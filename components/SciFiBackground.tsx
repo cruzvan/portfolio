@@ -57,9 +57,13 @@ const SciFiBackground: React.FC<SciFiBackgroundProps> = ({ appState = 'start' })
     if (!canvas) return;
 
     // PERFORMANCE OPTIMIZATION:
-    // On Mobile/Tablet (<1024px), use a lightweight 2D color fill instead of the heavy Raymarching Shader.
-    // This significantly reduces battery drain and GPU load while keeping the color-coding feature.
-    if (window.innerWidth < 1024) {
+    // Robust detection for Mobile/Tablet to disable heavy WebGL shaders.
+    // 1. Check User Agent for common mobile identifiers.
+    // 2. Check Screen Width via matchMedia (more stable than innerWidth).
+    const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const isSmallScreen = window.matchMedia("(max-width: 1024px)").matches;
+
+    if (isMobileUA || isSmallScreen) {
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
 
@@ -88,8 +92,6 @@ const SciFiBackground: React.FC<SciFiBackgroundProps> = ({ appState = 'start' })
             // Multiply by 255 for RGB strings
             ctx.fillStyle = `rgb(${Math.floor(nr * 255)}, ${Math.floor(ng * 255)}, ${Math.floor(nb * 255)})`;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
-            // Optional: Add a very faint static noise pattern if desired, but solid color is cleanest for mobile.
             
             id = requestAnimationFrame(loop2D);
         };

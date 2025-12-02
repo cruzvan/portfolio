@@ -158,7 +158,9 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
         }
     };
 
-    if (activeEl) {
+    // On mobile, native scrolling doesn't use this wheel handler in the same way,
+    // so we don't rely on it for mobile section tracking.
+    if (activeEl && window.matchMedia("(min-width: 768px)").matches) {
         activeEl.addEventListener('wheel', handleWheel, { passive: false });
     }
 
@@ -169,6 +171,29 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
     };
   }, [activeSection, isScrolling, dynamicSections, scrollToSection]);
 
+  // --- MOBILE SCROLL HANDLER ---
+  // Tracks native scroll position to update activeSection and trigger background blur
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    // Only process if not currently auto-scrolling (prevents jitter)
+    if (isScrolling) return;
+
+    const container = e.currentTarget;
+    // Trigger point is 1/3 down the screen to feel responsive
+    const scrollPosition = container.scrollTop + (window.innerHeight / 3);
+
+    for (const section of dynamicSections) {
+        const el = sectionRefs.current[section.id];
+        if (el) {
+            const { offsetTop, offsetHeight } = el;
+            if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                if (activeSection !== section.id) {
+                    setActiveSection(section.id);
+                }
+                return;
+            }
+        }
+    }
+  };
 
   const getContentForTag = (tag: string): TagContentSection => {
     // Look up the tag in the specific project's content
@@ -278,13 +303,25 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
       </div>
 
       {/* --- MAIN SCROLL CONTAINER --- */}
-      <div className="relative w-full h-full overflow-hidden">
+      {/* 
+          MOBILE FIX: Changed overflow-hidden to overflow-y-auto on parent to allow native scrolling.
+          Desktop retains md:overflow-hidden for the scroll-jack effect.
+          Added onScroll handler to track sections on mobile/tablet native scrolling.
+      */}
+      <div 
+        className="relative w-full h-full overflow-y-auto md:overflow-hidden scroll-smooth"
+        onScroll={handleScroll}
+      >
         
         {/* === SECTION 1: OVERVIEW === */}
+        {/* 
+            MOBILE FIX: Changed h-screen to min-h-screen and overflow-visible. 
+            This allows sections to stack naturally on mobile.
+        */}
         <section 
           id="overview" 
           ref={(el) => { if (el) sectionRefs.current['overview'] = el; }}
-          className="relative w-full h-screen overflow-y-auto overscroll-none"
+          className="relative w-full min-h-screen md:h-screen md:overflow-y-auto overflow-visible"
         >
            <div className="relative z-10 w-full min-h-screen px-4 md:px-8 flex flex-col items-center justify-center text-center py-20">
               <div className="animate-slide-up-fade-in flex flex-col items-center" style={{ animationDelay: '0.1s' }}>
@@ -341,7 +378,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                     key={sec.id}
                     id={sec.id} 
                     ref={(el) => { if (el) sectionRefs.current[sec.id] = el; }}
-                    className="relative w-full h-screen overflow-y-auto overscroll-none"
+                    className="relative w-full min-h-screen md:h-screen md:overflow-y-auto overflow-visible"
                 >
                     <div className="min-h-screen flex flex-col items-center py-16 md:py-20 px-4 md:px-8 md:pl-48">
                         
@@ -457,7 +494,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
         <section 
           id="gallery" 
           ref={(el) => { if (el) sectionRefs.current['gallery'] = el; }}
-          className="relative w-full h-screen overflow-y-auto overscroll-none"
+          className="relative w-full min-h-screen md:h-screen md:overflow-y-auto overflow-visible"
         >
             <div className="min-h-screen flex flex-col items-center justify-center w-full px-4 md:pl-48 py-20 md:py-24">
                 <div className="w-full max-w-7xl">
@@ -523,7 +560,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
         <section 
           id="videos" 
           ref={(el) => { if (el) sectionRefs.current['videos'] = el; }}
-          className="relative w-full h-screen overflow-y-auto overscroll-none"
+          className="relative w-full min-h-screen md:h-screen md:overflow-y-auto overflow-visible"
         >
             <div className="min-h-screen flex flex-col items-center w-full px-4 md:px-8 md:pl-48 py-20 md:py-24">
                 <div className="w-full max-w-5xl">

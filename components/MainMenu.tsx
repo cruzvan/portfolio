@@ -53,7 +53,10 @@ const MenuCard: React.FC<MenuCardProps> = ({
     if (!cardRef.current || isCompressed) return;
 
     // PERFORMANCE: Disable effect on tablets and mobile devices (< 1024px) to save resources
-    if (typeof window !== 'undefined' && window.innerWidth < 1024) return;
+    const isMobileUA = typeof navigator !== 'undefined' && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const isSmallScreen = typeof window !== 'undefined' && window.matchMedia("(max-width: 1024px)").matches;
+    
+    if (isMobileUA || isSmallScreen) return;
     
     const x = e.clientX;
     const y = e.clientY;
@@ -291,7 +294,10 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
   // --- INTERACTIVE CONSTELLATION EFFECT (Modified to "Bubble") ---
   useEffect(() => {
     // PERFORMANCE: Disable particles on mobile/tablet
-    if (window.innerWidth < 1024) return;
+    const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const isSmallScreen = window.matchMedia("(max-width: 1024px)").matches;
+    
+    if (isMobileUA || isSmallScreen) return;
 
     const canvas = canvasRef.current;
     if (!canvas) return;
