@@ -56,6 +56,52 @@ const SciFiBackground: React.FC<SciFiBackgroundProps> = ({ appState = 'start' })
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    // PERFORMANCE OPTIMIZATION:
+    // On Mobile/Tablet (<1024px), use a lightweight 2D color fill instead of the heavy Raymarching Shader.
+    // This significantly reduces battery drain and GPU load while keeping the color-coding feature.
+    if (window.innerWidth < 1024) {
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+
+        let id: number;
+        
+        const handleResize = () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        };
+        window.addEventListener('resize', handleResize);
+        handleResize();
+
+        const loop2D = () => {
+            // Smooth Color Interpolation (Same logic as shader but for 2D fill)
+            const [cr, cg, cb] = currentColorRef.current;
+            const [tr, tg, tb] = targetColorRef.current;
+            const easing = 0.02;
+
+            const nr = cr + (tr - cr) * easing;
+            const ng = cg + (tg - cg) * easing;
+            const nb = cb + (tb - cb) * easing;
+
+            currentColorRef.current = [nr, ng, nb];
+
+            // Fill background with solid color
+            // Multiply by 255 for RGB strings
+            ctx.fillStyle = `rgb(${Math.floor(nr * 255)}, ${Math.floor(ng * 255)}, ${Math.floor(nb * 255)})`;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Optional: Add a very faint static noise pattern if desired, but solid color is cleanest for mobile.
+            
+            id = requestAnimationFrame(loop2D);
+        };
+        loop2D();
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            cancelAnimationFrame(id);
+        };
+    }
+
+    // --- DESKTOP: FULL SHADER ---
     const gl = canvas.getContext('webgl');
     if (!gl) return;
 

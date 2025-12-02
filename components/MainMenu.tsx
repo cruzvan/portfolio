@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Gamepad2, Box, Music, FolderOpen, User } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -289,6 +290,9 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
 
   // --- INTERACTIVE CONSTELLATION EFFECT (Modified to "Bubble") ---
   useEffect(() => {
+    // PERFORMANCE: Disable particles on mobile/tablet
+    if (window.innerWidth < 1024) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
