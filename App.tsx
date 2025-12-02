@@ -10,8 +10,6 @@ import './indexFonts.css';
 const ContactView = React.lazy(() => import('./components/ContactView'));
 const AboutView = React.lazy(() => import('./components/AboutView'));
 const MusicView = React.lazy(() => import('./components/MusicView'));
-const CvGameDesignerView = React.lazy(() => import('./components/CvGameDesignerView'));
-const CvTechArtistView = React.lazy(() => import('./components/CvTechArtistView'));
 const GameDesignPortfolioView = React.lazy(() => import('./components/GameDesignPortfolioView'));
 const TechArt3DPortfolioView = React.lazy(() => import('./components/TechArt3DPortfolioView'));
 const OthersPortfolioView = React.lazy(() => import('./components/OthersPortfolioView'));
@@ -270,14 +268,6 @@ function PortfolioApp() {
 
             {appState === 'music' && (
               <MusicView onClose={handleGoToMenu} />
-            )}
-
-            {appState === 'cv-gd' && (
-                <CvGameDesignerView onClose={handleBackToAbout} />
-            )}
-
-            {appState === 'cv-ta' && (
-                <CvTechArtistView onClose={handleBackToAbout} />
             )}
 
             {appState === 'portfolio-gd' && (
