@@ -1,0 +1,1 @@
+import{j as s}from"./index-Comoabv_.js";import{B as e,o as r}from"./BasePortfolioView-CpPLkP1s.js";const m=({onClose:o})=>{const t=["Programming","Design","Visuals","Writing","Experiments"];return s.jsx(e,{title:"MISCELLANEOUS",projects:r,categories:t,onClose:o,baseRoute:"#others"})};export{m as default};
