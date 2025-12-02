@@ -528,12 +528,58 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
           </span>
         </button>
 
-        {/* Right: Score (Persistent from App) */}
-        <div className="flex items-center gap-3 pointer-events-none">
-          <span className="text-white/60 text-[10px] md:text-xs tracking-widest uppercase font-medium" style={{ fontFamily: "'ITC Avant Garde Gothic Pro XLt', sans-serif" }}>
-            {t('hud_score')}: {score.toString().padStart(6, '0')}
-          </span>
-          <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_#22c55e]"></span>
+        {/* Right: Responsive Content Swap (Score vs Language) */}
+        <div className="flex items-center gap-3">
+            
+            {/* DESKTOP: SCORE (Hidden on Mobile) */}
+            <div className="hidden md:flex items-center gap-3 pointer-events-none">
+              <span className="text-white/60 text-[10px] md:text-xs tracking-widest uppercase font-medium" style={{ fontFamily: "'ITC Avant Garde Gothic Pro XLt', sans-serif" }}>
+                {t('hud_score')}: {score.toString().padStart(6, '0')}
+              </span>
+              <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_#22c55e]"></span>
+            </div>
+
+            {/* MOBILE: LANGUAGE TOGGLE (Hidden on Desktop) */}
+            <div className="md:hidden pointer-events-auto">
+                <div className="flex items-center bg-black/40 border border-white/20 backdrop-blur-md p-1 gap-1">
+                    <button 
+                        onClick={() => setLanguage('en')}
+                        className={`
+                            relative px-3 py-1 text-[10px] font-bold tracking-widest transition-all duration-300
+                            ${language === 'en' 
+                                ? 'bg-white text-black shadow-[0_0_15px_rgba(255,255,255,0.5)]' 
+                                : 'bg-transparent text-white/40 hover:text-white hover:bg-white/5'}
+                        `}
+                        style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                    >
+                        EN
+                        {/* Active Indicator Line */}
+                        {language === 'en' && (
+                            <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#FE4403]" />
+                        )}
+                    </button>
+                    
+                    <div className="w-[1px] h-3 bg-white/10" />
+
+                    <button 
+                        onClick={() => setLanguage('es')}
+                        className={`
+                            relative px-3 py-1 text-[10px] font-bold tracking-widest transition-all duration-300
+                            ${language === 'es' 
+                                ? 'bg-white text-black shadow-[0_0_15px_rgba(255,255,255,0.5)]' 
+                                : 'bg-transparent text-white/40 hover:text-white hover:bg-white/5'}
+                        `}
+                        style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                    >
+                        ES
+                        {/* Active Indicator Line */}
+                        {language === 'es' && (
+                            <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#FE4403]" />
+                        )}
+                    </button>
+                </div>
+            </div>
+
         </div>
       </div>
 
@@ -621,45 +667,58 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
            </span>
         </div>
         
-        {/* Language Toggle - Pause Menu Style */}
-        <div className="pointer-events-auto">
-            <div className="flex items-center bg-black/40 border border-white/20 backdrop-blur-md p-1 gap-1">
-                <button 
-                    onClick={() => setLanguage('en')}
-                    className={`
-                        relative px-4 py-1 text-[10px] md:text-xs font-bold tracking-widest transition-all duration-300
-                        ${language === 'en' 
-                            ? 'bg-white text-black shadow-[0_0_15px_rgba(255,255,255,0.5)]' 
-                            : 'bg-transparent text-white/40 hover:text-white hover:bg-white/5'}
-                    `}
-                    style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-                >
-                    EN
-                    {/* Active Indicator Line */}
-                    {language === 'en' && (
-                        <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#FE4403]" />
-                    )}
-                </button>
-                
-                <div className="w-[1px] h-3 bg-white/10" />
+        {/* Right: Responsive Content Swap (Language vs Score) */}
+        <div className="flex items-center justify-end">
+            
+            {/* DESKTOP: LANGUAGE TOGGLE (Hidden on Mobile) */}
+            <div className="hidden md:block pointer-events-auto">
+                <div className="flex items-center bg-black/40 border border-white/20 backdrop-blur-md p-1 gap-1">
+                    <button 
+                        onClick={() => setLanguage('en')}
+                        className={`
+                            relative px-4 py-1 text-xs font-bold tracking-widest transition-all duration-300
+                            ${language === 'en' 
+                                ? 'bg-white text-black shadow-[0_0_15px_rgba(255,255,255,0.5)]' 
+                                : 'bg-transparent text-white/40 hover:text-white hover:bg-white/5'}
+                        `}
+                        style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                    >
+                        EN
+                        {/* Active Indicator Line */}
+                        {language === 'en' && (
+                            <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#FE4403]" />
+                        )}
+                    </button>
+                    
+                    <div className="w-[1px] h-3 bg-white/10" />
 
-                <button 
-                    onClick={() => setLanguage('es')}
-                    className={`
-                        relative px-4 py-1 text-[10px] md:text-xs font-bold tracking-widest transition-all duration-300
-                        ${language === 'es' 
-                            ? 'bg-white text-black shadow-[0_0_15px_rgba(255,255,255,0.5)]' 
-                            : 'bg-transparent text-white/40 hover:text-white hover:bg-white/5'}
-                    `}
-                    style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-                >
-                    ES
-                    {/* Active Indicator Line */}
-                    {language === 'es' && (
-                        <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#FE4403]" />
-                    )}
-                </button>
+                    <button 
+                        onClick={() => setLanguage('es')}
+                        className={`
+                            relative px-4 py-1 text-xs font-bold tracking-widest transition-all duration-300
+                            ${language === 'es' 
+                                ? 'bg-white text-black shadow-[0_0_15px_rgba(255,255,255,0.5)]' 
+                                : 'bg-transparent text-white/40 hover:text-white hover:bg-white/5'}
+                        `}
+                        style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                    >
+                        ES
+                        {/* Active Indicator Line */}
+                        {language === 'es' && (
+                            <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#FE4403]" />
+                        )}
+                    </button>
+                </div>
             </div>
+
+            {/* MOBILE: SCORE (Hidden on Desktop) */}
+            <div className="flex md:hidden items-center gap-3 pointer-events-none">
+              <span className="text-white/60 text-[10px] tracking-widest uppercase font-medium" style={{ fontFamily: "'ITC Avant Garde Gothic Pro XLt', sans-serif" }}>
+                {t('hud_score')}: {score.toString().padStart(6, '0')}
+              </span>
+              <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_#22c55e]"></span>
+            </div>
+
         </div>
       </div>
     </div>
