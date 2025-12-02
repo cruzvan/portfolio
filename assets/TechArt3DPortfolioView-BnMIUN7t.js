@@ -1,1 +1,0 @@
-import{j as o}from"./index-C6a9iyHa.js";import{B as r,t as s}from"./BasePortfolioView-BQjx4RWV.js";const n=({onClose:t})=>{const e=["3D Modeling","3D Texturing","Materials","Postprocessing","Unreal Engine","Unity"];return o.jsx(r,{title:"3D & TECH ART",projects:s,categories:e,onClose:t,baseRoute:"#3d-tech-art"})};export{n as default};
