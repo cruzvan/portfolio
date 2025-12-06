@@ -349,6 +349,12 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
       speedY: number;
       type: 'cross' | 'dot';
       isInteracting: boolean = false; // Track interaction status
+      colorR: number;
+      colorG: number;
+      colorB: number;
+      targetColorR: number;
+      targetColorG: number;
+      targetColorB: number;
 
       constructor() {
         this.x = Math.random() * width;
@@ -360,6 +366,12 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
         this.speedX = (Math.random() * 0.5) - 0.25;
         this.speedY = (Math.random() * 0.5) - 0.25;
         this.type = Math.random() > 0.5 ? 'cross' : 'dot';
+        this.colorR = 255;
+        this.colorG = 255;
+        this.colorB = 255;
+        this.targetColorR = 255;
+        this.targetColorG = 255;
+        this.targetColorB = 255;
       }
 
       update() {
@@ -382,20 +394,37 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
             if (distance < maxDistance) {
                 // Calculate scale based on proximity (closer = bigger)
                 const proximity = 1 - (distance / maxDistance);
-                scale = 1 + (proximity * 3); // Max 4x size
+                scale = 1 + (proximity * 10); // Max 4x size
                 
-                // We keep the interaction state for visual logic if needed,
-                // but we no longer trigger score updates here.
                 this.isInteracting = true;
+
+                // Set target color to orange
+                this.targetColorR = 254;
+                this.targetColorG = 68;
+                this.targetColorB = 3;
+
             } else {
                 this.isInteracting = false;
+                // Set target color to white
+                this.targetColorR = 255;
+                this.targetColorG = 255;
+                this.targetColorB = 255;
             }
         } else {
             this.isInteracting = false;
+             // Set target color to white
+            this.targetColorR = 255;
+            this.targetColorG = 255;
+            this.targetColorB = 255;
         }
         
-        // Smoothly interpolate size
-        this.size = this.size + (this.baseSize * scale - this.size) * 0.1;
+        // Smoothly interpolate size and color
+        const interpolationFactor = 0.1;
+        this.size = this.size + (this.baseSize * scale - this.size) * interpolationFactor;
+        
+        this.colorR = this.colorR + (this.targetColorR - this.colorR) * interpolationFactor;
+        this.colorG = this.colorG + (this.targetColorG - this.colorG) * interpolationFactor;
+        this.colorB = this.colorB + (this.targetColorB - this.colorB) * interpolationFactor;
         
         return this.size;
       }
@@ -403,8 +432,8 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
       draw(currentSize: number) {
         if (!ctx) return;
         // Reduced Opacity for elements
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
+        ctx.fillStyle = `rgba(${this.colorR}, ${this.colorG}, ${this.colorB}, 0.35)`;
+        ctx.strokeStyle = `rgba(${this.colorR}, ${this.colorG}, ${this.colorB}, 0.15)`;
         
         if (this.type === 'dot') {
             // UPDATED: Replaced rect with arc to make them round
