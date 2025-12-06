@@ -1,12 +1,13 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Play } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { TranslationKey } from '../data/translations';
 
 interface MusicTrack {
   id: string;
   title: string;
   projectName: string;
-  description: string;
+  description: TranslationKey;
   coverUrl: string;
   soundcloudId: string;
 }
@@ -16,6 +17,7 @@ interface MusicViewProps {
 }
 
 const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
+  const { t } = useLanguage();
   const [visualizerData, setVisualizerData] = useState<number[]>(new Array(12).fill(5));
   
   // Ref for the animation loop
@@ -28,7 +30,7 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
       id: "track-01",
       title: "ROTARY PONG MAIN THEME",
       projectName: "Rotary Pong",
-      description: "Aaaaaaan atmospheric exploration of deep space travel. Features heavy synthesizer usage inspired by 80s sci-fi cinema, blended with modern orchestral swells to create a sense of vast scale and isolation.",
+      description: "music_desc_01",
       coverUrl: "https://res.cloudinary.com/dseaazn5s/video/upload/v1764986395/ezgif-7e40e50aec655835_ma8mzf.webm",
       soundcloudId: "1533636247"
     },
@@ -36,7 +38,7 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
       id: "track-02",
       title: "ROTARY PONG GAMEPLAY THEME",
       projectName: "ROTARY PONG",
-      description: "Fast-paced combat music designed for a stealth-action sequence. The rhythm mimics the heartbeat of a protagonist running through a rainy cyberpunk city. Uses glitch percussion and distorted bass lines.",
+      description: "music_desc_02",
       coverUrl: "https://res.cloudinary.com/dseaazn5s/video/upload/v1764986395/ezgif-7e40e50aec655835_ma8mzf.webm",
       soundcloudId: "1533636958"
     },
@@ -44,7 +46,7 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
       id: "track-03",
       title: "BRAIN WASHER GAMEPLAY THEME",
       projectName: "BRAIN WASHER",
-      description: "A minimalistic ambient piece focused on tension and mystery. Created using granular synthesis of organic recordings found in nature, processed to sound alien and mechanical.",
+      description: "music_desc_03",
       coverUrl: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764992856/SB_AUDIO_BRAINWASHER_gmevyu.jpg",
       soundcloudId: "1561491655"
     },
@@ -52,7 +54,7 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
       id: "track-04",
       title: "BRAIN WASHER MAIN THEME",
       projectName: "BRAIN WASHER",
-      description: "Industrial techno track featuring metallic clangs and steam-release sound effects used as percussion. Represents a massive automated factory waking up.",
+      description: "music_desc_04",
       coverUrl: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764992856/SB_AUDIO_BRAINWASHER_gmevyu.jpg",
       soundcloudId: "1561491235"
     },
@@ -60,7 +62,7 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
       id: "track-05",
       title: "COMET RUSH",
       projectName: "COMET RUSH",
-      description: "Orchestral composition with choral elements for a fantasy RPG menu screen. Evokes feelings of lost history and forgotten magic.",
+      description: "music_desc_05",
       coverUrl: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764992926/SB_AUDIO_CometRush_pp5q7z.jpg",
       soundcloudId: "1561490245"
     },
@@ -68,7 +70,7 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
       id: "track-06",
       title: "NEON FLY",
       projectName: "",
-      description: "Experimental noise and high-tempo beats for a boss battle encounter. Chaos controlled through rhythm.",
+      description: "music_desc_06",
       coverUrl: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764994194/SB_AC_Logo_1k_navox5.webp",
       soundcloudId: "1561480960"
     },
@@ -76,7 +78,7 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
       id: "track-07",
       title: "CONSTRUYENDO LA SALIDA",
       projectName: "",
-      description: "Experimental noise and high-tempo beats for a boss battle encounter. Chaos controlled through rhythm.",
+      description: "music_desc_07",
       coverUrl: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764992982/SB_Audio_ConstruyendoLaSalida_edytgk.jpg",
       soundcloudId: "1561489477"
     },
@@ -84,7 +86,7 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
       id: "track-08",
       title: "CORAZÓN DE RATÓN",
       projectName: "",
-      description: "Experimental noise and high-tempo beats for a boss battle encounter. Chaos controlled through rhythm.",
+      description: "music_desc_08",
       coverUrl: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764993228/SB_AUDIO_CorazonDeRaton_rp6nfd.jpg",
       soundcloudId: "1561487938"
     },
@@ -92,7 +94,7 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
       id: "track-09",
       title: "A FORGOTTEN KING'S ANCESTRY CUTSCENE",
       projectName: "AFKA",
-      description: "Experimental noise and high-tempo beats for a boss battle encounter. Chaos controlled through rhythm.",
+      description: "music_desc_09",
       coverUrl: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764992819/SB_AUDIO_AFKA_czqbem.jpg",
       soundcloudId: "1561492783"
     },
@@ -100,7 +102,7 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
       id: "track-10",
       title: "IT WAS SOMETHING LIKE THIS",
       projectName: "FADING MEMORIES",
-      description: "Experimental noise and high-tempo beats for a boss battle encounter. Chaos controlled through rhythm.",
+      description: "music_desc_10",
       coverUrl: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764992685/SB_AUDIO_FadingMemories_idit8b.jpg",
       soundcloudId: "1573567399"
     },
@@ -108,7 +110,7 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
       id: "track-11",
       title: "BY YOUR SIDE",
       projectName: "FADING MEMORIES",
-      description: "Experimental noise and high-tempo beats for a boss battle encounter. Chaos controlled through rhythm.",
+      description: "music_desc_11",
       coverUrl: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764992685/SB_AUDIO_FadingMemories_idit8b.jpg",
       soundcloudId: "1658312175" 
     },
@@ -116,7 +118,7 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
       id: "track-12",
       title: "SLIPSTREAMING",
       projectName: "",
-      description: "Experimental noise and high-tempo beats for a boss battle encounter. Chaos controlled through rhythm.",
+      description: "music_desc_12",
       coverUrl: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764994194/SB_AC_Logo_1k_navox5.webp",
       soundcloudId: "2224913903" 
     }
@@ -227,7 +229,7 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
                             </div>
                         </div>
                         <p className="text-white/70 text-[13px] md:text-[15px] leading-relaxed text-justify" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                            {track.description}
+                            {t(track.description)}
                         </p>
                     </div>
 

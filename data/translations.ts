@@ -41,7 +41,19 @@ export type TranslationKey =
   | 'cv_spec_ta'
   | 'tech_stack'
   | 'experience'
-  | 'education';
+  | 'education'
+  | 'music_desc_01'
+  | 'music_desc_02'
+  | 'music_desc_03'
+  | 'music_desc_04'
+  | 'music_desc_05'
+  | 'music_desc_06'
+  | 'music_desc_07'
+  | 'music_desc_08'
+  | 'music_desc_09'
+  | 'music_desc_10'
+  | 'music_desc_11'
+  | 'music_desc_12';
 
 export const translations = {
   en: {
@@ -87,6 +99,18 @@ export const translations = {
     tech_stack: 'Tech Stack',
     experience: 'Experience',
     education: 'Education',
+    music_desc_01: "An atmospheric exploration of deep space travel. Features heavy synthesizer usage inspired by 80s sci-fi cinema, blended with modern orchestral swells to create a sense of vast scale and isolation.",
+    music_desc_02: "Fast-paced combat music designed for a stealth-action sequence. The rhythm mimics the heartbeat of a protagonist running through a rainy cyberpunk city. Uses glitch percussion and distorted bass lines.",
+    music_desc_03: "A minimalistic ambient piece focused on tension and mystery. Created using granular synthesis of organic recordings found in nature, processed to sound alien and mechanical.",
+    music_desc_04: "Industrial techno track featuring metallic clangs and steam-release sound effects used as percussion. Represents a massive automated factory waking up.",
+    music_desc_05: "Orchestral composition with choral elements for a fantasy RPG menu screen. Evokes feelings of lost history and forgotten magic.",
+    music_desc_06: "Experimental noise and high-tempo beats for a boss battle encounter. Chaos controlled through rhythm.",
+    music_desc_07: "Experimental noise and high-tempo beats for a boss battle encounter. Chaos controlled through rhythm.",
+    music_desc_08: "Experimental noise and high-tempo beats for a boss battle encounter. Chaos controlled through rhythm.",
+    music_desc_09: "Experimental noise and high-tempo beats for a boss battle encounter. Chaos controlled through rhythm.",
+    music_desc_10: "Experimental noise and high-tempo beats for a boss battle encounter. Chaos controlled through rhythm.",
+    music_desc_11: "Experimental noise and high-tempo beats for a boss battle encounter. Chaos controlled through rhythm.",
+    music_desc_12: "Experimental noise and high-tempo beats for a boss battle encounter. Chaos controlled through rhythm.",
   },
   es: {
     pressStart: 'Presiona para iniciar',
@@ -131,5 +155,17 @@ export const translations = {
     tech_stack: 'Tecnologías',
     experience: 'Experiencia',
     education: 'Educación',
+    music_desc_01: "Cyberpunk arcade frenético. Para el main menu, bajando los BPM y la agresividad del sonido para ser la zona segura del juego. ",
+    music_desc_02: "Cyberpunk arcade frenético. Va al mismo bpm del juego para coincidir en las visuales rítmicas",
+    music_desc_03: "Una pieza ambiental minimalista centrada en la tensión y el misterio. Creada mediante síntesis granular de grabaciones orgánicas encontradas en la naturaleza, procesadas para sonar alienígenas y mecánicas.",
+    music_desc_04: "Pista de techno industrial con sonidos metálicos y efectos de liberación de vapor utilizados como percusión. Representa el despertar de una enorme fábrica automatizada.",
+    music_desc_05: "Composición orquestal con elementos corales para la pantalla de menú de un RPG de fantasía. Evoca sentimientos de historia perdida y magia olvidada.",
+    music_desc_06: "Ruido experimental y ritmos de tempo alto para un encuentro con un jefe. El caos controlado a través del ritmo.",
+    music_desc_07: "Ruido experimental y ritmos de tempo alto para un encuentro con un jefe. El caos controlado a través del ritmo.",
+    music_desc_08: "Ruido experimental y ritmos de tempo alto para un encuentro con un jefe. El caos controlado a través del ritmo.",
+    music_desc_09: "Ruido experimental y ritmos de tempo alto para un encuentro con un jefe. El caos controlado a través del ritmo.",
+    music_desc_10: "Ruido experimental y ritmos de tempo alto para un encuentro con un jefe. El caos controlado a través del ritmo.",
+    music_desc_11: "Ruido experimental y ritmos de tempo alto para un encuentro con un jefe. El caos controlado a través del ritmo.",
+    music_desc_12: "Ruido experimental y ritmos de tempo alto para un encuentro con un jefe. El caos controlado a través del ritmo.",
   }
 };
