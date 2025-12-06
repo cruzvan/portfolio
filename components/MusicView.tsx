@@ -28,49 +28,97 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
       id: "track-01",
       title: "ROTARY PONG MAIN THEME",
       projectName: "Rotary Pong",
-      description: "An atmospheric exploration of deep space travel. Features heavy synthesizer usage inspired by 80s sci-fi cinema, blended with modern orchestral swells to create a sense of vast scale and isolation.",
+      description: "Aaaaaaan atmospheric exploration of deep space travel. Features heavy synthesizer usage inspired by 80s sci-fi cinema, blended with modern orchestral swells to create a sense of vast scale and isolation.",
       coverUrl: "https://res.cloudinary.com/dseaazn5s/video/upload/v1764986395/ezgif-7e40e50aec655835_ma8mzf.webm",
       soundcloudId: "1533636247"
     },
     {
       id: "track-02",
-      title: "NEON RAIN PROTOCOL",
-      projectName: "STEALTH RUNNER",
+      title: "ROTARY PONG GAMEPLAY THEME",
+      projectName: "ROTARY PONG",
       description: "Fast-paced combat music designed for a stealth-action sequence. The rhythm mimics the heartbeat of a protagonist running through a rainy cyberpunk city. Uses glitch percussion and distorted bass lines.",
-      coverUrl: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop",
-      soundcloudId: "312631602"
+      coverUrl: "https://res.cloudinary.com/dseaazn5s/video/upload/v1764986395/ezgif-7e40e50aec655835_ma8mzf.webm",
+      soundcloudId: "1533636958"
     },
     {
       id: "track-03",
-      title: "VOID TRANSMISSION",
-      projectName: "DEEP SIGNAL",
+      title: "BRAIN WASHER GAMEPLAY THEME",
+      projectName: "BRAIN WASHER",
       description: "A minimalistic ambient piece focused on tension and mystery. Created using granular synthesis of organic recordings found in nature, processed to sound alien and mechanical.",
-      coverUrl: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1200&auto=format&fit=crop",
-      soundcloudId: "893348323"
+      coverUrl: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764992856/SB_AUDIO_BRAINWASHER_gmevyu.jpg",
+      soundcloudId: "1561491655"
     },
     {
       id: "track-04",
-      title: "MECHANICAL HIVE",
-      projectName: "FACTORY RESET",
+      title: "BRAIN WASHER MAIN THEME",
+      projectName: "BRAIN WASHER",
       description: "Industrial techno track featuring metallic clangs and steam-release sound effects used as percussion. Represents a massive automated factory waking up.",
-      coverUrl: "https://images.unsplash.com/photo-1563245159-f793f19d8c37?q=80&w=1200&auto=format&fit=crop",
-      soundcloudId: "293673444"
+      coverUrl: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764992856/SB_AUDIO_BRAINWASHER_gmevyu.jpg",
+      soundcloudId: "1561491235"
     },
     {
       id: "track-05",
-      title: "ANCIENT WHISPERS",
-      projectName: "ELDEN MYTH",
+      title: "COMET RUSH",
+      projectName: "COMET RUSH",
       description: "Orchestral composition with choral elements for a fantasy RPG menu screen. Evokes feelings of lost history and forgotten magic.",
-      coverUrl: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop",
-      soundcloudId: "262569269"
+      coverUrl: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764992926/SB_AUDIO_CometRush_pp5q7z.jpg",
+      soundcloudId: "1561490245"
     },
     {
       id: "track-06",
-      title: "CRITICAL FAILURE",
-      projectName: "SYSTEM SHOCK TRIBUTE",
+      title: "NEON FLY",
+      projectName: "",
       description: "Experimental noise and high-tempo beats for a boss battle encounter. Chaos controlled through rhythm.",
-      coverUrl: "https://images.unsplash.com/photo-1515630278258-407f66498911?q=80&w=1200&auto=format&fit=crop",
-      soundcloudId: "207977872"
+      coverUrl: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764994194/SB_AC_Logo_1k_navox5.webp",
+      soundcloudId: "1561480960"
+    },
+    {
+      id: "track-07",
+      title: "CONSTRUYENDO LA SALIDA",
+      projectName: "",
+      description: "Experimental noise and high-tempo beats for a boss battle encounter. Chaos controlled through rhythm.",
+      coverUrl: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764992982/SB_Audio_ConstruyendoLaSalida_edytgk.jpg",
+      soundcloudId: "1561489477"
+    },
+    {
+      id: "track-08",
+      title: "CORAZÓN DE RATÓN",
+      projectName: "",
+      description: "Experimental noise and high-tempo beats for a boss battle encounter. Chaos controlled through rhythm.",
+      coverUrl: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764993228/SB_AUDIO_CorazonDeRaton_rp6nfd.jpg",
+      soundcloudId: "1561487938"
+    },
+    {
+      id: "track-09",
+      title: "A FORGOTTEN KING'S ANCESTRY CUTSCENE",
+      projectName: "AFKA",
+      description: "Experimental noise and high-tempo beats for a boss battle encounter. Chaos controlled through rhythm.",
+      coverUrl: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764992819/SB_AUDIO_AFKA_czqbem.jpg",
+      soundcloudId: "1561492783"
+    },
+    {
+      id: "track-10",
+      title: "IT WAS SOMETHING LIKE THIS",
+      projectName: "FADING MEMORIES",
+      description: "Experimental noise and high-tempo beats for a boss battle encounter. Chaos controlled through rhythm.",
+      coverUrl: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764992685/SB_AUDIO_FadingMemories_idit8b.jpg",
+      soundcloudId: "1573567399"
+    },
+    {
+      id: "track-11",
+      title: "BY YOUR SIDE",
+      projectName: "FADING MEMORIES",
+      description: "Experimental noise and high-tempo beats for a boss battle encounter. Chaos controlled through rhythm.",
+      coverUrl: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764992685/SB_AUDIO_FadingMemories_idit8b.jpg",
+      soundcloudId: "1658312175" 
+    },
+    {
+      id: "track-12",
+      title: "SLIPSTREAMING",
+      projectName: "",
+      description: "Experimental noise and high-tempo beats for a boss battle encounter. Chaos controlled through rhythm.",
+      coverUrl: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764994194/SB_AC_Logo_1k_navox5.webp",
+      soundcloudId: "2224913903" 
     }
   ];
 
@@ -126,27 +174,40 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
                 {/* --- Cover Art Area (With Glitch Effect) --- */}
                 <div className="relative w-full h-48 md:w-48 md:h-48 flex-shrink-0 overflow-hidden border border-white/10 group-hover:border-white/30 transition-colors">
                     
-                    {/* Base Image (Color, no grayscale as requested) */}
-                    <div 
-                      className="absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-200 group-hover:opacity-0 opacity-100"
-                      style={{ backgroundImage: `url(${track.coverUrl})` }}
-                    />
+                    {track.coverUrl.endsWith('.webm') ? (
+                        <video
+                            src={track.coverUrl}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="absolute inset-0 w-full h-full object-cover"
+                        />
+                    ) : (
+                        <>
+                            {/* Base Image (Color, no grayscale as requested) */}
+                            <div 
+                              className="absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-200 group-hover:opacity-0 opacity-100"
+                              style={{ backgroundImage: `url(${track.coverUrl})` }}
+                            />
 
-                    {/* Glitch Effect Layers (Visible on Hover) */}
-                    <div className="absolute inset-0 w-full h-full bg-black transition-opacity duration-0 opacity-0 group-hover:opacity-100">
-                        <div 
-                            className="absolute inset-0 w-full h-full bg-cover bg-center bg-red-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150 animate-glitch-1"
-                            style={{ backgroundImage: `url(${track.coverUrl})` }}
-                        />
-                        <div 
-                            className="absolute inset-0 w-full h-full bg-cover bg-center bg-green-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150"
-                            style={{ backgroundImage: `url(${track.coverUrl})` }}
-                        />
-                        <div 
-                            className="absolute inset-0 w-full h-full bg-cover bg-center bg-blue-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150 animate-glitch-2"
-                            style={{ backgroundImage: `url(${track.coverUrl})` }}
-                        />
-                    </div>
+                            {/* Glitch Effect Layers (Visible on Hover) */}
+                            <div className="absolute inset-0 w-full h-full bg-black transition-opacity duration-0 opacity-0 group-hover:opacity-100">
+                                <div 
+                                    className="absolute inset-0 w-full h-full bg-cover bg-center bg-red-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150 animate-glitch-1"
+                                    style={{ backgroundImage: `url(${track.coverUrl})` }}
+                                />
+                                <div 
+                                    className="absolute inset-0 w-full h-full bg-cover bg-center bg-green-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150"
+                                    style={{ backgroundImage: `url(${track.coverUrl})` }}
+                                />
+                                <div 
+                                    className="absolute inset-0 w-full h-full bg-cover bg-center bg-blue-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150 animate-glitch-2"
+                                    style={{ backgroundImage: `url(${track.coverUrl})` }}
+                                />
+                            </div>
+                        </>
+                    )}
 
                     {/* Overlay Scanline */}
                     <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none" />
@@ -178,7 +239,7 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
                             scrolling="no" 
                             frameBorder="no" 
                             allow="autoplay" 
-                            src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${track.soundcloudId}&color=%23fe4403&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`}
+                            src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A${track.soundcloudId}&color=%23fe4403&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false&show_artwork=false`}
                             className="opacity-100"
                         />
                     </div>
