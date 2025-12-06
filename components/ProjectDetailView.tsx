@@ -287,7 +287,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
             href={externalLinkUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:flex h-12 items-center gap-2 px-6 bg-white/5 border border-white/10 hover:bg-[#FE4403] hover:border-[#FE4403] backdrop-blur-md transition-all duration-300 group"
+            className="hidden md:flex h-12 items-center gap-2 px-12 bg-white/5 border border-white/10 hover:bg-[#FE4403] hover:border-[#FE4403] backdrop-blur-md transition-all duration-300 group"
          >
             <span className="text-xs font-bold uppercase tracking-widest text-white">{t('external_files')}</span>
             <ExternalLink size={14} className="text-white group-hover:rotate-45 transition-transform" />
@@ -327,33 +327,33 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
               <div className="animate-slide-up-fade-in flex flex-col items-center" style={{ animationDelay: '0.1s' }}>
                 
                 {/* Title */}
-                <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold uppercase tracking-tighter text-white mb-8 md:mb-12 leading-[0.9] drop-shadow-2xl break-words max-w-full" style={{ fontFamily: "'Dazzle Unicase', sans-serif" }}>
+                <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold uppercase tracking-tighter text-white mb-8 md:mb-12 leading-[0.9] drop-shadow-[0_0_30px_rgba(0,0,0,1)] break-words max-w-full" style={{ fontFamily: "'Dazzle Unicase', sans-serif" }}>
                   {project.title}
                 </h1>
 
                 {/* Stats */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 border-t border-white/20 pt-8 mt-4 w-full max-w-4xl bg-black/80 backdrop-blur-md p-6 md:p-8 rounded-sm">
                     <div className="flex flex-col gap-2 items-center">
-                        <span className="text-[10px] uppercase text-[#FE4403] tracking-widest flex items-center gap-2 font-bold"><Users size={12}/> {t('responsibilities')}</span>
+                        <span className="text-[11px] uppercase text-[#FE4403] tracking-widest flex items-center gap-2 font-bold"><Users size={12}/> {t('responsibilities')}</span>
                         <div className="flex flex-col gap-1">
                             {project.tags.map((tag: string, i: number) => (
-                                <span key={i} className="text-xs md:text-sm font-semibold tracking-wide text-white/90">{tag}</span>
+                                <span key={i} className="text-[13px] md:text-[15px] font-semibold tracking-wide text-white/90">{tag}</span>
                             ))}
                         </div>
                     </div>
 
                     <div className="flex flex-col gap-2 items-center">
-                        <span className="text-[10px] uppercase text-[#FE4403] tracking-widest flex items-center gap-2 font-bold"><Cpu size={12}/> {t('software')}</span>
+                        <span className="text-[11px] uppercase text-[#FE4403] tracking-widest flex items-center gap-2 font-bold"><Cpu size={12}/> {t('software')}</span>
                         <div className="flex flex-col gap-1">
                             {projectContent.software.map((sw: string, i: number) => (
-                                <span key={i} className="text-xs md:text-sm font-semibold tracking-wide text-white/90">{sw}</span>
+                                <span key={i} className="text-[13px] md:text-[15px] font-semibold tracking-wide text-white/90">{sw}</span>
                             ))}
                         </div>
                     </div>
 
                     <div className="flex flex-col gap-2 items-center">
-                        <span className="text-[10px] uppercase text-[#FE4403] tracking-widest flex items-center gap-2 font-bold"><Calendar size={12}/> {t('duration')}</span>
-                        <span className="text-xs md:text-sm font-semibold tracking-wide text-white/90">{projectContent.duration}</span>
+                        <span className="text-[11px] uppercase text-[#FE4403] tracking-widest flex items-center gap-2 font-bold"><Calendar size={12}/> {t('duration')}</span>
+                        <span className="text-[13px] md:text-[15px] font-semibold tracking-wide text-white/90">{projectContent.duration}</span>
                     </div>
                 </div>
               </div>
@@ -397,7 +397,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 mt-4">
                                     {content.bullets.map((bullet, i) => (
                                         <div key={i} className="flex items-center justify-center text-center bg-white/10 border border-[#FE4403]/50 p-2 md:p-3 shadow-[0_0_10px_rgba(254,68,3,0.1)]">
-                                            <span className="text-[9px] md:text-[10px] uppercase tracking-widest font-bold text-white">{bullet}</span>
+                                            <span className="text-[10px] md:text-[11px] uppercase tracking-widest font-bold text-white">{bullet}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -405,9 +405,9 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
 
                             {/* --- LAYOUT BLOCKS --- */}
                             
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 {/* TEXT BLOCK 1: Space Grotesk, White, No Opacity */}
-                                <div className="text-base md:text-lg text-white leading-relaxed font-normal text-justify" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                                <div className="flex items-center text-base md:text-lg text-white leading-relaxed font-normal text-justify" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                                     {content.textBlock1}
                                 </div>
                                 <div className="relative group cursor-zoom-in aspect-video border border-white/10 bg-white/5 p-1" onClick={() => setLightboxImage(sectionImage1)}>
@@ -447,12 +447,14 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                 </div>
                             </div>
 
-                            {/* TEXT BLOCK 3: Space Grotesk, White, No Opacity */}
-                            <div className="text-base md:text-lg text-white leading-relaxed font-normal text-justify" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                                {content.textBlock3}
+                            <div className="w-full bg-black/40 border-l-2 border-[#FE4403] p-4 md:p-8 backdrop-blur-md">
+                                {/* TEXT BLOCK 3: Space Grotesk, White, No Opacity */}
+                                <div className="text-base md:text-lg text-white leading-relaxed font-normal text-justify" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                                    {content.textBlock3}
+                                </div>
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="relative group cursor-zoom-in aspect-video border border-white/10 bg-white/5 p-1 order-2 md:order-1" onClick={() => setLightboxImage(sectionImage1)}>
                                     <div className="overflow-hidden h-full w-full relative">
                                         <img 
@@ -468,7 +470,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                     <div className="absolute -bottom-1 -left-1 w-3 h-3 border-b border-l border-[#FE4403]" />
                                 </div>
                                 {/* TEXT BLOCK 4: Space Grotesk, White, No Opacity */}
-                                <div className="text-base md:text-lg text-white leading-relaxed font-normal text-justify order-1 md:order-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                                <div className="flex items-center text-base md:text-lg text-white leading-relaxed font-normal text-justify order-1 md:order-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                                     {content.textBlock4}
                                 </div>
                             </div>
