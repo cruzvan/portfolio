@@ -332,6 +332,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
     // Throttle Resize
     let width = canvas.width = window.innerWidth;
     let height = canvas.height = window.innerHeight;
+    let animationFrameId: number;
 
     const particles: Particle[] = [];
     // UPDATED: Increased density (Dividing by smaller number = more particles)
@@ -439,7 +440,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
             p.draw(currentSize);
         });
 
-        requestAnimationFrame(animate);
+        animationFrameId = requestAnimationFrame(animate);
     }
 
     init();
@@ -466,6 +467,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
     window.addEventListener('mouseout', handleMouseLeave);
 
     return () => {
+        cancelAnimationFrame(animationFrameId);
         window.removeEventListener('resize', handleResize);
         window.removeEventListener('mousemove', handleMouseMove);
         window.removeEventListener('mouseout', handleMouseLeave);

@@ -258,29 +258,31 @@ function PortfolioApp() {
                 <div className="w-8 h-8 border-2 border-[#FE4403] border-t-transparent rounded-full animate-spin"></div>
             </div>
         }>
-            {appState === 'contact' && (
-              <ContactView onClose={handleGoToMenu} />
-            )}
+            <React.Fragment key={appState}>
+              {appState === 'contact' && (
+                <ContactView onClose={handleGoToMenu} />
+              )}
 
-            {appState === 'about' && (
-              <AboutView onClose={handleGoToMenu} onNavigate={handleNavigate} />
-            )}
+              {appState === 'about' && (
+                <AboutView onClose={handleGoToMenu} onNavigate={handleNavigate} />
+              )}
 
-            {appState === 'music' && (
-              <MusicView onClose={handleGoToMenu} />
-            )}
+              {appState === 'music' && (
+                <MusicView onClose={handleGoToMenu} />
+              )}
 
-            {appState === 'portfolio-gd' && (
-                <GameDesignPortfolioView onClose={handleGoToMenu} />
-            )}
+              {appState === 'portfolio-gd' && (
+                  <GameDesignPortfolioView onClose={handleGoToMenu} />
+              )}
 
-            {appState === 'portfolio-ta' && (
-                <TechArt3DPortfolioView onClose={handleGoToMenu} />
-            )}
+              {appState === 'portfolio-ta' && (
+                  <TechArt3DPortfolioView onClose={handleGoToMenu} />
+              )}
 
-            {appState === 'portfolio-others' && (
-                <OthersPortfolioView onClose={handleGoToMenu} />
-            )}
+              {appState === 'portfolio-others' && (
+                  <OthersPortfolioView onClose={handleGoToMenu} />
+              )}
+            </React.Fragment>
         </Suspense>
 
       </div>
