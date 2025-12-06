@@ -45,179 +45,203 @@ export interface ProjectCardData {
 export const gameDesignProjects: ProjectCardData[] = [
   { 
     id: 1, 
-    title: "PROJECT: ECHO", 
+    title: "HOLLOW FLOWERS", 
     category: "Game Design", 
-    tags: ["GAME DESIGN", "PROTOTYPING", "LEVEL DESIGN"], 
+    tags: ["PROGRAMMING BLUEPRINTS", "GAME DESIGN", "MATERIALS" ,"LEVEL DESIGN"], 
     image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764651989/HF1x1_2_ju3sr3.webp", 
-    status: "Gold" 
+    status: "DEMO" 
   },
   { 
     id: 2, 
-    title: "NEON VANGUARD", 
+    title: "FADING MEMORIES", 
     category: "Systems Design", 
-    tags: ["SYSTEMS DESIGN", "GAME DESIGN", "DOCS"], 
+    tags: ["GAME DESIGN", "ART DIRECTION", "ILLUMINATION", "DOCS"], 
     image: "https://images.unsplash.com/photo-1614726365723-49cfae92782f?q=80&w=2560&auto=format&fit=crop", 
-    status: "Alpha" 
-  },
-  { 
-    id: 3, 
-    title: "VOID RUNNER", 
-    category: "Level Design", 
-    tags: ["LEVEL DESIGN", "GAME DESIGN", "PROTOTYPING"], 
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2560&auto=format&fit=crop", 
     status: "Shipped" 
   },
   { 
-    id: 4, 
-    title: "AI BEHAVIOR TREE", 
+    id: 3, 
+    title: "UNDESERVED", 
     category: "Programming", 
-    tags: ["PROGRAMMING", "SYSTEMS DESIGN", "AI DESIGN"], 
+    tags: ["LEVEL DESIGN", "ART DIRECTION", "PROGRAMMING"], 
     image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2560&auto=format&fit=crop", 
-    status: "Tech Demo" 
+    status: "MINI PROJECT" 
   },
   { 
+    id: 4, 
+    title: "SUPER ZZ", 
+    category: "Level Design", 
+    tags: ["GAME DESIGN", "PROGRAMMING", "ART DIRECTION"], 
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2560&auto=format&fit=crop", 
+    status: "WIP" 
+  },
+   { 
     id: 5, 
-    title: "RAPID PROTO 04", 
-    category: "Prototyping", 
-    tags: ["PROTOTYPING", "PROGRAMMING", "GAME DESIGN"], 
-    image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=2560&auto=format&fit=crop", 
-    status: "Internal" 
-  },
-  { 
-    id: 6, 
-    title: "LORE BIBLE", 
+    title: "LLUVIA DE VERANO", 
     category: "Docs", 
-    tags: ["DOCS", "NARRATIVE", "GAME DESIGN"], 
+    tags: ["DOCS", "ART DIRECTION", "GAME DESIGN"], 
     image: "https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?q=80&w=2560&auto=format&fit=crop", 
-    status: "PDF" 
+    status: "PRE-PRODUCTION" 
+  },
+  {
+    id: 6, 
+    title: "EVERYTHING I SEE", 
+    category: "Systems Design", 
+    tags: ["GAME DESIGN", "DOCS", "SYSTEMS DESIGN"], 
+    image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=2560&auto=format&fit=crop", 
+    status: "CONCEPT IDEA" 
   },
   { 
     id: 7, 
-    title: "TITAN SLAYER", 
-    category: "Game Design", 
-    tags: ["GAME DESIGN", "SYSTEMS DESIGN", "LEVEL DESIGN"], 
+    title: "F.A.L.L.O.U.T.", 
+    category: "DOC", 
+    tags: ["DOCS", "SYSTEM DESIGN"], 
     image: "https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=2560&auto=format&fit=crop", 
-    status: "Concept" 
+    status: "CONCEPT IDEA" 
   },
-  { 
+/*  { 
     id: 8, 
     title: "INVENTORY SYS", 
     category: "Systems Design", 
     tags: ["SYSTEMS DESIGN", "UI/UX DESIGN", "DOCS"], 
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2560&auto=format&fit=crop", 
     status: "Live" 
-  },
+  }, */
 ];
 
 export const techArtProjects: ProjectCardData[] = [
   { 
     id: 1, 
-    title: "CYBER WEAPON", 
-    category: "3D Modeling", 
-    tags: ["3D MODELING", "HARD SURFACE", "SUBSTANCE PAINTER"], 
+    title: "NOISE GLITCH SHADER", 
+    category: "UNREAL ENGINE", 
+    tags: ["MATERIALS", "UNREAL ENGINE"], 
     image: "https://images.unsplash.com/photo-1599577908998-348df80c98f9?q=80&w=2560&auto=format&fit=crop", 
-    status: "Final" 
+    status: "ALPHA" 
   },
   { 
     id: 2, 
-    title: "PROCEDURAL CITY", 
+    title: "YIQ POSTPOCESS SHADER", 
     category: "Unreal Engine", 
-    tags: ["UNREAL ENGINE", "PCG TOOLS", "MATERIALS"], 
+    tags: ["UNREAL ENGINE", "POSTPROCESSING", "MATERIALS"], 
     image: "https://images.unsplash.com/photo-1533106958148-da053358df8d?q=80&w=2560&auto=format&fit=crop", 
-    status: "WIP" 
+    status: "ALPHA" 
   },
   { 
     id: 3, 
-    title: "HOLOGRAM SHADER", 
+    title: "CARD HOLOGRAM PARALLAX SHADER", 
     category: "Materials", 
-    tags: ["MATERIALS", "HLSL/GLSL", "POSTPROCESSING"], 
+    tags: ["MATERIALS", "UNREAL ENGINE"], 
     image: "https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=2560&auto=format&fit=crop", 
-    status: "Demo" 
+    status: "FINISHED" 
   },
   { 
     id: 4, 
-    title: "ENV. LIGHTING", 
+    title: "HEY ARNOLD 3D ROOM", 
     category: "Postprocessing", 
-    tags: ["POSTPROCESSING", "LUMEN", "UNREAL ENGINE"], 
+    tags: ["3D MODELING", "TEXTURING", "UNREAL ENGINE"], 
     image: "https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?q=80&w=2560&auto=format&fit=crop", 
-    status: "Shipped" 
+    status: "FINISHED" 
   },
   { 
     id: 5, 
-    title: "CHARACTER RIG", 
+    title: "INTEMPESTA LYRIC VIDEO", 
     category: "Unity", 
-    tags: ["UNITY", "3D MODELING", "ANIMATION"], 
+    tags: ["UNREAL ENGINE", "MATERIALS", "ANIMATION"], 
     image: "https://images.unsplash.com/photo-1550747528-cdb45925b3f7?q=80&w=2560&auto=format&fit=crop", 
-    status: "Rigged" 
+    status: "FINISHED" 
   },
   { 
     id: 6, 
-    title: "SCI-FI TEXTURE", 
+    title: "AURORA' - 3D CHARACTER", 
     category: "3D Texturing", 
-    tags: ["3D TEXTURING", "SUBSTANCE DESIGNER", "MATERIALS"], 
+    tags: ["UNREAL ENGINE", "HAIR GROOM", "MATERIALS"], 
     image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2560&auto=format&fit=crop", 
-    status: "4K PBR" 
+    status: "WIP" 
   },
   { 
     id: 7, 
-    title: "WATER SYSTEM", 
+    title: "UNDESERVED MAIN MENU", 
     category: "Materials", 
-    tags: ["MATERIALS", "UNREAL ENGINE", "PHYSICS"], 
+    tags: ["UNITY", "ANIMATION"], 
     image: "https://images.unsplash.com/photo-1506765515384-028b60a970df?q=80&w=2560&auto=format&fit=crop", 
-    status: "Tech" 
+    status: "SHIPPED" 
   },
   { 
     id: 8, 
-    title: "VFX EXPLOSION", 
+    title: "DRELL CREATURE", 
     category: "Unity", 
-    tags: ["UNITY", "PARTICLES", "MATERIALS"], 
+    tags: ["3D MODELING", "3D TEXTURING"], 
     image: "https://images.unsplash.com/photo-1485796826113-174aa68fd81b?q=80&w=2560&auto=format&fit=crop", 
-    status: "VFX" 
+    status: "FINISHED" 
+  },
+  { 
+    id: 9, 
+    title: "3D PROPS (FADING MEMORIES)", 
+    category: "Unity", 
+    tags: ["UNITY", "UI", "ILLUMINATION"], 
+    image: "https://images.unsplash.com/photo-1485796826113-174aa68fd81b?q=80&w=2560&auto=format&fit=crop", 
+    status: "FINISHED" 
+  },
+  { 
+    id: 10, 
+    title: "LOW POLY CHILEAN BUILDINGS (LLUVIA DE VERANO)", 
+    category: "Unity", 
+    tags: ["3D MODELING"], 
+    image: "https://images.unsplash.com/photo-1485796826113-174aa68fd81b?q=80&w=2560&auto=format&fit=crop", 
+    status: "FINISHED" 
+  },
+  { 
+    id: 11, 
+    title: "LEVEL DRESSING (CAVE MADNESS)", 
+    category: "Unity", 
+    tags: ["SHADERS"], 
+    image: "https://images.unsplash.com/photo-1485796826113-174aa68fd81b?q=80&w=2560&auto=format&fit=crop", 
+    status: "UNKNOWN" 
   },
 ];
 
 export const othersProjects: ProjectCardData[] = [
   { 
     id: 1, 
-    title: "PYTHON TOOLS", 
+    title: "SEBRA - CREATIVE SERVICES COMPANY", 
     category: "Programming", 
-    tags: ["PYTHON", "AUTOMATION", "PIPELINE"], 
+    tags: ["PRODUCTION", "MANAGEMENT"], 
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2560&auto=format&fit=crop", 
-    status: "v2.0" 
+    status: "ACTIVELY WORKING" 
   },
   { 
     id: 2, 
-    title: "UI KIT ALPHA", 
+    title: "CUSTOM OBSIDIAN VAULTS", 
     category: "Design", 
-    tags: ["UI DESIGN", "FIGMA", "VECTOR ART"], 
+    tags: ["JAVASCRIPT", "MANAGEMENT"], 
     image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2560&auto=format&fit=crop", 
-    status: "Asset Store" 
+    status: "" 
   },
   { 
     id: 3, 
-    title: "DIGITAL SKETCH", 
+    title: "PIXEL 3D SPOTIFY CANVAS (WINTERS OF BLUE)", 
     category: "Visuals", 
-    tags: ["CONCEPT ART", "PHOTOSHOP", "ENVIRONMENTS"], 
+    tags: ["ART", "UNREAL ENGINE"], 
     image: "https://images.unsplash.com/photo-1569091791842-7cf9646552dd?q=80&w=2560&auto=format&fit=crop", 
     status: "Personal" 
   },
   { 
     id: 4, 
-    title: "DESIGN ESSAYS", 
-    category: "Writing", 
-    tags: ["GAME THEORY", "BLOG", "ANALYSIS"], 
+    title: "WEBPAGE PORTFOLIO (VIBECODED)", 
+    category: "WEBPAGE", 
+    tags: ["TYPESCRIPT", "UI/UX"], 
     image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=2560&auto=format&fit=crop", 
     status: "Published" 
   },
   { 
     id: 5, 
-    title: "AI AGENTS SIM", 
-    category: "Experiments", 
-    tags: ["AI BEHAVIOR", "UNITY ML", "RESEARCH"], 
+    title: "WEBPAGE COMPANY (VIBECODED)", 
+    category: "WEBPAGE", 
+    tags: ["TYPESCRIPT", "UI/UX"],  
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2560&auto=format&fit=crop", 
     status: "Prototype" 
   },
-  { 
+/*   { 
     id: 6, 
     title: "WEB PORTFOLIO", 
     category: "Programming", 
@@ -240,7 +264,7 @@ export const othersProjects: ProjectCardData[] = [
     tags: ["CYBERPUNK", "NEON", "STREET"], 
     image: "https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=2560&auto=format&fit=crop", 
     status: "Gallery" 
-  },
+  }, */
 ];
 
 // --- CONTENT DATABASE ---
