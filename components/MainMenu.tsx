@@ -42,6 +42,7 @@ const MenuCard: React.FC<MenuCardProps> = ({
   const isCompressed = isStacked && isSiblingHovered;
   const cardRef = useRef<HTMLDivElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null); // Ref for the video element
   const [transform, setTransform] = useState("perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)");
   
   // PERFORMANCE OPTIMIZATION: Ref for requestAnimationFrame throttling
@@ -106,11 +107,17 @@ const MenuCard: React.FC<MenuCardProps> = ({
         cancelAnimationFrame(rafRef.current);
         rafRef.current = null;
     }
+    if (isVideo && videoRef.current) {
+      videoRef.current.pause();
+    }
     onMouseLeave();
     setTransform("perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)");
   };
 
   const handleMouseEnter = () => {
+    if (isVideo && videoRef.current) {
+      videoRef.current.play();
+    }
     onMouseEnter();
   };
 
@@ -138,8 +145,8 @@ const MenuCard: React.FC<MenuCardProps> = ({
 
           {isVideo ? (
             <video
+              ref={videoRef}
               src={item.image}
-              autoPlay
               loop
               muted
               playsInline
