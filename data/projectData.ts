@@ -102,14 +102,14 @@ export const gameDesignProjects: ProjectCardData[] = [
     image: "https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=2560&auto=format&fit=crop", 
     status: "CONCEPT IDEA" 
   },
-/*  { 
+  { 
     id: 8, 
-    title: "INVENTORY SYS", 
-    category: "Systems Design", 
-    tags: ["SYSTEMS DESIGN", "UI/UX DESIGN", "DOCS"], 
+    title: "ACID RAIN", 
+    category: "GAME DESIGN", 
+    tags: ["GAME DESIGN", "DOCS"], 
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2560&auto=format&fit=crop", 
-    status: "Live" 
-  }, */
+    status: "WIP" 
+  }, 
 ];
 
 export const techArtProjects: ProjectCardData[] = [
@@ -883,6 +883,61 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             },
             software: ["INSERT SOFTWARE"],
             duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+
+    "ACID RAIN": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. A detailed description of the Acid Rain project, its core mechanics, and design philosophy.",
+            tagContent: {
+                "GAME DESIGN": {
+                    headline: "INSERT HEADLINE: GAME DESIGN",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Core Gameplay Loop", "Mechanical Breakdown", "Player Progression", "World-building"]
+                },
+                "DOCS": {
+                    headline: "INSERT HEADLINE: DOCS",
+                    textBlock1: "Overview of the Game Design Document (GDD) for Acid Rain, outlining the project's vision and scope.",
+                    textBlock2: "Examples of concept documents, narrative outlines, and system diagrams.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["High-Level Concept", "Narrative Synopsis", "Feature Specification", "Mood Board"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERTE LA DESCRIPCIÓN AQUÍ. Una descripción detallada del proyecto Acid Rain, sus mecánicas principales y filosofía de diseño.",
+            tagContent: {
+                "GAME DESIGN": {
+                    headline: "INSERTE EL TITULAR: GAME DESIGN",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERTE TEXTO AQUÍ.",
+                    textBlock4: "INSERTE TEXTO AQUÍ.",
+                    bullets: ["Bucle de Jugabilidad Principal", "Desglose de Mecánicas", "Progresión del Jugador", "Construcción de Mundo"]
+                },
+                "DOCS": {
+                    headline: "INSERTE EL TITULAR: DOCS",
+                    textBlock1: "Resumen del Documento de Diseño de Juego (GDD) para Acid Rain, describiendo la visión y el alcance del proyecto.",
+                    textBlock2: "Ejemplos de documentos de concepto, resúmenes narrativos y diagramas de sistemas.",
+                    textBlock3: "INSERTE TEXTO AQUÍ.",
+                    textBlock4: "INSERTE TEXTO AQUÍ.",
+                    bullets: ["Concepto de Alto Nivel", "Sinopsis Narrativa", "Especificación de Características", "Mood Board"]
+                }
+            },
+            software: ["INSERTE SOFTWARE"],
+            duration: "INSERTE DURACIÓN",
             videos: [],
             gallery: [],
             externalLink: "#"
