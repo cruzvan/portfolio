@@ -342,12 +342,6 @@ const BasePortfolioView: React.FC<BasePortfolioViewProps> = ({ title, projects, 
       */}
       {!selectedProject && (
         <>
-            <style>{`
-                .scrollbar-hitman::-webkit-scrollbar { height: 6px; background: rgba(255, 255, 255, 0.05); }
-                .scrollbar-hitman::-webkit-scrollbar-thumb { background: #FE4403; border-radius: 0px; }
-                .scrollbar-hitman::-webkit-scrollbar-track { background: transparent; }
-            `}</style>
-
             {/* --- TOP NAVIGATION BAR --- */}
             <div className="absolute top-0 left-0 w-full z-40 bg-gradient-to-b from-black via-black/80 to-transparent pt-4 md:pt-8 pb-4 md:pb-12 px-6 md:px-12">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/20 pb-2">
@@ -385,7 +379,7 @@ const BasePortfolioView: React.FC<BasePortfolioViewProps> = ({ title, projects, 
                 <div className="relative w-full h-[60vh] md:h-[65vh] bg-black/20 border-y border-white/10 backdrop-blur-sm group">
                     <div 
                         ref={scrollContainerRef}
-                        className="scrollbar-hitman w-full h-full overflow-x-auto flex items-center gap-4 md:gap-4 2xl:gap-6 px-8 md:px-12 cursor-grab active:cursor-grabbing"
+                        className="w-full h-full overflow-x-auto flex items-center gap-4 md:gap-4 2xl:gap-6 px-8 md:px-12 cursor-grab active:cursor-grabbing"
                         onMouseDown={handleMouseDown}
                         onMouseLeave={handleMouseLeave}
                         onMouseUp={handleMouseUp}
