@@ -26,11 +26,11 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
   const tracks: MusicTrack[] = [
     {
       id: "track-01",
-      title: "CYBERNETIC HORIZON",
-      projectName: "STARFIELD EXPLORER",
+      title: "ROTARY PONG MAIN THEME",
+      projectName: "Rotary Pong",
       description: "An atmospheric exploration of deep space travel. Features heavy synthesizer usage inspired by 80s sci-fi cinema, blended with modern orchestral swells to create a sense of vast scale and isolation.",
-      coverUrl: "https://images.unsplash.com/photo-1614726365723-49cfae92782f?q=80&w=1200&auto=format&fit=crop",
-      soundcloudId: "1156642459"
+      coverUrl: "https://res.cloudinary.com/dseaazn5s/video/upload/v1764986395/ezgif-7e40e50aec655835_ma8mzf.webm",
+      soundcloudId: "1533636247"
     },
     {
       id: "track-02",
@@ -171,7 +171,7 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
                     </div>
 
                     {/* --- Player Section --- */}
-                    <div className="w-full h-[120px] md:h-[100px] border-t border-white/5 pt-4 relative bg-black/20">
+                    <div className="w-full h-[120px] md:h-[120px] border-t border-white/5 pt-4 relative bg-black/20">
                         <iframe 
                             width="100%" 
                             height="100%" 
