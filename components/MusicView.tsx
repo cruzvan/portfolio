@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Play } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { TranslationKey } from '../data/translations';
+import { useHoverVideo } from '../hooks/useHoverVideo';
 
 interface MusicTrack {
   id: string;
@@ -10,6 +11,97 @@ interface MusicTrack {
   description: TranslationKey;
   coverUrl: string;
   soundcloudId: string;
+}
+
+const MusicTrackItem: React.FC<{ track: MusicTrack; index: number }> = ({ track, index }) => {
+    const { t } = useLanguage();
+    const { videoRef, onHoverPlay, onHoverPause } = useHoverVideo();
+    const isVideo = track.coverUrl.endsWith('.webm');
+
+    return (
+        <div 
+            key={track.id} 
+            className="group relative bg-black/40 border border-white/10 hover:border-[#FE4403]/50 transition-all duration-300 p-4 md:p-6 flex flex-col md:flex-row gap-6 animate-slide-up-fade-in"
+            style={{ animationDelay: `${index * 150}ms` }}
+            onMouseEnter={onHoverPlay}
+            onMouseLeave={onHoverPause}
+        >
+            {/* --- Cover Art Area (With Glitch Effect) --- */}
+            <div className="relative w-full h-48 md:w-48 md:h-48 flex-shrink-0 overflow-hidden border border-white/10 group-hover:border-white/30 transition-colors">
+                
+                {isVideo ? (
+                    <video
+                        ref={videoRef}
+                        src={track.coverUrl}
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
+                        className="absolute inset-0 w-full h-full object-cover"
+                    />
+                ) : (
+                    <>
+                        {/* Base Image (Color, no grayscale as requested) */}
+                        <div 
+                          className="absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-200 group-hover:opacity-0 opacity-100"
+                          style={{ backgroundImage: `url(${track.coverUrl})` }}
+                        />
+
+                        {/* Glitch Effect Layers (Visible on Hover) */}
+                        <div className="absolute inset-0 w-full h-full bg-black transition-opacity duration-0 opacity-0 group-hover:opacity-100">
+                            <div 
+                                className="absolute inset-0 w-full h-full bg-cover bg-center bg-red-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150 animate-glitch-1"
+                                style={{ backgroundImage: `url(${track.coverUrl})` }}
+                            />
+                            <div 
+                                className="absolute inset-0 w-full h-full bg-cover bg-center bg-green-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150"
+                                style={{ backgroundImage: `url(${track.coverUrl})` }}
+                            />
+                            <div 
+                                className="absolute inset-0 w-full h-full bg-cover bg-center bg-blue-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150 animate-glitch-2"
+                                style={{ backgroundImage: `url(${track.coverUrl})` }}
+                            />
+                        </div>
+                    </>
+                )}
+
+                {/* Overlay Scanline */}
+                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none" />
+            </div>
+
+            {/* --- Info & Player Area --- */}
+            <div className="flex flex-col flex-grow justify-between">
+                <div className="mb-4">
+                    <div className="flex flex-wrap items-center gap-3 mb-3">
+                        {/* Track Title */}
+                        <h2 className="text-xl md:text-2xl text-white font-bold tracking-wide leading-none" style={{ fontFamily: "'UniversNextW04-620CondBold', sans-serif" }}>
+                            {track.title}
+                        </h2>
+                        {/* Project Name Label (Boxed) */}
+                        <div className="bg-[#FE4403] text-black text-[9px] md:text-[10px] font-bold px-2 py-1 uppercase tracking-widest" style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}>
+                            {track.projectName}
+                        </div>
+                    </div>
+                    <p className="text-white/70 text-[13px] md:text-[15px] leading-relaxed text-justify" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        {t(track.description)}
+                    </p>
+                </div>
+
+                {/* --- Player Section --- */}
+                <div className="w-full h-[120px] md:h-[120px] border-t border-white/5 pt-4 relative bg-black/20">
+                    <iframe 
+                        width="100%" 
+                        height="100%" 
+                        scrolling="no" 
+                        frameBorder="no" 
+                        allow="autoplay" 
+                        src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A${track.soundcloudId}&color=%23fe4403&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false&show_artwork=false`}
+                        className="opacity-100"
+                    />
+                </div>
+            </div>
+        </div>
+      );
 }
 
 interface MusicViewProps {
@@ -168,85 +260,7 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
         <div className="w-full h-full overflow-y-auto p-4 md:p-6 space-y-6 scrollbar-hide pb-20 md:pb-6">
           
           {tracks.map((track, index) => (
-            <div 
-                key={track.id} 
-                className="group relative bg-black/40 border border-white/10 hover:border-[#FE4403]/50 transition-all duration-300 p-4 md:p-6 flex flex-col md:flex-row gap-6 animate-slide-up-fade-in"
-                style={{ animationDelay: `${index * 150}ms` }}
-            >
-                {/* --- Cover Art Area (With Glitch Effect) --- */}
-                <div className="relative w-full h-48 md:w-48 md:h-48 flex-shrink-0 overflow-hidden border border-white/10 group-hover:border-white/30 transition-colors">
-                    
-                    {track.coverUrl.endsWith('.webm') ? (
-                        <video
-                            src={track.coverUrl}
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="absolute inset-0 w-full h-full object-cover"
-                        />
-                    ) : (
-                        <>
-                            {/* Base Image (Color, no grayscale as requested) */}
-                            <div 
-                              className="absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-200 group-hover:opacity-0 opacity-100"
-                              style={{ backgroundImage: `url(${track.coverUrl})` }}
-                            />
-
-                            {/* Glitch Effect Layers (Visible on Hover) */}
-                            <div className="absolute inset-0 w-full h-full bg-black transition-opacity duration-0 opacity-0 group-hover:opacity-100">
-                                <div 
-                                    className="absolute inset-0 w-full h-full bg-cover bg-center bg-red-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150 animate-glitch-1"
-                                    style={{ backgroundImage: `url(${track.coverUrl})` }}
-                                />
-                                <div 
-                                    className="absolute inset-0 w-full h-full bg-cover bg-center bg-green-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150"
-                                    style={{ backgroundImage: `url(${track.coverUrl})` }}
-                                />
-                                <div 
-                                    className="absolute inset-0 w-full h-full bg-cover bg-center bg-blue-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150 animate-glitch-2"
-                                    style={{ backgroundImage: `url(${track.coverUrl})` }}
-                                />
-                            </div>
-                        </>
-                    )}
-
-                    {/* Overlay Scanline */}
-                    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none" />
-                </div>
-
-                {/* --- Info & Player Area --- */}
-                <div className="flex flex-col flex-grow justify-between">
-                    <div className="mb-4">
-                        <div className="flex flex-wrap items-center gap-3 mb-3">
-                            {/* Track Title */}
-                            <h2 className="text-xl md:text-2xl text-white font-bold tracking-wide leading-none" style={{ fontFamily: "'UniversNextW04-620CondBold', sans-serif" }}>
-                                {track.title}
-                            </h2>
-                            {/* Project Name Label (Boxed) */}
-                            <div className="bg-[#FE4403] text-black text-[9px] md:text-[10px] font-bold px-2 py-1 uppercase tracking-widest" style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}>
-                                {track.projectName}
-                            </div>
-                        </div>
-                        <p className="text-white/70 text-[13px] md:text-[15px] leading-relaxed text-justify" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                            {t(track.description)}
-                        </p>
-                    </div>
-
-                    {/* --- Player Section --- */}
-                    <div className="w-full h-[120px] md:h-[120px] border-t border-white/5 pt-4 relative bg-black/20">
-                        <iframe 
-                            width="100%" 
-                            height="100%" 
-                            scrolling="no" 
-                            frameBorder="no" 
-                            allow="autoplay" 
-                            src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A${track.soundcloudId}&color=%23fe4403&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false&show_artwork=false`}
-                            className="opacity-100"
-                        />
-                    </div>
-                </div>
-            </div>
+            <MusicTrackItem key={track.id} track={track} index={index} />
           ))}
 
         </div>

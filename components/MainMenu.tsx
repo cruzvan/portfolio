@@ -3,6 +3,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Gamepad2, Box, Music, FolderOpen, User } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
+import { useHoverVideo } from '../hooks/useHoverVideo';
+
 // FIX: Define a type for menu items to improve type safety and avoid using `any`.
 interface MenuItem {
   id: number;
@@ -42,7 +44,7 @@ const MenuCard: React.FC<MenuCardProps> = ({
   const isCompressed = isStacked && isSiblingHovered;
   const cardRef = useRef<HTMLDivElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null); // Ref for the video element
+  const { videoRef, onHoverPlay, onHoverPause } = useHoverVideo();
   const [transform, setTransform] = useState("perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)");
   
   // PERFORMANCE OPTIMIZATION: Ref for requestAnimationFrame throttling
@@ -107,16 +109,16 @@ const MenuCard: React.FC<MenuCardProps> = ({
         cancelAnimationFrame(rafRef.current);
         rafRef.current = null;
     }
-    if (isVideo && videoRef.current) {
-      videoRef.current.pause();
+    if (isVideo) {
+      onHoverPause();
     }
     onMouseLeave();
     setTransform("perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)");
   };
 
   const handleMouseEnter = () => {
-    if (isVideo && videoRef.current) {
-      videoRef.current.play();
+    if (isVideo) {
+      onHoverPlay();
     }
     onMouseEnter();
   };
@@ -150,6 +152,7 @@ const MenuCard: React.FC<MenuCardProps> = ({
               loop
               muted
               playsInline
+              preload="metadata"
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-200 ${isHovered ? 'opacity-100' : 'opacity-60'}`}
             />
           ) : (
