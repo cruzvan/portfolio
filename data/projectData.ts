@@ -48,7 +48,7 @@ export const gameDesignProjects: ProjectCardData[] = [
     id: 1, 
     title: "HOLLOW FLOWERS", 
     category: "Game Design", 
-    tags: ["PROGRAMMING BLUEPRINTS", "GAME DESIGN", "MATERIALS" ,"LEVEL DESIGN"], 
+    tags: ["PROGRAMMING", "GAME DESIGN", "SHADERS" ,"LEVEL DESIGN"], 
     image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764651989/HF1x1_2_ju3sr3.webp", 
     status: "DEMO",
     locked: true
@@ -98,7 +98,7 @@ export const gameDesignProjects: ProjectCardData[] = [
     id: 7, 
     title: "F.A.L.L.O.U.T.", 
     category: "DOC", 
-    tags: ["DOCS", "SYSTEM DESIGN"], 
+    tags: ["DOCS", "SYSTEMS DESIGN"], 
     image: "https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=2560&auto=format&fit=crop", 
     status: "CONCEPT IDEA" 
   },
@@ -117,7 +117,7 @@ export const techArtProjects: ProjectCardData[] = [
     id: 1, 
     title: "NOISE GLITCH SHADER", 
     category: "UNREAL ENGINE", 
-    tags: ["MATERIALS", "UNREAL ENGINE"], 
+    tags: ["SHADERS", "UNREAL ENGINE"], 
     image: "https://images.unsplash.com/photo-1599577908998-348df80c98f9?q=80&w=2560&auto=format&fit=crop", 
     status: "ALPHA" 
   },
@@ -125,15 +125,15 @@ export const techArtProjects: ProjectCardData[] = [
     id: 2, 
     title: "YIQ POSTPOCESS SHADER", 
     category: "Unreal Engine", 
-    tags: ["UNREAL ENGINE", "POSTPROCESSING", "MATERIALS"], 
+    tags: ["UNREAL ENGINE", "POSTPROCESSING", "SHADERS"], 
     image: "https://images.unsplash.com/photo-1533106958148-da053358df8d?q=80&w=2560&auto=format&fit=crop", 
     status: "ALPHA" 
   },
   { 
     id: 3, 
     title: "CARD HOLOGRAM PARALLAX SHADER", 
-    category: "Materials", 
-    tags: ["MATERIALS", "UNREAL ENGINE"], 
+    category: "Shaders", 
+    tags: ["SHADERS", "UNREAL ENGINE"], 
     image: "https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=2560&auto=format&fit=crop", 
     status: "FINISHED" 
   },
@@ -149,7 +149,7 @@ export const techArtProjects: ProjectCardData[] = [
     id: 5, 
     title: "INTEMPESTA LYRIC VIDEO", 
     category: "Unity", 
-    tags: ["UNREAL ENGINE", "MATERIALS", "ANIMATION"], 
+    tags: ["UNREAL ENGINE", "SHADERS", "ANIMATION"], 
     image: "https://images.unsplash.com/photo-1550747528-cdb45925b3f7?q=80&w=2560&auto=format&fit=crop", 
     status: "FINISHED",
     locked: true
@@ -158,14 +158,14 @@ export const techArtProjects: ProjectCardData[] = [
     id: 6, 
     title: "AURORA' - 3D CHARACTER", 
     category: "3D Texturing", 
-    tags: ["UNREAL ENGINE", "HAIR GROOM", "MATERIALS"], 
+    tags: ["UNREAL ENGINE", "HAIR GROOM", "SHADERS"], 
     image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2560&auto=format&fit=crop", 
     status: "WIP" 
   },
   { 
     id: 7, 
     title: "UNDESERVED MAIN MENU", 
-    category: "Materials", 
+    category: "Unity", 
     tags: ["UNITY", "ANIMATION"], 
     image: "https://images.unsplash.com/photo-1506765515384-028b60a970df?q=80&w=2560&auto=format&fit=crop", 
     status: "SHIPPED" 
@@ -402,8 +402,8 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                     textBlock4: "INSERT TEXT HERE.",
                     bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
                 },
-                "MATERIALS": {
-                    headline: "INSERT HEADLINE: MATERIALS",
+                "SHADERS": {
+                    headline: "INSERT HEADLINE: SHADERS",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
@@ -444,8 +444,8 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                     textBlock4: "INSERT TEXT HERE.",
                     bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
                 },
-                "MATERIALS": {
-                    headline: "INSERT HEADLINE: MATERIALS",
+                "SHADERS": {
+                    headline: "INSERT HEADLINE: SHADERS",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
@@ -846,7 +846,7 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                     textBlock4: "INSERT TEXT HERE.",
                     bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
                 },
-                "SYSTEM DESIGN": {
+                "SYSTEMS DESIGN": {
                     headline: "INSERT HEADLINE: SYSTEM DESIGN",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
@@ -894,8 +894,8 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
         en: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
-                "MATERIALS": {
-                    headline: "INSERT HEADLINE: MATERIALS",
+                "SHADERS": {
+                    headline: "INSERT HEADLINE: SHADERS",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
@@ -920,8 +920,8 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
-                "MATERIALS": {
-                    headline: "INSERT HEADLINE: MATERIALS",
+                "SHADERS": {
+                    headline: "INSERT HEADLINE: SHADERS",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
@@ -964,8 +964,8 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                     textBlock4: "INSERT TEXT HERE.",
                     bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
                 },
-                "MATERIALS": {
-                    headline: "INSERT HEADLINE: MATERIALS",
+                "SHADERS": {
+                    headline: "INSERT HEADLINE: SHADERS",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
@@ -998,8 +998,8 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                     textBlock4: "INSERT TEXT HERE.",
                     bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
                 },
-                "MATERIALS": {
-                    headline: "INSERT HEADLINE: MATERIALS",
+                "SHADERS": {
+                    headline: "INSERT HEADLINE: SHADERS",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
@@ -1018,8 +1018,8 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
         en: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
-                "MATERIALS": {
-                    headline: "INSERT HEADLINE: MATERIALS",
+                "SHADERS": {
+                    headline: "INSERT HEADLINE: SHADERS",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
@@ -1044,8 +1044,8 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
-                "MATERIALS": {
-                    headline: "INSERT HEADLINE: MATERIALS",
+                "SHADERS": {
+                    headline: "INSERT HEADLINE: SHADERS",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
@@ -1150,8 +1150,8 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                     textBlock4: "INSERT TEXT HERE.",
                     bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
                 },
-                "MATERIALS": {
-                    headline: "INSERT HEADLINE: MATERIALS",
+                "SHADERS": {
+                    headline: "INSERT HEADLINE: SHADERS",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
@@ -1184,8 +1184,8 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                     textBlock4: "INSERT TEXT HERE.",
                     bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
                 },
-                "MATERIALS": {
-                    headline: "INSERT HEADLINE: MATERIALS",
+                "SHADERS": {
+                    headline: "INSERT HEADLINE: SHADERS",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
@@ -1228,8 +1228,8 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                     textBlock4: "INSERT TEXT HERE.",
                     bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
                 },
-                "MATERIALS": {
-                    headline: "INSERT HEADLINE: MATERIALS",
+                "SHADERS": {
+                    headline: "INSERT HEADLINE: SHADERS",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
@@ -1262,8 +1262,8 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                     textBlock4: "INSERT TEXT HERE.",
                     bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
                 },
-                "MATERIALS": {
-                    headline: "INSERT HEADLINE: MATERIALS",
+                "SHADERS": {
+                    headline: "INSERT HEADLINE: SHADERS",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",

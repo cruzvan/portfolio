@@ -8,7 +8,7 @@ interface OthersPortfolioViewProps {
 }
 
 const OthersPortfolioView: React.FC<OthersPortfolioViewProps> = ({ onClose }) => {
-  const categories = ['Programming', 'Design', 'Visuals', 'Writing', 'Experiments'];
+  const categories = [...new Set(othersProjects.flatMap(project => project.tags))];
 
   return (
     <BasePortfolioView 

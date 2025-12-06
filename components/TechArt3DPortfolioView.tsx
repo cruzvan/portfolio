@@ -8,7 +8,7 @@ interface TechArt3DPortfolioViewProps {
 }
 
 const TechArt3DPortfolioView: React.FC<TechArt3DPortfolioViewProps> = ({ onClose }) => {
-  const categories = ['3D Modeling', '3D Texturing', 'Materials', 'Postprocessing', 'Unreal Engine', 'Unity'];
+  const categories = [...new Set(techArtProjects.flatMap(project => project.tags))];
 
   return (
     <BasePortfolioView 

@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Target, Code, BookOpen, Layers, Terminal, PenTool, ArrowRight, Box, Zap, Monitor, Image, FileText, Beaker, Grid, Lock } from 'lucide-react';
+import { ArrowRight, Lock } from 'lucide-react';
 import ProjectDetailView from './ProjectDetailView';
 import { ProjectCardData, slugify } from '../data/projectData';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -304,27 +304,6 @@ const BasePortfolioView: React.FC<BasePortfolioViewProps> = ({ title, projects, 
     targetScrollRef.current = scrollContainerRef.current.scrollLeft;
   };
 
-  // --- ICONS MAPPING ---
-  const getCategoryIcon = (cat: string) => {
-      // Basic mapping based on common keywords
-      const c = cat.toLowerCase();
-      if (c.includes('game')) return <Target size={14} />;
-      if (c.includes('system')) return <Layers size={14} />;
-      if (c.includes('level')) return <BookOpen size={14} />;
-      if (c.includes('program') || c.includes('python')) return <Terminal size={14} />;
-      if (c.includes('proto')) return <Code size={14} />;
-      if (c.includes('doc')) return <FileText size={14} />;
-      if (c.includes('3d') || c.includes('model')) return <Box size={14} />;
-      if (c.includes('unreal') || c.includes('unity') || c.includes('tech')) return <Zap size={14} />;
-      if (c.includes('texture') || c.includes('material') || c.includes('paint')) return <PenTool size={14} />;
-      if (c.includes('post') || c.includes('render')) return <Monitor size={14} />;
-      if (c.includes('visual') || c.includes('art') || c.includes('photo')) return <Image size={14} />;
-      if (c.includes('design') || c.includes('ui')) return <Grid size={14} />;
-      if (c.includes('experiment') || c.includes('sim')) return <Beaker size={14} />;
-      
-      return null;
-  };
-
   // Handle opening a project
   const handleProjectClick = (project: ProjectCardData) => {
     if (!isDragging && !project.locked) {
@@ -385,7 +364,6 @@ const BasePortfolioView: React.FC<BasePortfolioViewProps> = ({ title, projects, 
                                 className={`flex items-center gap-1 md:gap-2 text-[9px] md:text-xs 2xl:text-base uppercase tracking-widest pb-2 transition-all duration-300 font-bold ${activeCategory === cat ? 'text-white border-b-4 border-[#FE4403]' : 'text-white/40 hover:text-white border-b-4 border-transparent'}`}
                                 style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}
                             >
-                                <span className="hidden md:inline">{activeCategory === cat && getCategoryIcon(cat)}</span>
                                 {cat}
                             </button>
                         ))}

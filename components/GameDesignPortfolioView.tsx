@@ -8,7 +8,7 @@ interface GameDesignPortfolioViewProps {
 }
 
 const GameDesignPortfolioView: React.FC<GameDesignPortfolioViewProps> = ({ onClose }) => {
-  const categories = ['Game Design', 'Systems Design', 'Level Design', 'Programming', 'Prototyping', 'Docs'];
+  const categories = [...new Set(gameDesignProjects.flatMap(p => p.tags))];
 
   return (
     <BasePortfolioView 
