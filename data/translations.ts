@@ -53,7 +53,8 @@ export type TranslationKey =
   | 'music_desc_09'
   | 'music_desc_10'
   | 'music_desc_11'
-  | 'music_desc_12';
+  | 'music_desc_12'
+  | 'in_progress';
 
 export const translations = {
   en: {
@@ -110,7 +111,8 @@ export const translations = {
     music_desc_09: "After attempting to enter the abandoned castle and getting his foot immobilized, the 'Vagabond King' is no longer so prepared to face his past.",
     music_desc_10: "Characterizing the story's antagonist with Alzheimer's, the piano, section by section, loses the memory of its melody.",
     music_desc_11: "Amidst the fog of defective memory, the old man can recall his beloved and their beautiful little moments together.",
-    music_desc_12: "Chiptune for old-school racing game prototyping."
+    music_desc_12: "Chiptune for old-school racing game prototyping.",
+    in_progress: "In Progress..."
   },
   es: {
     pressStart: 'Presiona para iniciar',
@@ -167,5 +169,6 @@ export const translations = {
     music_desc_10: "Caracterizando al antagoniista de la historia con Alzheimer, el piano sección a sección va perdiendo el recuerdo de su melodía.",
     music_desc_11: "Entre la neblina del defectuoso recuerso, el anciano puede recordar a su amada y sus pequeños hermosos momentos juntos.",
     music_desc_12: "Chiptune de prototipado para videojuegos de carrera old-school.",
+    in_progress: "En Proceso..."
   }
 };

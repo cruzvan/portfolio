@@ -38,6 +38,7 @@ export interface ProjectCardData {
     tags: string[];
     image: string;
     status: string;
+    locked?: boolean;
 }
 
 // --- CARD DATA COLLECTIONS (Remain shared for now, titles are keys) ---
@@ -49,7 +50,8 @@ export const gameDesignProjects: ProjectCardData[] = [
     category: "Game Design", 
     tags: ["PROGRAMMING BLUEPRINTS", "GAME DESIGN", "MATERIALS" ,"LEVEL DESIGN"], 
     image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764651989/HF1x1_2_ju3sr3.webp", 
-    status: "DEMO" 
+    status: "DEMO",
+    locked: true
   },
   { 
     id: 2, 
@@ -73,7 +75,8 @@ export const gameDesignProjects: ProjectCardData[] = [
     category: "Level Design", 
     tags: ["GAME DESIGN", "PROGRAMMING", "ART DIRECTION"], 
     image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2560&auto=format&fit=crop", 
-    status: "WIP" 
+    status: "WIP",
+    locked: true 
   },
    { 
     id: 5, 
@@ -148,7 +151,8 @@ export const techArtProjects: ProjectCardData[] = [
     category: "Unity", 
     tags: ["UNREAL ENGINE", "MATERIALS", "ANIMATION"], 
     image: "https://images.unsplash.com/photo-1550747528-cdb45925b3f7?q=80&w=2560&auto=format&fit=crop", 
-    status: "FINISHED" 
+    status: "FINISHED",
+    locked: true
   },
   { 
     id: 6, 
@@ -239,7 +243,8 @@ export const othersProjects: ProjectCardData[] = [
     category: "WEBPAGE", 
     tags: ["TYPESCRIPT", "UI/UX"],  
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2560&auto=format&fit=crop", 
-    status: "Prototype" 
+    status: "Prototype",
+    locked: true
   },
 /*   { 
     id: 6, 
@@ -288,7 +293,7 @@ const DEFAULT_CONTENT: ProjectContent = {
 // For brevity in this code update, I will clone the 'en' content to 'es' for most, 
 // and demonstrate translation on PROJECT: ECHO as an example.
 export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectContent }> = {
-    // --- GAME DESIGN PROJECTS ---
+    // --- EXISTING PROJECTS ---
     "PROJECT: ECHO": {
         en: {
             description: "Project: ECHO is a tactical stealth game where sound is your only vision. Players navigate a pitch-black facility using an echolocation scanner to visualize the environment, track patrols, and uncover a corporate conspiracy.",
@@ -375,31 +380,1430 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             externalLink: "https://www.google.com/search?q=Project+Echo+Stealth+Game"
         }
     },
-    // Placeholder logic for other projects to prevent crashes (cloning EN content for now)
-    // In a real app, I would fill all these out.
-    "NEON VANGUARD": { en: {} as any, es: {} as any }, // Will use default fallback below
-    "VOID RUNNER": { en: {} as any, es: {} as any },
-    "AI BEHAVIOR TREE": { en: {} as any, es: {} as any },
-    "RAPID PROTO 04": { en: {} as any, es: {} as any },
-    "LORE BIBLE": { en: {} as any, es: {} as any },
-    "TITAN SLAYER": { en: {} as any, es: {} as any },
-    "INVENTORY SYS": { en: {} as any, es: {} as any },
-    "CYBER WEAPON": { en: {} as any, es: {} as any },
-    "PROCEDURAL CITY": { en: {} as any, es: {} as any },
-    "HOLOGRAM SHADER": { en: {} as any, es: {} as any },
-    "ENV. LIGHTING": { en: {} as any, es: {} as any },
-    "CHARACTER RIG": { en: {} as any, es: {} as any },
-    "SCI-FI TEXTURE": { en: {} as any, es: {} as any },
-    "WATER SYSTEM": { en: {} as any, es: {} as any },
-    "VFX EXPLOSION": { en: {} as any, es: {} as any },
-    "PYTHON TOOLS": { en: {} as any, es: {} as any },
-    "UI KIT ALPHA": { en: {} as any, es: {} as any },
-    "DIGITAL SKETCH": { en: {} as any, es: {} as any },
-    "DESIGN ESSAYS": { en: {} as any, es: {} as any },
-    "AI AGENTS SIM": { en: {} as any, es: {} as any },
-    "WEB PORTFOLIO": { en: {} as any, es: {} as any },
-    "BOARD GAME": { en: {} as any, es: {} as any },
-    "PHOTOGRAPHY": { en: {} as any, es: {} as any },
+
+    // --- GAME DESIGN PROJECTS ---
+    "HOLLOW FLOWERS": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "PROGRAMMING BLUEPRINTS": {
+                    headline: "INSERT HEADLINE: PROGRAMMING BLUEPRINTS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "GAME DESIGN": {
+                    headline: "INSERT HEADLINE: GAME DESIGN",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "MATERIALS": {
+                    headline: "INSERT HEADLINE: MATERIALS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "LEVEL DESIGN": {
+                    headline: "INSERT HEADLINE: LEVEL DESIGN",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "PROGRAMMING BLUEPRINTS": {
+                    headline: "INSERT HEADLINE: PROGRAMMING BLUEPRINTS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "GAME DESIGN": {
+                    headline: "INSERT HEADLINE: GAME DESIGN",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "MATERIALS": {
+                    headline: "INSERT HEADLINE: MATERIALS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "LEVEL DESIGN": {
+                    headline: "INSERT HEADLINE: LEVEL DESIGN",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+    "FADING MEMORIES": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "GAME DESIGN": {
+                    headline: "INSERT HEADLINE: GAME DESIGN",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "ART DIRECTION": {
+                    headline: "INSERT HEADLINE: ART DIRECTION",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "ILLUMINATION": {
+                    headline: "INSERT HEADLINE: ILLUMINATION",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "DOCS": {
+                    headline: "INSERT HEADLINE: DOCS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "GAME DESIGN": {
+                    headline: "INSERT HEADLINE: GAME DESIGN",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "ART DIRECTION": {
+                    headline: "INSERT HEADLINE: ART DIRECTION",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "ILLUMINATION": {
+                    headline: "INSERT HEADLINE: ILLUMINATION",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "DOCS": {
+                    headline: "INSERT HEADLINE: DOCS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+    "UNDESERVED": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "LEVEL DESIGN": {
+                    headline: "INSERT HEADLINE: LEVEL DESIGN",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "ART DIRECTION": {
+                    headline: "INSERT HEADLINE: ART DIRECTION",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "PROGRAMMING": {
+                    headline: "INSERT HEADLINE: PROGRAMMING",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "LEVEL DESIGN": {
+                    headline: "INSERT HEADLINE: LEVEL DESIGN",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "ART DIRECTION": {
+                    headline: "INSERT HEADLINE: ART DIRECTION",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "PROGRAMMING": {
+                    headline: "INSERT HEADLINE: PROGRAMMING",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+    "SUPER ZZ": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "GAME DESIGN": {
+                    headline: "INSERT HEADLINE: GAME DESIGN",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "PROGRAMMING": {
+                    headline: "INSERT HEADLINE: PROGRAMMING",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "ART DIRECTION": {
+                    headline: "INSERT HEADLINE: ART DIRECTION",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "GAME DESIGN": {
+                    headline: "INSERT HEADLINE: GAME DESIGN",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "PROGRAMMING": {
+                    headline: "INSERT HEADLINE: PROGRAMMING",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "ART DIRECTION": {
+                    headline: "INSERT HEADLINE: ART DIRECTION",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+    "LLUVIA DE VERANO": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "DOCS": {
+                    headline: "INSERT HEADLINE: DOCS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "ART DIRECTION": {
+                    headline: "INSERT HEADLINE: ART DIRECTION",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "GAME DESIGN": {
+                    headline: "INSERT HEADLINE: GAME DESIGN",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "DOCS": {
+                    headline: "INSERT HEADLINE: DOCS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "ART DIRECTION": {
+                    headline: "INSERT HEADLINE: ART DIRECTION",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "GAME DESIGN": {
+                    headline: "INSERT HEADLINE: GAME DESIGN",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+    "EVERYTHING I SEE": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "GAME DESIGN": {
+                    headline: "INSERT HEADLINE: GAME DESIGN",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "DOCS": {
+                    headline: "INSERT HEADLINE: DOCS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "SYSTEMS DESIGN": {
+                    headline: "INSERT HEADLINE: SYSTEMS DESIGN",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "GAME DESIGN": {
+                    headline: "INSERT HEADLINE: GAME DESIGN",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "DOCS": {
+                    headline: "INSERT HEADLINE: DOCS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "SYSTEMS DESIGN": {
+                    headline: "INSERT HEADLINE: SYSTEMS DESIGN",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+    "F.A.L.L.O.U.T.": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "DOCS": {
+                    headline: "INSERT HEADLINE: DOCS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "SYSTEM DESIGN": {
+                    headline: "INSERT HEADLINE: SYSTEM DESIGN",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "DOCS": {
+                    headline: "INSERT HEADLINE: DOCS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "SYSTEM DESIGN": {
+                    headline: "INSERT HEADLINE: SYSTEM DESIGN",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+
+    // --- TECH ART & 3D PROJECTS ---
+    "NOISE GLITCH SHADER": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "MATERIALS": {
+                    headline: "INSERT HEADLINE: MATERIALS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "UNREAL ENGINE": {
+                    headline: "INSERT HEADLINE: UNREAL ENGINE",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "MATERIALS": {
+                    headline: "INSERT HEADLINE: MATERIALS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "UNREAL ENGINE": {
+                    headline: "INSERT HEADLINE: UNREAL ENGINE",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+    "YIQ POSTPOCESS SHADER": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "UNREAL ENGINE": {
+                    headline: "INSERT HEADLINE: UNREAL ENGINE",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "POSTPROCESSING": {
+                    headline: "INSERT HEADLINE: POSTPROCESSING",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "MATERIALS": {
+                    headline: "INSERT HEADLINE: MATERIALS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "UNREAL ENGINE": {
+                    headline: "INSERT HEADLINE: UNREAL ENGINE",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "POSTPROCESSING": {
+                    headline: "INSERT HEADLINE: POSTPROCESSING",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "MATERIALS": {
+                    headline: "INSERT HEADLINE: MATERIALS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+    "CARD HOLOGRAM PARALLAX SHADER": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "MATERIALS": {
+                    headline: "INSERT HEADLINE: MATERIALS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "UNREAL ENGINE": {
+                    headline: "INSERT HEADLINE: UNREAL ENGINE",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "MATERIALS": {
+                    headline: "INSERT HEADLINE: MATERIALS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "UNREAL ENGINE": {
+                    headline: "INSERT HEADLINE: UNREAL ENGINE",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+    "HEY ARNOLD 3D ROOM": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "3D MODELING": {
+                    headline: "INSERT HEADLINE: 3D MODELING",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "TEXTURING": {
+                    headline: "INSERT HEADLINE: TEXTURING",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "UNREAL ENGINE": {
+                    headline: "INSERT HEADLINE: UNREAL ENGINE",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "3D MODELING": {
+                    headline: "INSERT HEADLINE: 3D MODELING",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "TEXTURING": {
+                    headline: "INSERT HEADLINE: TEXTURING",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "UNREAL ENGINE": {
+                    headline: "INSERT HEADLINE: UNREAL ENGINE",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+    "INTEMPESTA LYRIC VIDEO": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "UNREAL ENGINE": {
+                    headline: "INSERT HEADLINE: UNREAL ENGINE",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "MATERIALS": {
+                    headline: "INSERT HEADLINE: MATERIALS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "ANIMATION": {
+                    headline: "INSERT HEADLINE: ANIMATION",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "UNREAL ENGINE": {
+                    headline: "INSERT HEADLINE: UNREAL ENGINE",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "MATERIALS": {
+                    headline: "INSERT HEADLINE: MATERIALS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "ANIMATION": {
+                    headline: "INSERT HEADLINE: ANIMATION",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+    "AURORA' - 3D CHARACTER": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "UNREAL ENGINE": {
+                    headline: "INSERT HEADLINE: UNREAL ENGINE",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "HAIR GROOM": {
+                    headline: "INSERT HEADLINE: HAIR GROOM",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "MATERIALS": {
+                    headline: "INSERT HEADLINE: MATERIALS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "UNREAL ENGINE": {
+                    headline: "INSERT HEADLINE: UNREAL ENGINE",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "HAIR GROOM": {
+                    headline: "INSERT HEADLINE: HAIR GROOM",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "MATERIALS": {
+                    headline: "INSERT HEADLINE: MATERIALS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+    "UNDESERVED MAIN MENU": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "UNITY": {
+                    headline: "INSERT HEADLINE: UNITY",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "ANIMATION": {
+                    headline: "INSERT HEADLINE: ANIMATION",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "UNITY": {
+                    headline: "INSERT HEADLINE: UNITY",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "ANIMATION": {
+                    headline: "INSERT HEADLINE: ANIMATION",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+    "DRELL CREATURE": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "3D MODELING": {
+                    headline: "INSERT HEADLINE: 3D MODELING",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "3D TEXTURING": {
+                    headline: "INSERT HEADLINE: 3D TEXTURING",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "3D MODELING": {
+                    headline: "INSERT HEADLINE: 3D MODELING",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "3D TEXTURING": {
+                    headline: "INSERT HEADLINE: 3D TEXTURING",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+    "3D PROPS (FADING MEMORIES)": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "UNITY": {
+                    headline: "INSERT HEADLINE: UNITY",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "UI": {
+                    headline: "INSERT HEADLINE: UI",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "ILLUMINATION": {
+                    headline: "INSERT HEADLINE: ILLUMINATION",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "UNITY": {
+                    headline: "INSERT HEADLINE: UNITY",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "UI": {
+                    headline: "INSERT HEADLINE: UI",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "ILLUMINATION": {
+                    headline: "INSERT HEADLINE: ILLUMINATION",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+    "LOW POLY CHILEAN BUILDINGS (LLUVIA DE VERANO)": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "3D MODELING": {
+                    headline: "INSERT HEADLINE: 3D MODELING",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "3D MODELING": {
+                    headline: "INSERT HEADLINE: 3D MODELING",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+    "LEVEL DRESSING (CAVE MADNESS)": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "SHADERS": {
+                    headline: "INSERT HEADLINE: SHADERS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "SHADERS": {
+                    headline: "INSERT HEADLINE: SHADERS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+
+    // --- OTHERS PROJECTS ---
+    "SEBRA - CREATIVE SERVICES COMPANY": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "PRODUCTION": {
+                    headline: "INSERT HEADLINE: PRODUCTION",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "MANAGEMENT": {
+                    headline: "INSERT HEADLINE: MANAGEMENT",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "PRODUCTION": {
+                    headline: "INSERT HEADLINE: PRODUCTION",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "MANAGEMENT": {
+                    headline: "INSERT HEADLINE: MANAGEMENT",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+    "CUSTOM OBSIDIAN VAULTS": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "JAVASCRIPT": {
+                    headline: "INSERT HEADLINE: JAVASCRIPT",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "MANAGEMENT": {
+                    headline: "INSERT HEADLINE: MANAGEMENT",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "JAVASCRIPT": {
+                    headline: "INSERT HEADLINE: JAVASCRIPT",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "MANAGEMENT": {
+                    headline: "INSERT HEADLINE: MANAGEMENT",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+    "PIXEL 3D SPOTIFY CANVAS (WINTERS OF BLUE)": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "ART": {
+                    headline: "INSERT HEADLINE: ART",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "UNREAL ENGINE": {
+                    headline: "INSERT HEADLINE: UNREAL ENGINE",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "ART": {
+                    headline: "INSERT HEADLINE: ART",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "UNREAL ENGINE": {
+                    headline: "INSERT HEADLINE: UNREAL ENGINE",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+    "WEBPAGE PORTFOLIO (VIBECODED)": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "TYPESCRIPT": {
+                    headline: "INSERT HEADLINE: TYPESCRIPT",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "UI/UX": {
+                    headline: "INSERT HEADLINE: UI/UX",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "TYPESCRIPT": {
+                    headline: "INSERT HEADLINE: TYPESCRIPT",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "UI/UX": {
+                    headline: "INSERT HEADLINE: UI/UX",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+    "WEBPAGE COMPANY (VIBECODED)": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "TYPESCRIPT": {
+                    headline: "INSERT HEADLINE: TYPESCRIPT",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "UI/UX": {
+                    headline: "INSERT HEADLINE: UI/UX",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "TYPESCRIPT": {
+                    headline: "INSERT HEADLINE: TYPESCRIPT",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "UI/UX": {
+                    headline: "INSERT HEADLINE: UI/UX",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    }
 };
 
 // Re-hydrate the incomplete keys with the original English content to ensure the app works 

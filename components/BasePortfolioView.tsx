@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Target, Code, BookOpen, Layers, Terminal, PenTool, ArrowRight, Box, Zap, Monitor, Image, FileText, Beaker, Grid } from 'lucide-react';
+import { Target, Code, BookOpen, Layers, Terminal, PenTool, ArrowRight, Box, Zap, Monitor, Image, FileText, Beaker, Grid, Lock } from 'lucide-react';
 import ProjectDetailView from './ProjectDetailView';
 import { ProjectCardData, slugify } from '../data/projectData';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -19,9 +19,11 @@ interface ProjectCardProps {
   project: ProjectCardData;
   index: number;
   onClick: (project: ProjectCardData) => void;
+  language: 'en' | 'es';
+  t: (key: any) => string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick, language, t }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [transform, setTransform] = useState("perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)");
   const [isHovered, setIsHovered] = useState(false);
@@ -32,7 +34,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick }) =>
   // 3D Tilt Logic - Throttled
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     // Disable heavy tilt on mobile touch via check if hover triggered naturally
-    if (!cardRef.current || rafRef.current) return;
+    if (project.locked || !cardRef.current || rafRef.current) return;
 
     const x = e.clientX;
     const y = e.clientY;
@@ -66,19 +68,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick }) =>
     setTransform("perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)");
   };
 
+  const isLocked = project.locked;
+
   return (
     <div 
       ref={cardRef}
       // UPDATED DIMENSIONS: Using VH units for desktop (md) to scale with screen height.
       // Mobile: Fixed pixel size.
       // Desktop (md): Height 55vh, Width 32vh (maintains aspect ratio based on height).
-      className="relative flex-shrink-0 w-[160px] h-[260px] md:w-[32vh] md:h-[55vh] cursor-pointer group select-none transition-all duration-300"
+      className={`relative flex-shrink-0 w-[160px] h-[260px] md:w-[32vh] md:h-[55vh] group select-none transition-all duration-300 ${isLocked ? 'cursor-default' : 'cursor-pointer'}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      onClick={() => onClick(project)}
+      onClick={() => !isLocked && onClick(project)}
       style={{
-        transform: isHovered ? transform : undefined,
+        transform: isHovered && !isLocked ? transform : undefined,
         zIndex: isHovered ? 10 : 1, // Bring to front on hover
         transition: isHovered ? 'transform 0.1s ease-out' : 'transform 0.5s ease-out',
         animation: `slide-up-fade-in 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both`,
@@ -90,19 +94,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick }) =>
         
         {/* --- Image & Shader Layer --- */}
         <div className="absolute inset-0 w-full h-full bg-black">
-           {/* Main Image - Full Color, Fades out on hover to show glitches */}
-           <div 
-            className={`absolute inset-0 bg-cover bg-center transition-all duration-200 ${isHovered ? 'opacity-0 scale-105' : 'opacity-100 scale-100'}`}
-            style={{ backgroundImage: `url(${project.image})` }}
-           />
-           
-           {/* Glitch Overlay on Hover */}
-           <div className={`absolute inset-0 w-full h-full bg-black transition-opacity duration-0 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
-              <div className={`absolute inset-0 w-full h-full bg-cover bg-center bg-red-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150 ${isHovered ? 'animate-glitch-1' : ''}`} 
-                   style={{ backgroundImage: `url(${project.image})` }} />
-              <div className={`absolute inset-0 w-full h-full bg-cover bg-center bg-blue-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150 ${isHovered ? 'animate-glitch-2' : ''}`} 
-                   style={{ backgroundImage: `url(${project.image})` }} />
-           </div>
+           {isLocked ? (
+             <div 
+                className={`absolute inset-0 bg-cover bg-center transition-all duration-300 ${isHovered ? 'grayscale blur-sm' : 'grayscale-0 blur-0'}`}
+                style={{ backgroundImage: `url(${project.image})` }}
+             />
+           ) : (
+            <>
+              {/* Main Image - Full Color, Fades out on hover to show glitches */}
+              <div 
+                className={`absolute inset-0 bg-cover bg-center transition-all duration-200 ${isHovered ? 'opacity-0 scale-105' : 'opacity-100 scale-100'}`}
+                style={{ backgroundImage: `url(${project.image})` }}
+              />
+              
+              {/* Glitch Overlay on Hover */}
+              <div className={`absolute inset-0 w-full h-full bg-black transition-opacity duration-0 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
+                  <div className={`absolute inset-0 w-full h-full bg-cover bg-center bg-red-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150 ${isHovered ? 'animate-glitch-1' : ''}`} 
+                      style={{ backgroundImage: `url(${project.image})` }} />
+                  <div className={`absolute inset-0 w-full h-full bg-cover bg-center bg-blue-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150 ${isHovered ? 'animate-glitch-2' : ''}`} 
+                      style={{ backgroundImage: `url(${project.image})` }} />
+              </div>
+            </>
+           )}
 
            {/* Vignette & Gradient */}
            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90" />
@@ -111,7 +124,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick }) =>
         {/* --- Top Status Bar --- */}
         <div className="absolute top-0 left-0 w-full p-3 md:p-4 flex justify-between items-start z-20">
             <div 
-                className={`bg-white/10 backdrop-blur-md px-2 py-1 text-[9px] md:text-[1.2vh] font-bold uppercase tracking-widest border-l-2 ${isHovered ? 'border-[#FE4403] text-white' : 'border-white text-white'}`}
+                className={`bg-white/10 backdrop-blur-md px-2 py-1 text-[9px] md:text-[1.2vh] font-bold uppercase tracking-widest border-l-2 ${isHovered && !isLocked ? 'border-[#FE4403] text-white' : 'border-white text-white'}`}
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             >
                 {project.status}
@@ -122,9 +135,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick }) =>
         <div className="absolute bottom-0 left-0 w-full z-20">
             
             {/* Hover Action Bar */}
-            <div className={`w-full h-1 bg-[#FE4403] transform origin-left transition-transform duration-300 ${isHovered ? 'scale-x-100' : 'scale-x-0'}`} />
+            <div className={`w-full h-1 bg-[#FE4403] transform origin-left transition-transform duration-300 ${isHovered && !isLocked ? 'scale-x-100' : 'scale-x-0'}`} />
             
-            <div className={`p-4 md:p-5 2xl:p-6 transition-all duration-300 ${isHovered ? 'bg-[#FE4403] translate-y-0' : 'bg-transparent translate-y-0'}`}>
+            <div className={`p-4 md:p-5 2xl:p-6 transition-all duration-300 ${isHovered && !isLocked ? 'bg-[#FE4403] translate-y-0' : 'bg-transparent translate-y-0'}`}>
                 
                 {/* Title */}
                 <h3 className="text-lg md:text-2xl 2xl:text-3xl font-bold uppercase leading-none tracking-tight mb-2 md:mb-3 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -133,21 +146,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick }) =>
 
                 {/* Sub-Location/Detail - Updated to Multi-Tags */}
                 <div className="flex flex-col gap-1 border-t border-white/20 pt-2 md:pt-3 mt-2">
-                    {project.tags.slice(0, 3).map((tag, i) => (
-                        <div key={i} className="flex items-center justify-between">
-                             <span className={`text-[8px] md:text-[1.1vh] uppercase tracking-widest font-medium ${isHovered ? 'text-black font-bold' : 'text-white'}`} style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                                {tag}
+                    {isHovered && isLocked ? (
+                        <div className="flex items-center justify-between">
+                            <span className={`text-[8px] md:text-[1.1vh] uppercase tracking-widest font-medium text-white`} style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                                {t('in_progress')}
                             </span>
-                            {/* Little decoration for the active state on the last item */}
-                            {isHovered && i === 2 && <ArrowRight size={10} className="text-black" />}
+                            <Lock size={24} className="text-[#FE4403]" />
                         </div>
-                    ))}
+                    ) : (
+                        project.tags.slice(0, 3).map((tag, i) => (
+                            <div key={i} className="flex items-center justify-between">
+                                <span className={`text-[8px] md:text-[1.1vh] uppercase tracking-widest font-medium ${isHovered && !isLocked ? 'text-black font-bold' : 'text-white'}`} style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                                    {tag}
+                                </span>
+                                {isHovered && !isLocked && i === 2 && <ArrowRight size={24} className="text-black" />}
+                            </div>
+                        ))
+                    )}
                 </div>
             </div>
         </div>
 
         {/* --- Selection Border --- */}
-        <div className={`absolute inset-0 border-[3px] transition-colors duration-200 pointer-events-none z-30 ${isHovered ? 'border-[#FE4403]' : 'border-transparent'}`} />
+        <div className={`absolute inset-0 border-[3px] transition-colors duration-200 pointer-events-none z-30 ${isHovered && !isLocked ? 'border-[#FE4403]' : 'border-transparent'}`} />
 
       </div>
     </div>
@@ -157,7 +178,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick }) =>
 
 // --- MAIN VIEW COMPONENT ---
 const BasePortfolioView: React.FC<BasePortfolioViewProps> = ({ title, projects, categories, onClose, baseRoute }) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [selectedProject, setSelectedProject] = useState<ProjectCardData | null>(null);
   
@@ -189,7 +210,7 @@ const BasePortfolioView: React.FC<BasePortfolioViewProps> = ({ title, projects, 
             const slug = hash.split('/')[1];
             if (slug) {
                 const project = projects.find(p => slugify(p.title) === slug);
-                if (project) {
+                if (project && !project.locked) {
                     setSelectedProject(project);
                 }
             }
@@ -306,7 +327,7 @@ const BasePortfolioView: React.FC<BasePortfolioViewProps> = ({ title, projects, 
 
   // Handle opening a project
   const handleProjectClick = (project: ProjectCardData) => {
-    if (!isDragging) {
+    if (!isDragging && !project.locked) {
         if (baseRoute) {
             // Update URL to enable deep linking / history
             window.location.hash = `${baseRoute}/${slugify(project.title)}`;
@@ -393,6 +414,8 @@ const BasePortfolioView: React.FC<BasePortfolioViewProps> = ({ title, projects, 
                                 project={project} 
                                 index={index} 
                                 onClick={handleProjectClick}
+                                language={language}
+                                t={t}
                             />
                         ))}
                     </div>
