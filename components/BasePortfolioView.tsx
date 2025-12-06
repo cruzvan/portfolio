@@ -154,12 +154,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick, lang
                             <Lock size={24} className="text-[#FE4403]" />
                         </div>
                     ) : (
-                        project.tags.slice(0, 3).map((tag, i) => (
+                        project.tags.slice(0, 3).map((tag, i, arr) => (
                             <div key={i} className="flex items-center justify-between">
                                 <span className={`text-[8px] md:text-[1.1vh] uppercase tracking-widest font-medium ${isHovered && !isLocked ? 'text-black font-bold' : 'text-white'}`} style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                                     {tag}
                                 </span>
-                                {isHovered && !isLocked && i === 2 && <ArrowRight size={24} className="text-black" />}
+                                {isHovered && !isLocked && i === arr.length - 1 && <ArrowRight size={24} className="text-black" />}
                             </div>
                         ))
                     )}
