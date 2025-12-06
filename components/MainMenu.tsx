@@ -47,6 +47,8 @@ const MenuCard: React.FC<MenuCardProps> = ({
   // PERFORMANCE OPTIMIZATION: Ref for requestAnimationFrame throttling
   const rafRef = useRef<number | null>(null);
 
+  const isVideo = item.image.endsWith('.webm');
+
   // --- 3D TILT & HOLOGRAPHIC LIGHTING LOGIC (THROTTLED) ---
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     // Disable tilt on mobile/touch devices implicitly by checking hover state interactions usually
@@ -134,27 +136,40 @@ const MenuCard: React.FC<MenuCardProps> = ({
             isHovered ? 'border-[#FE4403]' : 'border-transparent'
           }`} />
 
-          <div 
-            className={`absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-200 ${
-              isHovered ? 'opacity-0' : 'opacity-60 grayscale-0'
-            }`}
-            style={{ backgroundImage: `url(${item.image})` }}
-          />
+          {isVideo ? (
+            <video
+              src={item.image}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-200 ${isHovered ? 'opacity-100' : 'opacity-60'}`}
+            />
+          ) : (
+            <>
+              <div 
+                className={`absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-200 ${
+                  isHovered ? 'opacity-0' : 'opacity-60 grayscale-0'
+                }`}
+                style={{ backgroundImage: `url(${item.image})` }}
+              />
 
-          <div className={`absolute inset-0 w-full h-full bg-black transition-opacity duration-0 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
-              <div 
-                  className={`absolute inset-0 w-full h-full bg-cover bg-center bg-red-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150 ${isHovered ? 'animate-glitch-1' : ''}`}
-                  style={{ backgroundImage: `url(${item.image})` }}
-              />
-              <div 
-                  className="absolute inset-0 w-full h-full bg-cover bg-center bg-green-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150"
-                  style={{ backgroundImage: `url(${item.image})` }}
-              />
-              <div 
-                  className={`absolute inset-0 w-full h-full bg-cover bg-center bg-blue-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150 ${isHovered ? 'animate-glitch-2' : ''}`}
-                  style={{ backgroundImage: `url(${item.image})` }}
-              />
-          </div>
+              <div className={`absolute inset-0 w-full h-full bg-black transition-opacity duration-0 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
+                  <div 
+                      className={`absolute inset-0 w-full h-full bg-cover bg-center bg-red-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150 ${isHovered ? 'animate-glitch-1' : ''}`}
+                      style={{ backgroundImage: `url(${item.image})` }}
+                  />
+                  <div 
+                      className="absolute inset-0 w-full h-full bg-cover bg-center bg-green-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150"
+                      style={{ backgroundImage: `url(${item.image})` }}
+                  />
+                  <div 
+                      className={`absolute inset-0 w-full h-full bg-cover bg-center bg-blue-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150 ${isHovered ? 'animate-glitch-2' : ''}`}
+                      style={{ backgroundImage: `url(${item.image})` }}
+                  />
+              </div>
+            </>
+          )}
           
           <div className={`absolute inset-0 bg-black/0 transition-opacity duration-300 ${
             isHovered ? 'opacity-0' : (isCompressed ? 'opacity-100' : 'opacity-100')
@@ -277,7 +292,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
     { id: 1, category: t('menu_about_cat'), title: t('menu_about'), image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop", icon: <User /> },
     { id: 2, category: t('menu_gd_cat'), title: t('menu_gd'), image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764651495/HF1x1_b5xdg6.webp", icon: <Gamepad2 /> },
     { id: 3, category: t('menu_ta_cat'), title: t('menu_ta'), image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop", icon: <Box /> },
-    { id: 4, category: t('menu_music_cat'), title: t('menu_music'), image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1200&auto=format&fit=crop", icon: <Music /> },
+    { id: 4, category: t('menu_music_cat'), title: t('menu_music'), image: "https://res.cloudinary.com/dseaazn5s/video/upload/v1765001081/SB_Menu_Music_a39iu8.webm", icon: <Music /> },
     { id: 5, category: t('menu_extras_cat'), title: t('menu_extras'), image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&auto=format&fit=crop", icon: <FolderOpen /> },
   ];
 
