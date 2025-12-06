@@ -1,0 +1,1 @@
+import{j as o}from"./index-CqPc3ltO.js";import{B as t,g as i}from"./BasePortfolioView-lpLRe3z3.js";const g=({onClose:e})=>{const s=["Game Design","Systems Design","Level Design","Programming","Prototyping","Docs"];return o.jsx(t,{title:"GAME DESIGN",projects:i,categories:s,onClose:e,baseRoute:"#game-design"})};export{g as default};
