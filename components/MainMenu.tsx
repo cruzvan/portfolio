@@ -158,26 +158,11 @@ const MenuCard: React.FC<MenuCardProps> = ({
           ) : (
             <>
               <div 
-                className={`absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-200 ${
-                  isHovered ? 'opacity-0' : 'opacity-60 grayscale-0'
+                className={`absolute inset-0 w-full h-full bg-cover bg-center transition-all duration-300 ${
+                  isHovered ? 'opacity-100 contrast-[1.2] scale-105' : 'opacity-60 contrast-100 scale-100'
                 }`}
                 style={{ backgroundImage: `url(${item.image})` }}
               />
-
-              <div className={`absolute inset-0 w-full h-full bg-black transition-opacity duration-0 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
-                  <div 
-                      className={`absolute inset-0 w-full h-full bg-cover bg-center bg-red-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150 ${isHovered ? 'animate-glitch-1' : ''}`}
-                      style={{ backgroundImage: `url(${item.image})` }}
-                  />
-                  <div 
-                      className="absolute inset-0 w-full h-full bg-cover bg-center bg-green-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150"
-                      style={{ backgroundImage: `url(${item.image})` }}
-                  />
-                  <div 
-                      className={`absolute inset-0 w-full h-full bg-cover bg-center bg-blue-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150 ${isHovered ? 'animate-glitch-2' : ''}`}
-                      style={{ backgroundImage: `url(${item.image})` }}
-                  />
-              </div>
             </>
           )}
           
@@ -556,14 +541,14 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
           <svg className="absolute top-6 left-6 w-12 h-12 opacity-30 pointer-events-none" viewBox="0 0 100 100">
              <path d="M0 30 V0 H30" fill="none" stroke="white" strokeWidth="2" />
           </svg>
-          <svg className="absolute top-6 right-6 w-12 h-12 opacity-30 pointer-events-none" viewBox="0 0 100 100">
-             <path d="M70 0 H100 V30" fill="none" stroke="white" strokeWidth="2" />
+          <svg className="absolute top-6 right-6 w-12 h-12 opacity-30 pointer-events-none rotate-90" viewBox="0 0 100 100">
+             <path d="M0 30 V0 H30" fill="none" stroke="white" strokeWidth="2" />
           </svg>
-          <svg className="absolute bottom-6 left-6 w-12 h-12 opacity-30 pointer-events-none" viewBox="0 0 100 100">
-             <path d="M0 70 V100 H30" fill="none" stroke="white" strokeWidth="2" />
+          <svg className="absolute bottom-6 left-6 w-12 h-12 opacity-30 pointer-events-none -rotate-90" viewBox="0 0 100 100">
+             <path d="M0 30 V0 H30" fill="none" stroke="white" strokeWidth="2" />
           </svg>
-          <svg className="absolute bottom-6 right-6 w-12 h-12 opacity-30 pointer-events-none" viewBox="0 0 100 100">
-             <path d="M100 70 V100 H70" fill="none" stroke="white" strokeWidth="2" />
+          <svg className="absolute bottom-6 right-6 w-12 h-12 opacity-30 pointer-events-none rotate-180" viewBox="0 0 100 100">
+             <path d="M0 30 V0 H30" fill="none" stroke="white" strokeWidth="2" />
           </svg>
 
       </div>
