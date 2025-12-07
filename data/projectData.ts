@@ -49,7 +49,7 @@ export const gameDesignProjects: ProjectCardData[] = [
     title: "HOLLOW FLOWERS", 
     category: "Game Design", 
     tags: ["PROGRAMMING", "GAME DESIGN", "SHADERS" ,"LEVEL DESIGN"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764651989/HF1x1_2_ju3sr3.webp", 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
     status: "DEMO",
     locked: true
   },
@@ -58,23 +58,25 @@ export const gameDesignProjects: ProjectCardData[] = [
     title: "FADING MEMORIES", 
     category: "Systems Design", 
     tags: ["GAME DESIGN", "ART DIRECTION", "ILLUMINATION", "DOCS"], 
-    image: "https://images.unsplash.com/photo-1614726365723-49cfae92782f?q=80&w=2560&auto=format&fit=crop", 
-    status: "Shipped" 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    status: "Shipped",
+    locked: true
   },
   { 
     id: 3, 
     title: "UNDESERVED", 
     category: "Programming", 
     tags: ["LEVEL DESIGN", "ART DIRECTION", "PROGRAMMING"], 
-    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2560&auto=format&fit=crop", 
-    status: "MINI PROJECT" 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    status: "MINI PROJECT",
+    locked: true
   },
   { 
     id: 4, 
     title: "SUPER ZZ", 
     category: "Level Design", 
     tags: ["GAME DESIGN", "PROGRAMMING", "ART DIRECTION"], 
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2560&auto=format&fit=crop", 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
     status: "WIP",
     locked: true 
   },
@@ -83,32 +85,36 @@ export const gameDesignProjects: ProjectCardData[] = [
     title: "LLUVIA DE VERANO", 
     category: "Docs", 
     tags: ["DOCS", "ART DIRECTION", "GAME DESIGN"], 
-    image: "https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?q=80&w=2560&auto=format&fit=crop", 
-    status: "PRE-PRODUCTION" 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    status: "PRE-PRODUCTION",
+    locked: true 
   },
   {
     id: 6, 
     title: "EVERYTHING I SEE", 
     category: "Systems Design", 
     tags: ["GAME DESIGN", "DOCS", "SYSTEMS DESIGN"], 
-    image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=2560&auto=format&fit=crop", 
-    status: "CONCEPT IDEA" 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    status: "CONCEPT IDEA",
+    locked: true
   },
   { 
     id: 7, 
     title: "F.A.L.L.O.U.T.", 
     category: "DOC", 
     tags: ["DOCS", "SYSTEMS DESIGN"], 
-    image: "https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=2560&auto=format&fit=crop", 
-    status: "CONCEPT IDEA" 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    status: "CONCEPT IDEA",
+    locked: true
   },
   { 
     id: 8, 
     title: "ACID RAIN", 
     category: "GAME DESIGN", 
     tags: ["GAME DESIGN", "DOCS"], 
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2560&auto=format&fit=crop", 
-    status: "WIP" 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    status: "WIP",
+    locked: true
   }, 
 ];
 
@@ -118,39 +124,43 @@ export const techArtProjects: ProjectCardData[] = [
     title: "NOISE GLITCH SHADER", 
     category: "UNREAL ENGINE", 
     tags: ["SHADERS", "UNREAL ENGINE"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765069634/SB_Test_Project_ytizik.png", 
-    status: "ALPHA" 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    status: "ALPHA",
+    locked: true
   },
   { 
     id: 2, 
     title: "YIQ POSTPOCESS SHADER", 
     category: "Unreal Engine", 
     tags: ["UNREAL ENGINE", "POSTPROCESSING", "SHADERS"], 
-    image: "https://images.unsplash.com/photo-1533106958148-da053358df8d?q=80&w=2560&auto=format&fit=crop", 
-    status: "ALPHA" 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    status: "ALPHA",
+    locked: true 
   },
   { 
     id: 3, 
     title: "CARD HOLOGRAM PARALLAX SHADER", 
     category: "Shaders", 
     tags: ["SHADERS", "UNREAL ENGINE"], 
-    image: "https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=2560&auto=format&fit=crop", 
-    status: "FINISHED" 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    status: "FINISHED",
+    locked: true 
   },
   { 
     id: 4, 
     title: "HEY ARNOLD 3D ROOM", 
     category: "Postprocessing", 
     tags: ["3D MODELING", "TEXTURING", "UNREAL ENGINE"], 
-    image: "https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?q=80&w=2560&auto=format&fit=crop", 
-    status: "FINISHED" 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    status: "FINISHED",
+    locked: true
   },
   { 
     id: 5, 
     title: "INTEMPESTA LYRIC VIDEO", 
     category: "Unity", 
     tags: ["UNREAL ENGINE", "SHADERS", "ANIMATION"], 
-    image: "https://images.unsplash.com/photo-1550747528-cdb45925b3f7?q=80&w=2560&auto=format&fit=crop", 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
     status: "FINISHED",
     locked: true
   },
@@ -159,48 +169,54 @@ export const techArtProjects: ProjectCardData[] = [
     title: "AURORA - 3D CHARACTER", 
     category: "3D Texturing", 
     tags: ["UNREAL ENGINE", "HAIR GROOM", "SHADERS"], 
-    image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2560&auto=format&fit=crop", 
-    status: "WIP" 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    status: "WIP",
+    locked: true 
   },
   { 
     id: 7, 
     title: "UNDESERVED MAIN MENU", 
     category: "Unity", 
     tags: ["UNITY", "ANIMATION"], 
-    image: "https://images.unsplash.com/photo-1506765515384-028b60a970df?q=80&w=2560&auto=format&fit=crop", 
-    status: "SHIPPED" 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    status: "SHIPPED",
+    locked: true 
   },
   { 
     id: 8, 
     title: "DRELL CREATURE", 
     category: "Unity", 
     tags: ["3D MODELING", "3D TEXTURING"], 
-    image: "https://images.unsplash.com/photo-1485796826113-174aa68fd81b?q=80&w=2560&auto=format&fit=crop", 
-    status: "FINISHED" 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    status: "FINISHED",
+    locked: true 
   },
   { 
     id: 9, 
     title: "3D PROPS (FADING MEMORIES)", 
     category: "Unity", 
     tags: ["UNITY", "UI", "ILLUMINATION"], 
-    image: "https://images.unsplash.com/photo-1485796826113-174aa68fd81b?q=80&w=2560&auto=format&fit=crop", 
-    status: "FINISHED" 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    status: "FINISHED",
+    locked: true 
   },
   { 
     id: 10, 
     title: "LOW POLY CHILEAN BUILDINGS (LLUVIA DE VERANO)", 
     category: "Unity", 
     tags: ["3D MODELING"], 
-    image: "https://images.unsplash.com/photo-1485796826113-174aa68fd81b?q=80&w=2560&auto=format&fit=crop", 
-    status: "FINISHED" 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    status: "FINISHED",
+    locked: true 
   },
   { 
     id: 11, 
     title: "LEVEL DRESSING (CAVE MADNESS)", 
     category: "Unity", 
     tags: ["SHADERS"], 
-    image: "https://images.unsplash.com/photo-1485796826113-174aa68fd81b?q=80&w=2560&auto=format&fit=crop", 
-    status: "UNKNOWN" 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    status: "UNKNOWN",
+    locked: true 
   },
 ];
 
@@ -210,39 +226,43 @@ export const othersProjects: ProjectCardData[] = [
     title: "SEBRA - CREATIVE SERVICES COMPANY", 
     category: "Programming", 
     tags: ["PRODUCTION", "MANAGEMENT"], 
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2560&auto=format&fit=crop", 
-    status: "ACTIVELY WORKING" 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    status: "ACTIVELY WORKING",
+    locked: true 
   },
   { 
     id: 2, 
     title: "CUSTOM OBSIDIAN VAULTS", 
     category: "Design", 
     tags: ["JAVASCRIPT", "MANAGEMENT"], 
-    image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2560&auto=format&fit=crop", 
-    status: "" 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    status: "AVAILABLE",
+    locked: true 
   },
   { 
     id: 3, 
     title: "PIXEL 3D SPOTIFY CANVAS (WINTERS OF BLUE)", 
     category: "Visuals", 
     tags: ["ART", "UNREAL ENGINE"], 
-    image: "https://images.unsplash.com/photo-1569091791842-7cf9646552dd?q=80&w=2560&auto=format&fit=crop", 
-    status: "Personal" 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    status: "Personal",
+    locked: true 
   },
   { 
     id: 4, 
     title: "WEBPAGE PORTFOLIO (VIBECODED)", 
     category: "WEBPAGE", 
     tags: ["TYPESCRIPT", "UI/UX"], 
-    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=2560&auto=format&fit=crop", 
-    status: "Published" 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    status: "Published",
+    locked: true 
   },
   { 
     id: 5, 
     title: "WEBPAGE COMPANY (VIBECODED)", 
     category: "WEBPAGE", 
     tags: ["TYPESCRIPT", "UI/UX"],  
-    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2560&auto=format&fit=crop", 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
     status: "Prototype",
     locked: true
   },

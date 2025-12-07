@@ -13,9 +13,9 @@ const AboutView: React.FC<AboutViewProps> = ({ onClose }) => {
   
   // Flattened skills for the "Tag" layout style
   const topSkills = [
-    "Game Design", "Unreal Engine 5", "Systems Design", 
-    "Technical Art", "C++ / Blueprints", "Shader Dev",
-    "Team Leadership", "Rapid Prototyping"
+    "Game Design", "Unreal Engine 5", "Mechanics & Gameplay",  
+    "Technical Art", "Blueprints", "Unreal Materials", "ShaderGraph",
+    "Unity", "C#",  "Systems Design"
   ];
 
   const socialLinks = [
