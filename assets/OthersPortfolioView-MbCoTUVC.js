@@ -1,1 +1,0 @@
-import{j as s}from"./index-BhRQVQZK.js";import{B as e,o as r}from"./BasePortfolioView-CCg_f2oV.js";const m=({onClose:o})=>{const t=["Programming","Design","Visuals","Writing","Experiments"];return s.jsx(e,{title:"MISCELLANEOUS",projects:r,categories:t,onClose:o,baseRoute:"#others"})};export{m as default};
