@@ -101,19 +101,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick, lang
              />
            ) : (
             <>
-              {/* Main Image - Full Color, Fades out on hover to show glitches */}
+              {/* Main Image - Full Color, with contrast on hover */}
               <div 
-                className={`absolute inset-0 bg-cover bg-center transition-all duration-200 ${isHovered ? 'opacity-0 scale-105' : 'opacity-100 scale-100'}`}
+                className={`absolute inset-0 bg-cover bg-center transition-all duration-300 ${isHovered ? 'contrast-[1.25] scale-105' : 'contrast-100 scale-100'}`}
                 style={{ backgroundImage: `url(${project.image})` }}
               />
-              
-              {/* Glitch Overlay on Hover */}
-              <div className={`absolute inset-0 w-full h-full bg-black transition-opacity duration-0 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
-                  <div className={`absolute inset-0 w-full h-full bg-cover bg-center bg-red-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150 ${isHovered ? 'animate-glitch-1' : ''}`} 
-                      style={{ backgroundImage: `url(${project.image})` }} />
-                  <div className={`absolute inset-0 w-full h-full bg-cover bg-center bg-blue-600 bg-blend-multiply mix-blend-screen contrast-125 brightness-150 ${isHovered ? 'animate-glitch-2' : ''}`} 
-                      style={{ backgroundImage: `url(${project.image})` }} />
-              </div>
             </>
            )}
 

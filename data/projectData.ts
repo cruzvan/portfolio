@@ -118,7 +118,7 @@ export const techArtProjects: ProjectCardData[] = [
     title: "NOISE GLITCH SHADER", 
     category: "UNREAL ENGINE", 
     tags: ["SHADERS", "UNREAL ENGINE"], 
-    image: "https://images.unsplash.com/photo-1599577908998-348df80c98f9?q=80&w=2560&auto=format&fit=crop", 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765069634/SB_Test_Project_ytizik.png", 
     status: "ALPHA" 
   },
   { 
@@ -156,7 +156,7 @@ export const techArtProjects: ProjectCardData[] = [
   },
   { 
     id: 6, 
-    title: "AURORA' - 3D CHARACTER", 
+    title: "AURORA - 3D CHARACTER", 
     category: "3D Texturing", 
     tags: ["UNREAL ENGINE", "HAIR GROOM", "SHADERS"], 
     image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2560&auto=format&fit=crop", 
