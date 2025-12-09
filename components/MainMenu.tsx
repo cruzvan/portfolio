@@ -183,7 +183,7 @@ const MenuCard: React.FC<MenuCardProps> = ({
             ref={barRef}
             className={`
                 w-full px-4 md:px-6 py-4 md:py-5 flex flex-row items-center gap-4 relative overflow-hidden transition-all duration-300
-                ${isHovered ? 'bg-[#FE4403]' : 'bg-[#0d1b3e]/90 backdrop-blur-sm'}
+                ${isHovered ? 'bg-[#FE4403]' : 'bg-[#09080b]/90 backdrop-blur-sm'}
             `}
           >
               {/* --- HOLOGRAPHIC LAYERS (Only visible on hover AND large screens) --- */}
