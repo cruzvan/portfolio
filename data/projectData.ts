@@ -49,7 +49,7 @@ export const gameDesignProjects: ProjectCardData[] = [
     title: "HOLLOW FLOWERS", 
     category: "Game Design", 
     tags: ["PROGRAMMING", "GAME DESIGN", "SHADERS" ,"LEVEL DESIGN"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765282205/PF_GameDesign_HollowFlowers_Cover_nf3mge.webp", 
     status: "DEMO",
     locked: true
   },
@@ -58,7 +58,7 @@ export const gameDesignProjects: ProjectCardData[] = [
     title: "FADING MEMORIES", 
     category: "Systems Design", 
     tags: ["GAME DESIGN", "ART DIRECTION", "ILLUMINATION", "DOCS"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765285301/PF_GameDesign_FadingMemories_Cover_zxkkpv.webp", 
     status: "Shipped",
     locked: true
   },
@@ -67,7 +67,7 @@ export const gameDesignProjects: ProjectCardData[] = [
     title: "UNDESERVED", 
     category: "Programming", 
     tags: ["LEVEL DESIGN", "ART DIRECTION", "PROGRAMMING"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765285900/PF_GameDesign_Undeserved_Cover_v1f7lc.webp", 
     status: "MINI PROJECT",
     locked: true
   },
@@ -76,7 +76,7 @@ export const gameDesignProjects: ProjectCardData[] = [
     title: "SUPER ZZ", 
     category: "Level Design", 
     tags: ["GAME DESIGN", "PROGRAMMING", "ART DIRECTION"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765296556/PD_GameDesign_SuperZZ_Cover_ngewro.webp", 
     status: "WIP",
     locked: true 
   },
@@ -85,7 +85,7 @@ export const gameDesignProjects: ProjectCardData[] = [
     title: "LLUVIA DE VERANO", 
     category: "Docs", 
     tags: ["DOCS", "ART DIRECTION", "GAME DESIGN"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765291863/PD_GameDesign_LluviaDeVerano_Cover_ekue0o.webp", 
     status: "PRE-PRODUCTION",
     locked: true 
   },
@@ -94,13 +94,13 @@ export const gameDesignProjects: ProjectCardData[] = [
     title: "EVERYTHING I SEE", 
     category: "Systems Design", 
     tags: ["GAME DESIGN", "DOCS", "SYSTEMS DESIGN"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765321421/PD_GameDesign_EIS_Cover_vvzppq.webp", 
     status: "CONCEPT IDEA",
     locked: true
   },
   { 
     id: 7, 
-    title: "F.A.L.L.O.U.T.", 
+    title: "F.A.L.L.O.U.T. (Game Idea)", 
     category: "DOC", 
     tags: ["DOCS", "SYSTEMS DESIGN"], 
     image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
@@ -112,7 +112,7 @@ export const gameDesignProjects: ProjectCardData[] = [
     title: "ACID RAIN", 
     category: "GAME DESIGN", 
     tags: ["GAME DESIGN", "DOCS"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765288774/PD_GameDesign_AcidRain_Cover_grsa0r.webp", 
     status: "WIP",
     locked: true
   }, 
@@ -142,7 +142,7 @@ export const techArtProjects: ProjectCardData[] = [
     title: "CARD HOLOGRAM PARALLAX SHADER", 
     category: "Shaders", 
     tags: ["SHADERS", "UNREAL ENGINE"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765281853/PF_3DTech_CardHologram_Cover_3_y3q1c2.webp", 
     status: "FINISHED",
     locked: true 
   },
@@ -151,7 +151,7 @@ export const techArtProjects: ProjectCardData[] = [
     title: "HEY ARNOLD 3D ROOM", 
     category: "Postprocessing", 
     tags: ["3D MODELING", "TEXTURING", "UNREAL ENGINE"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765338333/PT_3DTech_ArnoldRoom_Cover_iermi7.webp", 
     status: "FINISHED",
     locked: true
   },
@@ -160,7 +160,7 @@ export const techArtProjects: ProjectCardData[] = [
     title: "INTEMPESTA LYRIC VIDEO", 
     category: "Unity", 
     tags: ["UNREAL ENGINE", "SHADERS", "ANIMATION"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765339138/PF_3DTech_WOBIntempesta_Cover_16_wongcl.webp", 
     status: "FINISHED",
     locked: true
   },
@@ -187,7 +187,7 @@ export const techArtProjects: ProjectCardData[] = [
     title: "DRELL CREATURE", 
     category: "Unity", 
     tags: ["3D MODELING", "3D TEXTURING"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765336797/PF_3DTech_DrellCreature_Cover_yh5zxu.webp", 
     status: "FINISHED",
     locked: true 
   },
@@ -196,7 +196,7 @@ export const techArtProjects: ProjectCardData[] = [
     title: "3D PROPS (FADING MEMORIES)", 
     category: "Unity", 
     tags: ["UNITY", "UI", "ILLUMINATION"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765337149/PF_3DTech_FMProps_Cover_czkwkv.webp", 
     status: "FINISHED",
     locked: true 
   },
@@ -205,7 +205,7 @@ export const techArtProjects: ProjectCardData[] = [
     title: "LOW POLY CHILEAN BUILDINGS (LLUVIA DE VERANO)", 
     category: "Unity", 
     tags: ["3D MODELING"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765337674/PF_3DTech_LDVBuildings_Cover_vs5usm.webp", 
     status: "FINISHED",
     locked: true 
   },
@@ -253,7 +253,7 @@ export const othersProjects: ProjectCardData[] = [
     title: "WEBPAGE PORTFOLIO (VIBECODED)", 
     category: "WEBPAGE", 
     tags: ["TYPESCRIPT", "UI/UX"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765291476/PD_Others_PortfolioWebpage_Cover_fvhppn.webp", 
     status: "Published",
     locked: true 
   },
