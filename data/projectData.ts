@@ -124,7 +124,7 @@ export const techArtProjects: ProjectCardData[] = [
     title: "NOISE GLITCH SHADER", 
     category: "UNREAL ENGINE", 
     tags: ["SHADERS", "UNREAL ENGINE"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765419716/PF_3DTech_NoisePP_Cover_mf3b4c.webp", 
     status: "ALPHA",
     locked: true
   },
