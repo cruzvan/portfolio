@@ -20,7 +20,7 @@ const AboutView: React.FC<AboutViewProps> = ({ onClose }) => {
 
   const socialLinks = [
     { icon: <Mail size={24} />, label: 'Email', href: 'mailto:angelo.cruz.gamedev@email.com' },
-    { icon: <Linkedin size={24} />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/ancrva/' },
+    { icon: <Linkedin size={24} />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/cruzvan/' },
     { icon: <Github size={24} />, label: 'GitHub', href: 'https://github.com/cruzvan' },
     { icon: <BrainCircuit size={24} />, label: 'Web', href: 'https://cruzvan.github.io/SeBra/' }
   ];
@@ -114,23 +114,46 @@ const AboutView: React.FC<AboutViewProps> = ({ onClose }) => {
                         ))}
                     </div>
 
-                    {/* Right: Horizontal CV Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-                        <a 
-                            href="#" 
-                            className="flex-1 md:flex-none flex items-center justify-center gap-4 bg-white/5 hover:bg-[#FE4403] border border-white/10 hover:border-[#FE4403] px-6 py-4 transition-all duration-200 group"
-                        >
-                            <span className="text-white text-xs md:text-sm font-bold uppercase tracking-widest group-hover:text-black">{t('download_cv_gd')}</span>
-                            <Download size={16} className="text-white/40 group-hover:text-black transition-colors" />
-                        </a>
+                    {/* Right: CV Buttons (2 Rows: EN top, ES bottom) */}
+                    <div className="flex flex-col gap-4 w-full md:w-auto">
+                        
+                        {/* Row 1: English */}
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <a 
+                                href="#" 
+                                className="flex-1 md:flex-none flex items-center justify-center gap-4 bg-white/5 hover:bg-[#FE4403] border border-white/10 hover:border-[#FE4403] px-6 py-4 transition-all duration-200 group"
+                            >
+                                <span className="text-white text-xs md:text-sm font-bold uppercase tracking-widest group-hover:text-black">{t('download_cv_gd_en')}</span>
+                                <Download size={16} className="text-white/40 group-hover:text-black transition-colors" />
+                            </a>
 
-                        <a 
-                            href="#" 
-                            className="flex-1 md:flex-none flex items-center justify-center gap-4 bg-white/5 hover:bg-[#FE4403] border border-white/10 hover:border-[#FE4403] px-6 py-4 transition-all duration-200 group"
-                        >
-                            <span className="text-white text-xs md:text-sm font-bold uppercase tracking-widest group-hover:text-black">{t('download_cv_ta')}</span>
-                            <Download size={16} className="text-white/40 group-hover:text-black transition-colors" />
-                        </a>
+                            <a 
+                                href="#" 
+                                className="flex-1 md:flex-none flex items-center justify-center gap-4 bg-white/5 hover:bg-[#FE4403] border border-white/10 hover:border-[#FE4403] px-6 py-4 transition-all duration-200 group"
+                            >
+                                <span className="text-white text-xs md:text-sm font-bold uppercase tracking-widest group-hover:text-black">{t('download_cv_ta_en')}</span>
+                                <Download size={16} className="text-white/40 group-hover:text-black transition-colors" />
+                            </a>
+                        </div>
+
+                        {/* Row 2: Spanish */}
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <a 
+                                href="#" 
+                                className="flex-1 md:flex-none flex items-center justify-center gap-4 bg-white/5 hover:bg-[#FE4403] border border-white/10 hover:border-[#FE4403] px-6 py-4 transition-all duration-200 group"
+                            >
+                                <span className="text-white text-xs md:text-sm font-bold uppercase tracking-widest group-hover:text-black">{t('download_cv_gd_es')}</span>
+                                <Download size={16} className="text-white/40 group-hover:text-black transition-colors" />
+                            </a>
+
+                            <a 
+                                href="#" 
+                                className="flex-1 md:flex-none flex items-center justify-center gap-4 bg-white/5 hover:bg-[#FE4403] border border-white/10 hover:border-[#FE4403] px-6 py-4 transition-all duration-200 group"
+                            >
+                                <span className="text-white text-xs md:text-sm font-bold uppercase tracking-widest group-hover:text-black">{t('download_cv_ta_es')}</span>
+                                <Download size={16} className="text-white/40 group-hover:text-black transition-colors" />
+                            </a>
+                        </div>
                     </div>
 
                 </div>

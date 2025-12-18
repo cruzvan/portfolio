@@ -18,6 +18,10 @@ export type TranslationKey =
   | 'close'
   | 'download_cv_gd'
   | 'download_cv_ta'
+  | 'download_cv_gd_en'
+  | 'download_cv_ta_en'
+  | 'download_cv_gd_es'
+  | 'download_cv_ta_es'
   | 'about_role_gd'
   | 'about_role_ta'
   | 'about_bio_p1'
@@ -76,6 +80,10 @@ export const translations = {
     close: 'Close',
     download_cv_gd: 'CV Game Designer',
     download_cv_ta: 'CV Tech Artist',
+    download_cv_gd_en: 'CV Game Designer (EN)',
+    download_cv_ta_en: 'CV Tech Artist (EN)',
+    download_cv_gd_es: 'CV Game Designer (ES)',
+    download_cv_ta_es: 'CV Tech Artist (ES)',
     about_role_gd: 'Game Designer',
     about_role_ta: 'Technical Artist',
     about_bio_p1: "World-builder at the intersection of code and art. I am passionate about the process of experimentation: the hours spent refining a mechanic or tweaking a shader until it feels just right.",
@@ -133,6 +141,10 @@ export const translations = {
     close: 'Cerrar',
     download_cv_gd: 'CV Game Designer',
     download_cv_ta: 'CV Tech Artist',
+    download_cv_gd_en: 'CV Game Designer (EN)',
+    download_cv_ta_en: 'CV Tech Artist (EN)',
+    download_cv_gd_es: 'CV Game Designer (ES)',
+    download_cv_ta_es: 'CV Tech Artist (ES)',
     about_role_gd: 'Diseñador de Juegos',
     about_role_ta: 'Artista Técnico',
     about_bio_p1: "Me defino como un constructor de mundos en la intersección del código y el arte. Me apasiona el proceso de experimentación: las horas dedicadas a perfeccionar una mecánica o a ajustar un shader hasta que se siente perfecto.",
