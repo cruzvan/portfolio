@@ -1,1 +1,0 @@
-import{j as a}from"./index-CysfBJwk.js";import{g as e,B as r}from"./BasePortfolioView-CctwmtJS.js";const m=({onClose:t})=>{const o=[...new Set(e.flatMap(s=>s.tags))];return a.jsx(r,{title:"GAME DESIGN",projects:e,categories:o,onClose:t,baseRoute:"#game-design"})};export{m as default};
