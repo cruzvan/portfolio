@@ -19,9 +19,9 @@ const ContactView: React.FC<ContactViewProps> = ({ onClose }) => {
 
   const socialLinks: SocialLink[] = [
     { icon: <Mail />, label: 'Email', href: 'mailto:angelocruz.vgd@gmail.com' },
-    { icon: <Linkedin />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/angelocruz' },
-    { icon: <Github />, label: 'GitHub', href: 'https://github.com/angelocruzdev' },
-    { icon: <BrainCircuit />, label: 'Company Webpage', href: 'https://www.my-company-website.com' } // Added new icon with a placeholder URL
+    { icon: <Linkedin />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/cruzvan' },
+    { icon: <Github />, label: 'GitHub', href: 'https://github.com/cruzvan' },
+    { icon: <BrainCircuit />, label: 'Company Webpage', href: 'https://cruzvan.github.io/SeBra/' } // Added new icon with a placeholder URL
   ];
 
   return (
