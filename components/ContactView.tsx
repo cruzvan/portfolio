@@ -18,7 +18,7 @@ const ContactView: React.FC<ContactViewProps> = ({ onClose }) => {
   const { t } = useLanguage();
 
   const socialLinks: SocialLink[] = [
-    { icon: <Mail />, label: 'Email', href: 'mailto:angelo.cruz.gamedev@email.com' },
+    { icon: <Mail />, label: 'Email', href: 'mailto:angelocruz.vgd@gmail.com' },
     { icon: <Linkedin />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/angelocruz' },
     { icon: <Github />, label: 'GitHub', href: 'https://github.com/angelocruzdev' },
     { icon: <BrainCircuit />, label: 'Company Webpage', href: 'https://www.my-company-website.com' } // Added new icon with a placeholder URL

@@ -19,7 +19,7 @@ const AboutView: React.FC<AboutViewProps> = ({ onClose }) => {
   ];
 
   const socialLinks = [
-    { icon: <Mail size={24} />, label: 'Email', href: 'mailto:angelo.cruz.gamedev@email.com' },
+    { icon: <Mail size={24} />, label: 'Email', href: 'mailto:angelocruz.vgd@gmail.com' },
     { icon: <Linkedin size={24} />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/cruzvan/' },
     { icon: <Github size={24} />, label: 'GitHub', href: 'https://github.com/cruzvan' },
     { icon: <BrainCircuit size={24} />, label: 'Web', href: 'https://cruzvan.github.io/SeBra/' }
