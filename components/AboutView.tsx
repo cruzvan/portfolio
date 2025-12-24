@@ -120,7 +120,7 @@ const AboutView: React.FC<AboutViewProps> = ({ onClose }) => {
                         {/* Row 1: English */}
                         <div className="flex flex-col sm:flex-row gap-4">
                             <a 
-                                href="assets/docs/CV_GameDesigner_EN.pdf" target="_blank"
+                                href="./assets/docs/CV_GameDesigner_EN.pdf" target="_blank"
                                 className="flex-1 md:flex-none flex items-center justify-center gap-4 bg-white/5 hover:bg-[#FE4403] border border-white/10 hover:border-[#FE4403] px-6 py-4 transition-all duration-200 group"
                             >
                                 <span className="text-white text-xs md:text-sm font-bold uppercase tracking-widest group-hover:text-black">{t('download_cv_gd_en')}</span>
