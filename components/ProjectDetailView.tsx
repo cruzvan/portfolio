@@ -229,7 +229,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
       {/* --- BACKGROUND LAYER --- */}
       <div 
           className="absolute inset-0 bg-cover bg-center z-0"
-          style={{ backgroundImage: `url(${project.image})` }}
+          style={{ backgroundImage: `url(${projectContent.overviewImage || project.image})` }}
       />
       
       {/* --- OVERLAY LAYERS --- */}
@@ -370,8 +370,12 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
         {dynamicSections.filter(s => s.type === 'content').map((sec, index) => {
             const content = getContentForTag(sec.tagName || "");
             const gallery = projectContent.gallery;
-            const sectionImage1 = gallery[index % gallery.length] || project.image;
-            const sectionImage2 = gallery[(index + 1) % gallery.length] || project.image;
+            
+            // Logic: 3 Unique images per tag section
+            const baseImgIndex = index * 3;
+            const sectionImage1 = gallery[baseImgIndex] || project.image;
+            const sectionImage2 = gallery[baseImgIndex + 1] || project.image;
+            const sectionImage3 = gallery[baseImgIndex + 2] || project.image;
 
             return (
                 <section 
@@ -455,10 +459,10 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div className="relative group cursor-zoom-in aspect-video border border-white/10 bg-white/5 p-1 order-2 md:order-1" onClick={() => setLightboxImage(sectionImage1)}>
+                                <div className="relative group cursor-zoom-in aspect-video border border-white/10 bg-white/5 p-1 order-2 md:order-1" onClick={() => setLightboxImage(sectionImage3)}>
                                     <div className="overflow-hidden h-full w-full relative">
                                         <img 
-                                            src={sectionImage1} 
+                                            src={sectionImage3} 
                                             alt="Detail" 
                                             loading="lazy"
                                             decoding="async"
@@ -505,53 +509,28 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                         <span className="text-xs tracking-normal text-white/40 font-normal normal-case">{projectContent.gallery.length} {t('assets_count')}</span>
                     </h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-auto md:h-[60vh]">
-                        {/* Featured Large Image */}
-                        {projectContent.gallery[0] && (
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[250px] md:auto-rows-[300px]">
+                        {projectContent.gallery.map((img, i) => (
                             <div 
-                                className="relative group overflow-hidden border border-white/10 md:row-span-2 h-[30vh] md:h-full cursor-zoom-in bg-[#050505]"
-                                onClick={() => setLightboxImage(projectContent.gallery[0])}
+                                key={i} 
+                                className={`relative group overflow-hidden border border-white/10 cursor-zoom-in bg-[#050505] ${i === 0 ? 'md:col-span-2 md:row-span-2 md:h-[616px]' : 'h-full'}`}
+                                onClick={() => setLightboxImage(img)}
                             >
                                 <div className="w-full h-full overflow-hidden">
                                     <img 
-                                        src={projectContent.gallery[0]} 
-                                        alt="Gallery Main" 
+                                        src={img} 
+                                        alt={`Gallery ${i}`} 
                                         loading="lazy"
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                     />
                                 </div>
                                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <Maximize2 className="text-white w-12 h-12" />
+                                    <Maximize2 className={i === 0 ? "text-white w-12 h-12" : "text-white w-8 h-8"} />
                                 </div>
-                                <div className="absolute top-2 left-2 w-6 h-6 border-t-2 border-l-2 border-[#FE4403] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                <div className="absolute bottom-2 right-2 w-6 h-6 border-b-2 border-r-2 border-[#FE4403] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-[#FE4403] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-[#FE4403] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                             </div>
-                        )}
-
-                        {/* Secondary Images */}
-                        <div className="grid grid-rows-2 gap-4 h-[40vh] md:h-full">
-                            {projectContent.gallery.slice(1, 3).map((img, i) => (
-                                <div 
-                                    key={i} 
-                                    className="relative group overflow-hidden border border-white/10 h-full cursor-zoom-in bg-[#050505]"
-                                    onClick={() => setLightboxImage(img)}
-                                >
-                                    <div className="w-full h-full overflow-hidden">
-                                        <img 
-                                            src={img} 
-                                            alt={`Gallery ${i}`} 
-                                            loading="lazy"
-                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                        />
-                                    </div>
-                                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                        <Maximize2 size={32} className="text-white" />
-                                    </div>
-                                    <div className="absolute top-1 left-1 w-4 h-4 border-t-2 border-l-2 border-[#FE4403] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                    <div className="absolute bottom-1 right-1 w-4 h-4 border-b-2 border-r-2 border-[#FE4403] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                </div>
-                            ))}
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>

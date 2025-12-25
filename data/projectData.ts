@@ -28,6 +28,7 @@ export interface ProjectContent {
     videos: string[];
     gallery: string[];
     externalLink?: string; // New field for the button
+    overviewImage?: string; // Specific image for the Overview background
 }
 
 // Interface for the Portfolio Cards (Menu Level)
@@ -1015,8 +1016,9 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             software: ["UNREAL ENGINE 5", "HLSL NODES"],
             duration: "2 SEMANAS",
             videos: [],
-            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1766696256/PF_3DTech_NoisePP_Image1_ioezay.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image2_jsamiq.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image3_sigo6i.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697535/PF_3DTech_NoisePP_Image5_snxdtu.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697535/PF_3DTech_NoisePP_Image6_iwuy3p.webp"],
-            externalLink: "https://www.fab.com/es-mx/listings/ce8b3eeb-d3d0-4419-9217-4193990bd403"
+            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1766696256/PF_3DTech_NoisePP_Image1_ioezay.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image2_jsamiq.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image3_sigo6i.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766698194/PF_3DTech_NoisePP_Image4_iw0bph.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697535/PF_3DTech_NoisePP_Image5_snxdtu.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697535/PF_3DTech_NoisePP_Image6_iwuy3p.webp"],
+            externalLink: "https://www.fab.com/es-mx/listings/ce8b3eeb-d3d0-4419-9217-4193990bd403",
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1766698479/PF_3DTech_NoisePP_Image0_q4yfiz.webp"
 }
     },
     "YIQ POSTPOCESS SHADER": {
