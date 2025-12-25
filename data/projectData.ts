@@ -126,7 +126,7 @@ export const techArtProjects: ProjectCardData[] = [
     tags: ["SHADERS", "UNREAL ENGINE"], 
     image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765419716/PF_3DTech_NoisePP_Cover_mf3b4c.webp", 
     status: "ALPHA",
-    locked: true
+    locked: false
   },
   { 
     id: 2, 
@@ -970,16 +970,16 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
                 "SHADERS": {
-                    headline: "INSERT HEADLINE: SHADERS",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    headline: "MATERIAL GRAPHS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
                     bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
                 },
                 "UNREAL ENGINE": {
-                    headline: "INSERT HEADLINE: UNREAL ENGINE",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    headline: "INSERT HEADLINE: UNREAL ENGINSSSE",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
@@ -989,35 +989,35 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             software: ["INSERT SOFTWARE"],
             duration: "INSERT DURATION",
             videos: [],
-            gallery: [],
+            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1766696256/PF_3DTech_NoisePP_Image1_ioezay.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image2_jsamiq.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image3_sigo6i.webp"],
             externalLink: "#"
         },
         es: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
-            tagContent: {
-                "SHADERS": {
-                    headline: "INSERT HEADLINE: SHADERS",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                },
-                "UNREAL ENGINE": {
-                    headline: "INSERT HEADLINE: UNREAL ENGINE",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                }
-            },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
-            videos: [],
-            gallery: [],
-            externalLink: "#"
+    description: "Sistema de post-procesado que utiliza manipulación de Normales para coloreado dinámico y Arrays de Texturas para ruido optimizado.",
+    tagContent: {
+        "SHADERS": {
+            headline: "Normal-Based Colors & Texture Arrays",
+            textBlock1: "El coloreado del personaje se calcula dinámicamente en base a su geometría. Utilizando el nodo 'WorldNormal', calculo el ángulo de la superficie respecto a la cámara y la luz. Esta información alimenta un 'Lerp' que interpola entre el Color Primario y Secundario, logrando que el color reaccione a la curvatura del modelo.",
+            textBlock2: "Para dar vida a este efecto, modulé la mezcla de colores usando funciones 'Sine' conectadas al Tiempo. Esto crea un efecto de oscilación constante donde los tonos 'resbalan' sobre la superficie del personaje, simulando un fallo de señal térmica o iridiscencia digital sin depender de texturas difusas complejas.",
+            textBlock3: "El movimiento del ruido visual se logra de manera eficiente mediante texturas. En lugar de generar ruido procedural (costoso para la GPU), utilizo 'Texture Samples' de ruido pre-renderizado. Conectando nodos 'Panner' a las coordenadas UV, desplazo estas texturas en los ejes X e Y para simular el barrido y la estática.",
+            textBlock4: "Gestión de Ruido Híbrido: Implementación de 'Texture Arrays' para ciclar entre múltiples patrones de estática de alta frecuencia, evitando la repetición visual (tiling) evidente y manteniendo el shader optimizado.",
+            bullets: ["World Normal Color Driver", "Optimized Texture Panning", "Texture Arrays Implementation"]
+        },
+        "UNREAL ENGINE": {
+            headline: "Editor, Sequencer y Stencil Masking",
+            textBlock1: "La integración en el editor utiliza un PostProcessVolume con un Material Instance que expone los parámetros de color y velocidad. Esto permite ajustar el 'look' final en tiempo real sin recompilar shaders. El efecto se limita a objetos específicos mediante el uso de 'Custom Depth Stencil', asegurando que solo los actores marcados (como el Metahuman) reciban el tratamiento de glitch.",
+            textBlock2: "En el Sequencer, sincronicé la activación del efecto con la animación del personaje. Al tener el material de post-proceso leyendo el 'CustomStencil', cualquier deformación de la malla del Metahuman (como las expresiones faciales 'Angry' o el ciclo de correr) es capturada perfectamente por la máscara, manteniendo la coherencia del efecto sobre la silueta en movimiento.",
+            textBlock3: "Stencil Logic: Comparación del valor de 'SceneTexture:CustomStencil' contra un ID paramétrico para enmascarar el fondo.",
+            textBlock4: "Lookdev Integration: Configuración del Metahuman para renderizar en el paso de 'CustomDepth' y reaccionar a la iluminación de la escena antes del pase de post-proceso.",
+            bullets: ["Custom Stencil Masking Logic", "Sequencer & Animation Sync", "Material Parameter Exposure"]
         }
+    },
+            software: ["UNREAL ENGINE 5", "HLSL NODES"],
+            duration: "2 SEMANAS",
+            videos: [],
+            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1766696256/PF_3DTech_NoisePP_Image1_ioezay.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image2_jsamiq.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image3_sigo6i.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697535/PF_3DTech_NoisePP_Image5_snxdtu.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697535/PF_3DTech_NoisePP_Image6_iwuy3p.webp"],
+            externalLink: "https://www.fab.com/es-mx/listings/ce8b3eeb-d3d0-4419-9217-4193990bd403"
+}
     },
     "YIQ POSTPOCESS SHADER": {
         en: {
