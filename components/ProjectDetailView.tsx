@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { X, ExternalLink, Maximize2, Users, Calendar, ChevronDown, Cpu, Play } from 'lucide-react';
+import { X, ExternalLink, Maximize2, Users, Calendar, ChevronDown, Cpu, Play, ChevronLeft, ChevronRight } from 'lucide-react';
 import { getProjectContent, TagContentSection, ProjectCardData } from '../data/projectData';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -95,6 +95,61 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
   const [isScrolling, setIsScrolling] = useState(false);
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
   
+  // --- LIGHTBOX NAVIGATION & SWIPE ---
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  const handleLightboxNavigation = useCallback((direction: 'next' | 'prev') => {
+    if (!lightboxImage) return;
+    const gallery = projectContent.gallery;
+    const currentIndex = gallery.indexOf(lightboxImage);
+    
+    if (currentIndex === -1) return;
+
+    let newIndex;
+    if (direction === 'next') {
+        newIndex = (currentIndex + 1) % gallery.length;
+    } else {
+        newIndex = (currentIndex - 1 + gallery.length) % gallery.length;
+    }
+    setLightboxImage(gallery[newIndex]);
+  }, [lightboxImage, projectContent.gallery]);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+        if (!lightboxImage) return;
+        if (e.key === 'ArrowRight') handleLightboxNavigation('next');
+        if (e.key === 'ArrowLeft') handleLightboxNavigation('prev');
+        if (e.key === 'Escape') setLightboxImage(null);
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxImage, handleLightboxNavigation]);
+
+  // Touch handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+      setTouchStart(e.targetTouches[0].clientX);
+  };
+  
+  const handleTouchMove = (e: React.TouchEvent) => {
+      setTouchEnd(e.targetTouches[0].clientX);
+  };
+  
+  const handleTouchEnd = () => {
+      if (!touchStart || !touchEnd) return;
+      const distance = touchStart - touchEnd;
+      const isLeftSwipe = distance > 50;
+      const isRightSwipe = distance < -50;
+      
+      if (isLeftSwipe) handleLightboxNavigation('next');
+      if (isRightSwipe) handleLightboxNavigation('prev');
+      
+      setTouchStart(0); 
+      setTouchEnd(0);
+  };
+
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
 
   useEffect(() => {
@@ -239,19 +294,43 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
       {/* --- LIGHTBOX MODAL --- */}
       {lightboxImage && (
           <div 
-            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center animate-fade-in-fast cursor-zoom-out"
+            className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center animate-fade-in-fast cursor-zoom-out backdrop-blur-sm"
             onClick={() => setLightboxImage(null)}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
-              <div className="relative w-auto h-auto max-w-[90vw] max-h-[90vh]">
+              {/* Prev Button */}
+              <button 
+                className="absolute left-2 md:left-8 p-4 text-white/50 hover:text-[#FE4403] hover:scale-110 transition-all z-[110]"
+                onClick={(e) => { e.stopPropagation(); handleLightboxNavigation('prev'); }}
+              >
+                <ChevronLeft size={48} />
+              </button>
+
+              <div 
+                className="relative w-auto h-auto max-w-[75vw] max-h-[75vh] flex items-center justify-center select-none"
+                onClick={(e) => e.stopPropagation()} 
+              >
                   <img 
                     src={lightboxImage} 
                     alt="Fullscreen" 
-                    className="w-full h-full object-contain shadow-2xl border border-white/10" 
+                    className="w-full h-full object-contain shadow-2xl border border-white/10 bg-black" 
                   />
-                  <div className="absolute -top-2 -left-2 w-8 h-8 border-t-4 border-l-4 border-[#FE4403]" />
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-4 border-r-4 border-[#FE4403]" />
               </div>
-              <button className="absolute top-8 right-8 text-white/50 hover:text-white p-2">
+
+              {/* Next Button */}
+              <button 
+                className="absolute right-2 md:right-8 p-4 text-white/50 hover:text-[#FE4403] hover:scale-110 transition-all z-[110]"
+                onClick={(e) => { e.stopPropagation(); handleLightboxNavigation('next'); }}
+              >
+                <ChevronRight size={48} />
+              </button>
+
+              <button 
+                  className="absolute top-4 right-4 md:top-8 md:right-8 text-white/50 hover:text-white p-2 transition-colors z-[110]"
+                  onClick={() => setLightboxImage(null)}
+              >
                   <X size={48} />
               </button>
           </div>
