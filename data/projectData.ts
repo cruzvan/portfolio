@@ -154,7 +154,7 @@ export const techArtProjects: ProjectCardData[] = [
     tags: ["3D MODELING", "TEXTURING", "UNREAL ENGINE"], 
     image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765338333/PT_3DTech_ArnoldRoom_Cover_iermi7.webp", 
     status: "FINISHED",
-    locked: true
+    locked: false
   },
   { 
     id: 5, 
@@ -1179,10 +1179,11 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1766771003/PF_3DTech_HeyArnold_Image0_sea71k.webp"
         },
         es: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Escenario 3D de principio a final para una réplica realista de la pieza en Hey Arnold!.",
             tagContent: {
                 "3D MODELING": {
                     headline: "INSERT HEADLINE: 3D MODELING",
@@ -1202,18 +1203,19 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                 },
                 "UNREAL ENGINE": {
                     headline: "INSERT HEADLINE: UNREAL ENGINE",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    textBlock1: "Al ambiente de UE5 le añadí un ciclo de día y noche, el cual controla: Directional Light, SkyLight, Sky Atmosphere y Volumetric Clouds. Este tiene una variable de 'Solar Time', la cual fue ajustada desde el Level Sequence para crear el ciclo.",
+                    textBlock2: "Creé un material único para que las texturas realizadas en Substance Painter pudieran añadirse a través de Material Instance y no perder tiempo creando un material para cada uno.",
+                    textBlock3: "La iluminación interna nocturna y sus intensidades son quienes hacen todo el trabajo en esta parte de la secuencia. Estas se intensifican y ajustan dependiendo del 'exposure' del nivel.",
+                    textBlock4: "Para el Level Sequence, la cámara tuvo la responsabilidad de ir entrando lentamente en dirección a la cama de la pieza en vez de solo hacer zoom, así se puede apreciar mejor el espacio 3D. Se añadió un Material Parameter Collection para activar la emisión de la TV en la noche, un 'Blend Weight' para activar un efecto de postprocesado estilo VHS y el parámetro de 'SolarTime' para ajustar el ciclo de día y noche",
+                    bullets: ["Day/Night Cycle", "Master Material", "Level Sequence"]
                 }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["BLENDER", "SUBSTANCE PAINTER", "UNREAL ENGINE"],
+            duration: "1-2 SEMANAS",
             videos: [],
-            gallery: [],
-            externalLink: "#"
+            gallery: ["a.jpg", "", "", "", "", "", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766771923/PT_3DTech_ArnoldRoom_Image7_igxt0x.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766775122/PT_3DTech_ArnoldRoom_Image8_zh3jic.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766775593/PT_3DTech_ArnoldRoom_Image9_1_ys6cfx.webp"],
+            externalLink: "#",
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1766771003/PF_3DTech_HeyArnold_Image0_sea71k.webp"
         }
     },
     "INTEMPESTA LYRIC VIDEO": {
