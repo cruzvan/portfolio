@@ -968,58 +968,59 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
     // --- TECH ART & 3D PROJECTS ---
     "NOISE GLITCH SHADER": {
         en: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Post-process system using Normal manipulation for dynamic coloring and Texture Arrays for optimized noise.",
             tagContent: {
                 "SHADERS": {
-                    headline: "MATERIAL GRAPHS",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "Normal-Based Colors & Noise Textures",
+                    textBlock1: "The colors of each object on screen are calculated dynamically based on its geometry. Using the 'WorldNormal' node, the surface angle relative to the camera and light is calculated. Both the secondary color and the highlight pass through a sine wave multiplied by time to create dynamic thresholding, causing a cyclic transition of color visibility over the normals. This information feeds a 'Lerp' that interpolates between the Primary and Secondary Color, allowing the color to react to the model's curvature.",
+                    textBlock2: "For the material to work on each object, it must be activated in UE5 Project Settings under 'Custom Depth-Stencil pass' by selecting 'Enabled with Stencil'. The material has a float parameter called 'Stencil_ID', which corresponds to the Custom Depth value used on each object to activate it.",
+                    textBlock3: "Each material module has its own Static Switch Parameter at the end so that designers who want to use the effect can easily enable or disable them.",
+                    textBlock4: "Visual noise movement is achieved via textures rather than procedurally to improve performance. Two very small base noise textures are used so the moving color doesn't feel empty, layered with static noise and a Tracking Noise Texture Array. By connecting 'Panner' nodes to the UV coordinates, I displace these textures along their respective axes to simulate scanning and static.",
+                    bullets: ["Color by Normals", "Custom Stencil", "Noises"]
                 },
                 "UNREAL ENGINE": {
-                    headline: "INSERT HEADLINE: UNREAL ENGINSSSE",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "Editor, Sequencer & Metahuman",
+                    textBlock1: "Editor integration uses an 'Unbound' PostProcessVolume, placing the Glitch-Noise Material Instance in 'Post Process Materials'. The instance exposes parameters for Color, movement speed, intensity, oscillation offset, etc., allowing real-time adjustment of the final look. The effect is limited to specific objects using 'Custom Depth Stencil'.",
+                    textBlock2: "In the Level Sequence, I synchronized the active effect with the character's animation. 'CustomStencil' reads any mesh deformation (like 'Angry' facial expressions or the running cycle), so it's captured in real-time by the mask, maintaining effect coherence on the moving silhouette.",
+                    textBlock3: "For animation, a camera facing the character was used. The character remains in place but uses a 'run' body animation and 'angry' face animation, with the effect mask already active.",
+                    textBlock4: "Lookdev Integration: For the character, Metahumans was used to define age and facial expressions, testing anger expressions. This was exported and its animations used to integrate into the Level Sequence. Configured the Metahuman to render in the 'CustomDepth' pass and react to scene lighting before the post-process pass.",
+                    bullets: ["Material Instance", "Level Sequence", "Metahuman"]
                 }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["UNREAL ENGINE 5", "HLSL NODES"],
+            duration: "2 WEEKS",
             videos: [],
-            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1766696256/PF_3DTech_NoisePP_Image1_ioezay.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image2_jsamiq.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image3_sigo6i.webp"],
-            externalLink: "#"
+            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1766696256/PF_3DTech_NoisePP_Image1_ioezay.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image2_jsamiq.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image3_sigo6i.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766698194/PF_3DTech_NoisePP_Image4_iw0bph.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697535/PF_3DTech_NoisePP_Image5_snxdtu.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697535/PF_3DTech_NoisePP_Image6_iwuy3p.webp"],
+            externalLink: "https://www.fab.com/es-mx/listings/ce8b3eeb-d3d0-4419-9217-4193990bd403",
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1766698479/PF_3DTech_NoisePP_Image0_q4yfiz.webp"
         },
         es: {
-    description: "Sistema de post-procesado que utiliza manipulación de Normales para coloreado dinámico y Arrays de Texturas para ruido optimizado.",
-    tagContent: {
-        "SHADERS": {
-            headline: "Normal-Based Colors & Noise Textures",
-            textBlock1: "Los colores en cada objeto en pantalla se calculan dinámicamente en base a su geometría. Utilizando el nodo 'WorldNormal', se calcula el ángulo de la superficie respecto a la cámara y la luz. Tanto el color secundario como el highlight pasan por un sine multiplicado por tiempo para crear un thresholding dinámico, provocando una transición cíclica de la visibilidad de los colores sobre las normales. Esta información alimenta un 'Lerp' que interpola entre el Color Primario y Secundario, logrando que el color reaccione a la curvatura del modelo.",
-            textBlock2: "Para que el material funcione en cada objeto, se necesita activar en UE5 desde Project Settings en el apartado ¨Custom Depth-Stencil pass¨ seleccionando Enabled with Stencil. El material posee un float llamado Stencil_ID donde su número es el que se ocupa en el Custom Depth de cada objeto para poder ser activado.",
-            textBlock3: "Cada módulo del material tiene su propio Static Switch Parameter al final para que los diseñadores que quieran ocupar el efecto puedan fácilmente activarlos y desactivarlos.",
-            textBlock4: "El movimiento del ruido visual se logra mediante texturas, por sobre lo procedural, para mejorar el rendimiento. Se utilizan dos ruidos muy pequeños de base para que el color en movimiento no se sienta vacío y encima de este un ruido estático junto a un Texture Array de Tracking Noise. Conectando nodos 'Panner' a las coordenadas UV, desplazo estas texturas en sus respectivos ejes para simular el barrido y la estática.",
-            bullets: ["World Normal Color Driver", "Optimized Texture Panning", "Texture Arrays Implementation"]
-        },
-        "UNREAL ENGINE": {
-            headline: "Editor, Sequencer y Metahuman",
-            textBlock1: "La integración en el editor utiliza un PostProcessVolume ¨Unbound¨ ubicando en ¨Post Process Materials¨ el Material Instance del Glitch-Noise. La instancia posee parámetros expuestos de Color, velocidad de movimiento, intensidad, offset de oscilaciones, entre otros, permitiendo ajustar el 'look' final en tiempo real. El efecto se limita a objetos específicos mediante el uso de 'Custom Depth Stencil'.",
-            textBlock2: "En el Level Sequence, sincronicé el efecto ya activado con la animación del personaje. El 'CustomStencil' lee cualquier deformación de la malla del objeto (como las expresiones faciales 'Angry' o el ciclo de correr) por lo que es capturado en tiempo real por la máscara, manteniendo la coherencia del efecto sobre la silueta en movimiento.",
-            textBlock3: "Para la animación, se ocupó una cámara mirando al personaje, el cual se mantiene en el mismo lugar, pero ocupando una animación en su cuerpo sin textura de 'run' y en su cara de 'angry', con la máscara del efecto ya activada.",
-            textBlock4: "Lookdev Integration: Para el personaje, se ocupó Metahumans donde se definió su edad, expresiones faciales y se probaron sus expresiones faciales de ira. Este se exportó y se ocuparon sus animaciones para integrarlas en el Level Sequence.  Configuración del Metahuman para renderizar en el paso de 'CustomDepth' y reaccionar a la iluminación de la escena antes del pase de post-proceso.",
-            bullets: ["Custom Stencil Masking Logic", "Sequencer & Animation Sync", "Material Parameter Exposure"]
-        }
-    },
+            description: "Sistema de post-procesado que utiliza manipulación de Normales para coloreado dinámico y Arrays de Texturas para ruido optimizado.",
+            tagContent: {
+                "SHADERS": {
+                    headline: "Normal-Based Colors & Noise Textures",
+                    textBlock1: "Los colores en cada objeto en pantalla se calculan dinámicamente en base a su geometría. Utilizando el nodo 'WorldNormal', se calcula el ángulo de la superficie respecto a la cámara y la luz. Tanto el color secundario como el highlight pasan por un sine multiplicado por tiempo para crear un thresholding dinámico, provocando una transición cíclica de la visibilidad de los colores sobre las normales. Esta información alimenta un 'Lerp' que interpola entre el Color Primario y Secundario, logrando que el color reaccione a la curvatura del modelo.",
+                    textBlock2: "Para que el material funcione en cada objeto, se necesita activar en UE5 desde Project Settings en el apartado ¨Custom Depth-Stencil pass¨ seleccionando Enabled with Stencil. El material posee un float llamado Stencil_ID donde su número es el que se ocupa en el Custom Depth de cada objeto para poder ser activado.",
+                    textBlock3: "Cada módulo del material tiene su propio Static Switch Parameter al final para que los diseñadores que quieran ocupar el efecto puedan fácilmente activarlos y desactivarlos.",
+                    textBlock4: "El movimiento del ruido visual se logra mediante texturas, por sobre lo procedural, para mejorar el rendimiento. Se utilizan dos ruidos muy pequeños de base para que el color en movimiento no se sienta vacío y encima de este un ruido estático junto a un Texture Array de Tracking Noise. Conectando nodos 'Panner' a las coordenadas UV, desplazo estas texturas en sus respectivos ejes para simular el barrido y la estática.",
+                    bullets: ["Color por Normales", "Custom Stencil", "Noises"]
+                },
+                "UNREAL ENGINE": {
+                    headline: "Editor, Sequencer y Metahuman",
+                    textBlock1: "La integración en el editor utiliza un PostProcessVolume ¨Unbound¨ ubicando en ¨Post Process Materials¨ el Material Instance del Glitch-Noise. La instancia posee parámetros expuestos de Color, velocidad de movimiento, intensidad, offset de oscilaciones, entre otros, permitiendo ajustar el 'look' final en tiempo real. El efecto se limita a objetos específicos mediante el uso de 'Custom Depth Stencil'.",
+                    textBlock2: "En el Level Sequence, sincronicé el efecto ya activado con la animación del personaje. El 'CustomStencil' lee cualquier deformación de la malla del objeto (como las expresiones faciales 'Angry' o el ciclo de correr) por lo que es capturado en tiempo real por la máscara, manteniendo la coherencia del efecto sobre la silueta en movimiento.",
+                    textBlock3: "Para la animación, se ocupó una cámara mirando al personaje, el cual se mantiene en el mismo lugar, pero ocupando una animación en su cuerpo sin textura de 'run' y en su cara de 'angry', con la máscara del efecto ya activada.",
+                    textBlock4: "Lookdev Integration: Para el personaje, se ocupó Metahumans donde se definió su edad, expresiones faciales y se probaron sus expresiones faciales de ira. Este se exportó y se ocuparon sus animaciones para integrarlas en el Level Sequence.  Configuración del Metahuman para renderizar en el paso de 'CustomDepth' y reaccionar a la iluminación de la escena antes del pase de post-proceso.",
+                    bullets: ["Material Instance", "Level Sequence", "Metahuman"]
+                }
+            },
             software: ["UNREAL ENGINE 5", "HLSL NODES"],
             duration: "2 SEMANAS",
             videos: [],
             gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1766696256/PF_3DTech_NoisePP_Image1_ioezay.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image2_jsamiq.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image3_sigo6i.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766698194/PF_3DTech_NoisePP_Image4_iw0bph.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697535/PF_3DTech_NoisePP_Image5_snxdtu.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697535/PF_3DTech_NoisePP_Image6_iwuy3p.webp"],
             externalLink: "https://www.fab.com/es-mx/listings/ce8b3eeb-d3d0-4419-9217-4193990bd403",
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1766698479/PF_3DTech_NoisePP_Image0_q4yfiz.webp"
-}
+        }
     },
     "YIQ POSTPOCESS SHADER": {
         en: {
