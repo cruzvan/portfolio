@@ -1,0 +1,1 @@
+import{j as r}from"./index-VGsXA6yt.js";import{o as t,B as a}from"./BasePortfolioView-D0dZqOL9.js";const p=({onClose:o})=>{const e=[...new Set(t.flatMap(s=>s.tags))];return r.jsx(a,{title:"MISCELLANEOUS",projects:t,categories:e,onClose:o,baseRoute:"#others"})};export{p as default};
