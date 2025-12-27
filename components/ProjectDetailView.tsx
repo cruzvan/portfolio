@@ -499,9 +499,8 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                                     alt="Detail"
                                                     loading="lazy"
                                                     decoding="async"
-                                                    className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
+                                                    className="w-full h-full object-cover transition-all duration-500"
                                                 />
-                                                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
                                             </div>
                                             <div className="absolute -top-1 -left-1 w-3 h-3 border-t border-l border-[#FE4403]" />
                                             <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b border-r border-[#FE4403]" />
@@ -523,7 +522,6 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                                             style={{ backgroundImage: `url(${sectionImage2})` }}
                                         />
-                                        <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500" />
                                         <div className="absolute bottom-4 right-4 bg-black/80 px-3 py-1 text-[10px] uppercase tracking-widest border border-white/20 text-white/70">
                                             Fig 1.2 - System Architecture
                                         </div>
@@ -544,9 +542,8 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                                     alt="Detail"
                                                     loading="lazy"
                                                     decoding="async"
-                                                    className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
+                                                    className="w-full h-full object-cover transition-all duration-500"
                                                 />
-                                                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
                                             </div>
                                             <div className="absolute -top-1 -right-1 w-3 h-3 border-t border-r border-[#FE4403]" />
                                             <div className="absolute -bottom-1 -left-1 w-3 h-3 border-b border-l border-[#FE4403]" />
@@ -602,7 +599,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                             />
                                         </div>
-                                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                             <Maximize2 className={i === 0 ? "text-white w-12 h-12" : "text-white w-8 h-8"} />
                                         </div>
                                         <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-[#FE4403] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
