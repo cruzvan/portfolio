@@ -1148,37 +1148,37 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
     },
     "HEY ARNOLD 3D ROOM": {
         en: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Full end-to-end 3D environment for a realistic replica of the room from Hey Arnold!.",
             tagContent: {
                 "3D MODELING": {
-                    headline: "INSERT HEADLINE: 3D MODELING",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "WORKING FROM 2D REFERENCES",
+                    textBlock1: "The biggest challenge was being able to assimilate 2D elements from the 'Hey Arnold' cartoon and translate them into Blender's 3D space. During the process, I noticed discrepancies in the animation regarding object placement, and the room's architectural shape even changed depending on the episode, so I decided to go with the common elements presented in the TV series. To start, I measured wall spaces in depth, height, and even tilt (as in the right-side wall) to set the boundaries of the 3D space I was going to occupy.",
+                    textBlock2: "Each of the constructed elements was based on something that already existed in some episode of the series, using a 'mid-poly' workflow with modifications mostly consisting of bevels and booleans. This allowed for the correct creation of wall openings for windows, doors, and spaces to place objects, without destroying the shape or correct topology of the object.",
+                    textBlock3: "A fast but manual unwrapping of all objects was performed, ensuring it covered as much space as possible, especially for large objects, to avoid losing detail or having a very noticeable pixel quality in relation to small objects.",
+                    textBlock4: "Unlike the other objects, for the carpet I used a particle system to generate that sense of density. This system was exported as an 'alembic' so that Unreal Engine could read and add it correctly.",
+                    bullets: ["2D TO 3D ANALYSIS", "MID-POLY", "CARPET"]
                 },
                 "TEXTURING": {
-                    headline: "INSERT HEADLINE: TEXTURING",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "A ROOM WITH A STORY",
+                    textBlock1: "In this section, my concern was always: How would a rooftop room in a middle/lower class apartment look? The story goes that the entire apartment is owned by the grandparents, so there should be history in the furniture and it shouldn't feel brand new; perhaps wear, scratches, and a bit of dust on top, understanding it has doors and windows on a high floor where the wind passes more freely. I also found it important for each object to have its own historical traits and not simply copy and paste the material onto similar objects.",
+                    textBlock2: "I used normal or height maps and masks to embed important surface micro-details that are not in the main geometry, such as scratches, wood grain, fabric textures, and others.",
+                    textBlock3: "Among the tasks performed, the most interesting texturing I did was using a simple geometry plane to add the feeling of being a speaker embedded in furniture. For this, a dark brown base color was used, with circular masks and a 'grid' pattern on top, which was worked with high metallic and exaggeration of its normals on the edges to give a sense of relief that can be easily visible when moving the camera or scene lighting.",
+                    textBlock4: "For an efficient export to Unreal Engine, I exported the textures using the ORM standard (Occlusion, Roughness, and Metallic). This also helps reduce draw calls and avoids unnecessarily using more storage in the project.",
+                    bullets: ["ROOM CONTEXT", "TEXTURING DETAILS", "NORMALS ON PLANES"]
                 },
                 "UNREAL ENGINE": {
-                    headline: "INSERT HEADLINE: UNREAL ENGINE",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "SPENDING THE DAY IN THE ROOM",
+                    textBlock1: "I added a day and night cycle to the UE5 environment, which controls: Directional Light, SkyLight, Sky Atmosphere, and Volumetric Clouds. This has a 'Solar Time' variable, which was adjusted from the Level Sequence to create the cycle.",
+                    textBlock2: "I created a master material so that the textures made in Substance Painter could be added through Material Instances, avoiding wasting time creating a material for each one.",
+                    textBlock3: "The internal night lighting and its intensities do all the work in this part of the sequence. These intensify and adjust depending on the level's exposure.",
+                    textBlock4: "For the Level Sequence, the camera was responsible for slowly moving towards the bed instead of just zooming, allowing for a better appreciation of the 3D space. A Material Parameter Collection was added to activate the TV's emission at night, a 'Blend Weight' to activate a VHS-style post-processing effect, and the 'SolarTime' parameter to adjust the day/night cycle.",
+                    bullets: ["DAY/NIGHT CYCLE", "MASTER MATERIAL", "LEVEL SEQUENCE"]
                 }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["BLENDER", "SUBSTANCE PAINTER", "UNREAL ENGINE"],
+            duration: "1-2 WEEKS",
             videos: [],
-            gallery: [],
+            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1766850385/PT_3DTech_ArnoldRoom_Image1_ruouvt.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766850385/PT_3DTech_ArnoldRoom_Image2_w0qigo.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766850386/PT_3DTech_ArnoldRoom_Image3_vkts4l.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766850385/PT_3DTech_ArnoldRoom_Image4_c6e0lk.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766850386/PT_3DTech_ArnoldRoom_Image5_dzfeg3.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766850385/PT_3DTech_ArnoldRoom_Image6_xymuo5.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766771923/PT_3DTech_ArnoldRoom_Image7_igxt0x.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766775122/PT_3DTech_ArnoldRoom_Image8_zh3jic.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766775593/PT_3DTech_ArnoldRoom_Image9_1_ys6cfx.webp"],
             externalLink: "#",
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1766771003/PF_3DTech_HeyArnold_Image0_sea71k.webp"
         },
@@ -1186,34 +1186,34 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             description: "Escenario 3D de principio a final para una réplica realista de la pieza en Hey Arnold!.",
             tagContent: {
                 "3D MODELING": {
-                    headline: "INSERT HEADLINE: 3D MODELING",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "TRABAJAR DESDE REFERENCIAS 2D",
+                    textBlock1: "El mayor desafío fue poder asimilar elementos 2D dentro del dibujo animado de 'Hey Arnold' y poder trasladarlo al espacio 3D de Blender. En el proceso, me di cuenta de que en la animación contaba con discrepancias sobre la ubicación de objetos e incluso la pieza cambiaba su forma arquitectónica dependiendo del capítulo emitido, por lo que decidí ir por los elementos comunes que se presentaban en la serie de TV. Para empezar, medí espacios de murallas en profundidad, altura e incluso inclinación (como en la muralla de la derecha) para poder asentar los límites del espacio 3D que iba a ocupar.",
+                    textBlock2: "Cada uno de los elementos construidos fueron en base de algo ya existente en algún capítulo de la serie, utilizando un flujo de trabajo 'mid-poly' con modificaciones mayormente de bevels y booleanos.  Esto sirvió para poder crear correctamente los agujeros en las paredes tanto para ventanas, puertas y espacios para ubicar objetos, sin que destruyera la forma o correcto poligonaje del objeto. ",
+                    textBlock3: "Se realizó un unwrapping rápido pero manual de todos los objetos, lo importante es que cubriera todo el espacio posible sobre todo en objetos grandes, para no perder detalles ni que tengan una calidad de pixeles muy notoria en relación a objetos pequeños.",
+                    textBlock4: "A diferencia de los otros objetos, para la alfombra utilicé un sistema de partículas para generar esa sensación de densidad en ella. Este sistema fue exportado como un 'alembic' para que Unreal Engine pudiese leerlo y añadirlo correctamente. ",
+                    bullets: ["ANÁLISIS 2D A 3D", "MID-POLY", "ALFOMBRA"]
                 },
                 "TEXTURING": {
-                    headline: "INSERT HEADLINE: TEXTURING",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "HABITACIÓN CON HISTORIA",
+                    textBlock1: "En esta sección mi problemática en mente siempre fue: ¿Cómo se vería una habitación de azotea en unos departamentos de clase media/baja? La historia cuenta que el apartamento entero es propiedad de los abuelos, por lo que debería haber historia en los muebles y no sentirse como nuevos, quizá desgaste, rasguños y un poco de polvo encima, entendiendo que tiene puertas y ventanas en un piso alto donde el viento pasa más libremente. También encontré importante que cada objeto tuviese sus propios rasgos de historia y no simplemente copiar y pegar el material en objetos parecidos.",
+                    textBlock2: "Utilicé mapas y máscaras de normales o height para incrustar micro detalles de superficie importantes que no están en el poligonaje principal, como rasguños, veta de la madera, texturas de telas, entre otros.",
+                    textBlock3: "Entre los trabajos realizados, el más interesante de texturizado que hice fue el ocupar un plano de poligonaje simple para añadirle la sensación de ser un parlante incrustado en un mueble. Para esto, se utilizó un color café oscuro de base, unas máscaras circulares y encima de ellos un patrón de 'reja' en el cual se trabajó con un metallic elevado y exageración de sus normales en los edges para así dar la sensación de relieve que pueda ser fácilmente visible al mover la cámara o iluminación de la escena.",
+                    textBlock4: "Para una expedita exportación hacia Unreal Engine, exporté las texturas utilizando el estándar ORM (Occlusion, Roughness y Metallic). Con esto, también em sirve para reducir draw calls y no usar innecesariamente más almacenamiento en el proyecto.",
+                    bullets: ["CONTEXTO HABITACIÓN", "TEXTURIZAR DETALLES", "NORMALES SOBRE PLANOS"]
                 },
                 "UNREAL ENGINE": {
-                    headline: "INSERT HEADLINE: UNREAL ENGINE",
+                    headline: "PASAR EL DÍA EN LA HABITACIÓN",
                     textBlock1: "Al ambiente de UE5 le añadí un ciclo de día y noche, el cual controla: Directional Light, SkyLight, Sky Atmosphere y Volumetric Clouds. Este tiene una variable de 'Solar Time', la cual fue ajustada desde el Level Sequence para crear el ciclo.",
                     textBlock2: "Creé un material único para que las texturas realizadas en Substance Painter pudieran añadirse a través de Material Instance y no perder tiempo creando un material para cada uno.",
                     textBlock3: "La iluminación interna nocturna y sus intensidades son quienes hacen todo el trabajo en esta parte de la secuencia. Estas se intensifican y ajustan dependiendo del 'exposure' del nivel.",
                     textBlock4: "Para el Level Sequence, la cámara tuvo la responsabilidad de ir entrando lentamente en dirección a la cama de la pieza en vez de solo hacer zoom, así se puede apreciar mejor el espacio 3D. Se añadió un Material Parameter Collection para activar la emisión de la TV en la noche, un 'Blend Weight' para activar un efecto de postprocesado estilo VHS y el parámetro de 'SolarTime' para ajustar el ciclo de día y noche",
-                    bullets: ["Day/Night Cycle", "Master Material", "Level Sequence"]
+                    bullets: ["DAY/NIGHT CYCLE", "MASTER MATERIAL", "LEVEL SEQUENCE"]
                 }
             },
             software: ["BLENDER", "SUBSTANCE PAINTER", "UNREAL ENGINE"],
             duration: "1-2 SEMANAS",
             videos: [],
-            gallery: ["a.jpg", "", "", "", "", "", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766771923/PT_3DTech_ArnoldRoom_Image7_igxt0x.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766775122/PT_3DTech_ArnoldRoom_Image8_zh3jic.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766775593/PT_3DTech_ArnoldRoom_Image9_1_ys6cfx.webp"],
+            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1766850385/PT_3DTech_ArnoldRoom_Image1_ruouvt.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766850385/PT_3DTech_ArnoldRoom_Image2_w0qigo.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766850386/PT_3DTech_ArnoldRoom_Image3_vkts4l.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766850385/PT_3DTech_ArnoldRoom_Image4_c6e0lk.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766850386/PT_3DTech_ArnoldRoom_Image5_dzfeg3.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766850385/PT_3DTech_ArnoldRoom_Image6_xymuo5.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766771923/PT_3DTech_ArnoldRoom_Image7_igxt0x.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766775122/PT_3DTech_ArnoldRoom_Image8_zh3jic.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766775593/PT_3DTech_ArnoldRoom_Image9_1_ys6cfx.webp"],
             externalLink: "#",
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1766771003/PF_3DTech_HeyArnold_Image0_sea71k.webp"
         }
