@@ -1177,9 +1177,9 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             },
             software: ["BLENDER", "SUBSTANCE PAINTER", "UNREAL ENGINE"],
             duration: "1-2 WEEKS",
-            videos: [],
+            videos: ["https://youtu.be/y0LmAPGPU2c"],
             gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1766850385/PT_3DTech_ArnoldRoom_Image1_ruouvt.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766850385/PT_3DTech_ArnoldRoom_Image2_w0qigo.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766850386/PT_3DTech_ArnoldRoom_Image3_vkts4l.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766850385/PT_3DTech_ArnoldRoom_Image4_c6e0lk.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766850386/PT_3DTech_ArnoldRoom_Image5_dzfeg3.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766850385/PT_3DTech_ArnoldRoom_Image6_xymuo5.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766771923/PT_3DTech_ArnoldRoom_Image7_igxt0x.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766775122/PT_3DTech_ArnoldRoom_Image8_zh3jic.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766775593/PT_3DTech_ArnoldRoom_Image9_1_ys6cfx.webp"],
-            externalLink: "#",
+            externalLink: "https://youtu.be/y0LmAPGPU2c",
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1766771003/PF_3DTech_HeyArnold_Image0_sea71k.webp"
         },
         es: {
@@ -1212,9 +1212,9 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             },
             software: ["BLENDER", "SUBSTANCE PAINTER", "UNREAL ENGINE"],
             duration: "1-2 SEMANAS",
-            videos: [],
+            videos: ["https://youtu.be/y0LmAPGPU2c"],
             gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1766850385/PT_3DTech_ArnoldRoom_Image1_ruouvt.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766850385/PT_3DTech_ArnoldRoom_Image2_w0qigo.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766850386/PT_3DTech_ArnoldRoom_Image3_vkts4l.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766850385/PT_3DTech_ArnoldRoom_Image4_c6e0lk.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766850386/PT_3DTech_ArnoldRoom_Image5_dzfeg3.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766850385/PT_3DTech_ArnoldRoom_Image6_xymuo5.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766771923/PT_3DTech_ArnoldRoom_Image7_igxt0x.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766775122/PT_3DTech_ArnoldRoom_Image8_zh3jic.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766775593/PT_3DTech_ArnoldRoom_Image9_1_ys6cfx.webp"],
-            externalLink: "#",
+            externalLink: "https://youtu.be/y0LmAPGPU2c",
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1766771003/PF_3DTech_HeyArnold_Image0_sea71k.webp"
         }
     },

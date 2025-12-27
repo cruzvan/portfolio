@@ -59,7 +59,7 @@ const VideoCard: React.FC<{ src: string, index: number }> = ({ src, index }) => 
                 ) : (
                     <iframe
                         className="w-full h-full"
-                        src={src}
+                        src={videoId ? `https://www.youtube.com/embed/${videoId}?autoplay=1` : src}
                         title={`Project Video ${index}`}
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
