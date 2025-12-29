@@ -1258,19 +1258,19 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             tagContent: {
                 "SHADERS": {
                     headline: "UNREAL MATERIAL NODES",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "A cada material creado donde quise exponer sus parámetros, los añadí a los 'Material Parameter Collection' para ser manejados posteriormente desde el Level Sequence.",
-                    textBlock4: "A.",
-                    bullets: ["Bullet point one", "Bullet point two", "MATERIAL PARAMETER COLLECTIONS"]
+                    textBlock1: "Disené un material para los planetas ocupados dentro del proyecto, donde dejé públicas 3 variables relevantes para poder ser modificadas posteriormente por los Material Instance. Desaturation me dará a elegir qué tanto quiero hacer destacar con su color a cierto planeta, Hue Shift para elegir dicho color y Fresnel Emission para crear esta 'luz' que envuelve al planeta.",
+                    textBlock2: "Entre los requisitos pedidos para la creación del video fue: Ambiente bajo el agua, combinado con planetas y cambios de colores, por esto último, uno de los nodos más ocupados es el 'Hue Shift'. A cada material creado donde quise exponer sus parámetros, los añadí a los 'Material Parameter Collection' para ser manejados posteriormente desde el Level Sequence.",
+                    textBlock3: "Para el Sky Sphere creé un objeto enorme esférico y este ocupa el Input 'Reflection Vector' para que pueda verse el objeto desde adentro como si fuese un 'World Normal'. Viene con un ruido procedural que puede cambiar su color gracias al 'Hue Shift' que además puede ajustar por un Vector Parameter su Remap Value Range, así se puede jugar constantemente con la sensación de 'nébulas' básicas y qué tanto espacio ocupan en pantalla.",
+                    textBlock4: "En los peces que ya venían por defecto en los assets adquiridos, les añadí una función al material para que use el 'Camera Vector' y las normales para alterar el tono del color percibido dependiendo del ángulo desde donde se mira el pez, esto junto a un lerp para que la textura base del pez no se pierda..",
+                    bullets: ["PLANETS", "SKY SPHERE", "FISHES"]
                 },
                 "UNREAL ENGINE": {
                     headline: "INSERT HEADLINE: UNREAL ENGINE",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["UNDERWATER INTEGRATION", "Bullet point two", "Bullet point three"]
+                    textBlock1: "Integré la librería de assets 'BP_Underwater' a la cuál le modifiqué varios elementos, quitando de la escena objetos no congruentes con la estética Underwater/Space y mejoré el rendimiento optimizando iluminación y ubicación estratégica de sistemas de partículas.",
+                    textBlock2: "Los plantes tienen un tamaño enorme para que la profunidad 3D de ellos se sienta correcta al hacer animaciones con la cámara.",
+                    textBlock3: "A la cámara le hice unos ajustes a través del post process volume para que el depth of field añade un suave blur a los objetos más cercanos, pero sin perder la claridad de los objetos desde distancia media a alta (hacer zoom en la imagen para ver los ajustes del Depth of Field).",
+                    textBlock4: "A algunos objetos en escena, como las algas, les inserté un breve código creado vía Blueprints para sus materiales reaccionaran a la música a través del Material Parameter Collection 'MPC_SoundVariable'. Esto fue multiplicado por 0.75 para suavizar el cambio entre colores.",
+                    bullets: ["UNDERWATER INTEGRATION", "CAMERA DOF", "MATERIAL-AUDIO REACTION"]
                 },
                 "ANIMATION": {
                     headline: "LEVEL SEQUENCE Y LYRICS",
@@ -1282,9 +1282,9 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                 }
             },
             software: ["UNREAL ENGINE", "PREMIERE PRO"],
-            duration: "INSERT DURATION",
+            duration: "2 SEMANAS",
             videos: [],
-            gallery: ["", "", "", "", "", "", "","https://res.cloudinary.com/dseaazn5s/video/upload/v1767007417/PF_3DTech_WOBIntempesta_Image8_ebeadq.webm", ""],
+            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1767010339/PF_3DTech_WOBIntempesta_Image1_fbfgle.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767010338/PF_3DTech_WOBIntempesta_Image2_hngyst.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767010338/PF_3DTech_WOBIntempesta_Image3_ywxk8k.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image4_wu5goh.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image5_rnpwpo.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image6_rmurqb.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767011764/PF_3DTech_WOBIntempesta_Image7_dsb3th.png","https://res.cloudinary.com/dseaazn5s/video/upload/v1767007417/PF_3DTech_WOBIntempesta_Image8_ebeadq.webm", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767011634/PF_3DTech_WOBIntempesta_Image9_dcsybt.png"],
             externalLink: "#"
         }
     },
