@@ -1223,34 +1223,34 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
                 "SHADERS": {
-                    headline: "INSERT HEADLINE: SHADERS",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "UNREAL MATERIAL NODES",
+                    textBlock1: "I designed a material for the planets used in the project, where I exposed 3 relevant variables to be modified later by Material Instances. Desaturation allows me to choose how much I want to highlight a certain planet with its color, Hue Shift to choose said color, and Fresnel Emission to create this 'light' that wraps around the planet.",
+                    textBlock2: "Among the requirements for the video creation were: Underwater environment, combined with planets and color changes. For the latter, one of the most used nodes is the 'Hue Shift'. For every material where I wanted to expose its parameters, I added them to the 'Material Parameter Collection' to be managed later from the Level Sequence.",
+                    textBlock3: "For the Sky Sphere, I created a huge spherical object that uses the 'Reflection Vector' Input so the object can be seen from the inside as if it were a 'World Normal'. It comes with procedural noise that can change its color thanks to the 'Hue Shift', which can also adjust its Remap Value Range via a Vector Parameter, allowing constant play with the sensation of basic 'nebulae' and how much space they occupy on screen.",
+                    textBlock4: "For the fish that came by default in the acquired assets, I added a function to the material to use the 'Camera Vector' and normals to alter the perceived color tone depending on the viewing angle of the fish, this together with a lerp so that the base texture of the fish is not lost.",
+                    bullets: ["PLANETS", "SKY SPHERE", "FISHES"]
                 },
                 "UNREAL ENGINE": {
-                    headline: "INSERT HEADLINE: UNREAL ENGINE",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "UNDERWATER SCENE",
+                    textBlock1: "I integrated the 'BP_Underwater' asset library, modifying several elements, removing objects from the scene that were inconsistent with the Underwater/Space aesthetic, and improving performance by optimizing lighting and strategic placement of particle systems.",
+                    textBlock2: "The planets have a huge size so that their 3D depth feels correct when making camera animations.",
+                    textBlock3: "I made adjustments to the camera through the post process volume so that the depth of field adds a soft blur to closer objects, but without losing the clarity of objects from medium to far distance (zoom in on the image to see the Depth of Field settings).",
+                    textBlock4: "For some objects in the scene, like the algae, I inserted a brief code created via Blueprints so their materials would react to the music through the 'MPC_SoundVariable' Material Parameter Collection. This was multiplied by 0.75 to soften the color change.",
+                    bullets: ["UNDERWATER INTEGRATION", "CAMERA DOF", "MATERIAL-AUDIO REACTION"]
                 },
                 "ANIMATION": {
-                    headline: "INSERT HEADLINE: ANIMATION",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "LEVEL SEQUENCE & LYRICS",
+                    textBlock1: "I manually created a camera animation within the Unreal Engine Level Sequence to move in first-person through the level. To this, I added a procedural 'Camera Shake' to create the sensation of swimming, which changes its rotational intensity depending on how fast the camera position is moving.",
+                    textBlock2: "Materials can be comfortably modified from the Level Sequence using Material Parameter Collections.",
+                    textBlock3: "For the material animation, I made small modifications within the material graph, inserting two Material Parameter Collection variables. The two most important ones are a Vector4 modifier for the inputs in the 'RemapValueRange' node and a scalar that adjusts the 'Hue Shift Percentage' value in the 'Hue Shift' node.",
+                    textBlock4: "In Premiere Pro, I inserted the lyrics using a horizontal crop. The lettering style was specified by the artist Winters of Blue, referencing a music video by Grimes.",
+                    bullets: ["CAMERA ANIMATION", "MATERIAL ANIMATION", "LYRICS ANIMATION"]
                 }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["UNREAL ENGINE", "PREMIERE PRO"],
+            duration: "2 WEEKS",
             videos: [],
-            gallery: [],
+            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1767010339/PF_3DTech_WOBIntempesta_Image1_fbfgle.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767010338/PF_3DTech_WOBIntempesta_Image2_hngyst.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767010338/PF_3DTech_WOBIntempesta_Image3_ywxk8k.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image4_wu5goh.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image5_rnpwpo.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image6_rmurqb.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767011764/PF_3DTech_WOBIntempesta_Image7_dsb3th.png","https://res.cloudinary.com/dseaazn5s/video/upload/v1767007417/PF_3DTech_WOBIntempesta_Image8_ebeadq.webm", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767011634/PF_3DTech_WOBIntempesta_Image9_dcsybt.png"],
             externalLink: "#"
         },
         es: {
@@ -1265,7 +1265,7 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                     bullets: ["PLANETS", "SKY SPHERE", "FISHES"]
                 },
                 "UNREAL ENGINE": {
-                    headline: "INSERT HEADLINE: UNREAL ENGINE",
+                    headline: "UNDERWATER SCENE",
                     textBlock1: "Integré la librería de assets 'BP_Underwater' a la cuál le modifiqué varios elementos, quitando de la escena objetos no congruentes con la estética Underwater/Space y mejoré el rendimiento optimizando iluminación y ubicación estratégica de sistemas de partículas.",
                     textBlock2: "Los plantes tienen un tamaño enorme para que la profunidad 3D de ellos se sienta correcta al hacer animaciones con la cámara.",
                     textBlock3: "A la cámara le hice unos ajustes a través del post process volume para que el depth of field añade un suave blur a los objetos más cercanos, pero sin perder la claridad de los objetos desde distancia media a alta (hacer zoom en la imagen para ver los ajustes del Depth of Field).",
