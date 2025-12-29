@@ -133,7 +133,7 @@ export const techArtProjects: ProjectCardData[] = [
     id: 2, 
     title: "YIQ POSTPOCESS SHADER", 
     category: "Unreal Engine", 
-    tags: ["UNREAL ENGINE", "POSTPROCESSING", "SHADERS"], 
+    tags: ["SHADERS", "UNREAL ENGINE"], 
     image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
     status: "ALPHA",
     locked: true 
@@ -160,10 +160,10 @@ export const techArtProjects: ProjectCardData[] = [
     id: 5, 
     title: "INTEMPESTA LYRIC VIDEO", 
     category: "Unity", 
-    tags: ["UNREAL ENGINE", "SHADERS", "ANIMATION"], 
+    tags: ["SHADERS", "UNREAL ENGINE", "ANIMATION"], 
     image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765339138/PF_3DTech_WOBIntempesta_Cover_16_wongcl.webp", 
     status: "FINISHED",
-    locked: true
+    locked: false
   },
   { 
     id: 6, 
@@ -196,7 +196,7 @@ export const techArtProjects: ProjectCardData[] = [
     id: 9, 
     title: "3D PROPS (FADING MEMORIES)", 
     category: "Unity", 
-    tags: ["UNITY", "UI", "ILLUMINATION"], 
+    tags: ["UNITY", "ILLUMINATION"], 
     image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765337149/PF_3DTech_FMProps_Cover_czkwkv.webp", 
     status: "FINISHED",
     locked: true 
@@ -1222,16 +1222,16 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
         en: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
-                "UNREAL ENGINE": {
-                    headline: "INSERT HEADLINE: UNREAL ENGINE",
+                "SHADERS": {
+                    headline: "INSERT HEADLINE: SHADERS",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
                     bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
                 },
-                "SHADERS": {
-                    headline: "INSERT HEADLINE: SHADERS",
+                "UNREAL ENGINE": {
+                    headline: "INSERT HEADLINE: UNREAL ENGINE",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
@@ -1256,35 +1256,35 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
+                "SHADERS": {
+                    headline: "UNREAL MATERIAL NODES",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "A cada material creado donde quise exponer sus parámetros, los añadí a los 'Material Parameter Collection' para ser manejados posteriormente desde el Level Sequence.",
+                    textBlock4: "A.",
+                    bullets: ["Bullet point one", "Bullet point two", "MATERIAL PARAMETER COLLECTIONS"]
+                },
                 "UNREAL ENGINE": {
                     headline: "INSERT HEADLINE: UNREAL ENGINE",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                },
-                "SHADERS": {
-                    headline: "INSERT HEADLINE: SHADERS",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["UNDERWATER INTEGRATION", "Bullet point two", "Bullet point three"]
                 },
                 "ANIMATION": {
-                    headline: "INSERT HEADLINE: ANIMATION",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "LEVEL SEQUENCE Y LYRICS",
+                    textBlock1: "Creé manualmente una dentro del Level Sequence de Unreal Engine una animación de la cámara para que se mueva en primera persona a través del nivel. A esta, le añadí un 'Camera Shake' procedural para dar la sensación de estar nadando, la cual cambia su intensidad de giro dependiendo de qué tan rápido se esté trasladando la posición de cámara.",
+                    textBlock2: "Los materiales pueden modificarse desde el Level Sequence cómodamente con los Material Parameter Collections.",
+                    textBlock3: "Para la animación de materiales, realicé unas pequeñas modificaciones dentro del material graph, insertando dos variables de Material Parameter Collections,  donde los dos más importantes son un Vector4 modificador de las entradas en el nodo 'RemapValueRange' y un scalar que ajusta el valor de 'Hue Shift Porcentaje' en el nodo 'Hue Shift'  .",
+                    textBlock4: "En Premiere Pro, inserté las letras utilizando un crop horizontal. El estilo de las letras fue señalado por la artista Winters of Blue, en referencia a un videoclip realizado por Grimes.",
+                    bullets: ["CAMERA ANIMATION", "MATERIAL ANIMATION", "LYRICS ANIMATION"]
                 }
             },
-            software: ["INSERT SOFTWARE"],
+            software: ["UNREAL ENGINE", "PREMIERE PRO"],
             duration: "INSERT DURATION",
             videos: [],
-            gallery: [],
+            gallery: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1767007417/PF_3DTech_WOBIntempesta_Image8_ebeadq.webm"],
             externalLink: "#"
         }
     },
