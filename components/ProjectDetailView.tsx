@@ -8,6 +8,11 @@ import { useLanguage } from '../contexts/LanguageContext';
 // or using ProjectCardData directly.
 export type Project = ProjectCardData;
 
+// Helper to check if a URL is a video
+const isVideo = (url: string) => {
+    return /\.(mp4|webm|ogg|mov)$/i.test(url);
+};
+
 interface ProjectDetailProps {
     project: Project;
     onClose: () => void;
@@ -312,11 +317,21 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                         className="relative w-auto h-auto max-w-[75vw] max-h-[75vh] flex items-center justify-center select-none"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        <img
-                            src={lightboxImage}
-                            alt="Fullscreen"
-                            className="w-full h-full object-contain shadow-2xl border border-white/10 bg-black"
-                        />
+                        {isVideo(lightboxImage) ? (
+                            <video
+                                src={lightboxImage}
+                                className="w-full h-full object-contain shadow-2xl border border-white/10 bg-black"
+                                controls
+                                autoPlay
+                                loop
+                            />
+                        ) : (
+                            <img
+                                src={lightboxImage}
+                                alt="Fullscreen"
+                                className="w-full h-full object-contain shadow-2xl border border-white/10 bg-black"
+                            />
+                        )}
                     </div>
 
                     {/* Next Button */}
@@ -494,13 +509,24 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                         </div>
                                         <div className="relative group cursor-zoom-in aspect-video border border-white/10 bg-white/5 p-1" onClick={() => setLightboxImage(sectionImage1)}>
                                             <div className="overflow-hidden h-full w-full relative">
-                                                <img
-                                                    src={sectionImage1}
-                                                    alt="Detail"
-                                                    loading="lazy"
-                                                    decoding="async"
-                                                    className="w-full h-full object-cover transition-all duration-500"
-                                                />
+                                                {isVideo(sectionImage1) ? (
+                                                    <video
+                                                        src={sectionImage1}
+                                                        className="w-full h-full object-cover transition-all duration-500"
+                                                        muted
+                                                        loop
+                                                        autoPlay
+                                                        playsInline
+                                                    />
+                                                ) : (
+                                                    <img
+                                                        src={sectionImage1}
+                                                        alt="Detail"
+                                                        loading="lazy"
+                                                        decoding="async"
+                                                        className="w-full h-full object-cover transition-all duration-500"
+                                                    />
+                                                )}
                                             </div>
                                             <div className="absolute -top-1 -left-1 w-3 h-3 border-t border-l border-[#FE4403]" />
                                             <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b border-r border-[#FE4403]" />
@@ -518,10 +544,21 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                         className="w-full h-[30vh] md:h-[40vh] relative group cursor-zoom-in border-y border-white/20"
                                         onClick={() => setLightboxImage(sectionImage2)}
                                     >
-                                        <div
-                                            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                                            style={{ backgroundImage: `url(${sectionImage2})` }}
-                                        />
+                                        {isVideo(sectionImage2) ? (
+                                            <video
+                                                src={sectionImage2}
+                                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                                muted
+                                                loop
+                                                autoPlay
+                                                playsInline
+                                            />
+                                        ) : (
+                                            <div
+                                                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                                                style={{ backgroundImage: `url(${sectionImage2})` }}
+                                            />
+                                        )}
                                         <div className="absolute bottom-4 right-4 bg-black/80 px-3 py-1 text-[10px] uppercase tracking-widest border border-white/20 text-white/70">
                                             Fig 1.2 - System Architecture
                                         </div>
@@ -537,13 +574,24 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div className="relative group cursor-zoom-in aspect-video border border-white/10 bg-white/5 p-1 order-2 md:order-1" onClick={() => setLightboxImage(sectionImage3)}>
                                             <div className="overflow-hidden h-full w-full relative">
-                                                <img
-                                                    src={sectionImage3}
-                                                    alt="Detail"
-                                                    loading="lazy"
-                                                    decoding="async"
-                                                    className="w-full h-full object-cover transition-all duration-500"
-                                                />
+                                                {isVideo(sectionImage3) ? (
+                                                    <video
+                                                        src={sectionImage3}
+                                                        className="w-full h-full object-cover transition-all duration-500"
+                                                        muted
+                                                        loop
+                                                        autoPlay
+                                                        playsInline
+                                                    />
+                                                ) : (
+                                                    <img
+                                                        src={sectionImage3}
+                                                        alt="Detail"
+                                                        loading="lazy"
+                                                        decoding="async"
+                                                        className="w-full h-full object-cover transition-all duration-500"
+                                                    />
+                                                )}
                                             </div>
                                             <div className="absolute -top-1 -right-1 w-3 h-3 border-t border-r border-[#FE4403]" />
                                             <div className="absolute -bottom-1 -left-1 w-3 h-3 border-b border-l border-[#FE4403]" />
@@ -592,15 +640,30 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                         onClick={() => setLightboxImage(img)}
                                     >
                                         <div className="w-full h-full overflow-hidden">
-                                            <img
-                                                src={img}
-                                                alt={`Gallery ${i}`}
-                                                loading="lazy"
-                                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                            />
+                                            {isVideo(img) ? (
+                                                <video
+                                                    src={img}
+                                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                                    muted
+                                                    loop
+                                                    autoPlay
+                                                    playsInline
+                                                />
+                                            ) : (
+                                                <img
+                                                    src={img}
+                                                    alt={`Gallery ${i}`}
+                                                    loading="lazy"
+                                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                                />
+                                            )}
                                         </div>
                                         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                            <Maximize2 className={i === 0 ? "text-white w-12 h-12" : "text-white w-8 h-8"} />
+                                            {isVideo(img) ? (
+                                                <Play className={i === 0 ? "text-white w-12 h-12" : "text-white w-8 h-8"} fill="white" />
+                                            ) : (
+                                                <Maximize2 className={i === 0 ? "text-white w-12 h-12" : "text-white w-8 h-8"} />
+                                            )}
                                         </div>
                                         <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-[#FE4403] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                         <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-[#FE4403] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

@@ -1284,7 +1284,7 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             software: ["UNREAL ENGINE", "PREMIERE PRO"],
             duration: "INSERT DURATION",
             videos: [],
-            gallery: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1767007417/PF_3DTech_WOBIntempesta_Image8_ebeadq.webm"],
+            gallery: ["", "", "", "", "", "", "","https://res.cloudinary.com/dseaazn5s/video/upload/v1767007417/PF_3DTech_WOBIntempesta_Image8_ebeadq.webm", ""],
             externalLink: "#"
         }
     },
