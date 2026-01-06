@@ -126,17 +126,17 @@ export const techArtProjects: ProjectCardData[] = [
     category: "UNREAL ENGINE", 
     tags: ["SHADERS", "UNREAL ENGINE"], 
     image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765419716/PF_3DTech_NoisePP_Cover_mf3b4c.webp", 
-    status: "ALPHA",
+    status: "SHIPPED",
     locked: false
   },
   { 
     id: 2, 
-    title: "YIQ POSTPOCESS SHADER", 
+    title: "YIQ NTSC POSTPOCESS SHADER", 
     category: "Unreal Engine", 
     tags: ["SHADERS", "UNREAL ENGINE"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
-    status: "ALPHA",
-    locked: true 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1767724393/PF_3DTech_YIQ_Cover_xkezuz.webp", 
+    status: "SHIPPED",
+    locked: false 
   },
   { 
     id: 3, 
@@ -1022,74 +1022,60 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1766698479/PF_3DTech_NoisePP_Image0_q4yfiz.webp"
         }
     },
-    "YIQ POSTPOCESS SHADER": {
+    "YIQ NTSC POSTPOCESS SHADER": {
         en: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
-                "UNREAL ENGINE": {
-                    headline: "INSERT HEADLINE: UNREAL ENGINE",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                },
-                "POSTPROCESSING": {
-                    headline: "INSERT HEADLINE: POSTPROCESSING",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                },
                 "SHADERS": {
-                    headline: "INSERT HEADLINE: SHADERS",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "MATERIAL GRAPH LOGIC",
+                    textBlock1: "I used a node architecture for color conversion, where SceneTexture is captured to decompose it into a mask, isolating each channel. Unlike standard RGB, here the signal is transformed into Y (Luminance), I (In-phase), and Q (Quadrature) components. This allowed me to apply offset mathematics to the color information without destroying the base light information.",
+                    textBlock2: "The conversion uses NTSC standard constants (0.299, 0.587, 0.114 for Y), giving greater weight to the green channel to calculate perceived luminance. The I and Q components are derived by projecting colors onto orthogonal axes, separating chromatic information from light to allow isolated manipulations without altering brightness.",
+                    textBlock3: "Depending on the 'vintage' material to be replicated, these drastically modify the use of Sharpen and Blur on the TV screen. Therefore, I added a modifiable function from the Material Instances to be able to reach the desired finish in more detail.",
+                    textBlock4: "Tests were performed both within the material and in the editor with many objects at the same time. By manipulating the screen's UV coordinates based on the YIQ channels, chromatic aberration is achieved simulating physical lenses, creating a spectral color 'halo' that can be configured from the Material Instance to have a horizontal, vertical, or both offset.",
+                    bullets: ["YIQ COLOR SPACE", "SHARP & BLUR", "TESTS AND OFFSETS"]
+                },
+                "UNREAL ENGINE": {
+                    headline: "INTEGRATION AND AESTHETICS",
+                    textBlock1: "The post-processing effect test was applied within 'Hard Surface' 3D models, demonstrating that the effect is achieved correctly without damaging their 3D depth or colors, simulating the sensation of old LCD screens.",
+                    textBlock2: "The material properties also allow using a 'Custom Depth Stencil' to apply this effect only to objects marked in the Rendering -> Advanced -> Render CustomDepth Pass and Stencil Value section.",
+                    textBlock3: "I also decided to test on 2D elements shown within Unreal Engine, ensuring that the material only modifies the offset of the YIQ color channels, without affecting brightness, contrast, hue, among others. I couldn't show it with an animation example like 'Hey Arnold!' due to copyright laws, but I found within the Public Domain 'The Night Watch' by Rembrandt, a painting where there are many elements within the same frame, demonstrating that it works as expected.",
+                    textBlock4: "Speaking of many elements within the same frame, I loaded many spheres in the Unreal Engine editor in different positions, scales, colors, and roughness to verify if silhouette readability is maintained.",
+                    bullets: ["HARD SURFACE TEST", "2D TEST", "MULTI-OBJECT TEST"]
                 }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["UNREAL ENGINE"],
+            duration: "1 WEEK",
             videos: [],
-            gallery: [],
-            externalLink: "#"
+            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image1_himw3r.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1767725762/PF_3DTech_YIQ_Image2_ijfb07.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image3_lxtxr0.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image4_vwunt2.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1767725283/PF_3DTech_YIQ_Image5_uxcwkh.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image6_rdtr1i.webp"],
+            externalLink: "#",
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1767725394/PF_3DTech_YIQ_Image0_yj5uek.webp"
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
-                "UNREAL ENGINE": {
-                    headline: "INSERT HEADLINE: UNREAL ENGINE",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                },
-                "POSTPROCESSING": {
-                    headline: "INSERT HEADLINE: POSTPROCESSING",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                },
-                "SHADERS": {
-                    headline: "INSERT HEADLINE: SHADERS",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                }
+            "SHADERS": {
+                headline: "LÓGICA DEL MATERIAL GRAPH",
+                textBlock1: "Utilicé una arquitectura de nodos para la conversión de color, donde se captura la SceneTexture para descomponerla en una máscara, aislando cada canal. A diferencia del RGB estándar, aquí se transforma la señal a componentes Y (Luminancia), I (In-phase) y Q (Quadrature). Esto me permitió aplicar matemáticas de desplazamiento (offsets) a la información del color, sin destruir la información de luz base.",
+                textBlock2: "La conversión utiliza constantes del estándar NTSC (0.299, 0.587, 0.114 para Y), dando mayor peso al canal verde para calcular la luminancia percibida. Los componentes I y Q se derivan proyectando los colores sobre ejes ortogonales, separando la información cromática de la luz para permitir manipulaciones aisladas sin alterar el brillo.",
+                textBlock3: "Dependiendo del material 'vintage' que se quiera replicar, estos modifican por la pantalla del televisor drásticamente el uso del Sharpen y Blur. Por esto, añadí una función modificable desde los Material Instance para poder llegar con más detalle al acabo deseado.",
+                textBlock4: "Se hicieron pruebas tanto dentro del material como en el editor con muchos objetos al mismo tiempo. Al manipular las coordenadas UV de la pantalla basándose en los canales YIQ, se logra la aberración cromática simulando lentes físicos, creando un 'halo' de color espectral, que puede configurarse desde el Material Instance para tener un offset horizontal, vertical o ambos.",
+                bullets: ["ESPACIO DE COLOR YIQ", "SHARP & BLUR", "PRUEBAS Y OFFSETS"]
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            "UNREAL ENGINE": {
+                headline: "INTEGRACIÓN Y ESTÉTICA",
+                textBlock1: "Se aplicó la prueba del efecto de post procesado dentro de modelos 3D 'Hard Surface', demostrando que el efecto se logra correctamente sin dañar su profundidad 3D ni sus colores, simulando la sensación de pantallas LCD antiguas.",
+                textBlock2: "Las propiedades del material también permiten utilizar un 'Custom Depth Stencil' para aplicar este efecto solo a los objetos que son señalados en el apartado Rendering -> Advanced -> Render CustomDepth Pass y Stencil Value.",
+                textBlock3: "También decidí probar en elementos 2D que se muestren dentro de Unreal Engine, asegurándome de que el material solo modifique el offset de los canales en color YIQ, sin pasar a llevar brillo, contraste, hue, entre otros. No pude mostrarlo con un ejemplo de una animación como 'Hey Arnold!' por leyes de copyright, pero encontré dentro del Public Domain 'The Night Watch' de Rembrandt, pintura donde hay muchos elementos dentro del mismo cuadro, demostrando que sí funciona como se esperaba.",
+                textBlock4: "Hablando de muchos elementos dentro del mismo cuadro, cargué muchas esferas en el editor de Unreal Engine en diferentes posiciones, escalas, colores y roughness para verificar si se mantiene la legibilidad de las siluetas.",
+                bullets: ["TEST HARD SURFACE", "TEST 2D", "TEST MULTI-OBJECT"]
+            }
+            },
+            software: ["UNREAL ENGINE"],
+            duration: "1 SEMANA",
             videos: [],
-            gallery: [],
-            externalLink: "#"
+            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image1_himw3r.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1767725762/PF_3DTech_YIQ_Image2_ijfb07.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image3_lxtxr0.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image4_vwunt2.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1767725283/PF_3DTech_YIQ_Image5_uxcwkh.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image6_rdtr1i.webp"],
+            externalLink: "#",
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1767725394/PF_3DTech_YIQ_Image0_yj5uek.webp"
         }
     },
     "CARD HOLOGRAM PARALLAX SHADER": {
@@ -1251,7 +1237,8 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             duration: "2 WEEKS",
             videos: [],
             gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1767010339/PF_3DTech_WOBIntempesta_Image1_fbfgle.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767010338/PF_3DTech_WOBIntempesta_Image2_hngyst.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767010338/PF_3DTech_WOBIntempesta_Image3_ywxk8k.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image4_wu5goh.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image5_rnpwpo.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image6_rmurqb.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767011764/PF_3DTech_WOBIntempesta_Image7_dsb3th.png","https://res.cloudinary.com/dseaazn5s/video/upload/v1767007417/PF_3DTech_WOBIntempesta_Image8_ebeadq.webm", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767011634/PF_3DTech_WOBIntempesta_Image9_dcsybt.png"],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1767033326/PF_3DTech_WOBIntempesta_Image0_y3ytyv.webp"
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
