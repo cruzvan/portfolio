@@ -146,7 +146,7 @@ export const techArtProjects: ProjectCardData[] = [
     tags: ["SHADERS", "UNREAL ENGINE"], 
     image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765281853/PF_3DTech_CardHologram_Cover_3_y3q1c2.webp", 
     status: "FINISHED",
-    locked: true 
+    locked: false 
   },
   { 
     id: 4, 
@@ -1104,7 +1104,7 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                 }
             },
             software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            duration: "ONE WEEK",
             videos: [],
             gallery: [],
             externalLink: "#"
@@ -1113,27 +1113,28 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
                 "SHADERS": {
-                    headline: "INSERT HEADLINE: SHADERS",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "SHADERS",
+                    textBlock1: "Creado para cartas coleccionables dentro del videojuego 'Hollow Flowers'. Utiliza los materiales de Unreal Engine 5 para emular un efecto de carta holográfica con profundidades en base al Parallax Occlusion. ",
+                    textBlock2: "Para que funcione, se le pidió al diseñador 2D Crear las texturas por capas diferentes usando el mismo espacio de pixeles para la exportación de las texturas de color.",
+                    textBlock3: "Utilizando el nodo de Parallax Occlusion Mapping, cada textura de personaje o decoración puede modificarse en su profundidad cambiando el valor de la variable 'Height Ratio', así se tiene más control dependiendo de la carta a modificar.",
+                    textBlock4: "Le añadí un efecto de holograma con una textura que modifica sus colores en base al efecto fresnel (dot product entre normales y orientación de cámara), utilizando para las uv la orientación del objeto.",
+                    bullets: ["CARTA", "HOLOGRAMA", "PARALLAX OCCLUSION"]
                 },
                 "UNREAL ENGINE": {
                     headline: "INSERT HEADLINE: UNREAL ENGINE",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    textBlock1: "Se crea una pequeña animación con Level Sequence de Unreal Engine 5, modificando la ubicación, rotación y escala de la carta y la cámara.",
+                    textBlock2: "A diferencia de otros ojetos del videojuego, el material ocupa shading Unlit para que sus colores vivos no sean afectados por la presencia o ausencia de iluminación en el ambiente.",
+                    textBlock3: "La parte delantera de la carta posee un Material Instance donde se pueden modificar variables como las texturas a ocupar con sus escalas, el brillo del holograma, niveles de profundidad, entre otros.",
+                    textBlock4: "La parte trasera también tiene su propio material, pero con propiedades más sencillas para que destaque ciertas áreas con efecto de holograma, sin ocupar efectos de profundidad.",
+                    bullets: ["LEVEL SEQUENCE", "CARD FRONT", "CARD BACK"]
                 }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
-            videos: [],
-            gallery: [],
-            externalLink: "#"
+            software: ["UNREAL ENGINE 5"],
+            duration: "UNA SEMANA",
+            videos: ["https://www.youtube.com/watch?v=7UlIUcnfRH8"],
+            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1771358505/PF_3DTech_CardHologram_Image1_dqqivo.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1771358773/PF_3DTech_CardHologram_Image2_weojek.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1771358772/PF_3DTech_CardHologram_Image3_nii20r.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1771360237/PF_3DTech_CardHologram_Image4_ndji5w.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1771360237/PF_3DTech_CardHologram_Image5_nvyyhv.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1771360237/PF_3DTech_CardHologram_Image6_itsp79.webp"],
+            externalLink: "#",
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1771358326/PF_3DTech_CardHologram_Image0_xgqy03.webp"
         }
     },
     "HEY ARNOLD 3D ROOM": {
