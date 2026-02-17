@@ -81,8 +81,17 @@ export const gameDesignProjects: ProjectCardData[] = [
     status: "WIP",
     locked: true 
   },
-   { 
+    { 
     id: 5, 
+    title: "ACID RAIN", 
+    category: "GAME DESIGN", 
+    tags: ["GAME DESIGN", "UNITY"], 
+    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765288774/PD_GameDesign_AcidRain_Cover_grsa0r.webp", 
+    status: "FINISHED",
+    locked: false
+  }, 
+   { 
+    id: 6, 
     title: "LLUVIA DE VERANO", 
     category: "Docs", 
     tags: ["DOCS", "ART DIRECTION", "GAME DESIGN"], 
@@ -91,7 +100,7 @@ export const gameDesignProjects: ProjectCardData[] = [
     locked: true 
   },
   {
-    id: 6, 
+    id: 7, 
     title: "EVERYTHING I SEE", 
     category: "Systems Design", 
     tags: ["GAME DESIGN", "DOCS", "SYSTEMS DESIGN"], 
@@ -100,7 +109,7 @@ export const gameDesignProjects: ProjectCardData[] = [
     locked: true
   },
   { 
-    id: 7, 
+    id: 8, 
     title: "F.A.L.L.O.U.T. (Game Idea)", 
     category: "DOC", 
     tags: ["DOCS", "SYSTEMS DESIGN"], 
@@ -108,15 +117,7 @@ export const gameDesignProjects: ProjectCardData[] = [
     status: "CONCEPT IDEA",
     locked: true
   },
-  { 
-    id: 8, 
-    title: "ACID RAIN", 
-    category: "GAME DESIGN", 
-    tags: ["GAME DESIGN", "DOCS"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765288774/PD_GameDesign_AcidRain_Cover_grsa0r.webp", 
-    status: "WIP",
-    locked: true
-  }, 
+
 ];
 
 export const techArtProjects: ProjectCardData[] = [
@@ -906,7 +907,8 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1766698479/PF_3DTech_NoisePP_Image0_q4yfiz.webp"
         }
     },
 
@@ -916,13 +918,13 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             tagContent: {
                 "GAME DESIGN": {
                     headline: "INSERT HEADLINE: GAME DESIGN",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock1: "AAAAAAAAAAAAAAAAAALorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
                     bullets: ["Core Gameplay Loop", "Mechanical Breakdown", "Player Progression", "World-building"]
                 },
-                "DOCS": {
+                "UNITY": {
                     headline: "INSERT HEADLINE: DOCS",
                     textBlock1: "Overview of the Game Design Document (GDD) for Acid Rain, outlining the project's vision and scope.",
                     textBlock2: "Examples of concept documents, narrative outlines, and system diagrams.",
@@ -935,7 +937,8 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1767827902/PF_GameDesign_AcidRain_Image0_rmmmd2.webp"
         },
         es: {
             description: "INSERTE LA DESCRIPCIÓN AQUÍ. Una descripción detallada del proyecto Acid Rain, sus mecánicas principales y filosofía de diseño.",
@@ -948,8 +951,8 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                     textBlock4: "INSERTE TEXTO AQUÍ.",
                     bullets: ["Bucle de Jugabilidad Principal", "Desglose de Mecánicas", "Progresión del Jugador", "Construcción de Mundo"]
                 },
-                "DOCS": {
-                    headline: "INSERTE EL TITULAR: DOCS",
+                "UNITY": {
+                    headline: "INSERTE EL TITULAR: UNITY",
                     textBlock1: "Resumen del Documento de Diseño de Juego (GDD) para Acid Rain, describiendo la visión y el alcance del proyecto.",
                     textBlock2: "Ejemplos de documentos de concepto, resúmenes narrativos y diagramas de sistemas.",
                     textBlock3: "INSERTE TEXTO AQUÍ.",
@@ -961,7 +964,8 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             duration: "INSERTE DURACIÓN",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1767827902/PF_GameDesign_AcidRain_Image0_rmmmd2.webp"
         }
     },
 
