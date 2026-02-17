@@ -45,253 +45,253 @@ export interface ProjectCardData {
 // --- CARD DATA COLLECTIONS (Remain shared for now, titles are keys) ---
 
 export const gameDesignProjects: ProjectCardData[] = [
-  { 
-    id: 1, 
-    title: "HOLLOW FLOWERS", 
-    category: "Game Design", 
-    tags: ["PROGRAMMING", "GAME DESIGN", "SHADERS" ,"LEVEL DESIGN"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765282205/PF_GameDesign_HollowFlowers_Cover_nf3mge.webp", 
-    status: "DEMO",
-    locked: true
-  },
-  { 
-    id: 2, 
-    title: "FADING MEMORIES", 
-    category: "Systems Design", 
-    tags: ["GAME DESIGN", "ART DIRECTION", "ILLUMINATION", "DOCS"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765285301/PF_GameDesign_FadingMemories_Cover_zxkkpv.webp", 
-    status: "Shipped",
-    locked: true
-  },
-  { 
-    id: 3, 
-    title: "UNDESERVED", 
-    category: "Programming", 
-    tags: ["LEVEL DESIGN", "ART DIRECTION", "PROGRAMMING"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765285900/PF_GameDesign_Undeserved_Cover_v1f7lc.webp", 
-    status: "MINI PROJECT",
-    locked: true
-  },
-  { 
-    id: 4, 
-    title: "SUPER ZZ", 
-    category: "Level Design", 
-    tags: ["GAME DESIGN", "PROGRAMMING", "ART DIRECTION"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765296556/PD_GameDesign_SuperZZ_Cover_ngewro.webp", 
-    status: "WIP",
-    locked: true 
-  },
-    { 
-    id: 5, 
-    title: "ACID RAIN", 
-    category: "GAME DESIGN", 
-    tags: ["GAME DESIGN", "UNITY"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765288774/PD_GameDesign_AcidRain_Cover_grsa0r.webp", 
-    status: "FINISHED",
-    locked: false
-  }, 
-   { 
-    id: 6, 
-    title: "LLUVIA DE VERANO", 
-    category: "Docs", 
-    tags: ["DOCS", "ART DIRECTION", "GAME DESIGN"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765291863/PD_GameDesign_LluviaDeVerano_Cover_ekue0o.webp", 
-    status: "PRE-PRODUCTION",
-    locked: true 
-  },
-  {
-    id: 7, 
-    title: "EVERYTHING I SEE", 
-    category: "Systems Design", 
-    tags: ["GAME DESIGN", "DOCS", "SYSTEMS DESIGN"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765321421/PD_GameDesign_EIS_Cover_vvzppq.webp", 
-    status: "CONCEPT IDEA",
-    locked: true
-  },
-  { 
-    id: 8, 
-    title: "F.A.L.L.O.U.T. (Game Idea)", 
-    category: "DOC", 
-    tags: ["DOCS", "SYSTEMS DESIGN"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
-    status: "CONCEPT IDEA",
-    locked: true
-  },
+    {
+        id: 1,
+        title: "HOLLOW FLOWERS",
+        category: "Game Design",
+        tags: ["PROGRAMMING", "GAME DESIGN", "SHADERS", "LEVEL DESIGN"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765282205/PF_GameDesign_HollowFlowers_Cover_nf3mge.webp",
+        status: "DEMO",
+        locked: true
+    },
+    {
+        id: 2,
+        title: "FADING MEMORIES",
+        category: "Systems Design",
+        tags: ["GAME DESIGN", "ART DIRECTION", "ILLUMINATION", "DOCS"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765285301/PF_GameDesign_FadingMemories_Cover_zxkkpv.webp",
+        status: "Shipped",
+        locked: true
+    },
+    {
+        id: 3,
+        title: "UNDESERVED",
+        category: "Programming",
+        tags: ["LEVEL DESIGN", "ART DIRECTION", "PROGRAMMING"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765285900/PF_GameDesign_Undeserved_Cover_v1f7lc.webp",
+        status: "MINI PROJECT",
+        locked: true
+    },
+    {
+        id: 4,
+        title: "SUPER ZZ",
+        category: "Level Design",
+        tags: ["GAME DESIGN", "PROGRAMMING", "ART DIRECTION"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765296556/PD_GameDesign_SuperZZ_Cover_ngewro.webp",
+        status: "WIP",
+        locked: true
+    },
+    {
+        id: 5,
+        title: "ACID RAIN",
+        category: "GAME DESIGN",
+        tags: ["GAME DESIGN", "UNITY"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765288774/PD_GameDesign_AcidRain_Cover_grsa0r.webp",
+        status: "FINISHED",
+        locked: false
+    },
+    {
+        id: 6,
+        title: "LLUVIA DE VERANO",
+        category: "Docs",
+        tags: ["DOCS", "ART DIRECTION", "GAME DESIGN"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765291863/PD_GameDesign_LluviaDeVerano_Cover_ekue0o.webp",
+        status: "PRE-PRODUCTION",
+        locked: true
+    },
+    {
+        id: 7,
+        title: "EVERYTHING I SEE",
+        category: "Systems Design",
+        tags: ["GAME DESIGN", "DOCS", "SYSTEMS DESIGN"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765321421/PD_GameDesign_EIS_Cover_vvzppq.webp",
+        status: "CONCEPT IDEA",
+        locked: true
+    },
+    {
+        id: 8,
+        title: "F.A.L.L.O.U.T. (Game Idea)",
+        category: "DOC",
+        tags: ["DOCS", "SYSTEMS DESIGN"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
+        status: "CONCEPT IDEA",
+        locked: true
+    },
 
 ];
 
 export const techArtProjects: ProjectCardData[] = [
-  { 
-    id: 1, 
-    title: "NOISE GLITCH SHADER", 
-    category: "UNREAL ENGINE", 
-    tags: ["SHADERS", "UNREAL ENGINE"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765419716/PF_3DTech_NoisePP_Cover_mf3b4c.webp", 
-    status: "SHIPPED",
-    locked: false
-  },
-  { 
-    id: 2, 
-    title: "YIQ NTSC POSTPOCESS SHADER", 
-    category: "Unreal Engine", 
-    tags: ["SHADERS", "UNREAL ENGINE"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1767724393/PF_3DTech_YIQ_Cover_xkezuz.webp", 
-    status: "SHIPPED",
-    locked: false 
-  },
-  { 
-    id: 3, 
-    title: "CARD HOLOGRAM PARALLAX SHADER", 
-    category: "Shaders", 
-    tags: ["SHADERS", "UNREAL ENGINE"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765281853/PF_3DTech_CardHologram_Cover_3_y3q1c2.webp", 
-    status: "FINISHED",
-    locked: false 
-  },
-  { 
-    id: 4, 
-    title: "HEY ARNOLD 3D ROOM", 
-    category: "Postprocessing", 
-    tags: ["3D MODELING", "TEXTURING", "UNREAL ENGINE"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765338333/PT_3DTech_ArnoldRoom_Cover_iermi7.webp", 
-    status: "FINISHED",
-    locked: false
-  },
-  { 
-    id: 5, 
-    title: "INTEMPESTA LYRIC VIDEO", 
-    category: "Unity", 
-    tags: ["SHADERS", "UNREAL ENGINE", "ANIMATION"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765339138/PF_3DTech_WOBIntempesta_Cover_16_wongcl.webp", 
-    status: "FINISHED",
-    locked: false
-  },
-  { 
-    id: 6, 
-    title: "AURORA - 3D CHARACTER", 
-    category: "3D Texturing", 
-    tags: ["UNREAL ENGINE", "HAIR GROOM", "SHADERS"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
-    status: "WIP",
-    locked: true 
-  },
-  { 
-    id: 7, 
-    title: "UNDESERVED MAIN MENU", 
-    category: "Unity", 
-    tags: ["UNITY", "ANIMATION"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
-    status: "SHIPPED",
-    locked: true 
-  },
-  { 
-    id: 8, 
-    title: "DRELL CREATURE", 
-    category: "Unity", 
-    tags: ["3D MODELING", "3D TEXTURING"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765336797/PF_3DTech_DrellCreature_Cover_yh5zxu.webp", 
-    status: "FINISHED",
-    locked: true 
-  },
-  { 
-    id: 9, 
-    title: "3D PROPS (FADING MEMORIES)", 
-    category: "Unity", 
-    tags: ["UNITY", "ILLUMINATION"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765337149/PF_3DTech_FMProps_Cover_czkwkv.webp", 
-    status: "FINISHED",
-    locked: true 
-  },
-  { 
-    id: 10, 
-    title: "LOW POLY CHILEAN BUILDINGS (LLUVIA DE VERANO)", 
-    category: "Unity", 
-    tags: ["3D MODELING"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765337674/PF_3DTech_LDVBuildings_Cover_vs5usm.webp", 
-    status: "FINISHED",
-    locked: true 
-  },
-  { 
-    id: 11, 
-    title: "LEVEL DRESSING (CAVE MADNESS)", 
-    category: "Unity", 
-    tags: ["SHADERS"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
-    status: "UNKNOWN",
-    locked: true 
-  },
+    {
+        id: 1,
+        title: "NOISE GLITCH SHADER",
+        category: "UNREAL ENGINE",
+        tags: ["SHADERS", "UNREAL ENGINE"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765419716/PF_3DTech_NoisePP_Cover_mf3b4c.webp",
+        status: "SHIPPED",
+        locked: false
+    },
+    {
+        id: 2,
+        title: "YIQ NTSC POSTPOCESS SHADER",
+        category: "Unreal Engine",
+        tags: ["SHADERS", "UNREAL ENGINE"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1767724393/PF_3DTech_YIQ_Cover_xkezuz.webp",
+        status: "SHIPPED",
+        locked: false
+    },
+    {
+        id: 3,
+        title: "CARD HOLOGRAM PARALLAX SHADER",
+        category: "Shaders",
+        tags: ["SHADERS", "UNREAL ENGINE"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765281853/PF_3DTech_CardHologram_Cover_3_y3q1c2.webp",
+        status: "FINISHED",
+        locked: false
+    },
+    {
+        id: 4,
+        title: "HEY ARNOLD 3D ROOM",
+        category: "Postprocessing",
+        tags: ["3D MODELING", "TEXTURING", "UNREAL ENGINE"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765338333/PT_3DTech_ArnoldRoom_Cover_iermi7.webp",
+        status: "FINISHED",
+        locked: false
+    },
+    {
+        id: 5,
+        title: "INTEMPESTA LYRIC VIDEO",
+        category: "Unity",
+        tags: ["SHADERS", "UNREAL ENGINE", "ANIMATION"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765339138/PF_3DTech_WOBIntempesta_Cover_16_wongcl.webp",
+        status: "FINISHED",
+        locked: false
+    },
+    {
+        id: 6,
+        title: "AURORA - 3D CHARACTER",
+        category: "3D Texturing",
+        tags: ["UNREAL ENGINE", "HAIR GROOM", "SHADERS"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
+        status: "WIP",
+        locked: true
+    },
+    {
+        id: 7,
+        title: "UNDESERVED MAIN MENU",
+        category: "Unity",
+        tags: ["UNITY", "ANIMATION"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
+        status: "SHIPPED",
+        locked: true
+    },
+    {
+        id: 8,
+        title: "DRELL CREATURE",
+        category: "Unity",
+        tags: ["3D MODELING", "3D TEXTURING"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765336797/PF_3DTech_DrellCreature_Cover_yh5zxu.webp",
+        status: "FINISHED",
+        locked: true
+    },
+    {
+        id: 9,
+        title: "3D PROPS (FADING MEMORIES)",
+        category: "Unity",
+        tags: ["UNITY", "ILLUMINATION"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765337149/PF_3DTech_FMProps_Cover_czkwkv.webp",
+        status: "FINISHED",
+        locked: true
+    },
+    {
+        id: 10,
+        title: "LOW POLY CHILEAN BUILDINGS (LLUVIA DE VERANO)",
+        category: "Unity",
+        tags: ["3D MODELING"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765337674/PF_3DTech_LDVBuildings_Cover_vs5usm.webp",
+        status: "FINISHED",
+        locked: true
+    },
+    {
+        id: 11,
+        title: "LEVEL DRESSING (CAVE MADNESS)",
+        category: "Unity",
+        tags: ["SHADERS"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
+        status: "UNKNOWN",
+        locked: true
+    },
 ];
 
 export const othersProjects: ProjectCardData[] = [
-  { 
-    id: 1, 
-    title: "SEBRA - CREATIVE SERVICES COMPANY", 
-    category: "Programming", 
-    tags: ["PRODUCTION", "MANAGEMENT"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
-    status: "ACTIVELY WORKING",
-    locked: true 
-  },
-  { 
-    id: 2, 
-    title: "CUSTOM OBSIDIAN VAULTS", 
-    category: "Design", 
-    tags: ["JAVASCRIPT", "MANAGEMENT"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
-    status: "AVAILABLE",
-    locked: true 
-  },
-  { 
-    id: 3, 
-    title: "PIXEL 3D SPOTIFY CANVAS (WINTERS OF BLUE)", 
-    category: "Visuals", 
-    tags: ["ART", "UNREAL ENGINE"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
-    status: "Personal",
-    locked: true 
-  },
-  { 
-    id: 4, 
-    title: "WEBPAGE PORTFOLIO (VIBECODED)", 
-    category: "WEBPAGE", 
-    tags: ["TYPESCRIPT", "UI/UX"], 
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765291476/PD_Others_PortfolioWebpage_Cover_fvhppn.webp", 
-    status: "Published",
-    locked: true 
-  },
-  { 
-    id: 5, 
-    title: "WEBPAGE COMPANY (VIBECODED)", 
-    category: "WEBPAGE", 
-    tags: ["TYPESCRIPT", "UI/UX"],  
-    image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp", 
-    status: "Prototype",
-    locked: true
-  },
-/*   { 
-    id: 6, 
-    title: "WEB PORTFOLIO", 
-    category: "Programming", 
-    tags: ["REACT", "THREE.JS", "WEBGL"], 
-    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=2560&auto=format&fit=crop", 
-    status: "Live" 
-  },
-  { 
-    id: 7, 
-    title: "BOARD GAME", 
-    category: "Design", 
-    tags: ["TABLETOP", "MECHANICS", "PRINT & PLAY"], 
-    image: "https://images.unsplash.com/photo-1610890716171-6b1c9f2045ca?q=80&w=2560&auto=format&fit=crop", 
-    status: "Playtesting" 
-  },
-  { 
-    id: 8, 
-    title: "PHOTOGRAPHY", 
-    category: "Visuals", 
-    tags: ["CYBERPUNK", "NEON", "STREET"], 
-    image: "https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=2560&auto=format&fit=crop", 
-    status: "Gallery" 
-  }, */
+    {
+        id: 1,
+        title: "SEBRA - CREATIVE SERVICES COMPANY",
+        category: "Programming",
+        tags: ["PRODUCTION", "MANAGEMENT"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
+        status: "ACTIVELY WORKING",
+        locked: true
+    },
+    {
+        id: 2,
+        title: "CUSTOM OBSIDIAN VAULTS",
+        category: "Design",
+        tags: ["JAVASCRIPT", "MANAGEMENT"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
+        status: "AVAILABLE",
+        locked: true
+    },
+    {
+        id: 3,
+        title: "PIXEL 3D SPOTIFY CANVAS (WINTERS OF BLUE)",
+        category: "Visuals",
+        tags: ["ART", "UNREAL ENGINE"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
+        status: "Personal",
+        locked: true
+    },
+    {
+        id: 4,
+        title: "WEBPAGE PORTFOLIO (VIBECODED)",
+        category: "WEBPAGE",
+        tags: ["TYPESCRIPT", "UI/UX"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765291476/PD_Others_PortfolioWebpage_Cover_fvhppn.webp",
+        status: "Published",
+        locked: true
+    },
+    {
+        id: 5,
+        title: "WEBPAGE COMPANY (VIBECODED)",
+        category: "WEBPAGE",
+        tags: ["TYPESCRIPT", "UI/UX"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
+        status: "Prototype",
+        locked: true
+    },
+    /*   { 
+        id: 6, 
+        title: "WEB PORTFOLIO", 
+        category: "Programming", 
+        tags: ["REACT", "THREE.JS", "WEBGL"], 
+        image: "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=2560&auto=format&fit=crop", 
+        status: "Live" 
+      },
+      { 
+        id: 7, 
+        title: "BOARD GAME", 
+        category: "Design", 
+        tags: ["TABLETOP", "MECHANICS", "PRINT & PLAY"], 
+        image: "https://images.unsplash.com/photo-1610890716171-6b1c9f2045ca?q=80&w=2560&auto=format&fit=crop", 
+        status: "Playtesting" 
+      },
+      { 
+        id: 8, 
+        title: "PHOTOGRAPHY", 
+        category: "Visuals", 
+        tags: ["CYBERPUNK", "NEON", "STREET"], 
+        image: "https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=2560&auto=format&fit=crop", 
+        status: "Gallery" 
+      }, */
 ];
 
 // --- CONTENT DATABASE ---
@@ -299,7 +299,7 @@ export const othersProjects: ProjectCardData[] = [
 // Fallback content now includes a safe external link
 const DEFAULT_CONTENT: ProjectContent = {
     description: "Data for this project is currently classified or pending declassification. Please check back later for full mission details.",
-    tagContent: {}, 
+    tagContent: {},
     software: ["Unknown", "Classified"],
     duration: "TBD",
     videos: [],
@@ -307,7 +307,7 @@ const DEFAULT_CONTENT: ProjectContent = {
         "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop"
     ],
-    externalLink: "https://www.google.com" 
+    externalLink: "https://www.google.com"
 };
 
 // Updated Project Images to w=2560 (2K ready)
@@ -994,7 +994,7 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             software: ["UNREAL ENGINE 5", "HLSL NODES"],
             duration: "2 WEEKS",
             videos: [],
-            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1766696256/PF_3DTech_NoisePP_Image1_ioezay.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image2_jsamiq.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image3_sigo6i.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766698194/PF_3DTech_NoisePP_Image4_iw0bph.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697535/PF_3DTech_NoisePP_Image5_snxdtu.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697535/PF_3DTech_NoisePP_Image6_iwuy3p.webp"],
+            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1766696256/PF_3DTech_NoisePP_Image1_ioezay.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image2_jsamiq.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image3_sigo6i.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766698194/PF_3DTech_NoisePP_Image4_iw0bph.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697535/PF_3DTech_NoisePP_Image5_snxdtu.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697535/PF_3DTech_NoisePP_Image6_iwuy3p.webp"],
             externalLink: "https://www.fab.com/es-mx/listings/ce8b3eeb-d3d0-4419-9217-4193990bd403",
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1766698479/PF_3DTech_NoisePP_Image0_q4yfiz.webp"
         },
@@ -1021,7 +1021,7 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             software: ["UNREAL ENGINE 5", "HLSL NODES"],
             duration: "2 SEMANAS",
             videos: [],
-            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1766696256/PF_3DTech_NoisePP_Image1_ioezay.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image2_jsamiq.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image3_sigo6i.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766698194/PF_3DTech_NoisePP_Image4_iw0bph.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697535/PF_3DTech_NoisePP_Image5_snxdtu.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697535/PF_3DTech_NoisePP_Image6_iwuy3p.webp"],
+            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1766696256/PF_3DTech_NoisePP_Image1_ioezay.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image2_jsamiq.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697053/PF_3DTech_NoisePP_Image3_sigo6i.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766698194/PF_3DTech_NoisePP_Image4_iw0bph.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697535/PF_3DTech_NoisePP_Image5_snxdtu.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1766697535/PF_3DTech_NoisePP_Image6_iwuy3p.webp"],
             externalLink: "https://www.fab.com/es-mx/listings/ce8b3eeb-d3d0-4419-9217-4193990bd403",
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1766698479/PF_3DTech_NoisePP_Image0_q4yfiz.webp"
         }
@@ -1050,67 +1050,68 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             software: ["UNREAL ENGINE"],
             duration: "1 WEEK",
             videos: [],
-            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image1_himw3r.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1767725762/PF_3DTech_YIQ_Image2_ijfb07.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image3_lxtxr0.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image4_vwunt2.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1767725283/PF_3DTech_YIQ_Image5_uxcwkh.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image6_rdtr1i.webp"],
+            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image1_himw3r.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767725762/PF_3DTech_YIQ_Image2_ijfb07.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image3_lxtxr0.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image4_vwunt2.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767725283/PF_3DTech_YIQ_Image5_uxcwkh.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image6_rdtr1i.webp"],
             externalLink: "#",
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1767725394/PF_3DTech_YIQ_Image0_yj5uek.webp"
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
-            "SHADERS": {
-                headline: "LÓGICA DEL MATERIAL GRAPH",
-                textBlock1: "Utilicé una arquitectura de nodos para la conversión de color, donde se captura la SceneTexture para descomponerla en una máscara, aislando cada canal. A diferencia del RGB estándar, aquí se transforma la señal a componentes Y (Luminancia), I (In-phase) y Q (Quadrature). Esto me permitió aplicar matemáticas de desplazamiento (offsets) a la información del color, sin destruir la información de luz base.",
-                textBlock2: "La conversión utiliza constantes del estándar NTSC (0.299, 0.587, 0.114 para Y), dando mayor peso al canal verde para calcular la luminancia percibida. Los componentes I y Q se derivan proyectando los colores sobre ejes ortogonales, separando la información cromática de la luz para permitir manipulaciones aisladas sin alterar el brillo.",
-                textBlock3: "Dependiendo del material 'vintage' que se quiera replicar, estos modifican por la pantalla del televisor drásticamente el uso del Sharpen y Blur. Por esto, añadí una función modificable desde los Material Instance para poder llegar con más detalle al acabo deseado.",
-                textBlock4: "Se hicieron pruebas tanto dentro del material como en el editor con muchos objetos al mismo tiempo. Al manipular las coordenadas UV de la pantalla basándose en los canales YIQ, se logra la aberración cromática simulando lentes físicos, creando un 'halo' de color espectral, que puede configurarse desde el Material Instance para tener un offset horizontal, vertical o ambos.",
-                bullets: ["ESPACIO DE COLOR YIQ", "SHARP & BLUR", "PRUEBAS Y OFFSETS"]
-            },
-            "UNREAL ENGINE": {
-                headline: "INTEGRACIÓN Y ESTÉTICA",
-                textBlock1: "Se aplicó la prueba del efecto de post procesado dentro de modelos 3D 'Hard Surface', demostrando que el efecto se logra correctamente sin dañar su profundidad 3D ni sus colores, simulando la sensación de pantallas LCD antiguas.",
-                textBlock2: "Las propiedades del material también permiten utilizar un 'Custom Depth Stencil' para aplicar este efecto solo a los objetos que son señalados en el apartado Rendering -> Advanced -> Render CustomDepth Pass y Stencil Value.",
-                textBlock3: "También decidí probar en elementos 2D que se muestren dentro de Unreal Engine, asegurándome de que el material solo modifique el offset de los canales en color YIQ, sin pasar a llevar brillo, contraste, hue, entre otros. No pude mostrarlo con un ejemplo de una animación como 'Hey Arnold!' por leyes de copyright, pero encontré dentro del Public Domain 'The Night Watch' de Rembrandt, pintura donde hay muchos elementos dentro del mismo cuadro, demostrando que sí funciona como se esperaba.",
-                textBlock4: "Hablando de muchos elementos dentro del mismo cuadro, cargué muchas esferas en el editor de Unreal Engine en diferentes posiciones, escalas, colores y roughness para verificar si se mantiene la legibilidad de las siluetas.",
-                bullets: ["TEST HARD SURFACE", "TEST 2D", "TEST MULTI-OBJECT"]
-            }
+                "SHADERS": {
+                    headline: "LÓGICA DEL MATERIAL GRAPH",
+                    textBlock1: "Utilicé una arquitectura de nodos para la conversión de color, donde se captura la SceneTexture para descomponerla en una máscara, aislando cada canal. A diferencia del RGB estándar, aquí se transforma la señal a componentes Y (Luminancia), I (In-phase) y Q (Quadrature). Esto me permitió aplicar matemáticas de desplazamiento (offsets) a la información del color, sin destruir la información de luz base.",
+                    textBlock2: "La conversión utiliza constantes del estándar NTSC (0.299, 0.587, 0.114 para Y), dando mayor peso al canal verde para calcular la luminancia percibida. Los componentes I y Q se derivan proyectando los colores sobre ejes ortogonales, separando la información cromática de la luz para permitir manipulaciones aisladas sin alterar el brillo.",
+                    textBlock3: "Dependiendo del material 'vintage' que se quiera replicar, estos modifican por la pantalla del televisor drásticamente el uso del Sharpen y Blur. Por esto, añadí una función modificable desde los Material Instance para poder llegar con más detalle al acabo deseado.",
+                    textBlock4: "Se hicieron pruebas tanto dentro del material como en el editor con muchos objetos al mismo tiempo. Al manipular las coordenadas UV de la pantalla basándose en los canales YIQ, se logra la aberración cromática simulando lentes físicos, creando un 'halo' de color espectral, que puede configurarse desde el Material Instance para tener un offset horizontal, vertical o ambos.",
+                    bullets: ["ESPACIO DE COLOR YIQ", "SHARP & BLUR", "PRUEBAS Y OFFSETS"]
+                },
+                "UNREAL ENGINE": {
+                    headline: "INTEGRACIÓN Y ESTÉTICA",
+                    textBlock1: "Se aplicó la prueba del efecto de post procesado dentro de modelos 3D 'Hard Surface', demostrando que el efecto se logra correctamente sin dañar su profundidad 3D ni sus colores, simulando la sensación de pantallas LCD antiguas.",
+                    textBlock2: "Las propiedades del material también permiten utilizar un 'Custom Depth Stencil' para aplicar este efecto solo a los objetos que son señalados en el apartado Rendering -> Advanced -> Render CustomDepth Pass y Stencil Value.",
+                    textBlock3: "También decidí probar en elementos 2D que se muestren dentro de Unreal Engine, asegurándome de que el material solo modifique el offset de los canales en color YIQ, sin pasar a llevar brillo, contraste, hue, entre otros. No pude mostrarlo con un ejemplo de una animación como 'Hey Arnold!' por leyes de copyright, pero encontré dentro del Public Domain 'The Night Watch' de Rembrandt, pintura donde hay muchos elementos dentro del mismo cuadro, demostrando que sí funciona como se esperaba.",
+                    textBlock4: "Hablando de muchos elementos dentro del mismo cuadro, cargué muchas esferas en el editor de Unreal Engine en diferentes posiciones, escalas, colores y roughness para verificar si se mantiene la legibilidad de las siluetas.",
+                    bullets: ["TEST HARD SURFACE", "TEST 2D", "TEST MULTI-OBJECT"]
+                }
             },
             software: ["UNREAL ENGINE"],
             duration: "1 SEMANA",
             videos: [],
-            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image1_himw3r.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1767725762/PF_3DTech_YIQ_Image2_ijfb07.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image3_lxtxr0.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image4_vwunt2.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1767725283/PF_3DTech_YIQ_Image5_uxcwkh.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image6_rdtr1i.webp"],
+            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image1_himw3r.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767725762/PF_3DTech_YIQ_Image2_ijfb07.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image3_lxtxr0.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image4_vwunt2.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767725283/PF_3DTech_YIQ_Image5_uxcwkh.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767725282/PF_3DTech_YIQ_Image6_rdtr1i.webp"],
             externalLink: "#",
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1767725394/PF_3DTech_YIQ_Image0_yj5uek.webp"
         }
     },
     "CARD HOLOGRAM PARALLAX SHADER": {
         en: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Holographic card effect with depth based on Parallax Occlusion.",
             tagContent: {
                 "SHADERS": {
-                    headline: "INSERT HEADLINE: SHADERS",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "SHADERS",
+                    textBlock1: "Created for collectible cards within the video game 'Hollow Flowers'. It uses Unreal Engine 5 materials to emulate a holographic card effect with depths based on Parallax Occlusion.",
+                    textBlock2: "To make it work, the 2D designer was asked to create textures in different layers using the same pixel space for the export of color textures.",
+                    textBlock3: "Using the Parallax Occlusion Mapping node, each character or decoration texture can have its depth modified by changing the 'Height Ratio' variable value, giving more control depending on the card to be modified.",
+                    textBlock4: "I added a hologram effect with a texture that modifies its colors based on the fresnel effect (dot product between normals and camera orientation), using the object's orientation for UVs.",
+                    bullets: ["CARD", "HOLOGRAM", "PARALLAX OCCLUSION"]
                 },
                 "UNREAL ENGINE": {
-                    headline: "INSERT HEADLINE: UNREAL ENGINE",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "LEVEL SEQUENCE & MATERIALS",
+                    textBlock1: "A small animation is created with Unreal Engine 5 Level Sequence, modifying the location, rotation, and scale of the card and camera.",
+                    textBlock2: "Unlike other objects in the video game, the material uses Unlit shading so that its vivid colors are not affected by the presence or absence of lighting in the environment.",
+                    textBlock3: "The front of the card has a Material Instance where variables such as textures to be used with their scales, hologram brightness, depth levels, among others, can be modified.",
+                    textBlock4: "The back also has its own material, but with simpler properties to highlight certain areas with a hologram effect, without using depth effects.",
+                    bullets: ["LEVEL SEQUENCE", "CARD FRONT", "CARD BACK"]
                 }
             },
-            software: ["INSERT SOFTWARE"],
+            software: ["UNREAL ENGINE 5"],
             duration: "ONE WEEK",
-            videos: [],
-            gallery: [],
-            externalLink: "#"
+            videos: ["https://www.youtube.com/watch?v=7UlIUcnfRH8"],
+            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1771358505/PF_3DTech_CardHologram_Image1_dqqivo.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1771358773/PF_3DTech_CardHologram_Image2_weojek.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1771358772/PF_3DTech_CardHologram_Image3_nii20r.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1771360237/PF_3DTech_CardHologram_Image4_ndji5w.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1771360237/PF_3DTech_CardHologram_Image5_nvyyhv.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1771360237/PF_3DTech_CardHologram_Image6_itsp79.webp"],
+            externalLink: "#",
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1771358326/PF_3DTech_CardHologram_Image0_xgqy03.webp"
         },
         es: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Efecto de carta holográfica con profundidad en base al Parallax Occlusion.",
             tagContent: {
                 "SHADERS": {
                     headline: "SHADERS",
@@ -1132,7 +1133,7 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             software: ["UNREAL ENGINE 5"],
             duration: "UNA SEMANA",
             videos: ["https://www.youtube.com/watch?v=7UlIUcnfRH8"],
-            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1771358505/PF_3DTech_CardHologram_Image1_dqqivo.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1771358773/PF_3DTech_CardHologram_Image2_weojek.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1771358772/PF_3DTech_CardHologram_Image3_nii20r.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1771360237/PF_3DTech_CardHologram_Image4_ndji5w.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1771360237/PF_3DTech_CardHologram_Image5_nvyyhv.webp","https://res.cloudinary.com/dseaazn5s/image/upload/v1771360237/PF_3DTech_CardHologram_Image6_itsp79.webp"],
+            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1771358505/PF_3DTech_CardHologram_Image1_dqqivo.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1771358773/PF_3DTech_CardHologram_Image2_weojek.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1771358772/PF_3DTech_CardHologram_Image3_nii20r.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1771360237/PF_3DTech_CardHologram_Image4_ndji5w.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1771360237/PF_3DTech_CardHologram_Image5_nvyyhv.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1771360237/PF_3DTech_CardHologram_Image6_itsp79.webp"],
             externalLink: "#",
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1771358326/PF_3DTech_CardHologram_Image0_xgqy03.webp"
         }
@@ -1241,7 +1242,7 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             software: ["UNREAL ENGINE", "PREMIERE PRO"],
             duration: "2 WEEKS",
             videos: [],
-            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1767010339/PF_3DTech_WOBIntempesta_Image1_fbfgle.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767010338/PF_3DTech_WOBIntempesta_Image2_hngyst.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767010338/PF_3DTech_WOBIntempesta_Image3_ywxk8k.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image4_wu5goh.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image5_rnpwpo.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image6_rmurqb.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767011764/PF_3DTech_WOBIntempesta_Image7_dsb3th.png","https://res.cloudinary.com/dseaazn5s/video/upload/v1767007417/PF_3DTech_WOBIntempesta_Image8_ebeadq.webm", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767011634/PF_3DTech_WOBIntempesta_Image9_dcsybt.png"],
+            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1767010339/PF_3DTech_WOBIntempesta_Image1_fbfgle.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767010338/PF_3DTech_WOBIntempesta_Image2_hngyst.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767010338/PF_3DTech_WOBIntempesta_Image3_ywxk8k.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image4_wu5goh.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image5_rnpwpo.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image6_rmurqb.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767011764/PF_3DTech_WOBIntempesta_Image7_dsb3th.png", "https://res.cloudinary.com/dseaazn5s/video/upload/v1767007417/PF_3DTech_WOBIntempesta_Image8_ebeadq.webm", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767011634/PF_3DTech_WOBIntempesta_Image9_dcsybt.png"],
             externalLink: "#",
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1767033326/PF_3DTech_WOBIntempesta_Image0_y3ytyv.webp"
         },
@@ -1276,7 +1277,7 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             software: ["UNREAL ENGINE", "PREMIERE PRO"],
             duration: "2 SEMANAS",
             videos: [],
-            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1767010339/PF_3DTech_WOBIntempesta_Image1_fbfgle.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767010338/PF_3DTech_WOBIntempesta_Image2_hngyst.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767010338/PF_3DTech_WOBIntempesta_Image3_ywxk8k.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image4_wu5goh.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image5_rnpwpo.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image6_rmurqb.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767011764/PF_3DTech_WOBIntempesta_Image7_dsb3th.png","https://res.cloudinary.com/dseaazn5s/video/upload/v1767007417/PF_3DTech_WOBIntempesta_Image8_ebeadq.webm", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767011634/PF_3DTech_WOBIntempesta_Image9_dcsybt.png"],
+            gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1767010339/PF_3DTech_WOBIntempesta_Image1_fbfgle.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767010338/PF_3DTech_WOBIntempesta_Image2_hngyst.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767010338/PF_3DTech_WOBIntempesta_Image3_ywxk8k.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image4_wu5goh.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image5_rnpwpo.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image6_rmurqb.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767011764/PF_3DTech_WOBIntempesta_Image7_dsb3th.png", "https://res.cloudinary.com/dseaazn5s/video/upload/v1767007417/PF_3DTech_WOBIntempesta_Image8_ebeadq.webm", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767011634/PF_3DTech_WOBIntempesta_Image9_dcsybt.png"],
             externalLink: "#"
         }
     },
@@ -1890,22 +1891,22 @@ const originalDB: Record<string, ProjectContent> = {
 export const getProjectContent = (title: string, lang: 'en' | 'es' = 'en'): ProjectContent => {
     // Upper case key matching to be safe
     const key = Object.keys(projectDatabase).find(k => k.toUpperCase() === title.toUpperCase());
-    
+
     if (key && projectDatabase[key]) {
         // If we have the specific language
         if (projectDatabase[key][lang] && Object.keys(projectDatabase[key][lang]).length > 0) {
-             return projectDatabase[key][lang];
+            return projectDatabase[key][lang];
         }
         // Fallback to EN if ES is missing
         if (projectDatabase[key]['en'] && Object.keys(projectDatabase[key]['en']).length > 0) {
             return projectDatabase[key]['en'];
         }
     }
-    
+
     // Hard fallback if the refactor left empty holes (to prevent crashes during transition)
     return {
         ...DEFAULT_CONTENT,
-        description: lang === 'es' 
+        description: lang === 'es'
             ? "Los datos para este proyecto están clasificados o pendientes de traducción. Por favor verifique más tarde."
             : DEFAULT_CONTENT.description
     };
