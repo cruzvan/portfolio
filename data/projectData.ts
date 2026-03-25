@@ -52,7 +52,7 @@ export const gameDesignProjects: ProjectCardData[] = [
         tags: ["PROGRAMMING", "GAME DESIGN", "SHADERS", "LEVEL DESIGN"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765282205/PF_GameDesign_HollowFlowers_Cover_nf3mge.webp",
         status: "DEMO",
-        locked: true
+        locked: false
     },
     {
         id: 2,
@@ -408,7 +408,7 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
         en: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
-                "PROGRAMMING BLUEPRINTS": {
+                "PROGRAMMING": {
                     headline: "INSERT HEADLINE: PROGRAMMING BLUEPRINTS",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
@@ -450,13 +450,13 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
-                "PROGRAMMING BLUEPRINTS": {
+                "PROGRAMMING": {
                     headline: "INSERT HEADLINE: PROGRAMMING BLUEPRINTS",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["SISTEMA REWIND-FAST FORWARD", "ZONA DE CAMBIO AL PASADO", "QTE", "SISTEMA DE EVENTOS"]
                 },
                 "GAME DESIGN": {
                     headline: "INSERT HEADLINE: GAME DESIGN",
@@ -464,7 +464,7 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["ESTE SI FUNCIONA", "Bullet point two", "Bullet point three"]
                 },
                 "SHADERS": {
                     headline: "INSERT HEADLINE: SHADERS",
