@@ -132,6 +132,15 @@ export const techArtProjects: ProjectCardData[] = [
     },
     {
         id: 2,
+        title: "BLENDER COMPOSITOR ADD-ONS",
+        category: "Blender",
+        tags: ["SHADERS"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
+        status: "WIP",
+        locked: false
+    },
+    {
+        id: 3,
         title: "YIQ NTSC POSTPOCESS SHADER",
         category: "Unreal Engine",
         tags: ["SHADERS", "UNREAL ENGINE"],
@@ -140,7 +149,7 @@ export const techArtProjects: ProjectCardData[] = [
         locked: false
     },
     {
-        id: 3,
+        id: 4,
         title: "CARD HOLOGRAM PARALLAX SHADER",
         category: "Shaders",
         tags: ["SHADERS", "UNREAL ENGINE"],
@@ -149,7 +158,7 @@ export const techArtProjects: ProjectCardData[] = [
         locked: false
     },
     {
-        id: 4,
+        id: 5,
         title: "HEY ARNOLD 3D ROOM",
         category: "Postprocessing",
         tags: ["3D MODELING", "TEXTURING", "UNREAL ENGINE"],
@@ -158,7 +167,7 @@ export const techArtProjects: ProjectCardData[] = [
         locked: false
     },
     {
-        id: 5,
+        id: 6,
         title: "INTEMPESTA LYRIC VIDEO",
         category: "Unity",
         tags: ["SHADERS", "UNREAL ENGINE", "ANIMATION"],
@@ -167,7 +176,7 @@ export const techArtProjects: ProjectCardData[] = [
         locked: false
     },
     {
-        id: 6,
+        id: 7,
         title: "AURORA - 3D CHARACTER",
         category: "3D Texturing",
         tags: ["UNREAL ENGINE", "HAIR GROOM", "SHADERS"],
@@ -176,7 +185,7 @@ export const techArtProjects: ProjectCardData[] = [
         locked: true
     },
     {
-        id: 7,
+        id: 8,
         title: "UNDESERVED MAIN MENU",
         category: "Unity",
         tags: ["UNITY", "ANIMATION"],
@@ -185,7 +194,7 @@ export const techArtProjects: ProjectCardData[] = [
         locked: true
     },
     {
-        id: 8,
+        id: 9,
         title: "DRELL CREATURE",
         category: "Unity",
         tags: ["3D MODELING", "3D TEXTURING"],
@@ -194,7 +203,7 @@ export const techArtProjects: ProjectCardData[] = [
         locked: true
     },
     {
-        id: 9,
+        id: 10,
         title: "3D PROPS (FADING MEMORIES)",
         category: "Unity",
         tags: ["UNITY", "ILLUMINATION"],
@@ -203,7 +212,7 @@ export const techArtProjects: ProjectCardData[] = [
         locked: true
     },
     {
-        id: 10,
+        id: 11,
         title: "LOW POLY CHILEAN BUILDINGS (LLUVIA DE VERANO)",
         category: "Unity",
         tags: ["3D MODELING"],
@@ -212,7 +221,7 @@ export const techArtProjects: ProjectCardData[] = [
         locked: true
     },
     {
-        id: 11,
+        id: 12,
         title: "LEVEL DRESSING (CAVE MADNESS)",
         category: "Unity",
         tags: ["SHADERS"],
@@ -220,6 +229,7 @@ export const techArtProjects: ProjectCardData[] = [
         status: "UNKNOWN",
         locked: true
     },
+
 ];
 
 export const othersProjects: ProjectCardData[] = [
@@ -1591,6 +1601,60 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             tagContent: {
                 "SHADERS": {
                     headline: "INSERT HEADLINE: SHADERS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        }
+    },
+    "BLENDER COMPOSITOR ADD-ONS": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "PYTHON": {
+                    headline: "INSERT HEADLINE: PYTHON",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "BLENDER": {
+                    headline: "INSERT HEADLINE: BLENDER",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "SHADERS": {
+                    headline: "INSERT HEADLINE: PYTHON",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["EEEEE", "Bullet point two", "Bullet point three"]
+                },
+                "BLENDER": {
+                    headline: "INSERT HEADLINE: BLENDER",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",

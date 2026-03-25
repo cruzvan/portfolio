@@ -286,7 +286,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
 
   // Updated Menu Data with translation hook
   const menuItems: MenuItem[] = [
-    { id: 1, category: t('menu_about_cat'), title: t('menu_about'), image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop", icon: <User /> },
+    { id: 1, category: t('menu_about_cat'), title: t('menu_about'), image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1764994194/SB_AC_Logo_1k_navox5.webp", icon: <User /> },
     { id: 2, category: t('menu_gd_cat'), title: t('menu_gd'), image: "https://res.cloudinary.com/dseaazn5s/video/upload/v1766778096/Hollow_Flowers_-_Gameplay_Trailer_-_Hollow_Flowers_1080p_h264__3_p2h0ax.webm", icon: <Gamepad2 /> },
     { id: 3, category: t('menu_ta_cat'), title: t('menu_ta'), image: "https://res.cloudinary.com/dseaazn5s/video/upload/v1765420594/PF_MainMenu_3DTech_cetqxy.webm", icon: <Box /> },
     { id: 4, category: t('menu_music_cat'), title: t('menu_music'), image: "https://res.cloudinary.com/dseaazn5s/video/upload/v1765001081/SB_Menu_Music_a39iu8.webm", icon: <Music /> },
