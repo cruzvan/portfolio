@@ -76,6 +76,65 @@ const VideoCard: React.FC<{ src: string, index: number }> = ({ src, index }) => 
     );
 };
 
+// --- INLINE MEDIA SLIDER (CAROUSEL) ---
+const InlineMediaSlider: React.FC<{ items: string[], setLightboxImage: (img: string) => void, className?: string, hideUIForSingle?: boolean }> = ({ items, setLightboxImage, className="", hideUIForSingle=true }) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const handleNext = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        setCurrentIndex((prev) => (prev + 1) % items.length);
+    };
+
+    const handlePrev = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        setCurrentIndex((prev) => (prev - 1 + items.length) % items.length);
+    };
+    
+    if (!items || items.length === 0) return null;
+    const currentMedia = items[currentIndex];
+
+    return (
+        <div className={`overflow-hidden w-full h-full relative group/slider ${className}`}>
+            {isVideo(currentMedia) ? (
+                <video
+                    key={currentMedia}
+                    src={currentMedia}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/slider:scale-105"
+                    muted
+                    loop
+                    autoPlay
+                    playsInline
+                />
+            ) : (
+                <div
+                    key={currentMedia}
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover/slider:scale-105"
+                    style={{ backgroundImage: `url(${currentMedia})` }}
+                />
+            )}
+            
+            {/* Click overlay */}
+            <div className="absolute inset-0 z-10 cursor-zoom-in" onClick={() => setLightboxImage(currentMedia)} />
+
+            {items.length > 1 && (!hideUIForSingle || items.length > 1) && (
+                <>
+                    <button onClick={handlePrev} className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 text-white p-2 hover:bg-[#FE4403] opacity-0 group-hover/slider:opacity-100 transition-all z-20 backdrop-blur-sm border border-white/10">
+                        <ChevronLeft size={20} />
+                    </button>
+                    <button onClick={handleNext} className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 text-white p-2 hover:bg-[#FE4403] opacity-0 group-hover/slider:opacity-100 transition-all z-20 backdrop-blur-sm border border-white/10">
+                        <ChevronRight size={20} />
+                    </button>
+                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-20 opacity-0 group-hover/slider:opacity-100 transition-all bg-black/40 px-3 py-1.5 rounded-full backdrop-blur-sm">
+                       {items.map((_, i) => (
+                           <div key={i} className={`w-1.5 h-1.5 rounded-full transition-all ${i === currentIndex ? 'bg-[#FE4403] scale-125' : 'bg-white/50'}`} />
+                       ))}
+                    </div>
+                </>
+            )}
+        </div>
+    );
+};
+
 const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
     const { language, t } = useLanguage();
 
@@ -507,29 +566,10 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                         <div className="flex items-center text-base md:text-lg text-white leading-relaxed font-normal text-justify" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                                             {content.textBlock1}
                                         </div>
-                                        <div className="relative group cursor-zoom-in aspect-video border border-white/10 bg-white/5 p-1" onClick={() => setLightboxImage(sectionImage1)}>
-                                            <div className="overflow-hidden h-full w-full relative">
-                                                {isVideo(sectionImage1) ? (
-                                                    <video
-                                                        src={sectionImage1}
-                                                        className="w-full h-full object-cover transition-all duration-500"
-                                                        muted
-                                                        loop
-                                                        autoPlay
-                                                        playsInline
-                                                    />
-                                                ) : (
-                                                    <img
-                                                        src={sectionImage1}
-                                                        alt="Detail"
-                                                        loading="lazy"
-                                                        decoding="async"
-                                                        className="w-full h-full object-cover transition-all duration-500"
-                                                    />
-                                                )}
-                                            </div>
-                                            <div className="absolute -top-1 -left-1 w-3 h-3 border-t border-l border-[#FE4403]" />
-                                            <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b border-r border-[#FE4403]" />
+                                        <div className="relative aspect-video border border-white/10 bg-white/5 p-1">
+                                            <InlineMediaSlider items={content.media1 && content.media1.length > 0 ? content.media1 : [sectionImage1]} setLightboxImage={setLightboxImage} />
+                                            <div className="absolute -top-1 -left-1 w-3 h-3 border-t border-l border-[#FE4403] pointer-events-none z-30" />
+                                            <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b border-r border-[#FE4403] pointer-events-none z-30" />
                                         </div>
                                     </div>
 
@@ -540,26 +580,9 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                         </div>
                                     </div>
 
-                                    <div
-                                        className="w-full h-[30vh] md:h-[40vh] relative group cursor-zoom-in border-y border-white/20"
-                                        onClick={() => setLightboxImage(sectionImage2)}
-                                    >
-                                        {isVideo(sectionImage2) ? (
-                                            <video
-                                                src={sectionImage2}
-                                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                                muted
-                                                loop
-                                                autoPlay
-                                                playsInline
-                                            />
-                                        ) : (
-                                            <div
-                                                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                                                style={{ backgroundImage: `url(${sectionImage2})` }}
-                                            />
-                                        )}
-                                        <div className="absolute bottom-4 right-4 bg-black/80 px-3 py-1 text-[10px] uppercase tracking-widest border border-white/20 text-white/70">
+                                    <div className="w-full h-[30vh] md:h-[40vh] relative border-y border-white/20">
+                                        <InlineMediaSlider items={content.media2 && content.media2.length > 0 ? content.media2 : [sectionImage2]} setLightboxImage={setLightboxImage} />
+                                        <div className="absolute bottom-4 right-4 bg-black/80 px-3 py-1 text-[10px] uppercase tracking-widest border border-white/20 text-white/70 pointer-events-none z-30">
                                             Fig 1.2 - System Architecture
                                         </div>
                                     </div>
@@ -572,29 +595,10 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                     </div>
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                        <div className="relative group cursor-zoom-in aspect-video border border-white/10 bg-white/5 p-1 order-2 md:order-1" onClick={() => setLightboxImage(sectionImage3)}>
-                                            <div className="overflow-hidden h-full w-full relative">
-                                                {isVideo(sectionImage3) ? (
-                                                    <video
-                                                        src={sectionImage3}
-                                                        className="w-full h-full object-cover transition-all duration-500"
-                                                        muted
-                                                        loop
-                                                        autoPlay
-                                                        playsInline
-                                                    />
-                                                ) : (
-                                                    <img
-                                                        src={sectionImage3}
-                                                        alt="Detail"
-                                                        loading="lazy"
-                                                        decoding="async"
-                                                        className="w-full h-full object-cover transition-all duration-500"
-                                                    />
-                                                )}
-                                            </div>
-                                            <div className="absolute -top-1 -right-1 w-3 h-3 border-t border-r border-[#FE4403]" />
-                                            <div className="absolute -bottom-1 -left-1 w-3 h-3 border-b border-l border-[#FE4403]" />
+                                        <div className="relative aspect-video border border-white/10 bg-white/5 p-1 order-2 md:order-1">
+                                            <InlineMediaSlider items={content.media3 && content.media3.length > 0 ? content.media3 : [sectionImage3]} setLightboxImage={setLightboxImage} />
+                                            <div className="absolute -top-1 -right-1 w-3 h-3 border-t border-r border-[#FE4403] pointer-events-none z-30" />
+                                            <div className="absolute -bottom-1 -left-1 w-3 h-3 border-b border-l border-[#FE4403] pointer-events-none z-30" />
                                         </div>
                                         {/* TEXT BLOCK 4: Space Grotesk, White, No Opacity */}
                                         <div className="flex items-center text-base md:text-lg text-white leading-relaxed font-normal text-justify order-1 md:order-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>

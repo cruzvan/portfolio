@@ -18,6 +18,9 @@ export interface TagContentSection {
     textBlock3: string;
     textBlock4: string;
     bullets: string[];
+    media1?: string[];
+    media2?: string[];
+    media3?: string[];
 }
 
 export interface ProjectContent {
@@ -49,7 +52,7 @@ export const gameDesignProjects: ProjectCardData[] = [
         id: 1,
         title: "HOLLOW FLOWERS",
         category: "Game Design",
-        tags: ["PROGRAMMING", "GAME DESIGN", "SHADERS", "LEVEL DESIGN"],
+        tags: ["GAME DESIGN", "PROGRAMMING", "SHADERS", "LEVEL DESIGN"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765282205/PF_GameDesign_HollowFlowers_Cover_nf3mge.webp",
         status: "DEMO",
         locked: false
@@ -418,29 +421,68 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
         en: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
-                "PROGRAMMING": {
-                    headline: "INSERT HEADLINE: PROGRAMMING BLUEPRINTS",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                },
                 "GAME DESIGN": {
                     headline: "INSERT HEADLINE: GAME DESIGN",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [
+                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop"
+                    ],
+                    media2: [
+                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop"
+                    ],
+                    media3: [
+                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop"
+                    ]
                 },
+                "PROGRAMMING": {
+                    headline: "INSERT HEADLINE: PROGRAMMING BLUEPRINTS",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1766778096/Hollow_Flowers_-_Gameplay_Trailer_-_Hollow_Flowers_1080p_h264__3_p2h0ax.webm",
+                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop"
+                    ],
+                    media2: [
+                        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop",
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1766778096/Hollow_Flowers_-_Gameplay_Trailer_-_Hollow_Flowers_1080p_h264__3_p2h0ax.webm"
+                    ],
+                    media3: [
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1766778096/Hollow_Flowers_-_Gameplay_Trailer_-_Hollow_Flowers_1080p_h264__3_p2h0ax.webm",
+                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop"
+                    ]
+                },
+
                 "SHADERS": {
                     headline: "INSERT HEADLINE: SHADERS",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [
+                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop"
+                    ],
+                    media2: [
+                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop"
+                    ],
+                    media3: [
+                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop"
+                    ]
                 },
                 "LEVEL DESIGN": {
                     headline: "INSERT HEADLINE: LEVEL DESIGN",
@@ -448,7 +490,20 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [
+                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop"
+                    ],
+                    media2: [
+                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop"
+                    ],
+                    media3: [
+                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop"
+                    ]
                 }
             },
             software: ["INSERT SOFTWARE"],
@@ -460,29 +515,68 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
-                "PROGRAMMING": {
-                    headline: "INSERT HEADLINE: PROGRAMMING BLUEPRINTS",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["SISTEMA REWIND-FAST FORWARD", "ZONA DE CAMBIO AL PASADO", "QTE", "SISTEMA DE EVENTOS"]
-                },
                 "GAME DESIGN": {
                     headline: "INSERT HEADLINE: GAME DESIGN",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["ESTE SI FUNCIONA", "Bullet point two", "Bullet point three"]
+                    bullets: ["ESTE SI FUNCIONA", "Bullet point two", "Bullet point three"],
+                    media1: [
+                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop"
+                    ],
+                    media2: [
+                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop"
+                    ],
+                    media3: [
+                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop"
+                    ]
                 },
+                "PROGRAMMING": {
+                    headline: "INSERT HEADLINE: PROGRAMMING BLUEPRINTS",
+                    textBlock1: "d",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["SISTEMA REWIND-FAST FORWARD", "ZONA DE CAMBIO AL PASADO", "QTE", "SISTEMA DE EVENTOS"],
+                    media1: [
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1766778096/Hollow_Flowers_-_Gameplay_Trailer_-_Hollow_Flowers_1080p_h264__3_p2h0ax.webm",
+                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop"
+                    ],
+                    media2: [
+                        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop",
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1766778096/Hollow_Flowers_-_Gameplay_Trailer_-_Hollow_Flowers_1080p_h264__3_p2h0ax.webm"
+                    ],
+                    media3: [
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1766778096/Hollow_Flowers_-_Gameplay_Trailer_-_Hollow_Flowers_1080p_h264__3_p2h0ax.webm",
+                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop"
+                    ]
+                },
+
                 "SHADERS": {
                     headline: "INSERT HEADLINE: SHADERS",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [
+                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop"
+                    ],
+                    media2: [
+                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop"
+                    ],
+                    media3: [
+                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop"
+                    ]
                 },
                 "LEVEL DESIGN": {
                     headline: "INSERT HEADLINE: LEVEL DESIGN",
@@ -490,7 +584,20 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [
+                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop"
+                    ],
+                    media2: [
+                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop"
+                    ],
+                    media3: [
+                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop"
+                    ]
                 }
             },
             software: ["INSERT SOFTWARE"],
