@@ -563,7 +563,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         {/* TEXT BLOCK 1: Space Grotesk, White, No Opacity */}
-                                        <div className="flex items-center text-base md:text-lg text-white leading-relaxed font-normal text-justify" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                                        <div className="flex items-center text-base md:text-lg text-white leading-relaxed font-normal text-justify whitespace-pre-wrap" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                                             {content.textBlock1}
                                         </div>
                                         <div className="relative aspect-video border border-white/10 bg-white/5 p-1">
@@ -575,7 +575,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
 
                                     <div className="w-full bg-black/40 border-l-2 border-[#FE4403] p-4 md:p-8 backdrop-blur-md">
                                         {/* TEXT BLOCK 2: Space Grotesk, White, No Opacity */}
-                                        <div className="text-lg md:text-xl text-white leading-relaxed font-normal" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                                        <div className="text-lg md:text-xl text-white leading-relaxed font-normal whitespace-pre-wrap" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                                             {content.textBlock2}
                                         </div>
                                     </div>
@@ -589,7 +589,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
 
                                     <div className="w-full bg-black/40 border-l-2 border-[#FE4403] p-4 md:p-8 backdrop-blur-md">
                                         {/* TEXT BLOCK 3: Space Grotesk, White, No Opacity */}
-                                        <div className="text-base md:text-lg text-white leading-relaxed font-normal text-justify" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                                        <div className="text-base md:text-lg text-white leading-relaxed font-normal text-justify whitespace-pre-wrap" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                                             {content.textBlock3}
                                         </div>
                                     </div>
@@ -601,7 +601,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                             <div className="absolute -bottom-1 -left-1 w-3 h-3 border-b border-l border-[#FE4403] pointer-events-none z-30" />
                                         </div>
                                         {/* TEXT BLOCK 4: Space Grotesk, White, No Opacity */}
-                                        <div className="flex items-center text-base md:text-lg text-white leading-relaxed font-normal text-justify order-1 md:order-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                                        <div className="flex items-center text-base md:text-lg text-white leading-relaxed font-normal text-justify order-1 md:order-2 whitespace-pre-wrap" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                                             {content.textBlock4}
                                         </div>
                                     </div>

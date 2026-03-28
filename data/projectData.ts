@@ -490,7 +490,7 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    bullets: ["HANDYCAM ORIENTED", "SYSTEM DESIGN", "LEVEL DESIGN"],
                     media1: [
                         "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop",
                         "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop",
@@ -517,11 +517,17 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             tagContent: {
                 "GAME DESIGN": {
                     headline: "INSERT HEADLINE: GAME DESIGN",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock1: `En el proyecto transmedia 'Hollow Flowers' Kei, la protagonista, es una adolescente que va todos lados con su Handycam. Para el videojuego, decidimos que gran parte de las mecánicas se realizarán en torno a ella, incluyendo:
+
+•  Hacer zoom.
+• El cambio de exploración de tercera persona a primera persona cuando la cámara se activa.
+• Enfocar objetos para retrocederlos y adelantarlos en el tiempo.
+• Usar la Handycam en lugares específicos para cambiar la época de una zona completa.
+• Ver enemigos ocultos.`,
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["ESTE SI FUNCIONA", "Bullet point two", "Bullet point three"],
+                    textBlock4: "En el diseño de niveles, optamos por un diseño que siempre priorice narrativa y ritmo. Para esto, en el vertical slice se intentó comenzar con elementos básicos de exploración y combinación de botones para que los player se acostumbren a los controles. Posteriormente, se incluyen triggers in-level de shock medianos con elementos de enemigos para generar tensión y curiosidad. Después, el nivel consiste en momentos de puzzle de pacing tranquilo, intercalados con momentos de tensión con eventos de escapar del enemigo y QTE contra un enemigo inmbatible. Finalmente, se pasa a un área con mayor peso narrativo donde termina con un tease del enemigo más importante del juego como recurso narrativo de cliffhanger.",
+                    bullets: ["HANDYCAM", "DISEÑO DE SISTEMAS", "DISEÑO DE NIVELES"],
                     media1: [
                         "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop",
                         "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop",

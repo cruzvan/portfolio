@@ -1,5 +1,5 @@
 
-export type TranslationKey = 
+export type TranslationKey =
   | 'pressStart'
   | 'loading'
   | 'menu_about'
@@ -147,8 +147,8 @@ export const translations = {
     download_cv_ta_es: 'CV Tech Artist (ES)',
     about_role_gd: 'Diseñador de Juegos',
     about_role_ta: 'Artista Técnico',
-    about_bio_p1: "Me defino como un constructor de mundos en la intersección del código y el arte. Me apasiona el proceso de experimentación: las horas dedicadas a perfeccionar una mecánica o a ajustar un shader hasta que se siente perfecto.",
-    about_bio_p2: "Disfruto enormemente del trabajo en equipo y la búsqueda constante de nuevos conocimientos para aplicar en mis proyectos, como lo hago actualmente en Hollow Flowers. Creo que los mejores juegos nacen de la colaboración y una meticulosa organización.",
+    about_bio_p1: "Me defino como un constructor de mundos en el punto medio entre el código y el arte. Me apasiona el proceso de experimentación: las horas dedicadas a perfeccionar una mecánica o a ajustar un shader hasta que se siente perfecto.",
+    about_bio_p2: "Disfruto enormemente del trabajo en equipo y la búsqueda constante de nuevos conocimientos para aplicar en mis proyectos, como lo hago actualmente en Ruido VFX. Creo que los mejores videojuegos nacen de la colaboración y una meticulosa organización.",
     get_in_touch: 'Contacto',
     autosave_msg: 'Este juego tiene función de autoguardado.',
     saving_notification: 'Aparecerá una notificación en pantalla cuando el juego esté guardando.',
