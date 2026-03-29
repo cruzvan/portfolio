@@ -141,6 +141,22 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
     // Fetch content from data file based on project title AND language
     const projectContent = useMemo(() => getProjectContent(project.title, language), [project.title, language]);
 
+    const combinedGallery = useMemo(() => {
+        const baseGallery = projectContent.gallery || [];
+        const additionalMedia: string[] = [];
+
+        if (projectContent.tagContent) {
+            Object.values(projectContent.tagContent).forEach(content => {
+                if (content.media1) additionalMedia.push(...content.media1);
+                if (content.media2) additionalMedia.push(...content.media2);
+                if (content.media3) additionalMedia.push(...content.media3);
+            });
+        }
+
+        // Deduplicate the combined gallery
+        return Array.from(new Set([...baseGallery, ...additionalMedia]));
+    }, [projectContent]);
+
     // Generate dynamic sections based on tags
     const dynamicSections = useMemo(() => [
         { id: 'overview', label: t('overview'), type: 'intro', tagName: '' },
@@ -165,7 +181,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
 
     const handleLightboxNavigation = useCallback((direction: 'next' | 'prev') => {
         if (!lightboxImage) return;
-        const gallery = projectContent.gallery;
+        const gallery = combinedGallery;
         const currentIndex = gallery.indexOf(lightboxImage);
 
         if (currentIndex === -1) return;
@@ -177,7 +193,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
             newIndex = (currentIndex - 1 + gallery.length) % gallery.length;
         }
         setLightboxImage(gallery[newIndex]);
-    }, [lightboxImage, projectContent.gallery]);
+    }, [lightboxImage, combinedGallery]);
 
     // Keyboard navigation
     useEffect(() => {
@@ -521,7 +537,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                 {/* === DYNAMIC CONTENT SECTIONS === */}
                 {dynamicSections.filter(s => s.type === 'content').map((sec, index) => {
                     const content = getContentForTag(sec.tagName || "");
-                    const gallery = projectContent.gallery;
+                    const gallery = combinedGallery;
 
                     // Logic: 3 Unique images per tag section
                     const baseImgIndex = index * 3;
@@ -633,11 +649,11 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                         <div className="w-full max-w-7xl">
                             <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-widest mb-8 md:mb-12 text-white/90 border-b border-white/10 pb-6 flex justify-between items-end">
                                 {t('gallery')}
-                                <span className="text-xs tracking-normal text-white/40 font-normal normal-case">{projectContent.gallery.length} {t('assets_count')}</span>
+                                <span className="text-xs tracking-normal text-white/40 font-normal normal-case">{combinedGallery.length} {t('assets_count')}</span>
                             </h2>
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[250px] md:auto-rows-[300px]">
-                                {projectContent.gallery.map((img, i) => (
+                                {combinedGallery.map((img, i) => (
                                     <div
                                         key={i}
                                         className={`relative group overflow-hidden border border-white/10 cursor-zoom-in bg-[#050505] ${i === 0 ? 'md:col-span-2 md:row-span-2 md:h-[616px]' : 'h-full'}`}
