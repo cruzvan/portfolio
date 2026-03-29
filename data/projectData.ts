@@ -573,9 +573,16 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
                 "SHADERS": {
                     headline: "INSERT HEADLINE: SHADERS",
                     textBlock1: "Para la handycam, se ocupa una combinación de 'post process materials', en los que destaca el uso de barrel y signal distortion, scanlines, scratches, coloured noise, blur y aberración cromática tipo YIQ. Tiene como finalidad solo activarse cuando la handycam es ocupada y posee ciertas variables que dinámicamente reaccionan como retroalimentación a lo que sucede en el ambiente utilizando 'material parameter collection'. Por ejemplo, si la cámara es usada para retroceder en el tiempo un objeto, se aumenta el valor de 'SignalDistortionIntensity' para que adquiera una sensación similar a los VHS cuando se ocupaba esta herramienta.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "Esto se logra utilizando materiales dinámicos que utilizan el mismo collision trigger del sitio para identificar qué está dentro o fuera de ese espacio.",
-                    textBlock4: "",
+                    textBlock2: `En la SHIFT TIME ZONE, todos los objetos que están dentro poseen 2 estados creados para el mismo material.
+• Player fuera del trigger collider: Ocupa una textura del presente, pero todo lo del objeto que utiliza el material que esté dentro del collider de la zona, activa una aberración cromática con emisión y pixelación.
+• Player dentro del trigger collider, usando la handycam: Cambia la textura del objeto a una del pasado, quitando los efectos anteriores, pero sigue reconociendo como textura del presente todo lo que está fuera del trigger collider.`,
+                    textBlock3: `Dentro de la misma zona, existen objeto que se muestran solo cuando se está en el pasado, con los que se puede interactuar para llevarlos al presente, tiene 3 estados:
+• Desactivado: Cuando no se está ocupando la handycam, ni se ha interactuado con el objeto. Hace que el mesh y su textura sea completamente invisible.
+• Visible Handycam: Cuando se ve en el presente por la handycam. Activa un efecto de colored noise pixelado usando de UV el screen position para llamar la atención. 
+• Visible en Tiempo Presente: Aparece con su textura del objeto original, pero durante 10 segundos va gradualmente aumentando el noise colored encima, para dar a entender que queda poco tiempor restante del objeto en el tiempo presente.`,
+                    textBlock4: `Para las cartas coleccionables del juego, se les creó un shader que economiza recursos puesto que trabaja solo con un plano. Este material se compone principalmente de dos caracteríticas técnicas:
+• Parallax Occlusion Mapping: Ocupa tres texturas dentro de la carta en las que se puede elegir que tan profundo se sienta dentro de la carta al rotarla o moverla.
+• Hologram Mask: Se utiliza una textura de holograma para que los sitios requeridos de la carta puedan ser 'selectos' para que este efecto de holograma se sitúe por encima de la textura original con una emisión modificable y que además, utilizando fresnel y el screen position cambie sus colores dependiendo del ángulo en que se vea.`,
                     bullets: ["VHS Camera", "Past Shift-Zone", "Card Hologram"],
                     media1: [
                         "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop",
