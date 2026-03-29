@@ -370,7 +370,8 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                 "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop",
                 "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop"
             ],
-            externalLink: "https://www.google.com/search?q=Project+Echo+Stealth+Game"
+            externalLink: "https://www.google.com/search?q=Project+Echo+Stealth+Game",
+            overviewImage: ""
         },
         es: {
             description: "Project: ECHO es un juego de sigilo táctico donde el sonido es tu única visión. Los jugadores navegan por una instalación en completa oscuridad utilizando un escáner de ecolocalización para visualizar el entorno, rastrear patrullas y descubrir una conspiración corporativa.",
@@ -412,7 +413,8 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                 "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop",
                 "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop"
             ],
-            externalLink: "https://www.google.com/search?q=Project+Echo+Stealth+Game"
+            externalLink: "https://www.google.com/search?q=Project+Echo+Stealth+Game",
+            overviewImage: ""
         }
     },
 
@@ -510,7 +512,8 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1774805103/PF_Game_HF_Image0_spkyq9.png"
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -610,11 +613,12 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
                     ]
                 }
             },
-            software: ["UNREAL ENGINE", "FIGMA", "GOOGLE DOCS", "BLENDER", "SUBSTANCE PAINTER"],
+            software: ["UNREAL ENGINE", "FIGMA", "GOOGLE DOCS", "BLENDER", "SUBSTANCE PAINTER", "GITHUB"],
             duration: "6-7 MESES",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1774805103/PF_Game_HF_Image0_spkyq9.png"
         }
     },
     "FADING MEMORIES": {
@@ -658,7 +662,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -700,7 +705,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         }
     },
     "UNDESERVED": {
@@ -736,7 +742,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -770,7 +777,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         }
     },
     "SUPER ZZ": {
@@ -806,7 +814,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -840,7 +849,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         }
     },
     "LLUVIA DE VERANO": {
@@ -876,7 +886,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -910,7 +921,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         }
     },
     "EVERYTHING I SEE": {
@@ -946,7 +958,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -980,7 +993,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         }
     },
     "F.A.L.L.O.U.T.": {
@@ -1008,7 +1022,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -1405,7 +1420,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "2 SEMANAS",
             videos: [],
             gallery: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1767010339/PF_3DTech_WOBIntempesta_Image1_fbfgle.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767010338/PF_3DTech_WOBIntempesta_Image2_hngyst.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767010338/PF_3DTech_WOBIntempesta_Image3_ywxk8k.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image4_wu5goh.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image5_rnpwpo.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767013223/PF_3DTech_WOBIntempesta_Image6_rmurqb.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767011764/PF_3DTech_WOBIntempesta_Image7_dsb3th.png", "https://res.cloudinary.com/dseaazn5s/video/upload/v1767007417/PF_3DTech_WOBIntempesta_Image8_ebeadq.webm", "https://res.cloudinary.com/dseaazn5s/image/upload/v1767011634/PF_3DTech_WOBIntempesta_Image9_dcsybt.png"],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1767033326/PF_3DTech_WOBIntempesta_Image0_y3ytyv.webp"
         }
     },
     "AURORA' - 3D CHARACTER": {
@@ -1441,7 +1457,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -1475,7 +1492,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         }
     },
     "UNDESERVED MAIN MENU": {
@@ -1503,7 +1521,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -1529,7 +1548,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         }
     },
     "DRELL CREATURE": {
@@ -1557,7 +1577,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -1583,7 +1604,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         }
     },
     "3D PROPS (FADING MEMORIES)": {
@@ -1619,7 +1641,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -1653,7 +1676,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         }
     },
     "LOW POLY CHILEAN BUILDINGS (LLUVIA DE VERANO)": {
@@ -1673,7 +1697,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -1691,7 +1716,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         }
     },
     "LEVEL DRESSING (CAVE MADNESS)": {
@@ -1711,7 +1737,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -1729,7 +1756,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         }
     },
     "BLENDER COMPOSITOR ADD-ONS": {
@@ -1757,7 +1785,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -1783,7 +1812,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         }
     },
 
@@ -1813,7 +1843,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -1839,7 +1870,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         }
     },
     "CUSTOM OBSIDIAN VAULTS": {
@@ -1867,7 +1899,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -1893,7 +1926,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         }
     },
     "PIXEL 3D SPOTIFY CANVAS (WINTERS OF BLUE)": {
@@ -1921,7 +1955,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -1947,7 +1982,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         }
     },
     "WEBPAGE PORTFOLIO (VIBECODED)": {
@@ -1975,7 +2011,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -2001,7 +2038,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         }
     },
     "WEBPAGE COMPANY (VIBECODED)": {
@@ -2029,7 +2067,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -2055,7 +2094,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             duration: "INSERT DURATION",
             videos: [],
             gallery: [],
-            externalLink: "#"
+            externalLink: "#",
+            overviewImage: ""
         }
     }
 };
