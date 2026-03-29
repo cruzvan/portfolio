@@ -431,9 +431,7 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                     textBlock4: "INSERT TEXT HERE.",
                     bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
                     media1: [
-                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop"
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774815700/PF_Game_HF_Image1_jiulg6.png"
                     ],
                     media2: [
                         "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop",
@@ -513,7 +511,7 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             videos: [],
             gallery: [],
             externalLink: "#",
-            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1774805103/PF_Game_HF_Image0_spkyq9.png"
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1774815393/PF_GameDesign_HollowFlowers_Image0_alycrj.webp"
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -532,17 +530,14 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                     textBlock4: "En el diseño de niveles, optamos por un diseño que siempre priorice narrativa y ritmo. Para esto, en el vertical slice se intentó comenzar con elementos básicos de exploración y combinación de botones para que los player se acostumbren a los controles. Posteriormente, se incluyen triggers in-level de shock medianos con elementos de enemigos para generar tensión y curiosidad. Después, el nivel consiste en momentos de puzzle de pacing tranquilo, intercalados con momentos de tensión con eventos de escapar del enemigo y QTE contra un enemigo inmbatible. Finalmente, se pasa a un área con mayor peso narrativo donde termina con un tease del enemigo más importante del juego como recurso narrativo de cliffhanger.",
                     bullets: ["HANDYCAM", "DISEÑO DE SISTEMAS", "DISEÑO DE NIVELES"],
                     media1: [
-                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop"
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774815700/PF_Game_HF_Image1_jiulg6.png"
                     ],
                     media2: [
-                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop"
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774815878/PF_Game_HF_Image2_dv8si8.png"
                     ],
                     media3: [
-                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop"
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774816449/PF_Game_HF_Image3_ncoftd.webp",
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774816610/PF_Game_HF_Image4_g8qzuv.webp"
                     ]
                 },
                 "PROGRAMMING": {
@@ -625,7 +620,7 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
             videos: [],
             gallery: [],
             externalLink: "#",
-            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1774805103/PF_Game_HF_Image0_spkyq9.png"
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1774815393/PF_GameDesign_HollowFlowers_Image0_alycrj.webp"
         }
     },
     "FADING MEMORIES": {

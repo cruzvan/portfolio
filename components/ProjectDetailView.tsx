@@ -77,7 +77,7 @@ const VideoCard: React.FC<{ src: string, index: number }> = ({ src, index }) => 
 };
 
 // --- INLINE MEDIA SLIDER (CAROUSEL) ---
-const InlineMediaSlider: React.FC<{ items: string[], setLightboxImage: (img: string) => void, className?: string, hideUIForSingle?: boolean }> = ({ items, setLightboxImage, className="", hideUIForSingle=true }) => {
+const InlineMediaSlider: React.FC<{ items: string[], setLightboxImage: (img: string) => void, className?: string, hideUIForSingle?: boolean }> = ({ items, setLightboxImage, className = "", hideUIForSingle = true }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const handleNext = (e: React.MouseEvent) => {
@@ -89,7 +89,7 @@ const InlineMediaSlider: React.FC<{ items: string[], setLightboxImage: (img: str
         e.stopPropagation();
         setCurrentIndex((prev) => (prev - 1 + items.length) % items.length);
     };
-    
+
     if (!items || items.length === 0) return null;
     const currentMedia = items[currentIndex];
 
@@ -112,7 +112,7 @@ const InlineMediaSlider: React.FC<{ items: string[], setLightboxImage: (img: str
                     style={{ backgroundImage: `url(${currentMedia})` }}
                 />
             )}
-            
+
             {/* Click overlay */}
             <div className="absolute inset-0 z-10 cursor-zoom-in" onClick={() => setLightboxImage(currentMedia)} />
 
@@ -125,9 +125,9 @@ const InlineMediaSlider: React.FC<{ items: string[], setLightboxImage: (img: str
                         <ChevronRight size={20} />
                     </button>
                     <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-20 opacity-0 group-hover/slider:opacity-100 transition-all bg-black/40 px-3 py-1.5 rounded-full backdrop-blur-sm">
-                       {items.map((_, i) => (
-                           <div key={i} className={`w-1.5 h-1.5 rounded-full transition-all ${i === currentIndex ? 'bg-[#FE4403] scale-125' : 'bg-white/50'}`} />
-                       ))}
+                        {items.map((_, i) => (
+                            <div key={i} className={`w-1.5 h-1.5 rounded-full transition-all ${i === currentIndex ? 'bg-[#FE4403] scale-125' : 'bg-white/50'}`} />
+                        ))}
                     </div>
                 </>
             )}
@@ -158,17 +158,26 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
     }, [projectContent]);
 
     // Generate dynamic sections based on tags
-    const dynamicSections = useMemo(() => [
-        { id: 'overview', label: t('overview'), type: 'intro', tagName: '' },
-        ...(project.tags || []).map((tag: string) => ({
-            id: `content-${tag.toLowerCase().replace(/\s+/g, '-')}`,
-            label: tag,
-            type: 'content',
-            tagName: tag
-        })),
-        { id: 'gallery', label: t('gallery'), type: 'gallery', tagName: '' },
-        { id: 'videos', label: t('videos'), type: 'videos', tagName: '' },
-    ], [project.tags, t]);
+    const dynamicSections = useMemo(() => {
+        let sections = [
+            { id: 'overview', label: t('overview'), type: 'intro', tagName: '' },
+            ...(project.tags || []).map((tag: string) => ({
+                id: `content-${tag.toLowerCase().replace(/\s+/g, '-')}`,
+                label: tag,
+                type: 'content',
+                tagName: tag
+            })),
+            { id: 'gallery', label: t('gallery'), type: 'gallery', tagName: '' },
+            { id: 'videos', label: t('videos'), type: 'videos', tagName: '' },
+        ];
+
+        // Specific hiding if needed
+        if (project.title === "HOLLOW FLOWERS") {
+            sections = sections.filter(sec => sec.tagName !== "LEVEL DESIGN");
+        }
+
+        return sections;
+    }, [project.tags, project.title, t]);
 
     const [activeSection, setActiveSection] = useState('overview');
     const [isLoaded, setIsLoaded] = useState(false);
@@ -436,8 +445,8 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                     >
                         <span
                             className={`text-xs md:text-sm tracking-[0.2em] uppercase font-bold transition-all duration-300 drop-shadow-md ${activeSection === sec.id
-                                    ? 'text-white text-shadow-glow scale-110 origin-left'
-                                    : 'text-white/50 hover:text-white'
+                                ? 'text-white text-shadow-glow scale-110 origin-left'
+                                : 'text-white/50 hover:text-white'
                                 }`}
                             style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}
                         >
