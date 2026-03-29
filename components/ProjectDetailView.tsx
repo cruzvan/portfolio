@@ -566,10 +566,12 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                         </div>
                                         <h3 className="text-lg md:text-2xl text-white/90 font-bold tracking-wide" style={{ fontFamily: "'ITC Avant Garde Gothic Pro', sans-serif" }} >{content.headline}</h3>
 
-                                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 mt-4">
+                                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 mt-4 relative z-10 w-full">
                                             {content.bullets.map((bullet, i) => (
-                                                <div key={i} className="flex items-center justify-center text-center bg-white/10 border border-[#FE4403]/50 p-2 md:p-3 shadow-[0_0_10px_rgba(254,68,3,0.1)]">
-                                                    <span className="text-[10px] md:text-[11px] uppercase tracking-widest font-bold text-white">{bullet}</span>
+                                                <div key={i} className="bullet-card" style={{ '--anim-offset': `-${i * 1.5}s` } as React.CSSProperties}>
+                                                    <div className="content">
+                                                        <span className="text-[10px] md:text-[11px] uppercase tracking-widest font-bold text-white relative z-10">{bullet}</span>
+                                                    </div>
                                                 </div>
                                             ))}
                                         </div>
