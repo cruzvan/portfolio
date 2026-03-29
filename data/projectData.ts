@@ -580,17 +580,17 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
 • Hologram Mask: Se utiliza una textura de holograma para que los sitios requeridos de la carta puedan ser 'selectos' para que este efecto de holograma se sitúe por encima de la textura original con una emisión modificable y que además, utilizando fresnel y el screen position cambie sus colores dependiendo del ángulo en que se vea.`,
                     bullets: ["VHS Camera", "Past Shift-Zone", "Card Hologram"],
                     media1: [
-                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop"
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1774818147/PF_Game_HF_Image13_thjcqj.webm",
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1774817268/PF_Game_HF_Image12_tnilid.webm",
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774817805/PF_Game_HF_Image11_norhx0.webp"
                     ],
                     media2: [
-                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop"
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1774819031/PF_Game_HF_Image14_pg4hfv.webm",
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1774820120/PF_Game_HF_Image15_uurckh.webm"
+
                     ],
                     media3: [
-                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop"
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1774820573/PF_Game_HF_Image16_ovsf2f.webm"
                     ]
                 },
                 "LEVEL DESIGN": {
