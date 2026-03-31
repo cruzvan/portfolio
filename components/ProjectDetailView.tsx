@@ -607,11 +607,8 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                         </div>
                                     </div>
 
-                                    <div className="w-full h-[30vh] md:h-[40vh] relative border-y border-white/20">
+                                    <div className="w-full aspect-video relative border-y border-white/20">
                                         <InlineMediaSlider items={content.media2 && content.media2.length > 0 ? content.media2 : [sectionImage2]} setLightboxImage={setLightboxImage} />
-                                        <div className="absolute bottom-4 right-4 bg-black/80 px-3 py-1 text-[10px] uppercase tracking-widest border border-white/20 text-white/70 pointer-events-none z-30">
-                                            Fig 1.2 - System Architecture
-                                        </div>
                                     </div>
 
                                     <div className="w-full bg-black/40 border-l-2 border-[#FE4403] p-4 md:p-8 backdrop-blur-md">
@@ -633,11 +630,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                         </div>
                                     </div>
 
-                                    <div className="border-t border-white/10 pt-8">
-                                        <p className="text-base md:text-lg text-white/60 italic text-center max-w-3xl mx-auto">
-                                            "Ultimately, this iterative loop allowed us to refine the mechanics to a polished state, ensuring player agency remained central to the experience."
-                                        </p>
-                                    </div>
+
 
                                 </div>
 
