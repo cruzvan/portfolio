@@ -605,25 +605,21 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
                     textBlock4: "INSERT TEXT HERE.",
                     bullets: ["RITMO", "PUZZLES", "NARRATIVA"],
                     media1: [
-                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop"
+                        ""
                     ],
                     media2: [
-                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop"
+                        ""
                     ],
                     media3: [
-                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop"
+                        ""
                     ]
                 }
             },
             software: ["UNREAL ENGINE", "FIGMA", "GOOGLE DOCS", "BLENDER", "SUBSTANCE PAINTER", "GITHUB"],
             duration: "6-7 MESES",
-            videos: [],
+            videos: ["https://www.youtube.com/watch?v=V-iyZe4rn9c", "https://www.youtube.com/watch?v=X2cXn5viBgs", "https://www.youtube.com/watch?v=6D3g5Fc9FW0"],
             gallery: [],
-            externalLink: "#",
+            externalLink: "https://www.instagram.com/hollowflowers_/",
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1774815393/PF_GameDesign_HollowFlowers_Image0_alycrj.webp"
         }
     },
