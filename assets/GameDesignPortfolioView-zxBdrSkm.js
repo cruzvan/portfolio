@@ -1,1 +1,0 @@
-import{j as a}from"./index-RdprU37V.js";import{g as e,B as r}from"./BasePortfolioView-6rOid2i7.js";const m=({onClose:t})=>{const o=[...new Set(e.flatMap(s=>s.tags))];return a.jsx(r,{title:"GAME DESIGN",projects:e,categories:o,onClose:t,baseRoute:"#game-design"})};export{m as default};
