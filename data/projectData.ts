@@ -545,23 +545,26 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                     textBlock1: `Rewind-Fastforward: Sistema que se utiliza con la handycam de Kei que sirve para atrasar o adelantar en el tiempo un objeto o un conjunto de estos.
 Funciona apuntando con la handycam a cierta distancia hacia el trigger del objetivo, utilizando el 'Line Trace' de Unreal Engine donde, al presionar para hacer fast forward o rewind, se reproduce un level sequence limitado al objeto en el cual transporta los meshes y colliders de un lugar a otro, cambiando el estado de 'rewinded' a 'fast-forwarded' y viceversa. 
 A su vez, cada vez que se activa un cambio de estados, el código llama a los efectos de postprocesado de la cámara para activar elementos de ruido, sumado a un cambio en el dynamic material de los meshes que son parte del sistema.`,
-                    textBlock2: "El sistema de eventos del videojuego funciona a través un código que funciona de listener ante los trigger dentro del nivel. Una vez recibe la información, es el encargado de comunicarle a otros sistemas del juego que ejecuten sus comandos a través de interfaces. Entre estos sistemas que reaccionan se encuentran el sistema de postprocesado de imagen, de cutscenes, objetos con iluminación y objetos específicos como modificar el dynamic material de un mesh asociado a un blueprint.",
+                    textBlock2: "El sistema de eventos del videojuego funciona a través un código que sirve de listener ante los diferentes tipos de trigger dentro del nivel. Una vez recibe la información, es el encargado de comunicarle a otros sistemas del juego que ejecuten sus comandos a través de interfaces. Entre estos sistemas que reaccionan se encuentran el sistema de postprocesado de imagen, environment, cutscenes, objetos con iluminación y objetos específicos, como modificar el dynamic material de un mesh asociado a un blueprint.",
                     textBlock3: "Entre las ventajas de usar Unreal Engine, está en que los level sequence pueden activar dentro de sí mismos una llamada de blueprint en el frame excacto que se necesitan. Con esto a favor, para los Quick Time Events se utilizó una cadena de nodos para activar um módulo del sistema de HUDs con un countdown, donde activa en pantalla el input que se necesita presionar durante un tiempo limitado. Si se presiona el input solicitado en pantalla, da la retroalimentación en su imagen y el cutscene sigue por su misma trayectoria o 'camino dorado'. En su caso contrario, se sigue por otra vía de los cutscene donde la personaje es derrotada por el enemigo.",
                     textBlock4: `Past Shif Zone: Sistema que gestiona una zona 'trigger' del videojuego en donde, si se entra a ella y se activa la handycam, todo lo que está dentro de esa zona cambia a su apariencia del cómo se veía en el pasado, además de quitar y añadir objetos si estos estaban o no en esa zona temporal.
 Si aparece un objeto nuevo, se puede interactuar con él con la cámara para cambiarlo a la zona temporal presente por un tiempo limitado y así poder avanzar con los puzzles del nivel.
 Para que funcione, se toma como condicionantes que el player esté dentro del collision trigger del past shift zone, tenga la handycam encendida y el line trace se encuentre a una distancia correcta para que el cambio temporal del objeto funcione. Una vez activado, el player deberá ocupar ese objeto rápidamente para el propósito de su condición antes de que vuelva al tiempo pasado (ejemplo, subir una furgoneta para llegar a un sitio a una altura que antes no se podía).`,
                     bullets: ["SISTEMA REWIND-FAST FORWARD", "SISTEMA DE EVENTOS", "QTE USANDO LEVEL SEQUENCE", "ZONA DE CAMBIO AL PASADO"],
                     media1: [
-                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1766778096/Hollow_Flowers_-_Gameplay_Trailer_-_Hollow_Flowers_1080p_h264__3_p2h0ax.webm",
-                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop"
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1774964280/PF_Game_HF_Image7_zqrqvq.webm",
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774964939/PF_Game_HF_Image8_gwfgd2.webp",
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774965155/PF_Game_HF_Image9_eqw5wf.webp"
                     ],
                     media2: [
-                        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop",
-                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1766778096/Hollow_Flowers_-_Gameplay_Trailer_-_Hollow_Flowers_1080p_h264__3_p2h0ax.webm"
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774966508/PF_Game_HF_Image10_pzphky.webp",
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774966744/PF_Game_HF_Image10_2_z48ok3.webp"
                     ],
                     media3: [
-                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1766778096/Hollow_Flowers_-_Gameplay_Trailer_-_Hollow_Flowers_1080p_h264__3_p2h0ax.webm",
-                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop"
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1774819031/PF_Game_HF_Image14_pg4hfv.webm",
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1774820120/PF_Game_HF_Image15_uurckh.webm",
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774967725/PF_Game_HF_Image10_3_okkbn5.webp",
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774968066/PF_Game_HF_Image10_4_i5mjuz.webp"
                     ]
                 },
 
@@ -590,7 +593,8 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
 
                     ],
                     media3: [
-                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1774820573/PF_Game_HF_Image16_ovsf2f.webm"
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1774820573/PF_Game_HF_Image16_ovsf2f.webm",
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774967349/PF_Game_HF_Image17_vwvbho.webp"
                     ]
                 },
                 "LEVEL DESIGN": {
