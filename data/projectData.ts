@@ -137,8 +137,8 @@ export const techArtProjects: ProjectCardData[] = [
         id: 2,
         title: "BLENDER COMPOSITOR ADD-ONS",
         category: "Blender",
-        tags: ["SHADERS"],
-        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
+        tags: ["PROGRAMMING", "SHADERS"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775162957/PF_3DTech_BlenderAddon_Cover_dkzmqv.webp",
         status: "WIP",
         locked: false
     },
@@ -1184,6 +1184,62 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1766698479/PF_3DTech_NoisePP_Image0_q4yfiz.webp"
         }
     },
+    "BLENDER COMPOSITOR ADD-ONS": {
+        en: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "PROGRAMMING": {
+                    headline: "INSERT HEADLINE: PROGRAMMING",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "SHADERS": {
+                    headline: "INSERT HEADLINE: BLENDER",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#",
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775163317/PF_3DTech_BlenderAddon_0_cover_z9nymx.webp"
+        },
+        es: {
+            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            tagContent: {
+                "PROGRAMMING": {
+                    headline: "INSERT HEADLINE: PROGRAMMING",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                },
+                "SHADERS": {
+                    headline: "INSERT HEADLINE: PYTHON",
+                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+                    textBlock3: "INSERT TEXT HERE.",
+                    textBlock4: "INSERT TEXT HERE.",
+                    bullets: ["EEEEE", "Bullet point two", "Bullet point three"]
+                }
+            },
+            software: ["INSERT SOFTWARE"],
+            duration: "INSERT DURATION",
+            videos: [],
+            gallery: [],
+            externalLink: "#",
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775163317/PF_3DTech_BlenderAddon_0_cover_z9nymx.webp"
+        }
+    },
     "YIQ NTSC POSTPOCESS SHADER": {
         en: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -1776,62 +1832,7 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
             overviewImage: ""
         }
     },
-    "BLENDER COMPOSITOR ADD-ONS": {
-        en: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
-            tagContent: {
-                "PYTHON": {
-                    headline: "INSERT HEADLINE: PYTHON",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                },
-                "BLENDER": {
-                    headline: "INSERT HEADLINE: BLENDER",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                }
-            },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
-            videos: [],
-            gallery: [],
-            externalLink: "#",
-            overviewImage: ""
-        },
-        es: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
-            tagContent: {
-                "SHADERS": {
-                    headline: "INSERT HEADLINE: PYTHON",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["EEEEE", "Bullet point two", "Bullet point three"]
-                },
-                "BLENDER": {
-                    headline: "INSERT HEADLINE: BLENDER",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                }
-            },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
-            videos: [],
-            gallery: [],
-            externalLink: "#",
-            overviewImage: ""
-        }
-    },
+
 
     // --- OTHERS PROJECTS ---
     "MINI SCREEN STREAM DOCK APP": {
