@@ -425,63 +425,82 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             tagContent: {
                 "GAME DESIGN": {
                     headline: "INSERT HEADLINE: GAME DESIGN",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    textBlock1: `'Hollow Flowers' is a transmedia project starring Kei, a teenager who records everything with her Handycam. For this exploration and horror video game, featuring an aesthetic that combines dreamlike, analog, and anime elements, we decided that a large part of the mechanics would revolve around the video camera, including:
+• The exploration view switching from third-person to first-person when the camera is activated.
+• Zooming in.
+• Focusing on objects to rewind and fast-forward them in time.
+• Using the Handycam in specific locations to change the era of an entire zone.
+• Seeing hidden enemies.`,
+                    textBlock2: "The project's systems architecture is structured around two main axes: Player movement and the use of the Handycam. A modular design was used, which streamlined the development of base interactions, such as jumping, climbing, or pushing/pulling objects. The video camera acts as the bridge that expands the interactions from the ordinary game world into the dreamlike, analog, or glitchy realms. ",
+                    textBlock3: "In parallel with this, an assembly of interconnections has been designed based on an event system with trigger zones; by linking and placing the player in each trigger, it unleashes possibilities such as activating a tutorial, changing lights, post-processing, material properties, camera position, and cinematics. Likewise, cinematics can also activate or modify these same processes, in addition to the ability to establish Quick Time Events within themselves, where, if the correct button is pressed within the estimated time, a part of the cinematic will continue, but if an incorrect one is pressed, it will switch to another cutscene.",
+                    textBlock4: "Our approach to level design prioritizes narrative and pacing. For this, the vertical slice begins by introducing basic exploration mechanics, familiarizing the player with the controls. Following this, environmental jump-scares involving enemy-related elements are included to generate tension and curiosity. The progression of the level consists of puzzle moments with a calm pacing, interleaved with moments of tension featuring events to escape from the enemy and QTEs against an unbeatable enemy. Finally, it transitions to an area with heavier narrative weight, where it ends with a tease of the game's most important enemy as a narrative device (cliffhanger).",
+                    bullets: ["HANDYCAM", "SYSTEMS DESIGN", "LEVEL DESIGN"],
                     media1: [
                         "https://res.cloudinary.com/dseaazn5s/image/upload/v1774815700/PF_Game_HF_Image1_jiulg6.png"
                     ],
                     media2: [
-                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop"
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774815878/PF_Game_HF_Image2_dv8si8.png"
                     ],
                     media3: [
-                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop"
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774816449/PF_Game_HF_Image3_ncoftd.webp",
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774816610/PF_Game_HF_Image4_g8qzuv.webp"
                     ]
                 },
                 "PROGRAMMING": {
                     headline: "INSERT HEADLINE: PROGRAMMING BLUEPRINTS",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    textBlock1: `Rewind-Fastforward: A system integrated into Kei's handycam, designed to rewind or fast-forward objects in time.
+It works via a 'Line Trace' in Unreal Engine to detect the selected target. Upon activating the rewind or fast-forward command, an exclusive 'Level Sequence' of the object is played, which transitions the position of its 'meshes' and 'colliders' to alternate fluidly between both temporal states.
+Simultaneously, the activation of the system adds noise effects through the camera's post-processing and modifies the dynamic materials of the affected models to provide visual feedback.`,
+                    textBlock2: "The video game's event system works through a core code that acts as a 'listener' to the different types of 'triggers' in the level. Upon detecting an interaction, this system communicates via interfaces with other code agents to execute chained commands. Among the entities that react to these events are image post-processing volumes, the environment, cinematic playback, lighting, and 'Blueprints' of specific objects (for example, to alter their dynamic materials in real time).",
+                    textBlock3: "An advantage of using Unreal Engine is that 'Level Sequences' can invoke functions from 'Blueprints' on an exact frame. Taking advantage of this, for the Quick Time Events, a node chain was built to activate an HUDs system module with a countdown, activating an on-screen texture with the requested input for a limited time. If this is fulfilled, it provides visual feedback and the cutscene continues along its same path (or 'golden path'). Otherwise, the sequence diverts to an alternative scene where the protagonist is defeated.",
+                    textBlock4: `Past Shift Zone: A system that manages a 'trigger' zone in the level where, if entered and the handycam is activated, everything inside that zone temporarily adopts its appearance from the past, in addition to removing and adding objects if they existed in that temporal zone.
+The player can interact with key pieces from the past by focusing on them with the camera to bring them to the present era and thus be able to decipher a part of the level's puzzles.
+For it to work, the system verifies three parameters: the player must be inside the 'collision trigger' of the zone, have the handycam turned on, and aim the 'Line Trace' within an allowed distance. Once activated, the player will have to use that object quickly before it returns to the past time (for example, climbing a van to reach a height that previously could not be reached).`,
+                    bullets: ["REWIND-FAST FORWARD SYSTEM", "EVENT SYSTEM", "QTE USING LEVEL SEQUENCE", "SHIFT TO PAST ZONE"],
                     media1: [
-                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1766778096/Hollow_Flowers_-_Gameplay_Trailer_-_Hollow_Flowers_1080p_h264__3_p2h0ax.webm",
-                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop"
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1774964280/PF_Game_HF_Image7_zqrqvq.webm",
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774964939/PF_Game_HF_Image8_gwfgd2.webp",
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774965155/PF_Game_HF_Image9_eqw5wf.webp"
                     ],
                     media2: [
-                        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop",
-                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1766778096/Hollow_Flowers_-_Gameplay_Trailer_-_Hollow_Flowers_1080p_h264__3_p2h0ax.webm"
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774966508/PF_Game_HF_Image10_pzphky.webp",
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774966744/PF_Game_HF_Image10_2_z48ok3.webp"
                     ],
                     media3: [
-                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1766778096/Hollow_Flowers_-_Gameplay_Trailer_-_Hollow_Flowers_1080p_h264__3_p2h0ax.webm",
-                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop"
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1774819031/PF_Game_HF_Image14_pg4hfv.webm",
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1774820120/PF_Game_HF_Image15_uurckh.webm",
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774967725/PF_Game_HF_Image10_3_okkbn5.webp",
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774968066/PF_Game_HF_Image10_4_i5mjuz.webp"
                     ]
                 },
 
                 "SHADERS": {
                     headline: "INSERT HEADLINE: SHADERS",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    textBlock1: "For the handycam's aesthetics, we employed a combination of 'Post Process Materials', highlighting effects of 'barrel' and 'signal distortion', 'scanlines', 'scratches', 'colored noise', blur, and YIQ chromatic aberration. These filters are activated exclusively when using the video camera and react dynamically to the environment to provide visual feedback. To achieve this, a 'Material Parameter Collection' (MPC) is used; for example, when rewinding an object, the code increments the 'SignalDistortionIntensity' variable, emulating the classic static of a VHS tape.",
+                    textBlock2: `In the 'Past Shift Zone', interactive objects use a smart material configured to react asynchronously in two states:
+• Player outside the 'Trigger Collider': The object renders its present-time texture. However, the portion of its 3D model that visually intersects with the zone generates a strong anomaly of chromatic aberration and emissive pixelation to alert the player.
+• Player inside the 'Trigger Collider' (Handycam active): The material reveals the past texture of the object, dissipating the distortion effects. Simultaneously, the Shader performs spatial masking, ensuring the rest of the level renders with a present appearance if it is outside the limits of the zone.`,
+                    textBlock3: `Within the same 'Past Shift Zone', there are exclusive objects from the past that can be brought to the present by interacting with them. These respond to three visual states:
+• Deactivated: If the handycam is turned off and no prior interaction has occurred. The object's 'mesh' and texture remain completely invisible.
+• Visible in Handycam: When focusing on the zone in the present with the active camera. A pixelated 'colored noise' effect is generated using the 'Screen Position' coordinates in its UVs, thus attracting the player's curiosity.
+• Visible in Present Time: Once brought to the present, the object shows its original texture. However, a layer of 'colored noise' will increase gradually over 10 seconds to indicate that the anomalous component is about to return to its corresponding era.`,
+                    textBlock4: `For the collectible cards we designed an optimized shader that works using a single plane model. This material stands out for the integration of two main technical characteristics:
+• Parallax Occlusion Mapping: Using three depth textures, a three-dimensional volume is emulated, which provides an intense sensation of relief when the player manipulates or rotates the collectible in the menu.
+• Hologram Mask: Through the use of a texturized mask, we are able to isolate the specific zones where the holographic effect should be superimposed. Furthermore, the combination of the Fresnel effect and the 'Screen Position' coordinates generate a striking iridescence of colors depending on the angle at which the camera views the card.`,
+                    bullets: ["VHS Camera", "Past Shift-Zone", "Card Hologram"],
                     media1: [
-                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop"
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1774818147/PF_Game_HF_Image13_thjcqj.webm",
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1774817268/PF_Game_HF_Image12_tnilid.webm",
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774817805/PF_Game_HF_Image11_norhx0.webp"
                     ],
                     media2: [
-                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop"
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1774819031/PF_Game_HF_Image14_pg4hfv.webm",
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1774820120/PF_Game_HF_Image15_uurckh.webm"
+
                     ],
                     media3: [
-                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop"
+                        "https://res.cloudinary.com/dseaazn5s/video/upload/v1774820573/PF_Game_HF_Image16_ovsf2f.webm",
+                        "https://res.cloudinary.com/dseaazn5s/image/upload/v1774967349/PF_Game_HF_Image17_vwvbho.webp"
                     ]
                 },
                 "LEVEL DESIGN": {
@@ -490,27 +509,23 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["HANDYCAM ORIENTED", "SYSTEM DESIGN", "LEVEL DESIGN"],
+                    bullets: ["RHYTHM", "PUZZLES", "NARRATIVE"],
                     media1: [
-                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop"
+                        ""
                     ],
                     media2: [
-                        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop"
+                        ""
                     ],
                     media3: [
-                        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop",
-                        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop"
+                        ""
                     ]
                 }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
-            videos: [],
+            software: ["UNREAL ENGINE", "FIGMA", "GOOGLE DOCS", "BLENDER", "SUBSTANCE PAINTER", "GITHUB"],
+            duration: "6-7 MONTHS",
+            videos: ["https://www.youtube.com/watch?v=V-iyZe4rn9c", "https://www.youtube.com/watch?v=X2cXn5viBgs", "https://www.youtube.com/watch?v=6D3g5Fc9FW0"],
             gallery: [],
-            externalLink: "#",
+            externalLink: "https://www.instagram.com/hollowflowers_/",
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1774815393/PF_GameDesign_HollowFlowers_Image0_alycrj.webp"
         },
         es: {
@@ -518,16 +533,15 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             tagContent: {
                 "GAME DESIGN": {
                     headline: "INSERT HEADLINE: GAME DESIGN",
-                    textBlock1: `En el proyecto transmedia 'Hollow Flowers' Kei, la protagonista, es una adolescente que va todos lados con su Handycam. Para este videojuego de exploración y horror con estética que combina lo onírico, analógico y animé, decidimos que gran parte de las mecánicas se realizarán en torno a la videocámara, incluyendo:
-
-•  Hacer zoom.
+                    textBlock1: `'Hollow Flowers' es un proyecto transmedia protagonizado por Kei, una adolescente que registra todo con su Handycam. Para este videojuego de exploración y horror, con estética que combina: lo onírico, analógico y animé, decidimos que gran parte de las mecánicas se realizarán en torno a la videocámara, incluyendo:
 • El cambio de exploración de tercera persona a primera persona cuando la cámara se activa.
+•  Hacer zoom.
 • Enfocar objetos para retrocederlos y adelantarlos en el tiempo.
 • Usar la Handycam en lugares específicos para cambiar la época de una zona completa.
 • Ver enemigos ocultos.`,
-                    textBlock2: "Se estructuró la arquitectura de sistemas del proyecto en torno a dos ejes principales: El movimiento del jugador y el uso de la Handycam. La cámara actúa como el puente que expande las interacciones del mundo ordinario del juego hacia lo onírico, analógico o glitchy. Se utilizó un diseño modular que permitió agilizar el desarrollo de las interacciones base, como saltos, escaladas o empuje-tire de objetos.",
-                    textBlock3: "En paralelo a ello, se diseñó un ensamble de interconexiones basado en un sistema de eventos con trigger zones; al vincularse y situar al player en cada trigger, se desprende de ella posibilidades como activar un tutorial, cambio de luces, postprocesado, propiedades de materiales, posición de cámara y cinemáticas. Así mismo, las cinemáticas también pueden activar o modificar estos mismos procesos, sumado a la posibilidad de establecer dentro de sí misma los Quick Time Events, donde, si se presiona el botón correcto en el tiempo estimado seguirá con una parte de la cinemática, pero si se presiona uno erróneo cambiará a otro cutscene.",
-                    textBlock4: "En el diseño de niveles, optamos por un diseño que siempre priorice narrativa y ritmo. Para esto, en el vertical slice se intentó comenzar con elementos básicos de exploración y combinación de botones para que los player se acostumbren a los controles. Posteriormente, se incluyen triggers in-level de shock medianos con elementos de enemigos para generar tensión y curiosidad. Después, el nivel consiste en momentos de puzzle de pacing tranquilo, intercalados con momentos de tensión con eventos de escapar del enemigo y QTE contra un enemigo inmbatible. Finalmente, se pasa a un área con mayor peso narrativo donde termina con un tease del enemigo más importante del juego como recurso narrativo de cliffhanger.",
+                    textBlock2: "Se estructura la arquitectura de sistemas del proyecto en torno a dos ejes principales: El movimiento del jugador y el uso de la Handycam. Se utilizó un diseño modular que permitió agilizar el desarrollo de las interacciones base, como saltos, escaladas o empuje-tire de objetos. La cámara de video actúa como el puente que expande las interacciones del mundo ordinario del juego hacia lo onírico, analógico o glitchy. ",
+                    textBlock3: "En paralelo a ello, se ha diseñado un ensamble de interconexiones basado en un sistema de eventos con trigger zones; al vincularse y situar al player en cada trigger, se desprende de ella posibilidades como activar un tutorial, cambio de luces, postprocesado, propiedades de materiales, posición de cámara y cinemáticas. Así mismo, las cinemáticas también pueden activar o modificar estos mismos procesos, sumado a la posibilidad de establecer dentro de sí misma los Quick Time Events, donde, si se presiona el botón correcto en el tiempo estimado seguirá con una parte de la cinemática, pero si se presiona uno erróneo cambiará a otra cutscene.",
+                    textBlock4: "Nuestro enfoque de diseño de niveles prioriza la narrativa y el ritmo. Para esto, en el vertical slice inicia introduciendo mecánicas básicas de exploración, familiarizando al jugador con los controles. A continuación, se incluyen jump-scares ambientales con elementos relacionados con enemigos para generar tensión y curiosidad. La progresión del nivel consiste en momentos de puzzle de pacing tranquilo, intercalados con momentos de tensión con eventos de escapar del enemigo y QTE contra un enemigo imbatible. Finalmente, se pasa a un área con mayor peso narrativo donde termina con un tease del enemigo más importante del juego como recurso narrativo (cliffhanger).",
                     bullets: ["HANDYCAM", "DISEÑO DE SISTEMAS", "DISEÑO DE NIVELES"],
                     media1: [
                         "https://res.cloudinary.com/dseaazn5s/image/upload/v1774815700/PF_Game_HF_Image1_jiulg6.png"
@@ -542,14 +556,14 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                 },
                 "PROGRAMMING": {
                     headline: "INSERT HEADLINE: PROGRAMMING BLUEPRINTS",
-                    textBlock1: `Rewind-Fastforward: Sistema que se utiliza con la handycam de Kei que sirve para atrasar o adelantar en el tiempo un objeto o un conjunto de estos.
-Funciona apuntando con la handycam a cierta distancia hacia el trigger del objetivo, utilizando el 'Line Trace' de Unreal Engine donde, al presionar para hacer fast forward o rewind, se reproduce un level sequence limitado al objeto en el cual transporta los meshes y colliders de un lugar a otro, cambiando el estado de 'rewinded' a 'fast-forwarded' y viceversa. 
-A su vez, cada vez que se activa un cambio de estados, el código llama a los efectos de postprocesado de la cámara para activar elementos de ruido, sumado a un cambio en el dynamic material de los meshes que son parte del sistema.`,
-                    textBlock2: "El sistema de eventos del videojuego funciona a través un código que sirve de listener ante los diferentes tipos de trigger dentro del nivel. Una vez recibe la información, es el encargado de comunicarle a otros sistemas del juego que ejecuten sus comandos a través de interfaces. Entre estos sistemas que reaccionan se encuentran el sistema de postprocesado de imagen, environment, cutscenes, objetos con iluminación y objetos específicos, como modificar el dynamic material de un mesh asociado a un blueprint.",
-                    textBlock3: "Entre las ventajas de usar Unreal Engine, está en que los level sequence pueden activar dentro de sí mismos una llamada de blueprint en el frame excacto que se necesitan. Con esto a favor, para los Quick Time Events se utilizó una cadena de nodos para activar um módulo del sistema de HUDs con un countdown, donde activa en pantalla el input que se necesita presionar durante un tiempo limitado. Si se presiona el input solicitado en pantalla, da la retroalimentación en su imagen y el cutscene sigue por su misma trayectoria o 'camino dorado'. En su caso contrario, se sigue por otra vía de los cutscene donde la personaje es derrotada por el enemigo.",
-                    textBlock4: `Past Shif Zone: Sistema que gestiona una zona 'trigger' del videojuego en donde, si se entra a ella y se activa la handycam, todo lo que está dentro de esa zona cambia a su apariencia del cómo se veía en el pasado, además de quitar y añadir objetos si estos estaban o no en esa zona temporal.
-Si aparece un objeto nuevo, se puede interactuar con él con la cámara para cambiarlo a la zona temporal presente por un tiempo limitado y así poder avanzar con los puzzles del nivel.
-Para que funcione, se toma como condicionantes que el player esté dentro del collision trigger del past shift zone, tenga la handycam encendida y el line trace se encuentre a una distancia correcta para que el cambio temporal del objeto funcione. Una vez activado, el player deberá ocupar ese objeto rápidamente para el propósito de su condición antes de que vuelva al tiempo pasado (ejemplo, subir una furgoneta para llegar a un sitio a una altura que antes no se podía).`,
+                    textBlock1: `Rewind-Fastforward: Sistema integrado a la handycam de Kei, diseñado para atrasar o adelantar objetos en el tiempo.
+Funciona mediante un 'Line Trace' en Unreal Engine para detectar el objetivo seleccionado. Al activar el comando de rewind o fast-forward, se reproduce un 'Level Sequence' exclusivo del objeto, el cual transiciona la posición de sus 'meshes' y 'colliders' para alternar fluidamente entre ambos estados temporales.
+Simultáneamente, la activación del sistema añade efectos de ruido mediante el postprocesado de la cámara y modifica los materiales dinámicos de los modelos afectados para brindar feedback visual.`,
+                    textBlock2: "El sistema de eventos del videojuego funciona a través de un código central que actúa como 'listener' ante los distintos tipos de 'triggers' del nivel. Al detectar una interacción, este sistema se comunica mediante interfaces con otros agentes del código para ejecutar comandos en cadena. Entre las entidades que reaccionan a estos eventos se encuentran los volúmenes de postprocesado de imagen, el entorno (environment), la reproducción de cinemáticas, la iluminación y 'Blueprints' de objetos específicos (por ejemplo, para alterar sus materiales dinámicos en tiempo real).",
+                    textBlock3: "Una ventaja de utilizar Unreal Engine es que los 'Level Sequences' pueden invocar funciones de 'Blueprints' en un frame exacto. Aprovechando esto, para los Quick Time Events se construyó una cadena de nodos para activar um módulo del sistema de HUDs con una cuenta regresiva, activando en pantalla una textura con el input solicitado durante un tiempo limitado. Si esto se cumple, da un feedback visual y el cutscene sigue por su misma trayectoria (o 'camino dorado'). En caso contrario, la secuencia se desvía hacia una escena alternativa donde la protagonista es derrotada.",
+                    textBlock4: `Past Shift Zone: Sistema que gestiona una zona 'trigger' del nivel donde, si se entra a ella y se activa la handycam, todo lo que está dentro de esa zona adopta temporalmente su apariencia del pasado, además de quitar y añadir objetos si estaban en esa zona temporal.
+El jugador puede interactuar con piezas clave del pasado enfocándolas con la cámara para traerlas a la época presente y así poder descifrar una parte los puzzles del nivel.
+Para que funcione, el sistema verifica tres parámetros: el jugador debe estar dentro del 'collision trigger' de la zona, tener la handycam encendida y apuntar con el 'Line Trace' a una distancia permitida. Una vez activado, el player deberá ocupar ese objeto rápidamente antes de que vuelva al tiempo pasado (ejemplo, subir una furgoneta para llegar a un sitio a una altura que antes no se podía).`,
                     bullets: ["SISTEMA REWIND-FAST FORWARD", "SISTEMA DE EVENTOS", "QTE USANDO LEVEL SEQUENCE", "ZONA DE CAMBIO AL PASADO"],
                     media1: [
                         "https://res.cloudinary.com/dseaazn5s/video/upload/v1774964280/PF_Game_HF_Image7_zqrqvq.webm",
@@ -570,17 +584,17 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
 
                 "SHADERS": {
                     headline: "INSERT HEADLINE: SHADERS",
-                    textBlock1: "Para la handycam, se ocupa una combinación de 'post process materials', en los que destaca el uso de barrel y signal distortion, scanlines, scratches, coloured noise, blur y aberración cromática tipo YIQ. Tiene como finalidad solo activarse cuando la handycam es ocupada y posee ciertas variables que dinámicamente reaccionan como retroalimentación a lo que sucede en el ambiente utilizando 'material parameter collection'. Por ejemplo, si la cámara es usada para retroceder en el tiempo un objeto, se aumenta el valor de 'SignalDistortionIntensity' para que adquiera una sensación similar a los VHS cuando se ocupaba esta herramienta.",
-                    textBlock2: `En la SHIFT TIME ZONE, todos los objetos que están dentro poseen 2 estados creados para el mismo material.
-• Player fuera del trigger collider: Ocupa una textura del presente, pero todo lo del objeto que utiliza el material que esté dentro del collider de la zona, activa una aberración cromática con emisión y pixelación.
-• Player dentro del trigger collider, usando la handycam: Cambia la textura del objeto a una del pasado, quitando los efectos anteriores, pero sigue reconociendo como textura del presente todo lo que está fuera del trigger collider.`,
-                    textBlock3: `Dentro de la misma zona, existen objeto que se muestran solo cuando se está en el pasado, con los que se puede interactuar para llevarlos al presente, tiene 3 estados:
-• Desactivado: Cuando no se está ocupando la handycam, ni se ha interactuado con el objeto. Hace que el mesh y su textura sea completamente invisible.
-• Visible Handycam: Cuando se ve en el presente por la handycam. Activa un efecto de colored noise pixelado usando de UV el screen position para llamar la atención. 
-• Visible en Tiempo Presente: Aparece con su textura del objeto original, pero durante 10 segundos va gradualmente aumentando el noise colored encima, para dar a entender que queda poco tiempor restante del objeto en el tiempo presente.`,
-                    textBlock4: `Para las cartas coleccionables del juego, se les creó un shader que economiza recursos puesto que trabaja solo con un plano. Este material se compone principalmente de dos caracteríticas técnicas:
-• Parallax Occlusion Mapping: Ocupa tres texturas dentro de la carta en las que se puede elegir que tan profundo se sienta dentro de la carta al rotarla o moverla.
-• Hologram Mask: Se utiliza una textura de holograma para que los sitios requeridos de la carta puedan ser 'selectos' para que este efecto de holograma se sitúe por encima de la textura original con una emisión modificable y que además, utilizando fresnel y el screen position cambie sus colores dependiendo del ángulo en que se vea.`,
+                    textBlock1: "Para la estética de la handycam empleamos una combinación de 'Post Process Materials', destacando efectos de 'barrel' y 'signal distortion', 'scanlines', 'scratches', 'colored noise', desenfoque y aberración cromática YIQ. Estos filtros se activan exclusivamente al usar la video-cámara y reaccionan dinámicamente al entorno para otorgar feedback visual. Para lograr esto, se utiliza un 'Material Parameter Collection' (MPC); por ejemplo, al rebobinar un objeto, el código incrementa la variable 'SignalDistortionIntensity', emulando la clásica estática de una cinta VHS",
+                    textBlock2: `En la 'Past Shift Zone', los objetos interactivos utilizan un material inteligente configurado para reaccionar asíncronamente en dos estados:
+• Jugador fuera del 'Trigger Collider': El objeto renderiza su textura del tiempo presente. Sin embargo, la porción de su modelo 3D que intersecta visualmente con la zona, genera una fuerte anomalía de aberración cromática y pixelación emisiva para alertar al jugador.
+• Jugador dentro del 'Trigger Collider' (Handycam activa): El material revela la textura del pasado del objeto, disipando los efectos de distorsión. Simultáneamente, el Shader realiza un enmascarado espacial asegurándose de renderizar el resto del nivel con apariencia del presente si está fuera de los límites de la zona.`,
+                    textBlock3: `Dentro de la misma 'Past Shift Zone' existen objetos exclusivos del pasado que pueden ser traídos al presente interactuando con ellos. Estos responden a tres estados visuales:
+• Desactivado: Si la handycam está apagada y no ha habido interacción previa. El 'mesh' del objeto y su textura permanecen completamente invisibles.
+• Visible en Handycam: Al enfocar la zona en el presente con la cámara activa. Se genera un efecto de 'colored noise' pixelado utilizando las coordenadas del 'Screen Position' en sus UVs, atrayendo así la curiosidad del jugador.
+• Visible en Tiempo Presente: Ya traído al presente, el objeto muestra su textura original. No obstante, una capa de 'colored noise' irá aumentando gradualmente a lo largo de 10 segundos para dar a entender que el componente anómalo está pronto a regresar a su época correspondiente.`,
+                    textBlock4: `Para las cartas coleccionables diseñamos un shader optimizado que trabaja usando un único modelo de plano (plane). Este material destaca por la integración de dos características técnicas principales:
+• Parallax Occlusion Mapping: Utilizando tres texturas de profundidad se emula un volumen tridimensional, lo cual otorga una intensa sensación de relieve cuando el jugador manipula o rota el coleccionable en el menú.
+• Hologram Mask: Mediante el uso de una máscara texturizada logramos aislar las zonas específicas donde el efecto holográfico debe superponerse. Además, la combinación del efecto Fresnel y las coordenadas de 'Screen Position' provocan una llamativa iridiscencia de colores dependiendo del ángulo en el que la cámara visualice a la carta.`,
                     bullets: ["VHS Camera", "Past Shift-Zone", "Card Hologram"],
                     media1: [
                         "https://res.cloudinary.com/dseaazn5s/video/upload/v1774818147/PF_Game_HF_Image13_thjcqj.webm",
@@ -756,7 +770,7 @@ Para que funcione, se toma como condicionantes que el player esté dentro del co
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["LORE", "PARANOIA", "STORYTELLING"]
                 },
                 "ART DIRECTION": {
                     headline: "INSERT HEADLINE: ART DIRECTION",
