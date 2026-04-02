@@ -1211,11 +1211,11 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
                     media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775166099/PF_3DTech_BlenderAddon_6_u3t5a6.webp"]
                 }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["VS CODE", "BLENDER", "GITHUB"],
+            duration: "2026 - ",
             videos: [],
             gallery: [],
-            externalLink: "#",
+            externalLink: "https://superhivemarket.com/creators/ruidovfx",
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775163317/PF_3DTech_BlenderAddon_0_cover_z9nymx.webp"
         },
         es: {
@@ -1244,11 +1244,11 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
                     media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775166099/PF_3DTech_BlenderAddon_6_u3t5a6.webp"]
                 }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["VS CODE", "BLENDER", "GITHUB"],
+            duration: "2026 - ",
             videos: [],
             gallery: [],
-            externalLink: "#",
+            externalLink: "https://superhivemarket.com/creators/ruidovfx",
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775163317/PF_3DTech_BlenderAddon_0_cover_z9nymx.webp"
         }
     },
