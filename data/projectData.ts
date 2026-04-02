@@ -1189,20 +1189,26 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
                 "PROGRAMMING": {
-                    headline: "INSERT HEADLINE: PROGRAMMING",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "PYTHON + BLENDER API",
+                    textBlock1: "For the add-on structure, my workflow begins by programming in VS Code. Using the Blender 5.0 API, I generate Python scripts to design the graphical interface in the Blender Layout 'Sidebar', structuring interaction panels and storing all manipulable variables (like scales or colors) inside global structures such as 'bpy.types.PropertyGroup'.",
+                    textBlock2: "Automation Process (Nodes to Code): The design of the effects originates directly in the Compositor by connecting nodes manually. Once the visual mathematical logic is defined, I apply reverse engineering to translate that node tree into algorithmic iterations ('build_nodes'). This system automates the creation of the Nodes from scratch in an empty project by calling 'bpy.data.node_groups.new', ensuring that the artist or designer has the entire setup ready with a single click.",
+                    textBlock3: "Data Management and Persistence: To manage 'Presets', I developed a system based on serialized dictionaries (JSON) that allows for data and state persistence. The code memorizes unique configurations without mixing global values. Additionally, it includes subsystems for 'Reset' functionality, which rewrite the sockets from the interface back to their default values without breaking the pre-existing node.",
+                    textBlock4: "Compositor-UI Interconnectivity (Drivers): To achieve bi-directional, real-time communication between the UI and the Nodes, I used custom functions to inject *Drivers* ('driver_add'). This solution parents the 'data_path' of the properties ('scene.vhs_props') directly to their corresponding sockets. Thus, by sliding a parameter, the value is instantly matched to the core of the Shader in the nodes.",
+                    bullets: ["PYTHON SCRIPTING", "BLENDER COMPOSITOR", "REVERSE ENGINEERING", "UI & DRIVERS"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775164833/PF_3DTech_BlenderAddon_1_qdeot1.webp"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775164834/PF_3DTech_BlenderAddon_2_oqrfr6.webp"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775164834/PF_3DTech_BlenderAddon_3_jsk5n2.webp"]
                 },
                 "SHADERS": {
-                    headline: "INSERT HEADLINE: BLENDER",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "POST-PROCESS SHADERS",
+                    textBlock1: "VHS Generator / Texturized Aesthetic: The effect simulates analog retro videos and the original hardware player. Its logic uses an animated 'Luma Waveform', in addition to distortion mathematics, to apply Chromatic Aberration (YIQ) and 'Barrel Distortion'. It also includes FBM-type noisy generation to replicate asynchrony in the classic rewinding lines ('Tracking lines').",
+                    textBlock2: "Dither (Base Structure): A framework to chain multiple obsolete pixelation styles. As a base, an asynchronous 'downscaling' logic is developed over coordinates. In its core, the shaders process the texturing style to emulate Bayer-type matrices (from 2x2 up to 8x8), 'Crosshatch', and algorithmically generated irregular organic dispersions (Blue/White Noises).",
+                    textBlock3: "Dither (Quantization and Color Space): To complete the effect, an entire subsystem dedicated to dynamic color compression and posterization was programmed. With this, the degradation allows for interpretation under pure RGB calculations, isolating perfect luminance via CIELAB models, or being aggressively constrained to classic console dichromies (1-Bit Monochrome) by implementing editable 'Color Ramp' variations.",
+                    textBlock4: "CRT Simulation: This component simulates the physical density of the cathode-ray tube (Phosphor Display). The shader micro-segments the light values of the scene, projecting them toward geometric sub-pixel matrices in Red, Green, and Blue formats. This is interactively combined with 'Scanlines', restrictive luminous blooming ('Glow' / Blooming), and customizable optical aberrations.",
+                    bullets: ["VHS GENERATOR", "DITHER (PROCEDURAL SPACES)", "CRT SUBPIXEL EMULATION"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775166706/PF_3DTech_BlenderAddon_5_joctea.webm"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775165656/PF_3DTech_BlenderAddon_4_rpwwk3.webm"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775166099/PF_3DTech_BlenderAddon_6_u3t5a6.webp"]
                 }
             },
             software: ["INSERT SOFTWARE"],
@@ -1216,20 +1222,26 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
                 "PROGRAMMING": {
-                    headline: "INSERT HEADLINE: PROGRAMMING",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "PYTHON + BLENDER API",
+                    textBlock1: "Para la estructura de los add-ons, mi workflow comienza programando desde VS Code. Ocupando la API de Blender 5.0, genero los scripts en Python para diseñar la interfaz gráfica en el 'Sidebar' del Layout en Blender, estructurando paneles de interacción y almacenando todas las variables manipulables (como escalas o colores) dentro de estructuras globales como 'bpy.types.PropertyGroup'.",
+                    textBlock2: "Proceso de Automatización (Nodos a Código): El diseño de los efectos nace directamente en el Compositor conectando los nodos manualmente. Una vez definida la lógica matemática visual, aplico retroingeniería para traducir ese árbol de nodos a iteraciones algorítmicas ('build_nodes'). Este sistema automatiza la creación de los Nodos desde cero en un proyecto en blanco invocando 'bpy.data.node_groups.new', asegurando que el artista o diseñador tenga todo el setup con un solo clic.",
+                    textBlock3: "Manejo de Datos y Permanencia: Para gestionar los 'Presets', desarrollé un sistema basado en diccionarios serializados (JSON) que permite la persistencia de datos y estados. El código memoriza las configuraciones únicas sin mezclar valores globales. Además, incluye subsistemas para la funcionalidad de 'Reset', los cuales reescriben los sockets desde la interfaz a sus valores por default sin romper el nodo preexistente.",
+                    textBlock4: "Interconectividad Compositor-UI (Drivers): Para lograr comunicación bidireccional en tiempo real entre la UI y los Nodos utilicé funciones personalizadas para inyectar *Drivers* ('driver_add'). Esta solución emparenta los 'data_path' de las propiedades ('scene.vhs_props') directo a sus sockets correspondientes. Así, al deslizar un parámetro, el valor se empareja instantáneamente hacia el núcleo del Shader en los nodos.",
+                    bullets: ["PYTHON SCRIPTING", "BLENDER COMPOSITOR", "RETROINGENIERÍA", "UI & DRIVERS"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775164833/PF_3DTech_BlenderAddon_1_qdeot1.webp"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775164834/PF_3DTech_BlenderAddon_2_oqrfr6.webp"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775164834/PF_3DTech_BlenderAddon_3_jsk5n2.webp"]
                 },
                 "SHADERS": {
-                    headline: "INSERT HEADLINE: PYTHON",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["EEEEE", "Bullet point two", "Bullet point three"]
+                    headline: "POST-PROCESS SHADERS",
+                    textBlock1: "Generador de VHS / Estética Texturizada: El efecto simula los videos retro analógicos y el reproductor de hardware original. Su lógica emplea un 'Luma Waveform' animado, además de matemáticas de distorsión, para aplicar Aberración Cromática (YIQ) y 'Barrel Distortion'. También incluye generación ruidosa tipo FBM para replicar asincronía en las clásicas líneas de rebobinado ('Tracking lines').",
+                    textBlock2: "Dither (Estructura Base): Un framework para encadenar múltiples estilos de pixelación obsoleto. Como base se desarrolla lógica de 'downscaling' asíncrono sobre coordenadas. En su núcleo de shaders se procesa el estilo de texturizado para emular matrices tipo Bayer (2x2 hasta 8x8), 'Crosshatch' y dispersiones orgánicas irregulares generadas algorítmicamente (Blue/White Noises).",
+                    textBlock3: "Dither (Cuantización y Color Space): Para completar el efecto, se programó un subsistema íntegro dedicado a la compresión y posterización dinámica de color. Con esto, la degradación permite interpretarse bajo cálculos RGB, aislar la luminancia perfecta vía modelos CIELAB, o ser constreñida agresivamente a dicromías de consola clásica (1-Bit Monochrome) implementando variaciones por 'Color Ramps' editables.",
+                    textBlock4: "Simulación CRT: Este componente simula la densidad física del tubo de rayos catódicos (Phosphor Display). El shader micro-segmenta los valores de luz de la escena proyectándolos hacia matrices geométricas sub-pixel en formato Red, Green, Blue. Combinado interactivamente con 'Scanlines', floración luminosa restrictiva ('Glow' / Blooming) y aberraciones ópticas personalizables.",
+                    bullets: ["VHS GENERATOR", "DITHER", "CRT"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775166706/PF_3DTech_BlenderAddon_5_joctea.webm"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775165656/PF_3DTech_BlenderAddon_4_rpwwk3.webm"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775166099/PF_3DTech_BlenderAddon_6_u3t5a6.webp"]
                 }
             },
             software: ["INSERT SOFTWARE"],
