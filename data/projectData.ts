@@ -686,14 +686,14 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
             tagContent: {
                 "GAME DESIGN": {
                     headline: "DISEÑO DE JUEGO",
-                    textBlock1: "Fading Memories' es aventura de exploración narrativa estilo 'Walking Simulator' donde el jugador debe interpretar, interactuar y deducir la historia a partir de su entorno. Se diseña una restricción de la movilidad y las acciones físicas de la protagonista al caminar, observar y actuar sobre eventos u objetos específicos, como limpiar o interactuar con vinilos. Con esto, se permite bajar las revoluciones y exigirle al jugador una reflexión constante de las vivencias del hogar.",
-                    textBlock2: "El Alzheimer en el Gameplay: Afrontar el entorno desde los ojos del cuidador implicó documentar fidedignamente las fases clínicas del Alzheimer, evitando caer en los clásicos esterotips donde el paciente funge como 'monstruo'. Como parte del loop, el jugador enfrenta diálogos confusos, labores de prevención de caídas y debe medir sus respuestas; puesto que la hostilidad y falta de empatía repercuten empíricamente en el flujo emocional del Abuelo.",
-                    textBlock3: "Enfoque Story Driven y Subtramas: Toda mecánica responde a la narrativa. El juego orquesta 'Subtramas' para revelar progresivamente las negligencias familiares. Utilizando herramientas narrativas interactivas como Foreshadowing y Contrastes de Tensión ('Planting y Pay-off'), el nivel diseña su ritmo hasta desencadenar el clímax emocional cuando el antagonista confronta la negación de su deterioro cognitivo.",
+                    textBlock1: "Fading Memories' es aventura de exploración narrativa estilo 'Walking Simulator' donde el jugador debe interpretar, interactuar y deducir la historia a partir de su entorno. Se diseña una restricción de la movilidad y las acciones físicas de la protagonista al caminar, observar y actuar sobre eventos u objetos específicos, como limpiar o interactuar con vinilos. Con esto, se permite bajar las revoluciones y exigirle al jugador una reflexión constante de las vivencias con los objetos del hogar y su abuelo.",
+                    textBlock2: "El Alzheimer en el Gameplay: Afrontar el entorno desde los ojos del cuidador implicó documentar fidedignamente las fases clínicas del Alzheimer, evitando caer en los clásicos esterotips donde el paciente funge como 'monstruo'. Como parte del loop, el jugador enfrenta diálogos confusos, labores de prevención de caídas y debe medir sus respuestas; puesto que la hostilidad y falta de empatía repercuten en el flujo emocional del Abuelo.",
+                    textBlock3: "Story Driven y Subtramas: Toda mecánica responde a la narrativa. Además, el videojuego orquesta subtramas para revelar progresivamente las negligencias familiares. Utilizando herramientas narrativas interactivas como Foreshadowing y Contrastes de Tensión ('Planting y Pay-off'), el nivel diseña su ritmo hasta desencadenar el clímax emocional cuando el antagonista confronta la negación de su deterioro cognitivo.",
                     textBlock4: "Interacción Física y Examinación: Con el objetivo de profundizar la inmersión, el control de los elementos interactivos requiere manipular físicamente el entorno, por ejemplo, que inspeccione objetos tridimensionales girándolos sobre su propio eje en detalle para descubrir su historia, aportando un 'Game Feel' mucho más tactil.",
                     bullets: ["WALKING SIMULATOR", "ALZHEIMER Y CUIDADO", "STORY DRIVEN", "EXPLORACIÓN"],
                     media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775314744/PF_Game_FM_Image1_fhcrgd.webp"],
                     media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775316175/PF_Game_FM_Image2_1_eqtqrd.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775315058/PF_Game_FM_Image2_a5m25u.webp"],
-                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775315313/PF_Game_FM_Image3_ledmhq.webp"]
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775316424/PF_Game_FM_Image3_1_cwfieh.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775315313/PF_Game_FM_Image3_ledmhq.webp"]
                 },
                 "ART DIRECTION": {
                     headline: "DIRECCIÓN DE ARTE",
@@ -703,7 +703,7 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
                     textBlock4: "[ESPACIO RESERVADO PARA AUDIO DESIGN]",
                     bullets: ["RURALIDAD CHILENA", "ANTIGÜEDADES E ICONOGRAFÍA", "UI", "AUDIO DESIGN"],
                     media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775315691/PF_Game_FM_Image4_qnfybu.webp"],
-                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775315058/PF_Game_FM_Image2_a5m25u.webp"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775316695/PF_Game_FM_Image5__1_zzmpkx.jpg", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775316695/PF_Game_FM_Image5__4_qygyag.jpg", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775316693/PF_Game_FM_Image5__2_culho6.jpg", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775316694/PF_Game_FM_Image5__3_ipkev6.jpg", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775316695/PF_Game_FM_Image5__5_lw7osz.jpg"],
                     media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775316035/PF_Game_FM_Image6_slhcta.webp"]
                 },
                 "ILLUMINATION": {
@@ -712,7 +712,11 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
                     textBlock2: "Postprocesado para Horror: Utilizando capas de post-proceso se diseñan las atmósferas opresivas de horror emocional. A través de la distorsión del foco ('Depth of field' dinámico) y el alto contraste para remarcar la incertidumbre durante las situaciones de estrés o en el transcurso de las cinemáticas, obligando al jugador a sentir la vulnerabilidad sin perder nunca el realismo y la humanidad de cada toma.",
                     textBlock3: "Ciclo Día/Noche y Light Baking: La dualidad de horarios ejerce una función narrativa crucial, por lo que su realismo fue procesado rigurosamente mediante 'Light Baking' en Unity. Se generaron mapas de iluminación independientes ('bakes') tanto para los escenarios de día como para los de noche, permitiendo una máxima fidelidad de sombras sin sacrificar rendimiento. Mientras que el bake diurno envuelve en colores cálidos para apoyar diálogos pacíficos, la carga de los mapas nocturnos acentúa radicalmente el terror, apoyándose como un Foreshadowing pasivo del peligro que aguarda en la oscuridad.",
                     textBlock4: "Aumentos de Espacio (Augmentations of Space): Me basé en nociones teóricas de diseño para emplear la iluminación como un elemento premonitorio. Manejar sutiles cambios en las paletas lumínicas o hacer parpadear luces no tiene la simple función de asustar visualmente, sino servir como un simbolismo que advierte psíquicamente al jugador cuando se aproximan transiciones argumentales o inestabilidad inminente producida por las crisis del abuelo.",
-                    bullets: ["INTERIOR LIGHTING", "ATMOSPHERIC COMPOSITION", "DAY / NIGHT CYCLE", "AUMENTOS DE ESPACIO"]
+                    bullets: ["INTERIOR LIGHTING", "ATMOSPHERIC COMPOSITION", "DAY / NIGHT CYCLE", "AUMENTOS DE ESPACIO"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775317151/PF_Game_FM_Image7_ym8owc.jpg"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775314744/PF_Game_FM_Image1_fhcrgd.webp"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775317447/PF_Game_FM_Image9_xlaiwn.webm"],
+
                 },
                 "DOCS": {
                     headline: "INSERT HEADLINE: DOCS",
