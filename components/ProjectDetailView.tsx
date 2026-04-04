@@ -79,27 +79,83 @@ const VideoCard: React.FC<{ src: string, index: number }> = ({ src, index }) => 
 // --- INLINE MEDIA SLIDER (CAROUSEL) ---
 const InlineMediaSlider: React.FC<{ items: string[], setLightboxImage: (img: string) => void, className?: string, hideUIForSingle?: boolean }> = ({ items, setLightboxImage, className = "", hideUIForSingle = true }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [touchStartX, setTouchStartX] = useState<number | null>(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [dragged, setDragged] = useState(false);
 
-    const handleNext = (e: React.MouseEvent) => {
-        e.stopPropagation();
+    const handleNext = (e?: React.MouseEvent | React.TouchEvent) => {
+        if (e) e.stopPropagation();
         setCurrentIndex((prev) => (prev + 1) % items.length);
     };
 
-    const handlePrev = (e: React.MouseEvent) => {
-        e.stopPropagation();
+    const handlePrev = (e?: React.MouseEvent | React.TouchEvent) => {
+        if (e) e.stopPropagation();
         setCurrentIndex((prev) => (prev - 1 + items.length) % items.length);
+    };
+
+    const handleTouchStart = (e: React.TouchEvent | React.MouseEvent) => {
+        setDragged(false);
+        if ('touches' in e) {
+            setTouchStartX(e.touches[0].clientX);
+        } else {
+            setTouchStartX(e.clientX);
+            setIsDragging(true);
+        }
+    };
+
+    const handleTouchMove = (e: React.TouchEvent | React.MouseEvent) => {
+        if (touchStartX === null) return;
+        if (!('touches' in e) && !isDragging) return;
+
+        const currentX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+        const diff = touchStartX - currentX;
+
+        if (Math.abs(diff) > 10) setDragged(true); // movement threshold detected
+
+        if (diff > 50) {
+            handleNext();
+            setTouchStartX(null);
+            setIsDragging(false);
+        } else if (diff < -50) {
+            handlePrev();
+            setTouchStartX(null);
+            setIsDragging(false);
+        }
+    };
+
+    const handleTouchEnd = () => {
+        setTouchStartX(null);
+        setIsDragging(false);
+    };
+
+    const handleClickOverlay = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        if (!dragged) {
+            setLightboxImage(currentMedia);
+        }
     };
 
     if (!items || items.length === 0) return null;
     const currentMedia = items[currentIndex];
 
+    const showUI = items.length > 1 && (!hideUIForSingle || items.length > 1);
+
     return (
-        <div className={`overflow-hidden w-full h-full relative group/slider ${className}`}>
+        <div
+            className={`overflow-hidden w-full h-full relative group/slider ${className} select-none`}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            onMouseDown={handleTouchStart}
+            onMouseMove={handleTouchMove}
+            onMouseUp={handleTouchEnd}
+            onMouseLeave={handleTouchEnd}
+        >
             {isVideo(currentMedia) ? (
                 <video
                     key={currentMedia}
                     src={currentMedia}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/slider:scale-105"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover/slider:scale-105 pointer-events-none"
                     muted
                     loop
                     autoPlay
@@ -108,25 +164,42 @@ const InlineMediaSlider: React.FC<{ items: string[], setLightboxImage: (img: str
             ) : (
                 <div
                     key={currentMedia}
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover/slider:scale-105"
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 md:group-hover/slider:scale-105 pointer-events-none"
                     style={{ backgroundImage: `url(${currentMedia})` }}
                 />
             )}
 
-            {/* Click overlay */}
-            <div className="absolute inset-0 z-10 cursor-zoom-in" onClick={() => setLightboxImage(currentMedia)} />
+            {/* Click/Drag overlay */}
+            <div
+                className={`absolute inset-0 z-10 ${isDragging ? 'cursor-grabbing' : 'cursor-zoom-in'}`}
+                onClick={handleClickOverlay}
+            />
 
-            {items.length > 1 && (!hideUIForSingle || items.length > 1) && (
+            {showUI && (
                 <>
-                    <button onClick={handlePrev} className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 text-white p-2 hover:bg-[#FE4403] opacity-0 group-hover/slider:opacity-100 transition-all z-20 backdrop-blur-sm border border-white/10">
-                        <ChevronLeft size={20} />
+                    {/* Mobile Arrows: Always slightly visible, minimal. Desktop: Opacity 0 to 100 on hover */}
+                    <button
+                        onClick={(e) => { e.stopPropagation(); setDragged(false); handlePrev(e); }}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 p-2 z-20 transition-all border border-white/10 rounded-full
+                                   bg-black/40 text-white/70 hover:bg-[#FE4403] hover:text-white
+                                   opacity-60 md:opacity-0 md:group-hover/slider:opacity-100 backdrop-blur-md"
+                    >
+                        <ChevronLeft size={16} className="md:w-5 md:h-5" />
                     </button>
-                    <button onClick={handleNext} className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 text-white p-2 hover:bg-[#FE4403] opacity-0 group-hover/slider:opacity-100 transition-all z-20 backdrop-blur-sm border border-white/10">
-                        <ChevronRight size={20} />
+                    <button
+                        onClick={(e) => { e.stopPropagation(); setDragged(false); handleNext(e); }}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 p-2 z-20 transition-all border border-white/10 rounded-full
+                                   bg-black/40 text-white/70 hover:bg-[#FE4403] hover:text-white
+                                   opacity-60 md:opacity-0 md:group-hover/slider:opacity-100 backdrop-blur-md"
+                    >
+                        <ChevronRight size={16} className="md:w-5 md:h-5" />
                     </button>
-                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-20 opacity-0 group-hover/slider:opacity-100 transition-all bg-black/40 px-3 py-1.5 rounded-full backdrop-blur-sm">
+
+                    {/* Dots indicator */}
+                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-20 transition-all bg-black/40 px-3 py-1.5 rounded-full backdrop-blur-md
+                                  opacity-80 md:opacity-0 md:group-hover/slider:opacity-100 pointer-events-none">
                         {items.map((_, i) => (
-                            <div key={i} className={`w-1.5 h-1.5 rounded-full transition-all ${i === currentIndex ? 'bg-[#FE4403] scale-125' : 'bg-white/50'}`} />
+                            <div key={i} className={`w-1 h-1 md:w-1.5 md:h-1.5 rounded-full transition-all ${i === currentIndex ? 'bg-[#FE4403] scale-125' : 'bg-white/50'}`} />
                         ))}
                     </div>
                 </>
