@@ -642,28 +642,38 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
                 "GAME DESIGN": {
-                    headline: "INSERT HEADLINE: GAME DESIGN",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "GAME DESIGN",
+                    textBlock1: "'Fading Memories' is a narrative exploration adventure in the style of a 'Walking Simulator' where the player must interpret, interact, and deduce the story from their environment. A restriction on mobility and the physical actions of the protagonist was designed when walking, observing, and acting upon specific events or objects, such as cleaning or interacting with vinyl records. With this, it allows slowing down the pace and demanding from the player a constant reflection on the experiences with the household objects and their grandfather.",
+                    textBlock2: "Alzheimer's in Gameplay: Facing the environment through the eyes of the caregiver involved accurately documenting the clinical phases of Alzheimer's, avoiding falling into the classic stereotypes where the patient serves as a 'monster'. As part of the loop, the player faces confusing dialogues, fall prevention tasks, and must measure their responses; since hostility and lack of empathy impact the Grandfather's emotional flow.",
+                    textBlock3: "Story Driven and Subplots: Every mechanic responds to the narrative. Furthermore, the video game orchestrates subplots to progressively reveal family negligence. Utilizing interactive narrative tools like Foreshadowing and Tension Contrasts ('Planting and Pay-off'), the level designs its pacing until triggering the emotional climax when the antagonist confronts the denial of their cognitive decline.",
+                    textBlock4: "Physical Interaction and Examination: With the aim of deepening the immersion, the control of interactive elements requires physically manipulating the environment, for example, inspecting three-dimensional objects by rotating them on their own axis in detail to discover their history, providing a much more tactile 'Game Feel'.",
+                    bullets: ["WALKING SIMULATOR", "ALZHEIMER AND CARE", "STORY DRIVEN", "EXPLORATION"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775314744/PF_Game_FM_Image1_fhcrgd.webp"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775316175/PF_Game_FM_Image2_1_eqtqrd.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775315058/PF_Game_FM_Image2_a5m25u.webp"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775316424/PF_Game_FM_Image3_1_cwfieh.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775315313/PF_Game_FM_Image3_ledmhq.webp"]
                 },
                 "ART DIRECTION": {
-                    headline: "INSERT HEADLINE: ART DIRECTION",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "ART DIRECTION",
+                    textBlock1: "Central-South Chilean Rurality: For the spatial and contextual design, the art direction was framed within the setting of a Chilean manor house in the countryside of the central-south zone (early 2000s). The interiors in constant material abandonment function as a transmission of meaning of the social negligence in which the Grandfather was immersed, causing a naturalistic and melancholic isolation.",
+                    textBlock2: "Antiques and National Iconography: To delve deeper into the realism and familiarity with the spaces, classic artifacts from Chile were taken as references. The introduction of nostalgic objects is not used solely as decoration, but to anchor the cultural context and establish that these pieces are connected to the recesses of memory.",
+                    textBlock3: "Minimalist Interface Design: To maintain the immersive focus on the 3D models and the realistic textures of the manor house, the interface design (UI) and HUD adopt a strictly minimalist philosophy. By minimizing the visual elements on screen as much as possible during exploration, the menus and text boxes are limited to essential information, using subtle icons and clean interactions to avoid any narrative disconnection from the player.",
+                    textBlock4: "Taking into account the grandfather's context and his vinyl within the gameplay, the musical concept, composition, and production were made around the jazz that the grandfather listened to when he was younger, which is related to one of the most effective ways to remember past elements in people with Alzheimer's. However, for the main menu track an approach to horror was chosen with a central piano, in which the musical 'loop' changes drastically within the scale of notes to make it conceptually noticeable that Alzheimer's is altering memories.",
+                    bullets: ["CHILEAN RURALITY", "ANTIQUES AND ICONOGRAPHY", "UI", "MUSICAL DESIGN"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775315691/PF_Game_FM_Image4_qnfybu.webp"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775316695/PF_Game_FM_Image5__1_zzmpkx.jpg", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775316695/PF_Game_FM_Image5__4_qygyag.jpg", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775316693/PF_Game_FM_Image5__2_culho6.jpg", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775316694/PF_Game_FM_Image5__3_ipkev6.jpg", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775316695/PF_Game_FM_Image5__5_lw7osz.jpg"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775316035/PF_Game_FM_Image6_slhcta.webp"]
                 },
                 "ILLUMINATION": {
-                    headline: "INSERT HEADLINE: ILLUMINATION",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "LIGHTING AND COMPOSITION",
+                    textBlock1: "Interior Ambient Lighting: With the intention of inducing suggested fear and anticipation (as advised by our research), the lighting inside the home is guided by the predominance of multiple small light sources. In this way, through hard shadows, intermittent flashes, and the elevating of lights to limit the visual field, we provoke that irregularity and discomfort typical of a dimmed and worn-out place.",
+                    textBlock2: "Post-Processing for Horror: Using post-processing layers, the oppressive atmospheres of emotional horror are designed. Through focus distortion (dynamic 'Depth of Field') and high contrast to highlight uncertainty during stressful situations or during cinematics, forcing the player to feel the vulnerability without ever losing the realism and humanity of each shot.",
+                    textBlock3: "Day/Night Cycle and Light Baking: The duality of schedules exerts a crucial narrative function, so its realism was rigorously processed through 'Light Baking' in Unity. Independent lighting maps ('bakes') were generated for both day and night scenarios, allowing for maximum shadow fidelity without sacrificing performance. While the daytime bake wraps in warm colors to support peaceful dialogues, the load of the nighttime maps radically accentuates the terror, serving as a passive Foreshadowing of the danger that awaits in the dark.",
+                    textBlock4: "Augmentations of Space: I relied on theoretical design notions to employ lighting as a premonitory element. Managing subtle changes in lighting palettes or making lights flicker does not have the simple function of visually scaring, but serves as a symbolism that psychically warns the player when plot transitions or imminent instability produced by the grandfather's crises are approaching.",
+                    bullets: ["INTERIOR LIGHTING", "POST-PROCESSING", "DAY AND NIGHT CYCLE", "AUGMENTATIONS OF SPACE"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775317151/PF_Game_FM_Image7_ym8owc.jpg"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775314744/PF_Game_FM_Image1_fhcrgd.webp"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775317447/PF_Game_FM_Image9_xlaiwn.webm"],
+
                 },
                 "DOCS": {
                     headline: "INSERT HEADLINE: DOCS",
@@ -674,12 +684,12 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
                     bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
                 }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["UNITY", "GOOGLE DOCS", "GITHUB", "TRELLO", "ILLUSTRATOR", "BLENDER", "SUBSTANCE PAINTER", "CUBASE"],
+            duration: "11 MONTHS",
             videos: [],
             gallery: [],
             externalLink: "#",
-            overviewImage: ""
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775238068/PF_Game_FM_Image0_j4k6g3.webp"
         },
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
@@ -690,7 +700,7 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
                     textBlock2: "El Alzheimer en el Gameplay: Afrontar el entorno desde los ojos del cuidador implicó documentar fidedignamente las fases clínicas del Alzheimer, evitando caer en los clásicos esterotips donde el paciente funge como 'monstruo'. Como parte del loop, el jugador enfrenta diálogos confusos, labores de prevención de caídas y debe medir sus respuestas; puesto que la hostilidad y falta de empatía repercuten en el flujo emocional del Abuelo.",
                     textBlock3: "Story Driven y Subtramas: Toda mecánica responde a la narrativa. Además, el videojuego orquesta subtramas para revelar progresivamente las negligencias familiares. Utilizando herramientas narrativas interactivas como Foreshadowing y Contrastes de Tensión ('Planting y Pay-off'), el nivel diseña su ritmo hasta desencadenar el clímax emocional cuando el antagonista confronta la negación de su deterioro cognitivo.",
                     textBlock4: "Interacción Física y Examinación: Con el objetivo de profundizar la inmersión, el control de los elementos interactivos requiere manipular físicamente el entorno, por ejemplo, que inspeccione objetos tridimensionales girándolos sobre su propio eje en detalle para descubrir su historia, aportando un 'Game Feel' mucho más tactil.",
-                    bullets: ["WALKING SIMULATOR", "ALZHEIMER Y CUIDADO", "STORY DRIVEN", "EXPLORACIÓN"],
+                    bullets: ["WALKING SIMULATOR", "ALZHEIMER Y CUIDADO", "IMPULSADO POR LA HISTORIA", "EXPLORACIÓN"],
                     media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775314744/PF_Game_FM_Image1_fhcrgd.webp"],
                     media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775316175/PF_Game_FM_Image2_1_eqtqrd.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775315058/PF_Game_FM_Image2_a5m25u.webp"],
                     media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775316424/PF_Game_FM_Image3_1_cwfieh.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775315313/PF_Game_FM_Image3_ledmhq.webp"]
@@ -701,7 +711,7 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
                     textBlock2: "Antigüedades e Iconografía Nacional: Para profundizar en el realismo y familiaridad con los espacios, se tomaron como referentes artefactos clásicos de Chile. La introducción de objetos nostálgicos no se usa únicamente como decoración, sino para anclar el contexto cultural y establecer que estas piezas están conectadas a los recovecos de la memoria.",
                     textBlock3: "Diseño de Interfaz Minimalista: Para mantener el enfoque inmersivo en los modelos 3D y las texturas realistas de la casa patronal, el diseño de la interfaz (UI) y el HUD adoptan una filosofía estrictamente minimalista. Disminuyendo al máximo los elementos visuales en pantalla durante la exploración, los menús y recuadros de texto se limitan a la información esencial empleando íconos sutiles e interacciones limpias para evitar cualquier desconexión narrativa del jugador.",
                     textBlock4: "Tomando en cuenta el contexto del abuelo y su vinilo dentro del gameplay, el concepto, composición y producción musical se hizo en torno al jazz que escuchaba el abuelo cuando era más joven, que se relaciona a una de las formas más efectivas para recordar elementos anterior en personas con Alzheimer. Sin embargo, para el track del main menu se optó por un acercamiento al horror con un piano central, en el cual el 'loop' musical va cambiando drásticamente dentro de la escala de notas para hacer notar conceptualmente que el Alzheimer va modificando las memorias.",
-                    bullets: ["RURALIDAD CHILENA", "ANTIGÜEDADES E ICONOGRAFÍA", "UI", "AUDIO DESIGN"],
+                    bullets: ["RURALIDAD CHILENA", "ANTIGÜEDADES E ICONOGRAFÍA", "UI", "DISEÑO MUSICAL"],
                     media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775315691/PF_Game_FM_Image4_qnfybu.webp"],
                     media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775316695/PF_Game_FM_Image5__1_zzmpkx.jpg", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775316695/PF_Game_FM_Image5__4_qygyag.jpg", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775316693/PF_Game_FM_Image5__2_culho6.jpg", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775316694/PF_Game_FM_Image5__3_ipkev6.jpg", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775316695/PF_Game_FM_Image5__5_lw7osz.jpg"],
                     media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775316035/PF_Game_FM_Image6_slhcta.webp"]
@@ -712,7 +722,7 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
                     textBlock2: "Postprocesado para Horror: Utilizando capas de post-proceso se diseñan las atmósferas opresivas de horror emocional. A través de la distorsión del foco ('Depth of field' dinámico) y el alto contraste para remarcar la incertidumbre durante las situaciones de estrés o en el transcurso de las cinemáticas, obligando al jugador a sentir la vulnerabilidad sin perder nunca el realismo y la humanidad de cada toma.",
                     textBlock3: "Ciclo Día/Noche y Light Baking: La dualidad de horarios ejerce una función narrativa crucial, por lo que su realismo fue procesado rigurosamente mediante 'Light Baking' en Unity. Se generaron mapas de iluminación independientes ('bakes') tanto para los escenarios de día como para los de noche, permitiendo una máxima fidelidad de sombras sin sacrificar rendimiento. Mientras que el bake diurno envuelve en colores cálidos para apoyar diálogos pacíficos, la carga de los mapas nocturnos acentúa radicalmente el terror, apoyándose como un Foreshadowing pasivo del peligro que aguarda en la oscuridad.",
                     textBlock4: "Aumentos de Espacio (Augmentations of Space): Me basé en nociones teóricas de diseño para emplear la iluminación como un elemento premonitorio. Manejar sutiles cambios en las paletas lumínicas o hacer parpadear luces no tiene la simple función de asustar visualmente, sino servir como un simbolismo que advierte psíquicamente al jugador cuando se aproximan transiciones argumentales o inestabilidad inminente producida por las crisis del abuelo.",
-                    bullets: ["INTERIOR LIGHTING", "ATMOSPHERIC COMPOSITION", "DAY / NIGHT CYCLE", "AUMENTOS DE ESPACIO"],
+                    bullets: ["ILUMINACIÓN INTERIORES", "POSTPROCESADO", "CICLO DíA Y NOCHE", "AUMENTOS DE ESPACIO"],
                     media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775317151/PF_Game_FM_Image7_ym8owc.jpg"],
                     media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775314744/PF_Game_FM_Image1_fhcrgd.webp"],
                     media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775317447/PF_Game_FM_Image9_xlaiwn.webm"],
