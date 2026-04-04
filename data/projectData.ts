@@ -1092,54 +1092,70 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
 
     "ACID RAIN": {
         en: {
-            description: "INSERT DESCRIPTION HERE. A detailed description of the Acid Rain project, its core mechanics, and design philosophy.",
+            description: "'Acid Rain' is an arcade-style game focused on survival and achieving high scores against an endless storm of hazards and helpful items falling from the sky.",
             tagContent: {
                 "GAME DESIGN": {
-                    headline: "INSERT HEADLINE: GAME DESIGN",
-                    textBlock1: "AAAAAAAAAAAAAAAAAALorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Core Gameplay Loop", "Mechanical Breakdown", "Player Progression", "World-building"]
+                    headline: "GAME DESIGN",
+                    textBlock1: `Acid Rain is an arcade survival game designed around the pillars of perseverance and classic 'high-score chasing'. The player controls a protagonist who must endure relentless radioactive rain and thunderstorms, dodging environmental threats while tactically interacting with sporadic resources to stay alive as long as possible.
+
+The concept of "Acid Rain" stems from the eponymous song by the band "The Growlers", combining the concept of acid rain with the psychedelic substance LSD, colloquially called "acid". For this reason, the entire visual aspect related to the rain features color changes, emulating an effect on the player's senses.`,
+                    textBlock2: "The core gameplay loop revolves around constant horizontal movement. The player starts with 3 health points (HP) and must dodge drops of acid rain and deadly lightning bolts that chase them to avoid taking damage. As long as the player avoids contact, they will progressively gain score, but if they take direct hits and their counter drops to 0, the match will end, forcing a 'GameOver'.",
+                    textBlock3: "To ensure a constant level of challenge and manage the pacing, progression adopts an attrition-based scaling system. Through internal 'timers', the overall speed and the spawn cycle of objects progressively increase and become more aggressive as time passes. Consequently, the player is required to make increasingly precise and faster movements until reaching a limit speed where tension is at its maximum and any wrong move can cost the character's life.",
+                    textBlock4: "To help counterbalance the difficulty, players can collect essential Items to survive on the field. On one hand, healing items drop infrequently to restore HP; on the other hand, defensive boxes can be captured: the 'Umbrella', which provides a barrier capable of withstanding multiple hits before breaking, or bubble shields ('BubbleShield'), granting temporary invulnerability to repel greater threats like lightning bolts.",
+                    bullets: ["ARCADE SURVIVAL", "HIGH-SCORE", "DIFFICULTY SCALING", "ITEM MANAGEMENT"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775326086/PF_Game_AcidRain_Image1_lx7tss.webp"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775334604/PF_Game_AcidRain_Image9_1_klgonv.webm", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775326354/PF_Game_AcidRain_Image2_rkojbn.webp"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775326482/PF_Game_AcidRain_Image3_ikbtnh.webp"]
                 },
                 "UNITY": {
-                    headline: "INSERT HEADLINE: DOCS",
-                    textBlock1: "Overview of the Game Design Document (GDD) for Acid Rain, outlining the project's vision and scope.",
-                    textBlock2: "Examples of concept documents, narrative outlines, and system diagrams.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["High-Level Concept", "Narrative Synopsis", "Feature Specification", "Mood Board"]
+                    headline: "PROGRAMMING AND SYSTEMS",
+                    textBlock1: "The core architecture leverages the flow of Singleton and Object Pooling Patterns, implemented through central managers ('SkySpawner', 'ScoreManager', 'LevelManager'). In this way, excessive instantiation of rain and resources is avoided to save memory by creating a reserve of inactive objects that are recycled, all of them inheriting their gravity and directional behavior through an abstract parent class ('FallingObject').",
+                    textBlock2: "Visual feedback directly manipulates the camera sub-processes in URP (Universal Render Pipeline). When at critical low HP levels, the code invokes a global hue shift to generate a psychedelic setup, combined with 'Lens Distortion', Chromatic Aberration, and a Vignette effect when the umbrella is damaged. Other elements, like the lightning ('ThunderDrop'), warn the player by drastically modifying a flash and interpolating the overall colors of the scene to emulate anticipation.",
+                    textBlock3: "Much of the codebase avoids using the normal Update cycle, adopting a massive Observer Pattern using C# Events in base interfaces and player variables ('OnHealthChanged', 'OnScoreChanged', 'OnStaminaChanged'); thus, actions such as firing particles, triggering informative texts, or applying modifiers act cleanly and reactively.",
+                    textBlock4: "Regarding user button inputs, the scripts are structured around Unity's New Input System ('TouchControllers'). Inside the player logic, a synergistic hybrid input system was created, making it possible to play identically and accurately without needing to reprogram modules, simultaneously detecting physical keystrokes natively (like on PC) and sustained touch gestures from virtual buttons ('MobileButtonHandler') for Android versions.",
+                    bullets: ["SYSTEMS ARCHITECTURE", "URP VISUAL FEEDBACK", "OBSERVER AND SINGLETON PATTERN", "CROSS-PLATFORM NEW INPUT SYSTEM"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775329622/PF_Game_AcidRain_Image4_npya2j.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775332157/PF_Game_AcidRain_Image4_1_s2ey6q.webp"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775332451/PF_Game_AcidRain_Image5_r85jjz.webp"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775333775/PF_Game_AcidRain_Image9_ks19sk.webm"]
                 }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["UNITY", "ASEPRITE", "VS CODE"],
+            duration: "2-3 WEEKS",
             videos: [],
             gallery: [],
             externalLink: "#",
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1767827902/PF_GameDesign_AcidRain_Image0_rmmmd2.webp"
         },
         es: {
-            description: "INSERTE LA DESCRIPCIÓN AQUÍ. Una descripción detallada del proyecto Acid Rain, sus mecánicas principales y filosofía de diseño.",
+            description: "'Acid Rain' es un título estilo arcade centrado en la supervivencia y obtención de puntajes máximos frente a una tormenta incesante de peligros y ayudas que caen del cielo.",
             tagContent: {
                 "GAME DESIGN": {
-                    headline: "INSERTE EL TITULAR: GAME DESIGN",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERTE TEXTO AQUÍ.",
-                    textBlock4: "INSERTE TEXTO AQUÍ.",
-                    bullets: ["Bucle de Jugabilidad Principal", "Desglose de Mecánicas", "Progresión del Jugador", "Construcción de Mundo"]
+                    headline: "DISEÑO DE JUEGO",
+                    textBlock1: `Acid Rain es un título de supervivencia arcade diseñado bajo los pilares de la perseverancia y el clásico 'high-score chasing'. El jugador controla a un protagonista que debe resistir una inclemente lluvia radiactiva y tormentas eléctricas, esquivando las amenazas ambientales mientras interactúa tácticamente con recursos esporádicos para mantenerse con vida el mayor tiempo posible.
+
+El concepto "Acid Rain" nace de la canción homónima de la banda musical "The Growlers", en donde combina el concepto de lluvia ácida con las sustancias psicodélicas LSD coloquialmente llamado "acid". Por esto, todo el apartado visual relacionado a la lluvia posee cambios en sus colores, emulando afectar los sentidos del player.`,
+                    textBlock2: "El bucle de juego gira en torno al movimiento horizontal constante. El jugador comienza con 3 puntos de vida (HP) y debe esquivar las gotas de lluvia ácida y los letales rayos que lo persiguen para no recibir daño. Durante todo el tiempo que logre evitar el contacto ganará score progresivo, pero de recibir golpes directos y vaciar su contador a 0, la partida culminará forzando un 'GameOver'.",
+                    textBlock3: "Para asegurar un nivel de reto constante y gestionar el ritmo, la progresión adopta un escalado de desgaste. Mediante 'timers' internos, la velocidad global y el ciclo de reaparición (spawn) de los objetos aumenta progresivamente y se hace más agresivo a medida que pasa el tiempo. De esta forma, el jugador va requiriendo de movimientos cada vez más precisos y veloces hasta alcanzar una velocidad límite donde la tensión está al máximo y cada movimiento erróneo puede costar la vida del personaje.",
+                    textBlock4: "Como factor de soporte a la dificultad, los jugadores pueden recolectar Ítems esenciales para resistir en el campo. Por un lado, cae infrecuentemente curación para reponer HP; y por el otro, se puede capturar cajas defensivas: el 'Umbrella', que otorga una barrera capaz de aguantar diversos choques antes de quebrarse, o escudos burbujas ('BubbleShield'), otorgando invulnerabilidad para repeler amenazas mayores como relámpagos.",
+                    bullets: ["SUPERVIVENCIA ARCADE", "HIGH-SCORE", "ESCALADO DE DIFICULTAD", "GESTIÓN DE ÍTEMS"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775326086/PF_Game_AcidRain_Image1_lx7tss.webp"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775334604/PF_Game_AcidRain_Image9_1_klgonv.webm", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775326354/PF_Game_AcidRain_Image2_rkojbn.webp"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775326482/PF_Game_AcidRain_Image3_ikbtnh.webp"],
                 },
                 "UNITY": {
-                    headline: "INSERTE EL TITULAR: UNITY",
-                    textBlock1: "Resumen del Documento de Diseño de Juego (GDD) para Acid Rain, describiendo la visión y el alcance del proyecto.",
-                    textBlock2: "Ejemplos de documentos de concepto, resúmenes narrativos y diagramas de sistemas.",
-                    textBlock3: "INSERTE TEXTO AQUÍ.",
-                    textBlock4: "INSERTE TEXTO AQUÍ.",
-                    bullets: ["Concepto de Alto Nivel", "Sinopsis Narrativa", "Especificación de Características", "Mood Board"]
+                    headline: "PROGRAMACIÓN Y SISTEMAS",
+                    textBlock1: "La arquitectura base aprovecha el flujo de los Patrones Singleton y Object Pooling, implementados mediante gestores centrales ('SkySpawner', 'ScoreManager', 'LevelManager'). De esta forma, el instanciamiento desmedido de la lluvia y recursos se ahorra en memoria creando una reserva de objetos inactivos que se van reciclando, todos ellos heredando su gravedad y comportamiento direccional a través de una clase abstracta madre ('FallingObject').",
+                    textBlock2: "El feedback visual manipula directamente los subprocesos de las cámaras en URP (Universal Render Pipeline). Al estar en niveles bajos de HP críticas, el código invoca cambio en el hue global para generar un setup psicodélico, sumado con distorsiones de la lente ('Lens Distortion'), Aberración Cromática y Vignette al dañarse el paraguas. Otros elementos, como el rayo ('ThunderDrop'), advierten al jugador modificando drásticamente un flash e interpolando los colores de la escena para emular anticipación.",
+                    textBlock3: "Gran parte del código evita utilizar el Update del ciclo normal, adoptando un masivo Patrón Observer con Eventos de C# en interfaces base y variables del jugador ('OnHealthChanged', 'OnScoreChanged', 'OnStaminaChanged'); así, acciones como disparar partículas, activar textos informativos o aplicar modificadores, actúan de forma reactiva y limpia.",
+                    textBlock4: "Respecto a las entradas de botones del usuario, los códigos están estructurados sobre el New Input System de Unity ('TouchControllers'). Dentro del player se creó un sistema de inputs híbridos sinérgica, posibilitando jugar de manera idéntica y precisa sin necesidad de reprogramar módulos, tanto detectando nativamente las pulsaciones físicas (como en PC)  y gestos sostenidos de botones táctiles ('MobileButtonHandler') para versiones Android.",
+                    bullets: ["ARQUITECTURA DE SISTEMAS", "FEEDBACK VISUAL URP", "PATRÓN OBSERVER Y SINGLETON", "NEW INPUT SYSTEM MULTIPLATAFORMA"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775329622/PF_Game_AcidRain_Image4_npya2j.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775332157/PF_Game_AcidRain_Image4_1_s2ey6q.webp"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775332451/PF_Game_AcidRain_Image5_r85jjz.webp"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775333775/PF_Game_AcidRain_Image9_ks19sk.webm"],
                 }
             },
-            software: ["INSERTE SOFTWARE"],
-            duration: "INSERTE DURACIÓN",
+            software: ["UNITY", "ASEPRITE", "VS CODE"],
+            duration: "2-3 SEMANAS",
             videos: [],
             gallery: [],
             externalLink: "#",
