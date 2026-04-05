@@ -43,6 +43,7 @@ export interface ProjectCardData {
     image: string;
     status: string;
     locked?: boolean;
+    hidden?: boolean;
 }
 
 // --- CARD DATA COLLECTIONS (Remain shared for now, titles are keys) ---
@@ -55,7 +56,8 @@ export const gameDesignProjects: ProjectCardData[] = [
         tags: ["GAME DESIGN", "PROGRAMMING", "SHADERS", "LEVEL DESIGN"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765282205/PF_GameDesign_HollowFlowers_Cover_nf3mge.webp",
         status: "DEMO",
-        locked: false
+        locked: false,
+        hidden: false
     },
     {
         id: 2,
@@ -64,7 +66,8 @@ export const gameDesignProjects: ProjectCardData[] = [
         tags: ["GAME DESIGN", "ART DIRECTION", "ILLUMINATION"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765285301/PF_GameDesign_FadingMemories_Cover_zxkkpv.webp",
         status: "Shipped",
-        locked: false
+        locked: false,
+        hidden: false
     },
     {
         id: 3,
@@ -73,7 +76,8 @@ export const gameDesignProjects: ProjectCardData[] = [
         tags: ["LEVEL DESIGN", "ART DIRECTION", "PROGRAMMING"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765285900/PF_GameDesign_Undeserved_Cover_v1f7lc.webp",
         status: "MINI PROJECT",
-        locked: true
+        locked: true,
+        hidden: false
     },
     {
         id: 4,
@@ -82,7 +86,8 @@ export const gameDesignProjects: ProjectCardData[] = [
         tags: ["GAME DESIGN", "PROGRAMMING", "ART DIRECTION"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765296556/PD_GameDesign_SuperZZ_Cover_ngewro.webp",
         status: "WIP",
-        locked: true
+        locked: true,
+        hidden: true
     },
     {
         id: 5,
@@ -91,7 +96,8 @@ export const gameDesignProjects: ProjectCardData[] = [
         tags: ["GAME DESIGN", "UNITY"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765288774/PD_GameDesign_AcidRain_Cover_grsa0r.webp",
         status: "FINISHED",
-        locked: false
+        locked: false,
+        hidden: false
     },
     {
         id: 6,
@@ -100,7 +106,8 @@ export const gameDesignProjects: ProjectCardData[] = [
         tags: ["DOCS", "ART DIRECTION", "GAME DESIGN"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765291863/PD_GameDesign_LluviaDeVerano_Cover_ekue0o.webp",
         status: "PRE-PRODUCTION",
-        locked: true
+        locked: true,
+        hidden: false
     },
     {
         id: 7,
@@ -109,7 +116,8 @@ export const gameDesignProjects: ProjectCardData[] = [
         tags: ["GAME DESIGN", "DOCS", "SYSTEMS DESIGN"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765321421/PD_GameDesign_EIS_Cover_vvzppq.webp",
         status: "CONCEPT IDEA",
-        locked: true
+        locked: true,
+        hidden: false
     },
     {
         id: 8,
@@ -118,7 +126,8 @@ export const gameDesignProjects: ProjectCardData[] = [
         tags: ["DOCS", "SYSTEMS DESIGN"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
         status: "CONCEPT IDEA",
-        locked: true
+        locked: true,
+        hidden: true
     },
 
 ];
@@ -131,7 +140,8 @@ export const techArtProjects: ProjectCardData[] = [
         tags: ["SHADERS", "UNREAL ENGINE"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765419716/PF_3DTech_NoisePP_Cover_mf3b4c.webp",
         status: "SHIPPED",
-        locked: false
+        locked: false,
+        hidden: false
     },
     {
         id: 2,
@@ -140,7 +150,8 @@ export const techArtProjects: ProjectCardData[] = [
         tags: ["PROGRAMMING", "SHADERS"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775162957/PF_3DTech_BlenderAddon_Cover_dkzmqv.webp",
         status: "WIP",
-        locked: false
+        locked: false,
+        hidden: false
     },
     {
         id: 3,
@@ -149,7 +160,8 @@ export const techArtProjects: ProjectCardData[] = [
         tags: ["SHADERS", "UNREAL ENGINE"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1767724393/PF_3DTech_YIQ_Cover_xkezuz.webp",
         status: "SHIPPED",
-        locked: false
+        locked: false,
+        hidden: false
     },
     {
         id: 4,
@@ -158,7 +170,8 @@ export const techArtProjects: ProjectCardData[] = [
         tags: ["SHADERS", "UNREAL ENGINE"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765281853/PF_3DTech_CardHologram_Cover_3_y3q1c2.webp",
         status: "FINISHED",
-        locked: false
+        locked: false,
+        hidden: false
     },
     {
         id: 5,
@@ -167,7 +180,8 @@ export const techArtProjects: ProjectCardData[] = [
         tags: ["3D MODELING", "TEXTURING", "UNREAL ENGINE"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765338333/PT_3DTech_ArnoldRoom_Cover_iermi7.webp",
         status: "FINISHED",
-        locked: false
+        locked: false,
+        hidden: false
     },
     {
         id: 6,
@@ -176,7 +190,8 @@ export const techArtProjects: ProjectCardData[] = [
         tags: ["SHADERS", "UNREAL ENGINE", "ANIMATION"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765339138/PF_3DTech_WOBIntempesta_Cover_16_wongcl.webp",
         status: "FINISHED",
-        locked: false
+        locked: false,
+        hidden: false
     },
     {
         id: 7,
@@ -185,7 +200,8 @@ export const techArtProjects: ProjectCardData[] = [
         tags: ["UNREAL ENGINE", "HAIR GROOM", "SHADERS"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
         status: "WIP",
-        locked: true
+        locked: true,
+        hidden: true
     },
     {
         id: 8,
@@ -194,7 +210,8 @@ export const techArtProjects: ProjectCardData[] = [
         tags: ["UNITY", "ANIMATION"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
         status: "SHIPPED",
-        locked: true
+        locked: true,
+        hidden: true
     },
     {
         id: 9,
@@ -203,7 +220,8 @@ export const techArtProjects: ProjectCardData[] = [
         tags: ["3D MODELING", "3D TEXTURING"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765336797/PF_3DTech_DrellCreature_Cover_yh5zxu.webp",
         status: "FINISHED",
-        locked: true
+        locked: true,
+        hidden: false
     },
     {
         id: 10,
@@ -212,7 +230,8 @@ export const techArtProjects: ProjectCardData[] = [
         tags: ["UNITY", "ILLUMINATION"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765337149/PF_3DTech_FMProps_Cover_czkwkv.webp",
         status: "FINISHED",
-        locked: true
+        locked: true,
+        hidden: false
     },
     {
         id: 11,
@@ -221,7 +240,8 @@ export const techArtProjects: ProjectCardData[] = [
         tags: ["3D MODELING"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765337674/PF_3DTech_LDVBuildings_Cover_vs5usm.webp",
         status: "FINISHED",
-        locked: true
+        locked: true,
+        hidden: false
     },
     {
         id: 12,
@@ -230,7 +250,8 @@ export const techArtProjects: ProjectCardData[] = [
         tags: ["SHADERS"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
         status: "UNKNOWN",
-        locked: true
+        locked: true,
+        hidden: true
     },
 
 ];
@@ -243,7 +264,8 @@ export const othersProjects: ProjectCardData[] = [
         tags: ["PRODUCTION", "MANAGEMENT"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
         status: "ACTIVELY WORKING",
-        locked: true
+        locked: false,
+        hidden: false
     },
     {
         id: 2,
@@ -252,7 +274,8 @@ export const othersProjects: ProjectCardData[] = [
         tags: ["JAVASCRIPT", "MANAGEMENT"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
         status: "AVAILABLE",
-        locked: true
+        locked: true,
+        hidden: false
     },
     {
         id: 3,
@@ -261,7 +284,8 @@ export const othersProjects: ProjectCardData[] = [
         tags: ["ART", "UNREAL ENGINE"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
         status: "Personal",
-        locked: true
+        locked: true,
+        hidden: false
     },
     {
         id: 4,
@@ -270,7 +294,8 @@ export const othersProjects: ProjectCardData[] = [
         tags: ["TYPESCRIPT", "UI/UX"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765291476/PD_Others_PortfolioWebpage_Cover_fvhppn.webp",
         status: "Published",
-        locked: true
+        locked: true,
+        hidden: false
     },
     {
         id: 5,
@@ -279,7 +304,8 @@ export const othersProjects: ProjectCardData[] = [
         tags: ["TYPESCRIPT", "UI/UX"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
         status: "Prototype",
-        locked: true
+        locked: true,
+        hidden: false
     },
     /*   { 
         id: 6, 
@@ -899,7 +925,10 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "ART DIRECTION": {
                     headline: "INSERT HEADLINE: ART DIRECTION",
@@ -907,7 +936,10 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "GAME DESIGN": {
                     headline: "INSERT HEADLINE: GAME DESIGN",
@@ -934,7 +966,10 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "ART DIRECTION": {
                     headline: "INSERT HEADLINE: ART DIRECTION",
@@ -942,7 +977,10 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "GAME DESIGN": {
                     headline: "INSERT HEADLINE: GAME DESIGN",
@@ -971,7 +1009,10 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "DOCS": {
                     headline: "INSERT HEADLINE: DOCS",
@@ -979,7 +1020,10 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "SYSTEMS DESIGN": {
                     headline: "INSERT HEADLINE: SYSTEMS DESIGN",
@@ -1006,7 +1050,10 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "DOCS": {
                     headline: "INSERT HEADLINE: DOCS",
@@ -1014,7 +1061,10 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "SYSTEMS DESIGN": {
                     headline: "INSERT HEADLINE: SYSTEMS DESIGN",
@@ -1043,7 +1093,10 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "SYSTEMS DESIGN": {
                     headline: "INSERT HEADLINE: SYSTEM DESIGN",
@@ -1070,7 +1123,10 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "SYSTEM DESIGN": {
                     headline: "INSERT HEADLINE: SYSTEM DESIGN",
@@ -1554,7 +1610,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "HAIR GROOM": {
                     headline: "INSERT HEADLINE: HAIR GROOM",
@@ -1562,7 +1621,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "SHADERS": {
                     headline: "INSERT HEADLINE: SHADERS",
@@ -1589,7 +1651,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "HAIR GROOM": {
                     headline: "INSERT HEADLINE: HAIR GROOM",
@@ -1597,7 +1662,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "SHADERS": {
                     headline: "INSERT HEADLINE: SHADERS",
@@ -1626,7 +1694,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "ANIMATION": {
                     headline: "INSERT HEADLINE: ANIMATION",
@@ -1653,7 +1724,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "ANIMATION": {
                     headline: "INSERT HEADLINE: ANIMATION",
@@ -1682,7 +1756,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "3D TEXTURING": {
                     headline: "INSERT HEADLINE: 3D TEXTURING",
@@ -1709,7 +1786,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "3D TEXTURING": {
                     headline: "INSERT HEADLINE: 3D TEXTURING",
@@ -1738,7 +1818,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "ART DIRECTION": {
                     headline: "INSERT HEADLINE: UI",
@@ -1746,7 +1829,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "ILLUMINATION": {
                     headline: "INSERT HEADLINE: ILLUMINATION",
@@ -1773,7 +1859,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "ART DIRECTION": {
                     headline: "INSERT HEADLINE: UI",
@@ -1781,7 +1870,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "ILLUMINATION": {
                     headline: "INSERT HEADLINE: ILLUMINATION",
@@ -1887,21 +1979,27 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
         en: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
-                "PRODUCTION": {
+                "PROGRAMMING": {
                     headline: "INSERT HEADLINE: PRODUCTION",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
-                "MANAGEMENT": {
+                "USER INTERFACE": {
                     headline: "INSERT HEADLINE: MANAGEMENT",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 }
             },
             software: ["INSERT SOFTWARE"],
@@ -1914,21 +2012,27 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
-                "PRODUCTION": {
+                "PROGRAMMING": {
                     headline: "INSERT HEADLINE: PRODUCTION",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
-                "MANAGEMENT": {
+                "USER INTERFACE": {
                     headline: "INSERT HEADLINE: MANAGEMENT",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 }
             },
             software: ["INSERT SOFTWARE"],
@@ -1949,7 +2053,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "MANAGEMENT": {
                     headline: "INSERT HEADLINE: MANAGEMENT",
@@ -1957,7 +2064,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 }
             },
             software: ["INSERT SOFTWARE"],
@@ -1976,7 +2086,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "MANAGEMENT": {
                     headline: "INSERT HEADLINE: MANAGEMENT",
@@ -1984,7 +2097,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 }
             },
             software: ["INSERT SOFTWARE"],
@@ -2005,7 +2121,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "UNREAL ENGINE": {
                     headline: "INSERT HEADLINE: UNREAL ENGINE",
@@ -2013,7 +2132,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 }
             },
             software: ["INSERT SOFTWARE"],
@@ -2032,7 +2154,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "UNREAL ENGINE": {
                     headline: "INSERT HEADLINE: UNREAL ENGINE",
@@ -2040,7 +2165,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 }
             },
             software: ["INSERT SOFTWARE"],
@@ -2061,7 +2189,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "UI/UX": {
                     headline: "INSERT HEADLINE: UI/UX",
@@ -2069,7 +2200,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 }
             },
             software: ["INSERT SOFTWARE"],
@@ -2088,7 +2222,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "UI/UX": {
                     headline: "INSERT HEADLINE: UI/UX",
@@ -2096,7 +2233,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 }
             },
             software: ["INSERT SOFTWARE"],
@@ -2117,7 +2257,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "UI/UX": {
                     headline: "INSERT HEADLINE: UI/UX",
@@ -2125,7 +2268,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 }
             },
             software: ["INSERT SOFTWARE"],
@@ -2144,7 +2290,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 },
                 "UI/UX": {
                     headline: "INSERT HEADLINE: UI/UX",
@@ -2152,7 +2301,10 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
                     textBlock3: "INSERT TEXT HERE.",
                     textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 }
             },
             software: ["INSERT SOFTWARE"],

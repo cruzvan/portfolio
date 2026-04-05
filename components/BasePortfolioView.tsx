@@ -217,10 +217,11 @@ const BasePortfolioView: React.FC<BasePortfolioViewProps> = ({ title, projects, 
   }, [baseRoute, projects]);
 
 
-  // Filter projects based on TAGS
+  // Filter projects based on TAGS and hidden property
+  const visibleProjects = projects.filter(p => !p.hidden);
   const filteredProjects = activeCategory === 'All'
-    ? projects
-    : projects.filter(p => {
+    ? visibleProjects
+    : visibleProjects.filter(p => {
       const categoryUpper = activeCategory.toUpperCase();
       return p.tags.includes(categoryUpper) || p.category === activeCategory;
     });
