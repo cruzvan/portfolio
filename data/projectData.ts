@@ -261,7 +261,7 @@ export const othersProjects: ProjectCardData[] = [
         id: 1,
         title: "MINI SCREEN STREAM DOCK APP",
         category: "Programming",
-        tags: ["PRODUCTION", "MANAGEMENT"],
+        tags: ["PROGRAMMING", "USER INTERFACE"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
         status: "ACTIVELY WORKING",
         locked: false,
@@ -291,20 +291,20 @@ export const othersProjects: ProjectCardData[] = [
         id: 4,
         title: "WEBPAGE PORTFOLIO (VIBECODED)",
         category: "WEBPAGE",
-        tags: ["TYPESCRIPT", "UI/UX"],
+        tags: ["PROGRAMMING", "UI/UX"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765291476/PD_Others_PortfolioWebpage_Cover_fvhppn.webp",
         status: "Published",
-        locked: true,
+        locked: false,
         hidden: false
     },
     {
         id: 5,
         title: "WEBPAGE COMPANY (VIBECODED)",
         category: "WEBPAGE",
-        tags: ["TYPESCRIPT", "UI/UX"],
+        tags: ["PROGRAMMING", "UI/UX"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
         status: "Prototype",
-        locked: true,
+        locked: false,
         hidden: false
     },
     /*   { 
@@ -1977,66 +1977,66 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
     // --- OTHERS PROJECTS ---
     "MINI SCREEN STREAM DOCK APP": {
         en: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "A custom-built productivity control center with a 4-way swipe interface, Media Listener, and PowerShell OS integrations.",
             tagContent: {
                 "PROGRAMMING": {
-                    headline: "INSERT HEADLINE: PRODUCTION",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    headline: "MODULAR OS HUB",
+                    textBlock1: "MiniScreen OS emerged as a personal productivity and multimedia control solution. Developed to run on a 7-inch external landscape display, this application functions as a control center (similar to a Stream Deck), allowing instant access to software tools, timers, hardware monitoring, and music controls without interrupting the main workstation workflow.",
+                    textBlock2: "It integrates 4 independent core modules: an app launcher with shortcuts, a Pomodoro timer with a built-in 'brown noise' generator, a real-time CPU/GPU/RAM monitoring system backed by PowerShell scripts (interacting at the OS level), and a smart music player acting as a Media Listener.",
+                    textBlock3: "To organize the different modules, I used the Module Pattern and Singleton Pattern in core elements such as ShaderManager and BreathSystem. This allows tight control over WebGL instances and interactive DOM animations without polluting the global scope and keeping data encapsulated.",
+                    textBlock4: "The biggest programming challenge was integrating the music player and its metadata (lyrics, album art) via the 'Media Listener'. To solve the lack of stable local APIs for Tidal, I built a system that reads Windows media signals and, upon retrieving the title and artist, asynchronously queries external APIs (like iTunes and LrcLib) to fetch covers and sync LRC formatted lyrics.",
+                    bullets: ["7-INCH UI", "POWERSHELL API", "SINGLETON PATTERN"],
                     media1: [""],
                     media2: [""],
                     media3: [""]
                 },
                 "USER INTERFACE": {
-                    headline: "INSERT HEADLINE: MANAGEMENT",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    headline: "GESTURE NAVIGATION",
+                    textBlock1: "The UI is designed to prioritize quick readability, effortless navigation, and touch-friendly buttons for a 7-inch screen. The 4 main screens are arranged with immovable corner navigation menus, ensuring that switching from timer mode to media playback requires just a single tap.",
+                    textBlock2: "To take advantage of the touchscreen edges, a pure JavaScript 4-Way Swipe Gesture system was implemented. Swiping from the edges summons overlapping 'Dock' menus containing extra utilities without interfering with the active screen, such as volume controls or a rhythmic visualizer for breathing exercises.",
+                    textBlock3: "A 'Best Practices' section focused on ADHD tips was included, presenting study tactics (such as Active Recall and Spaced Repetition) in a card format quickly accessible via the left dock menu. In turn, the rhythmic visualizer greatly helps focus or return to calm after hyperfocus using fluid animations.",
+                    textBlock4: "As an immersive visual rest or concentration stimulus, the top dock allows swapping WebGL Shaders that act as an animated background on the main screen. This ranges from abstract art to looping videos, specifically chosen to bring the desk to life, and managed efficiently by pausing and reactivating based on the performance needs of heavy external tasks.",
+                    bullets: ["4-WAY SWIPES", "FLUID ANIMATIONS", "BACKGROUND WEBGL"],
                     media1: [""],
                     media2: [""],
                     media3: [""]
                 }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["HTML / CSS", "JAVASCRIPT", "POWERSHELL"],
+            duration: "3 WEEKS",
             videos: [],
             gallery: [],
             externalLink: "#",
             overviewImage: ""
         },
         es: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Centro de control de productividad con interfaz de gestos, Media Listener e integraciones del SO vía PowerShell.",
             tagContent: {
                 "PROGRAMMING": {
-                    headline: "INSERT HEADLINE: PRODUCTION",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    headline: "MODULAR OS HUB",
+                    textBlock1: "MiniScreen OS surge como una solución personal de productividad y control multimedia. Desarrollada para ejecutarse en una pantalla externa de 7 pulgadas en formato horizontal, esta aplicación funciona como un centro de control (al estilo Stream Deck) permitiendo acceder al instante a herramientas de software, temporizadores, monitoreo de hardware y controles de música sin interrumpir el flujo de trabajo principal.",
+                    textBlock2: "Se integran 4 módulos centrales independientes: Un lanzador de aplicaciones con accesos directos, un temporizador Pomodoro con generador de 'ruido marrón', un monitor de lectura en tiempo real del uso de CPU/GPU/RAM apoyado en scripts de PowerShell (para interactuar directamente a nivel de sistema operativo), y un reproductor de música inteligente.",
+                    textBlock3: "Para organizar los distintos módulos utilicé el Patrón Módulo (Module Pattern) y Singleton en elementos principales como ShaderManager y BreathSystem, lo que permite un control cerrado sobre las instancias de WebGL y animaciones interactivas del DOM sin ensuciar el scope global.",
+                    textBlock4: "El mayor desafío de programación fue la integración del reproductor musical y sus metadatos (letra, portadas). Ante la escasez de APIs precisas locales para Tidal, construí un 'Media Listener' que interpreta las señales de medios de Windows y asincrónicamente consulta APIs externas como iTunes y LrcLib para recuperar las portadas correctas y sincronizar las letras (formato LRC) de la música reproducible.",
+                    bullets: ["UI DE 7 PULGADAS", "POWERSHELL API", "PATRÓN SINGLETON"],
                     media1: [""],
                     media2: [""],
                     media3: [""]
                 },
                 "USER INTERFACE": {
-                    headline: "INSERT HEADLINE: MANAGEMENT",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    headline: "GESTURE NAVIGATION",
+                    textBlock1: "La UI está diseñada para priorizar la legibilidad rápida, la navegación sin esfuerzo y el tamaño táctil ideal en 7 pulgadas. Las 4 pantallas principales se disponen con botones de navegación inamovibles en las esquinas, asegurando que cambiar del temporizador a la reproducción multimedia requiera solo de un simple toque.",
+                    textBlock2: "Para aprovechar los bordes de la pantalla, se implementó en JavaScript puro un sistema de gestos por deslizamiento (4-Way Swipe Gesture). Deslizar desde los bordes invoca menús 'Dock' superpuestos que contienen utilidades extra sin interferir con la pantalla general, como un control de volumen responsivo o un visualizador rítmico para ejercicios de respiración (box breathing).",
+                    textBlock3: "Se incluyó una sección de 'Mejores Prácticas' enfocado en tips sobre TDAH, presentando tácticas de estudio (como Active Recall y Spaced Repetition) en formato de tarjetas accesibles rápidamente mediante el menú deslizante izquierdo. A su vez, el visualizador de respiración antes mencionado ayuda enormemente al foco o retornar a la calma tras el hiperfoco mediante animaciones fluidas CSS.",
+                    textBlock4: "Como un descanso visual envolvente o un estímulo de ambiente visual, el dock superior permite intercambiar dinámicamente Shaders WebGL que actúan de fondo animado en la pantalla principal. Esto incluye desde arte abstracto interactivo hasta videos en bucle, seleccionados específicamente para dar vida al escritorio, y siendo gestionados al pausarse o reactivarse según las necesidades de rendimiento de las tareas de PC.",
+                    bullets: ["4-WAY SWIPES", "ANIMACIONES FLUIDAS", "FONDO WEBGL SHADER"],
                     media1: [""],
                     media2: [""],
                     media3: [""]
                 }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["HTML / CSS", "JAVASCRIPT", "POWERSHELL"],
+            duration: "3 SEMANAS",
             videos: [],
             gallery: [],
             externalLink: "#",
@@ -2183,7 +2183,7 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
         en: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
-                "TYPESCRIPT": {
+                "PROGRAMMING": {
                     headline: "INSERT HEADLINE: TYPESCRIPT",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
@@ -2214,33 +2214,33 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
             overviewImage: ""
         },
         es: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Desarrollo completo de este portafolio web interactivo utilizando React, TypeScript y shaders WebGL en tiempo real para generar una experiencia inmersiva.",
             tagContent: {
-                "TYPESCRIPT": {
-                    headline: "INSERT HEADLINE: TYPESCRIPT",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                "PROGRAMMING": {
+                    headline: "ARQUITECTURA REACT Y RENDIMIENTO",
+                    textBlock1: "Este portafolio web (la página que estás visualizando ahora mismo) fue construido desde cero con React y TypeScript utilizando Vite como entorno de construcción. El objetivo principal fue crear una experiencia altamente interactiva y fluida que se sintiera más cercana a una interfaz de videojuego que a una web estática tradicional, manteniendo al mismo tiempo tiempos de carga optimizados y una base de código escalable.",
+                    textBlock2: "Implementé un sistema de enrutamiento SPA (Single Page Application) personalizado (State-based Routing) sin depender de librerías externas. Este enrutador intercepta eventos `hashchange` del DOM y actualiza un estado central (appState) que orquesta dinámicamente los renders de alto nivel. Además, integra un analizador sintáctico para Deep Linking que sincroniza bidireccionalmente los sub-hashes paramétricos (ej. `#game-design/slug-del-proyecto`) con el componente `ProjectDetailView`, garantizando accesibilidad directa a subrutas y anulando por completo las peticiones HTTP secundarias en las transiciones de interfaz.",
+                    textBlock3: "Hice un uso del Patrón Observador (Observer Pattern) mediante los Hooks de React para monitorear contínuamente la posición del ratón y el progreso de carga. Además, integré el Patrón Proveedor (Provider Pattern) empleando la Context API para gestionar de forma global y eficiente la localización de idiomas, y apliqué Lazy Loading y Code Splitting con 'Suspense' para diferir la carga de chunks pesados para el momento en que el usuario los necesita.",
+                    textBlock4: "En ordenador utiliza un renderizado ininterrumpido del fondo WebGL y los cálculos matemáticos para efectos 3D dinámicos. Para evitar la caída de fotogramas y la saturación del hilo principal (Main Thread), funciones intensivas como el cálculo de perspectiva 3D en cursores o los smooth scroll físicos utilizan `requestAnimationFrame` en lugar de modificadores de estado estándar para sincronizarse perfectamente con el ciclo del monitor. Asimismo, programé un detector de pantalla y User-Agent que de forma inteligente apaga y reemplaza el costoso shader WebGL por interpolaciones procedimentales de color 2D puro en pantallas táctiles y móviles.",
+                    bullets: ["ENRUTAMIENTO SPA CUSTOM", "PATRONES OBSERVER & PROVIDER", "RENDIMIENTO WEBGL OPTIMIZADO"],
                     media1: [""],
                     media2: [""],
                     media3: [""]
                 },
                 "UI/UX": {
-                    headline: "INSERT HEADLINE: UI/UX",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
+                    headline: "EXPERIENCIA SENSORIAL Y DE USUARIO",
+                    textBlock1: "El diseño de toda la interfaz fue creado intencionalmente conceptualizando el Main Menu de un videojuego con una estética que persigue una sensación contemporánea y de alta fidelidad, fusionando minimalismo oscuro de ciencia ficción y brutalismo tipográfico mediante fuentes de mayor grosor ('Space Grotesk' y 'ITC Avant Garde'). La paleta y disposición de elementos emulan terminales de mando, donde este orden monolítico y preciso contrasta de forma intencional con capas de ruido continuo, viñeteados fotográficos y filtros orgánicos que le otorgan un tacto cinemático al conjunto de elementos.",
+                    textBlock2: "El eje direccional y bienvenida a la navegación recae en el Main Menu estructurado mediante un Bento Grid responsivo (CSS Grid). Esta cuadrícula divide de manera algorítmica y asimétrica la pantalla inicial, logrando un orden predecible mediante distintos bloques paramétricos (como 9:16 o 16:9) que equilibran la información. Cada tarjeta (Bento Box) actúa como puerto hacia los submenús de las distintas disciplinas o apartados de contacto, dotados con recuadros interactivos (brillo holográfico, sombra y amplicación de escala) y sistemas de puntuación progresivos que reaccionan al mouse del usuario para invitar a la exploración ininterrumpida.",
+                    textBlock3: "Para visualizar los submenús de los portafolios, ideé una disposición expansiva centrada en un estilo carrusel horizontal. En navegación clásica de escritorio, eliminé la tradicional barra de desplazamiento predeterminada del navegador web, reemplazándola por un sistema de 'Slide' horizontal accionado suavemente por una interpolación matemática desde la rueda del ratón, combinado con agarre táctil (Drag-to-Scroll). Adicionalmente, las tarjetas en forma de monolito cristalino integran otra interpolación matemática atada al movimiento del puntero, inyectándoles un hiper-reactivo y liso efecto Tilt 3D sobre los ejes.",
+                    textBlock4: "Por último, al ingresar al detalle individual de cada proyecto (`ProjectDetailView`), las tarjetas previas ceden ante un esquema de superposición expansiva paralela. El flujo informativo es fraccionado: la zona superior alberga un enorme encabezado descriptivo inmerso encima del 'Hero Image' completo para impacto máximo con descripciones básicas del proyecto. Al descender, se separa por secciones donde se combina contenido en texto, imágenes y gifs, con una columna izquierda de botones tipo anclaje para navegación fija por secciones, y al centro reposa la información interna, donde párrafos de lectura reposada se acompañan de micro-carruseles (`InlineMediaSlider`) para digerir la técnica sin cansancio visual.",
+                    bullets: ["MAIN MENU ESTILO BENTO", "CARRUSEL SLIDER Y TILT 3D", "LAYOUT INMERSIVO CON ANCLAJES"],
                     media1: [""],
                     media2: [""],
                     media3: [""]
                 }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["REACT / TYPESCRIPT", "GLSL / WEBGL", "TAILWIND CSS", "VITE PRE-BUILDER"],
+            duration: "3 SEMANAS",
             videos: [],
             gallery: [],
             externalLink: "#",
@@ -2251,7 +2251,7 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
         en: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
-                "TYPESCRIPT": {
+                "PROGRAMMING": {
                     headline: "INSERT HEADLINE: TYPESCRIPT",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
@@ -2284,7 +2284,7 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
         es: {
             description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
             tagContent: {
-                "TYPESCRIPT": {
+                "PROGRAMMING": {
                     headline: "INSERT HEADLINE: TYPESCRIPT",
                     textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
                     textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
