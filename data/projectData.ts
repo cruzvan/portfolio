@@ -1987,8 +1987,8 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock4: "The biggest programming challenge was integrating the music player and its metadata (lyrics, album art). To solve the lack of stable local APIs for Tidal, I built a 'Media Listener' that reads Windows media signals and, upon retrieving the title and artist, asynchronously queries external APIs (like iTunes and LrcLib) to fetch covers and sync LRC formatted lyrics.",
                     bullets: ["7-INCH UI", "POWERSHELL API", "SINGLETON PATTERN"],
                     media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775485540/Screenshot_2026-04-06_102507_cueyy8.png"],
-                    media2: [""],
-                    media3: [""]
+                    media2: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775486297/PF_Others_MinScreen_Image2_bk6v3m.webm", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775485690/Screenshot_2026-04-06_102730_sh5kyk.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775485689/Screenshot_2026-04-06_102737_vinriq.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775485690/Screenshot_2026-04-06_102757_iey7e0.png"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775486940/PF_Others_MinScreen_Image3_a2rhm8.webm", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775485860/b33d6f19-a007-4aa2-b538-dce16edf6758.png"]
                 },
                 "USER INTERFACE": {
                     headline: "GESTURE NAVIGATION",
@@ -1997,9 +1997,9 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock3: "A 'Best Practices' section focused on ADHD tips was included, presenting study tactics (such as Active Recall and Spaced Repetition) in a card format quickly accessible via the left dock menu. In turn, the aforementioned rhythmic visualizer greatly helps focus or return to calm after hyperfocus through fluid CSS animations.",
                     textBlock4: "As an immersive visual rest or concentration stimulus, the top dock allows swapping WebGL Shaders that act as an animated background on the main screen. This ranges from abstract art to looping videos, specifically chosen to bring the desk to life, and managed efficiently by pausing and reactivating based on the performance needs of heavy external tasks.",
                     bullets: ["4-WAY SWIPES", "FLUID ANIMATIONS", "WEBGL SHADER BACKGROUND"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
+                    media1: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775486297/PF_Others_MinScreen_Image2_bk6v3m.webm"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775486556/PF_Others_MinScreen_Image5_tu21ft.webm"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775486707/PF_Others_MinScreen_Image6_cusymz.webm"]
                 }
             },
             software: ["HTML / CSS", "JAVASCRIPT", "POWERSHELL"],
@@ -2007,7 +2007,7 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
             videos: [],
             gallery: [],
             externalLink: "#",
-            overviewImage: ""
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775487136/PF_Others_MinScren_Image0_hylslw.png"
         },
         es: {
             description: "Centro de control de productividad con interfaz de gestos, Media Listener e integraciones del SO vía PowerShell.",
@@ -2191,8 +2191,8 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock4: "On desktop devices, it utilizes an uninterrupted render of the WebGL background and mathematical calculations for dynamic 3D effects. To prevent frame drops and Main Thread saturation, intensive functions like 3D cursor perspective calculations or smooth scrolling physics use `requestAnimationFrame` instead of standard state modifiers to sync perfectly with the monitor's refresh cycle. Additionally, I programmed a screen and User-Agent detector that intelligently disables and replaces the expensive WebGL shader with procedurally generated 2D color interpolations on touch screens and mobile devices.",
                     bullets: ["CUSTOM SPA ROUTING", "OBSERVER & PROVIDER PATTERNS", "OPTIMIZED WEBGL RENDERING"],
                     media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775487968/PF_Others_WebPortfolio_Image_1_zl0toe.webp"],
-                    media2: [""],
-                    media3: [""]
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775488933/PF_Others_WebPortfolio_Image_2_wtdfkq.webp"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775489235/PF_Others_WebPortfolio_Image3_vo55zg.webm"]
                 },
                 "UI/UX": {
                     headline: "SENSORY & USER EXPERIENCE",
@@ -2201,17 +2201,17 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock3: "To display the portfolio submenus, I devised an expansive layout centered around a horizontal carousel style. For classic desktop navigation, I stripped away the traditional default browser scrollbar, replacing it with a custom horizontal 'Slide' system powered smoothly by a mathematical interpolation from the mouse wheel, combined with a manual Drag-to-Scroll feature. Additionally, the crystalline monolith cards feature another mathematical interpolation tied to pointer movement, injecting them with a hyper-reactive and perfectly smooth 3D Tilt effect across both axes.",
                     textBlock4: "Finally, upon entering the individual details of each project (`ProjectDetailView`), the previous cards give way to an expansive parallel overlay scheme. The information flow is fragmented: the upper zone houses a massive descriptive header immersed atop the full 'Hero Image' for maximum impact with clean icon-based stats. Moving downward, the content separates into specific sections combining text, images, and gifs, with a left column featuring anchor-type buttons for fixed navigation, while the central area holds the internal info, where digestible reading paragraphs are accompanied by micro-carousels (`InlineMediaSlider`) to process technical details without visual fatigue.",
                     bullets: ["BENTO STYLE MAIN MENU", "HORIZONTAL SLIDER & 3D TILT", "IMMERSIVE LAYOUT WITH ANCHORS"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
+                    media1: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775489607/PF_Others_WebPortfolio_Image4_hmc71n.webm"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775490808/PF_Others_WebPortfolio_Image5_uoejyr.webm"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775490872/PF_Others_WebPortfolio_Image6_y0ekor.webm"]
                 }
             },
             software: ["REACT / TYPESCRIPT", "GLSL / WEBGL", "TAILWIND CSS", "VITE PRE-BUILDER"],
-            duration: "3 WEEKS",
+            duration: "2-3 MONTHS",
             videos: [],
             gallery: [],
             externalLink: "#",
-            overviewImage: ""
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775491585/PF_Others_WebPortfolio_Image_0_aejztw.webp"
         },
         es: {
             description: "Desarrollo completo de este portafolio web interactivo utilizando React, TypeScript y shaders WebGL en tiempo real para generar una experiencia inmersiva.",
@@ -2235,16 +2235,16 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock4: "Por último, al ingresar al detalle individual de cada proyecto (`ProjectDetailView`), las tarjetas previas ceden ante un esquema de superposición expansiva paralela. El flujo informativo es fraccionado: la zona superior alberga un enorme encabezado descriptivo inmerso encima del 'Hero Image' completo para impacto máximo con descripciones básicas del proyecto. Al descender, se separa por secciones donde se combina contenido en texto, imágenes y gifs, con una columna izquierda de botones tipo anclaje para navegación fija por secciones, y al centro reposa la información interna, donde párrafos de lectura reposada se acompañan de micro-carruseles (`InlineMediaSlider`) para digerir la técnica sin cansancio visual.",
                     bullets: ["MAIN MENU ESTILO BENTO", "CARRUSEL SLIDER Y TILT 3D", "LAYOUT INMERSIVO CON ANCLAJES"],
                     media1: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775489607/PF_Others_WebPortfolio_Image4_hmc71n.webm"],
-                    media2: [""],
-                    media3: [""]
+                    media2: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775490808/PF_Others_WebPortfolio_Image5_uoejyr.webm"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775490872/PF_Others_WebPortfolio_Image6_y0ekor.webm"]
                 }
             },
             software: ["REACT / TYPESCRIPT", "GLSL / WEBGL", "TAILWIND CSS", "VITE PRE-BUILDER"],
-            duration: "2 SEMANAS",
+            duration: "2-3 MESES",
             videos: [],
             gallery: [],
             externalLink: "#",
-            overviewImage: ""
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775491585/PF_Others_WebPortfolio_Image_0_aejztw.webp"
         }
     },
     "WEBPAGE COMPANY (VIBECODED)": {
@@ -2253,25 +2253,25 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
             tagContent: {
                 "PROGRAMMING": {
                     headline: "REACT ARCHITECTURE & 3D MODULES",
-                    textBlock1: "Second Brain Multimedia is a dynamic landing page built from scratch with React, TypeScript, and Tailwind CSS, specifically designed as a vanguard presentation for a multimedia service agency. The main development goal was bridging the gap between heavy graphic components (WebGL and complex interactive math) and the React main thread without jeopardizing overall performance, structuring clean routing modules for the brand's informational layout.",
-                    textBlock2: "To handle the intensive micro-interactions, array tag filtering, and dynamic modal mounting (such as deep dives into service details and pricing configurations), I utilized the **Framer Motion** library. This integration allowed me to implement `AnimatePresence`, fundamentally guaranteeing that DOM unmounting events effectively triggered liquid-smooth entry and exit algorithms. This prevents abrupt cut-offs, ensuring continuous fluidity whenever a user filters the multimedia gallery.",
+                    textBlock1: "A landing page built from scratch in React, TypeScript, and Tailwind CSS, specifically designed to serve as an avant-garde presentation for a creative services agency, Second Brain Multimedia (SeBra). The main coding goal was to integrate graphics components and heavy cinematic animations (WebGL and physics) directly into the React main thread, while simultaneously allowing corresponding services to be clearly displayed from the landing page itself to capture clients' attention.",
+                    textBlock2: "To handle the intensive micro-interactions, array tag filtering, and dynamic modal mounting (such as deep dives into service details and pricing configurations), I utilized the Framer Motion library. This integration allowed me to implement `AnimatePresence`, guaranteeing that DOM unmounting events effectively triggered liquid-smooth exit algorithms. This prevents abrupt cut-offs and ensures continuous fluidity whenever a user filters the gallery.",
                     textBlock3: "Acknowledging the heavy footprint of WebGL shaders natively, I implemented robust `useEffect` hooks tracking `window.innerWidth` and runtime device types. Highly precise yet demanding components—like the continuous noise `Background3D` WebGL canvas or specific parallax triggers—are forcefully unmounted on a logical level upon detecting mobile platforms. This significantly relieves computational GPU workload and bolsters the Google Lighthouse accessibility ratings on phones.",
-                    textBlock4: "Finally, this entire architectural core is heavily safeguarded by solid TypeScript structural typing. Establishing rigid data interfaces (`Service`, `PricingPlan`, etc.) allowed me to inject massive nested arrays of media content cleanly, preemptively catching deployment errors. This data-driven approach standardized the agency's portfolio and team curriculum dataset into completely reusable components rather than resorting to messy hard-coded HTML paragraphs.",
+                    textBlock4: "Finally, this entire architectural core is heavily safeguarded by solid TypeScript structural typing. Establishing rigid data interfaces (`Service`, `PricingPlan`, etc.) allowed me to agilely inject nested arrays of multimedia content cleanly, preemptively catching deployment errors. This data-driven approach standardized the agency's portfolio into reusable components rather than resorting to hard-coded HTML paragraphs.",
                     bullets: ["FRAMER MOTION API", "3D RENDER OPTIMIZATION", "DATA-DRIVEN COMPONENTS"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
+                    media1: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775494327/PF_Others_WebSebra_Image1_irr7d1.webm"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775494551/PF_Others_WebSebra_Image2_mkztco.webm"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775495036/PF_Others_WebSebra_Image_3_anbkrx.webp"]
                 },
                 "UI/UX": {
                     headline: "CINEMATIC SCROLL-DRIVEN NEON",
-                    textBlock1: "The visual aesthetic of Second Brain was engineered as a hyper-realistic digital journey into a 'connected mind,' completely discarding standard corporate web bounds. The overarching design incorporates a strict and sober 'Dark Mode' palette that is constantly broken up by vibrant neon edge effects (cyan, fuchsia, pink) mimicking futuristic cybersecurity terminals. This design choice immediately provides prospective clients with the visceral feeling of entering a highly technological workspace.",
-                    textBlock2: "The 'Hero Section' (main landing header) was tailored to seamlessly capture attention using asymmetrical fade-in animations on the static agency headline, complemented by monumental typography with absolutely zero bloated filler. This section passes the visual baton down to a discrete, animated 'Scroll Indicator'—organically encouraging narrative progression rather than relying on overwhelming, giant Call-to-Action buttons to dictate behavior.",
+                    textBlock1: "The visual design of Second Brain was structured as a digital vaporwave journey into a 'connected mind,' abandoning formal corporate standards. The fundamental approach integrates a cyan and magenta palette with neon edge effects that emulate futuristic cyberpunk cybersecurity terminals.",
+                    textBlock2: "The 'Hero Section' (main landing header) was designed to immediately capture attention using asymmetrical fade-in animations. This section directly passes the visual baton down to a discrete, animated 'Scroll Indicator,' organically encouraging narrative progression without overwhelming the user.",
                     textBlock3: "Upon descending the page, each section (such as the Service Cards or the FAQ dropdowns) emerges modularly, responding precisely to scroll depth paring (`Scrollytelling`). This treatment turns an otherwise dense and informative webpage into a sequence of digestible, bite-sized narrative chunks. Strategically, this allows the highly abstract and saturated visual background to flourish without ever sacrificing the razor-sharp readability of the foreground text.",
-                    textBlock4: "Lastly, the atmospheric heavyweight and foundational pillar tying these floating components together is `Background3D`. Utilizing React Three Fiber (`@react-three/fiber`), I programmed a raw Canvas wrapping Shader planes internally compiled via GLSL. These generate continuous dense fractional noise, false volumetric lighting, and deep organic shadows to simulate an interactive fluid energy tunnel. Even when layered behind complex UI cards, this reactive mist guarantees a unified Sci-Fi aura.",
+                    textBlock4: "Lastly, the atmospheric heavyweight and foundational pillar tying these floating components together is `Background3D`. Utilizing React Three Fiber (`@react-three/fiber`), I programmed a raw Canvas wrapping Shader planes internally compiled via GLSL. These generate continuous dense fractional noise, with false volumetric lighting and organic shadows simulating the fluidity of metallic paint in motion. Even when hidden behind the services overlay, it guarantees a continuous Sci-Fi 'aura'.",
                     bullets: ["FLUID SCROLLYTELLING", "PROCEDURAL GLOW SHADOWS", "GLSL SHADER BACKGROUND"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
+                    media1: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775494002/PF_Others_WebSebra_Image4_vbipd1.webm"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775493196/c1b2e056-f44a-4f05-b45c-67e90b1c31c2.png"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775493567/PF_Others_WebSebra_Image5_ummg3u.webm"]
                 }
             },
             software: ["REACT / TYPESCRIPT", "R3F / WEBGL", "TAILWIND CSS", "FRAMER MOTION"],
@@ -2279,32 +2279,32 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
             videos: [],
             gallery: [],
             externalLink: "#",
-            overviewImage: ""
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775493196/c1b2e056-f44a-4f05-b45c-67e90b1c31c2.png"
         },
         es: {
             description: "Landing page vanguardista y cinemática para una agencia multimedia, utilizando React Three Fiber para shaders WebGL, Framer Motion para transiciones fluidas y Tailwind CSS para formato responsivo.",
             tagContent: {
                 "PROGRAMMING": {
                     headline: "ARQUITECTURA REACT Y MÓDULOS 3D",
-                    textBlock1: "Second Brain Multimedia es una landing page concebida desde cero en React con TypeScript y Tailwind CSS, diseñada específicamente para servir como presentación vanguardista para una agencia de servicios. El objetivo principal a nivel código fue integrar componentes gráficos y animaciones cinemáticas pesadas (WebGL y física) directo en el hilo principal de React sin comprometer el rendimiento general, estructurando módulos de enrutamiento limpios para la información.",
-                    textBlock2: "Para manejar las intensas micro-interacciones, el filtrado de etiquetas de arreglos y el montaje dinámico de vistas modales (como los detalles de los servicios y precios), utilicé la librería **Framer Motion**. Esta integración me permitió implementar `AnimatePresence`, garantizando que los desmontajes de componentes en el DOM dispararan transiciones líquidas de salida. Esto previene los cortes abruptos y asegura una fluidez óptima cuando el usuario filtra la galería.",
+                    textBlock1: "Landing page concebida desde cero en React con TypeScript y Tailwind CSS, diseñada específicamente para servir como presentación vanguardista para una agencia de servicios creativos, Second Brain Multimedia (SeBra). El objetivo principal a nivel código fue integrar componentes gráficos y animaciones cinemáticas pesadas (WebGL y física) directo en el hilo principal de React y que al mismo tiempo que se puedan mostrar los servicios claramente desde la misma landing page para llamar la atención de los clientes.",
+                    textBlock2: "Para manejar las intensas micro-interacciones, el filtrado de etiquetas de arreglos y el montaje dinámico de vistas modales (como los detalles de los servicios y precios), utilicé la librería Framer Motion. Esta integración me permitió implementar `AnimatePresence`, garantizando que los desmontajes de componentes en el DOM dispararan transiciones líquidas de salida. Esto previene los cortes abruptos y asegura una fluidez óptima cuando el usuario filtra la galería.",
                     textBlock3: "Teniendo en cuenta el peso inherente de los shaders WebGL, implementé ganchos `useEffect` robustos para monitorear el `window.innerWidth` y el dispositivo de ejecución. Funciones hiper-precisas pero exigentes, como el lienzo WebGL de ruido continuo de `Background3D` o interacciones selectas de parallax, se desmontan lógicamente al detectar celulares. Esto alivia de golpe la carga computacional en la GPU y mejora el índice de accesibilidad de Google Lighthouse.",
-                    textBlock4: "Finalmente, todo este núcleo central está resguardado fuertemente por una sólida tipificación estructural en TypeScript. Establecer interfaces rígidas (`Service`, `PricingPlan`, etc.) me permitió inyectar enormes arreglos anidados de contenido multimedia ágilmente, atajando errores de despliegue antes de tiempo. Este enfoque basado en datos estandarizó el portafolio de la agencia en componentes reutilizables sin recaer en párrafos HTML hardcodeados.",
+                    textBlock4: "Finalmente, todo este núcleo central está resguardado fuertemente por una sólida tipificación estructural en TypeScript. Establecer interfaces rígidas (`Service`, `PricingPlan`, etc.) me permitió inyectar arreglos anidados de contenido multimedia ágilmente, atajando errores de despliegue antes de tiempo. Este enfoque basado en datos estandarizó el portafolio de la agencia en componentes reutilizables sin recaer en párrafos HTML hardcodeados.",
                     bullets: ["FRAMER MOTION API", "OPTIMIZACIÓN DE RENDER 3D", "COMPONENTES DATA-DRIVEN"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
+                    media1: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775494327/PF_Others_WebSebra_Image1_irr7d1.webm"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775494551/PF_Others_WebSebra_Image2_mkztco.webm"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775495036/PF_Others_WebSebra_Image_3_anbkrx.webp"]
                 },
                 "UI/UX": {
                     headline: "NEÓN CINEMÁTICO SCROLL-DRIVEN",
-                    textBlock1: "El diseño visual de Second Brain fue estructurado como un viaje digital hiperrealista hacia una 'mente conectada', abandonando los estándares corporativos. El enfoque fundamental integra una paleta 'Dark Mode' estricta y sobria, pero rota vibrante por efectos de neón en bordes (cian, fucsia, rosa) que emulan terminales futuristas de ciberseguridad. Esta decisión de diseño otorga al instante a los clientes potenciales la sensación visceral de adentrarse en un entorno de alta fidelidad.",
-                    textBlock2: "El 'Hero Section' (encabezado de aterrizaje principal) fue diseñado para captar inmediatamente la atención manipulando animaciones asimétricas de aparición (`fade-in`) sobre los titulares estáticos de la agencia, complementado por tipografías monumentales absolutamente carentes de relleno de texto innecesario. Esta sección le pasa directamente la batuta visual a una discreta indicación animada de Scroll, incentivando de manera orgánica la progresión narrativa sin abrumar.",
+                    textBlock1: "El diseño visual de Second Brain fue estructurado como un viaje digital vaporwave hacia una 'mente conectada', abandonando los estándares corporativos formales. El enfoque fundamental integra una paleta cyan y magenta con efectos de neón en bordes que emulan terminales futuristas cyberpunk de ciberseguridad.",
+                    textBlock2: "El 'Hero Section' (encabezado de aterrizaje principal) fue diseñado para captar inmediatamente la atención manipulando animaciones asimétricas de aparición (`fade-in`). Esta sección le pasa directamente la batuta visual a una discreta indicación animada de Scroll, incentivando de manera orgánica la progresión narrativa sin abrumar.",
                     textBlock3: "Al descender en la página, cada sección (como las tarjetas de servicio o las respuestas FAQ) emerge modularmente en función de emparejarse con el nivel de profundidad del desplazamiento (`Scrollytelling`). Este tratamiento convierte lo que podría ser una web densa e informativa en una secuencia de porciones manejables. Estratégicamente, esto permite desarrollar visuales abstractos y saturados en el fondo sin jamás sacrificar la legibilidad impecable en el frente.",
-                    textBlock4: "Por último, el peso atmosférico y el pilar fundamental que ata estos componentes flotantes es `Background3D`. Utilizando React Three Fiber (`@react-three/fiber`), programé un Canvas que envuelve planos Shader compilados internamente a través de GLSL. Éstos generan ruidos fraccionarios continuos hiperdensos, luces volumétricas falsas y sombras orgánicas simulando túneles de energía fluida. Incluso escondido detrás de cartas complejas, garantiza el aura Sci-Fi continua.",
+                    textBlock4: "Por último, el peso atmosférico y el pilar fundamental que ata estos componentes flotantes es `Background3D`. Utilizando React Three Fiber (`@react-three/fiber`), programé un Canvas que envuelve planos Shader compilados internamente a través de GLSL. Éstos generan ruidos fraccionarios continuos hiperdensos, con luces volumétricas falsas y sombras orgánicas simulando una fluidez de pintura metálica en movimiento. Incluso escondido detrás del overlay de los servicios, garantiza el 'aura' Sci-Fi continua.",
                     bullets: ["SCROLLYTELLING FLUIDO", "SOMBRAS GLOW PROCEDURALES", "GLSL SHADER BACKGROUND"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
+                    media1: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775494002/PF_Others_WebSebra_Image4_vbipd1.webm"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775493196/c1b2e056-f44a-4f05-b45c-67e90b1c31c2.png"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775493567/PF_Others_WebSebra_Image5_ummg3u.webm"]
                 }
             },
             software: ["REACT / TYPESCRIPT", "R3F / WEBGL", "TAILWIND CSS", "FRAMER MOTION"],
@@ -2312,7 +2312,7 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
             videos: [],
             gallery: [],
             externalLink: "#",
-            overviewImage: ""
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775493196/c1b2e056-f44a-4f05-b45c-67e90b1c31c2.png"
         }
     }
 };
