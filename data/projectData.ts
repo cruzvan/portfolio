@@ -263,7 +263,7 @@ export const othersProjects: ProjectCardData[] = [
         category: "Programming",
         tags: ["PROGRAMMING", "USER INTERFACE"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775487399/PF_Others_MinScreen_Image_Cover_lapteg.webp",
-        status: "ACTIVELY WORKING",
+        status: "FINISHED",
         locked: false,
         hidden: false
     },
@@ -293,7 +293,7 @@ export const othersProjects: ProjectCardData[] = [
         category: "WEBPAGE",
         tags: ["PROGRAMMING", "UI/UX"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765291476/PD_Others_PortfolioWebpage_Cover_fvhppn.webp",
-        status: "Published",
+        status: "PUBLISHED",
         locked: false,
         hidden: false
     },
@@ -302,8 +302,8 @@ export const othersProjects: ProjectCardData[] = [
         title: "WEBPAGE COMPANY (VIBECODED)",
         category: "WEBPAGE",
         tags: ["PROGRAMMING", "UI/UX"],
-        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
-        status: "Prototype",
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775495798/PF_Others_WebSebra_Image_Cover_ybcdf0.webp",
+        status: "PUBLISHED",
         locked: false,
         hidden: false
     },
