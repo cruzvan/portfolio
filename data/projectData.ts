@@ -73,10 +73,10 @@ export const gameDesignProjects: ProjectCardData[] = [
         id: 3,
         title: "UNDESERVED",
         category: "Programming",
-        tags: ["LEVEL DESIGN", "ART DIRECTION", "PROGRAMMING"],
+        tags: ["LEVEL DESIGN", "ART DIRECTION"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765285900/PF_GameDesign_Undeserved_Cover_v1f7lc.webp",
         status: "MINI PROJECT",
-        locked: true,
+        locked: false,
         hidden: false
     },
     {
@@ -777,74 +777,70 @@ Créditos Concept Art: Matías Rojas Torrejón`,
     },
     "UNDESERVED": {
         en: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "'Undeserved' is a first-person psychological horror title with a strong religious theme. The player inhabits the mind of a protagonist suffering from schizophrenia, where reality fractures and the environment becomes their greatest enemy.",
             tagContent: {
                 "LEVEL DESIGN": {
-                    headline: "INSERT HEADLINE: LEVEL DESIGN",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "LEVEL DESIGN AND SPATIAL NARRATIVE",
+                    textBlock1: "'Undeserved' takes players on a first-person horror-walking simulator experience, leaning on a twisted religious theme. The core concept revolves around the psyche of the schizophrenic protagonist and her traumas, which devised a fundamental rule for us: material reality is not static. The entire architecture of the space was designed to act as an antagonist that reflects mental deterioration through the environment.",
+                    textBlock2: "Fluctuating Spatial Narrative: The layout of hallways and rooms was initially designed to teach mechanics in a stable zone. However, at the code level, we integrated an event system linked to the doors. Playing with schizophrenia and distrusting what is perceived, the level design abuses blind spots: upon crossing a door and closing it, the code ensures that the geometry and decoration of the room change behind the player's back, managing to completely disorient them.",
+                    textBlock3: "Interest Curve Structure: The pacing of the game was balanced to prevent excess tension from desensitizing the player. We structured the interest curve by alternating moments of high vulnerability while escaping in non-linear areas, combined with temporary 'Safe Zone' hallways. These relief zones allow solving narrative puzzles and make the anticipation before the next jump-scare much more impactful.",
+                    textBlock4: "This illusory restructuring of the pathways is tied directly to the collection of keys or interaction objects (crucifixes, flashlights) that trigger new cascading events and serve as mechanics for the game. In this way, exploration rewards, but at the same time pushes the player to confront uncomfortable spaces where the environmental storytelling takes charge of accentuating paranoia, without the constant need to fight physical enemies.",
+                    bullets: ["SPATIAL NARRATIVE", "PSYCHOLOGICAL HORROR", "PACING CURVE", "DYNAMIC DESIGN"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775504713/PF_Game_Undeserved_1_o6kpmg.webm", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775507356/PF_Game_Undeserved_1_1_becx7a.webp"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775506016/PF_Game_Undeserved_2_1_dylxkw.webm", "https://res.cloudinary.com/dseaazn5s/video/upload/v1775506017/PF_Game_Undeserved_2_szdtdt.webm"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775507105/PF_Game_Undeserved_3_mlsmgm.webm", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775508685/PF_Game_Undeserved_3_1_jrwobs.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775508686/PF_Game_Undeserved_3_2_exddzv.webp"],
                 },
                 "ART DIRECTION": {
-                    headline: "INSERT HEADLINE: ART DIRECTION",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "ART DIRECTION AND HORROR",
+                    textBlock1: "To cement a genuine pathway for creating psychological horror, we opted for a realistic approach to graphics and interiors. The setting intentionally contains religious aesthetic iconography: statues of crucifixes, demons, and old altars that not only adorn the rustic hallways but also serve as veiled visual clues about the game's lore and the protagonist's guilt.",
+                    textBlock2: "Iconography as a Guide: The repetitive use of sacred objects dirties and breaks the apparent naturalness of the house, functioning as a narrative vehicle to provide cryptic clues on how to proceed through the level sections. Furthermore, it gradually brings players closer to the 'why' of the protagonist's mental state, understanding that the graphics allude to elements from the past that continue to impact her mind in the present.",
+                    textBlock3: "Oppressive Horror Lighting: The lighting management was configured to overwhelm and intimidate the protagonist. By continuously modifying the defective flickering of bulbs with blink scripts mixed with harsh shadows due to directional proximity, we crafted rigorous chiaroscuros. Being stripped of full visibility of the level, the player suspiciously relies on the minuscule beam of their static light to illuminate the horrors of what lies ahead.",
+                    textBlock4: "Post-processing for Paranoia: The final push to embody schizophrenia relied heavily on shaping the camera render's post-processing. By employing high thresholds of 'Film Grain' in combination with visual distortions through shaders on virtual textures, we intentionally forced a dirty and anomalous visor. This is constantly enclosed by borders submerged in a severe 'Vignette' that trims the vision, exponentially triggering progressive claustrophobia within the game.",
+                    bullets: ["REALISTIC GRAPHICS", "OPPRESSIVE LIGHTING", "CAMERA POST-PROCESSING", "RELIGIOUS ICONOGRAPHY"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775508637/PF_Game_Undeserved_4_1_uzixt2.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775508638/PF_Game_Undeserved_4_2_mazxmw.webp"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775508512/PF_Game_Undeserved_4_ysl5ss.webm"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775508066/PF_Game_Undeserved_5_awvodq.webm", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775510024/PF_Game_Undeserved_6_ujbfox.webp"],
                 },
-                "PROGRAMMING": {
-                    headline: "INSERT HEADLINE: PROGRAMMING",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["UNITY", "C#", "BLENDER"],
+            duration: "4 WEEKS",
             videos: [],
             gallery: [],
-            externalLink: "#",
-            overviewImage: ""
+            externalLink: "https://drive.google.com/file/d/1Bv8L6ti8TH-ZUNAc8_3d5TQy4ggINrUO/view",
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775504783/4d31443b-7940-4e06-9a7d-3ad1e2b0a80d.png"
         },
         es: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "'Undeserved' es un título de terror psicológico en primera persona con una fuerte temática religiosa. El jugador habita la mente de una protagonista que padece esquizofrenia, donde la realidad se fractura y el entorno se vuelve su mayor enemigo.",
             tagContent: {
                 "LEVEL DESIGN": {
-                    headline: "INSERT HEADLINE: LEVEL DESIGN",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["LORE", "PARANOIA", "STORYTELLING"]
+                    headline: "DISEÑO DE NIVELES Y NARRATIVA ESPACIAL",
+                    textBlock1: "'Undeserved' lleva a a los jugadores en una experiencia de horror-walking simulator en primera persona, apoyándose en una retorcida temática religiosa. El concepto central gira en torno a la psique de la protagonista con esquizofrenia y sus traumas, lo que nos ideó una regla fundamental: la realidad material no es estática. Toda la arquitectura del espacio fue diseñada para actuar como un antagonista que refleja el deterioro mental a través del entorno.",
+                    textBlock2: "Narrativa Espacial Fluctuante: La distribución de pasillos y habitaciones se diseñó primero para enseñar mecánicas en una zona estable. Sin embargo, a nivel de código integramos un sistema de eventos vinculados a las puertas. Al jugar con la esquizofrenia y desconfiar de lo que se percibe, el diseño de niveles abusa de los puntos ciegos: al cruzar una puerta y cerrarla, el código se asegura de que la geometría y el decorado de la habitación cambien a espaldas del jugador, logrando desorientarlo por completo.",
+                    textBlock3: "Estructura de la Curva de Interés: El ritmo de juego fue balanceado para evitar que el exceso de tensión insensibilice al jugador. Estructuramos la curva de interés alternando momentos de alta vulnerabilidad al escapar en áreas no lineales, combinadas con pasillos de 'Zonas Seguras' temporales. Estas zonas de alivio permiten solucionar puzzles narrativos y hacen que la anticipación ante el próximo salto de terror (jump-scare) sea mucho más impactante.",
+                    textBlock4: "Esta reestructuración ilusoria de las vías está atada directamente a la recolección de llaves u objetos de interacción (crucifixos, linternas) que disparan nuevos eventos desencadenantes y sirven como mecánicas para el juego. De esta forma la exploración recompensa, pero a la vez empuja al jugador a enfrentarse a espacios incómodos donde la narrativa ambiental se encarga de acentuar la paranoia, sin necesidad constante de combatir a enemigos físicos.",
+                    bullets: ["NARRATIVA ESPACIAL", "TERROR PSICOLÓGICO", "CURVA DE RITMO", "DISEÑO DINÁMICO"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775504713/PF_Game_Undeserved_1_o6kpmg.webm", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775507356/PF_Game_Undeserved_1_1_becx7a.webp"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775506016/PF_Game_Undeserved_2_1_dylxkw.webm", "https://res.cloudinary.com/dseaazn5s/video/upload/v1775506017/PF_Game_Undeserved_2_szdtdt.webm"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775507105/PF_Game_Undeserved_3_mlsmgm.webm", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775508685/PF_Game_Undeserved_3_1_jrwobs.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775508686/PF_Game_Undeserved_3_2_exddzv.webp"],
                 },
                 "ART DIRECTION": {
-                    headline: "INSERT HEADLINE: ART DIRECTION",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "DIRECCIÓN DE ARTE Y HORROR",
+                    textBlock1: "Para cimentar una vía genuina donde crear horror psicológico, se apostó por un enfoque de gráficas e interiores realistas. La ambientación contiene intencionadamente iconografía estética religiosa: estatuas de crucifijos, demonios y viejos altares que no solo adornan los pasillos rústicos, sino que fungen como pistas visuales veladas sobre el lore del juego y la culpa de la protagonista.",
+                    textBlock2: "Iconografía como Guía: El uso repetitivo de objetos sagrados ensucia y rompe la aparente naturalidad de la casa, funcionando como vehículo narrativo para dar pistas crípticas sobre cómo proceder por los tramos del nivel. Además, acerca a los jugadores gradualmente al porqué del estado mental de la protagonista, entendiendo que las gráficas aluden a elementos del pasado que siguen impactando su mente en el presente.",
+                    textBlock3: "Iluminación Opresiva de Horror: La gestión de luces fue configurada para abrumar e intimidar a la protagonista. Modificando continuamente el titilar defectuoso de focos con scripts de parpadeo mezclados con sombras duras por la proximidad direccional, fabricamos claroscuros rigurosos. Al estar despojado de visibilidad total del nivel, el jugador depende con recelo del minúsculo haz de su luz estática para iluminar los horrores de lo que viene al frente.",
+                    textBlock4: "Postprocesado para la Paranoia: El empuje final para encarnar la esquizofrenia recayó fuertemente en el modelado del postprocesado del render de la cámara. Empleando altos umbrales de 'Film Grain' en combinación con distorsiones visuales por shaders en virtual textures, forzamos intencionalmente un visor sucio y anómalo. Esto va encerrado constantemente por bordes sumergidos en un 'Vignette' severo que recorta la visión, disparando exponencialmente la claustrofobia progresiva dentro del juego.",
+                    bullets: ["GRÁFICAS REALISTAS", "ILUMINACIÓN OPRESIVA", "POSTPROCESADO DE CÁMARA", "ICONOGRAFÍA RELIGIOSA"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775508637/PF_Game_Undeserved_4_1_uzixt2.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775508638/PF_Game_Undeserved_4_2_mazxmw.webp"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775508512/PF_Game_Undeserved_4_ysl5ss.webm"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775508066/PF_Game_Undeserved_5_awvodq.webm", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775510024/PF_Game_Undeserved_6_ujbfox.webp"],
                 },
-                "PROGRAMMING": {
-                    headline: "INSERT HEADLINE: PROGRAMMING",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["UNITY", "C#", "BLENDER"],
+            duration: "4 SEMANAS",
             videos: [],
             gallery: [],
-            externalLink: "#",
-            overviewImage: ""
+            externalLink: "https://drive.google.com/file/d/1Bv8L6ti8TH-ZUNAc8_3d5TQy4ggINrUO/view",
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775504783/4d31443b-7940-4e06-9a7d-3ad1e2b0a80d.png"
         }
     },
     "SUPER ZZ": {
