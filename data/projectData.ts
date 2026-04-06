@@ -262,7 +262,7 @@ export const othersProjects: ProjectCardData[] = [
         title: "MINI SCREEN STREAM DOCK APP",
         category: "Programming",
         tags: ["PROGRAMMING", "USER INTERFACE"],
-        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775487399/PF_Others_MinScreen_Image_Cover_lapteg.webp",
         status: "ACTIVELY WORKING",
         locked: false,
         hidden: false
@@ -1983,20 +1983,20 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     headline: "MODULAR OS HUB",
                     textBlock1: "MiniScreen OS emerged as a personal productivity and multimedia control solution. Developed to run on a 7-inch external landscape display, this application functions as a control center (similar to a Stream Deck), allowing instant access to software tools, timers, hardware monitoring, and music controls without interrupting the main workstation workflow.",
                     textBlock2: "It integrates 4 independent core modules: an app launcher with shortcuts, a Pomodoro timer with a built-in 'brown noise' generator, a real-time CPU/GPU/RAM monitoring system backed by PowerShell scripts (interacting at the OS level), and a smart music player acting as a Media Listener.",
-                    textBlock3: "To organize the different modules, I used the Module Pattern and Singleton Pattern in core elements such as ShaderManager and BreathSystem. This allows tight control over WebGL instances and interactive DOM animations without polluting the global scope and keeping data encapsulated.",
-                    textBlock4: "The biggest programming challenge was integrating the music player and its metadata (lyrics, album art) via the 'Media Listener'. To solve the lack of stable local APIs for Tidal, I built a system that reads Windows media signals and, upon retrieving the title and artist, asynchronously queries external APIs (like iTunes and LrcLib) to fetch covers and sync LRC formatted lyrics.",
+                    textBlock3: "To organize the different modules, I used the Module Pattern and Singleton Pattern in core elements such as ShaderManager and BreathSystem. This allows tight control over WebGL instances and interactive DOM animations without polluting the global scope.",
+                    textBlock4: "The biggest programming challenge was integrating the music player and its metadata (lyrics, album art). To solve the lack of stable local APIs for Tidal, I built a 'Media Listener' that reads Windows media signals and, upon retrieving the title and artist, asynchronously queries external APIs (like iTunes and LrcLib) to fetch covers and sync LRC formatted lyrics.",
                     bullets: ["7-INCH UI", "POWERSHELL API", "SINGLETON PATTERN"],
-                    media1: [""],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775485540/Screenshot_2026-04-06_102507_cueyy8.png"],
                     media2: [""],
                     media3: [""]
                 },
                 "USER INTERFACE": {
                     headline: "GESTURE NAVIGATION",
                     textBlock1: "The UI is designed to prioritize quick readability, effortless navigation, and touch-friendly buttons for a 7-inch screen. The 4 main screens are arranged with immovable corner navigation menus, ensuring that switching from timer mode to media playback requires just a single tap.",
-                    textBlock2: "To take advantage of the touchscreen edges, a pure JavaScript 4-Way Swipe Gesture system was implemented. Swiping from the edges summons overlapping 'Dock' menus containing extra utilities without interfering with the active screen, such as volume controls or a rhythmic visualizer for breathing exercises.",
-                    textBlock3: "A 'Best Practices' section focused on ADHD tips was included, presenting study tactics (such as Active Recall and Spaced Repetition) in a card format quickly accessible via the left dock menu. In turn, the rhythmic visualizer greatly helps focus or return to calm after hyperfocus using fluid animations.",
+                    textBlock2: "To take advantage of the touchscreen edges, a pure JavaScript 4-Way Swipe Gesture system was implemented. Swiping from the edges summons overlapping 'Dock' menus containing extra utilities without interfering with the active screen, such as volume controls or a rhythmic visualizer for breathing exercises (box breathing).",
+                    textBlock3: "A 'Best Practices' section focused on ADHD tips was included, presenting study tactics (such as Active Recall and Spaced Repetition) in a card format quickly accessible via the left dock menu. In turn, the aforementioned rhythmic visualizer greatly helps focus or return to calm after hyperfocus through fluid CSS animations.",
                     textBlock4: "As an immersive visual rest or concentration stimulus, the top dock allows swapping WebGL Shaders that act as an animated background on the main screen. This ranges from abstract art to looping videos, specifically chosen to bring the desk to life, and managed efficiently by pausing and reactivating based on the performance needs of heavy external tasks.",
-                    bullets: ["4-WAY SWIPES", "FLUID ANIMATIONS", "BACKGROUND WEBGL"],
+                    bullets: ["4-WAY SWIPES", "FLUID ANIMATIONS", "WEBGL SHADER BACKGROUND"],
                     media1: [""],
                     media2: [""],
                     media3: [""]
@@ -2019,9 +2019,9 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock3: "Para organizar los distintos módulos utilicé el Patrón Módulo (Module Pattern) y Singleton en elementos principales como ShaderManager y BreathSystem, lo que permite un control cerrado sobre las instancias de WebGL y animaciones interactivas del DOM sin ensuciar el scope global.",
                     textBlock4: "El mayor desafío de programación fue la integración del reproductor musical y sus metadatos (letra, portadas). Ante la escasez de APIs precisas locales para Tidal, construí un 'Media Listener' que interpreta las señales de medios de Windows y asincrónicamente consulta APIs externas como iTunes y LrcLib para recuperar las portadas correctas y sincronizar las letras (formato LRC) de la música reproducible.",
                     bullets: ["UI DE 7 PULGADAS", "POWERSHELL API", "PATRÓN SINGLETON"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775485540/Screenshot_2026-04-06_102507_cueyy8.png"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775486297/PF_Others_MinScreen_Image2_bk6v3m.webm", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775485690/Screenshot_2026-04-06_102730_sh5kyk.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775485689/Screenshot_2026-04-06_102737_vinriq.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775485690/Screenshot_2026-04-06_102757_iey7e0.png"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775486940/PF_Others_MinScreen_Image3_a2rhm8.webm", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775485860/b33d6f19-a007-4aa2-b538-dce16edf6758.png"]
                 },
                 "USER INTERFACE": {
                     headline: "GESTURE NAVIGATION",
@@ -2030,9 +2030,9 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock3: "Se incluyó una sección de 'Mejores Prácticas' enfocado en tips sobre TDAH, presentando tácticas de estudio (como Active Recall y Spaced Repetition) en formato de tarjetas accesibles rápidamente mediante el menú deslizante izquierdo. A su vez, el visualizador de respiración antes mencionado ayuda enormemente al foco o retornar a la calma tras el hiperfoco mediante animaciones fluidas CSS.",
                     textBlock4: "Como un descanso visual envolvente o un estímulo de ambiente visual, el dock superior permite intercambiar dinámicamente Shaders WebGL que actúan de fondo animado en la pantalla principal. Esto incluye desde arte abstracto interactivo hasta videos en bucle, seleccionados específicamente para dar vida al escritorio, y siendo gestionados al pausarse o reactivarse según las necesidades de rendimiento de las tareas de PC.",
                     bullets: ["4-WAY SWIPES", "ANIMACIONES FLUIDAS", "FONDO WEBGL SHADER"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
+                    media1: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775486297/PF_Others_MinScreen_Image2_bk6v3m.webm"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775486556/PF_Others_MinScreen_Image5_tu21ft.webm"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775486707/PF_Others_MinScreen_Image6_cusymz.webm"]
                 }
             },
             software: ["HTML / CSS", "JAVASCRIPT", "POWERSHELL"],
@@ -2040,7 +2040,7 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
             videos: [],
             gallery: [],
             externalLink: "#",
-            overviewImage: ""
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775487136/PF_Others_MinScren_Image0_hylslw.png"
         }
     },
     "CUSTOM OBSIDIAN VAULTS": {
@@ -2190,7 +2190,7 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock3: "I made use of the Observer Pattern through React Hooks to continuously monitor mouse coordinates and loading progress. Furthermore, I integrated the Provider Pattern using the Context API to globally and efficiently manage language localization, and applied Lazy Loading and Code Splitting with 'Suspense' to defer the loading of heavy chunks until the exact moment the user needs them.",
                     textBlock4: "On desktop devices, it utilizes an uninterrupted render of the WebGL background and mathematical calculations for dynamic 3D effects. To prevent frame drops and Main Thread saturation, intensive functions like 3D cursor perspective calculations or smooth scrolling physics use `requestAnimationFrame` instead of standard state modifiers to sync perfectly with the monitor's refresh cycle. Additionally, I programmed a screen and User-Agent detector that intelligently disables and replaces the expensive WebGL shader with procedurally generated 2D color interpolations on touch screens and mobile devices.",
                     bullets: ["CUSTOM SPA ROUTING", "OBSERVER & PROVIDER PATTERNS", "OPTIMIZED WEBGL RENDERING"],
-                    media1: [""],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775487968/PF_Others_WebPortfolio_Image_1_zl0toe.webp"],
                     media2: [""],
                     media3: [""]
                 },
@@ -2223,9 +2223,9 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock3: "Hice un uso del Patrón Observador (Observer Pattern) mediante los Hooks de React para monitorear contínuamente la posición del ratón y el progreso de carga. Además, integré el Patrón Proveedor (Provider Pattern) empleando la Context API para gestionar de forma global y eficiente la localización de idiomas, y apliqué Lazy Loading y Code Splitting con 'Suspense' para diferir la carga de chunks pesados para el momento en que el usuario los necesita.",
                     textBlock4: "En ordenador utiliza un renderizado ininterrumpido del fondo WebGL y los cálculos matemáticos para efectos 3D dinámicos. Para evitar la caída de fotogramas y la saturación del hilo principal (Main Thread), funciones intensivas como el cálculo de perspectiva 3D en cursores o los smooth scroll físicos utilizan `requestAnimationFrame` en lugar de modificadores de estado estándar para sincronizarse perfectamente con el ciclo del monitor. Asimismo, programé un detector de pantalla y User-Agent que de forma inteligente apaga y reemplaza el costoso shader WebGL por interpolaciones procedimentales de color 2D puro en pantallas táctiles y móviles.",
                     bullets: ["ENRUTAMIENTO SPA CUSTOM", "PATRONES OBSERVER & PROVIDER", "RENDIMIENTO WEBGL OPTIMIZADO"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775487968/PF_Others_WebPortfolio_Image_1_zl0toe.webp"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775488933/PF_Others_WebPortfolio_Image_2_wtdfkq.webp"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775489235/PF_Others_WebPortfolio_Image3_vo55zg.webm"]
                 },
                 "UI/UX": {
                     headline: "EXPERIENCIA SENSORIAL Y DE USUARIO",
@@ -2234,7 +2234,7 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     textBlock3: "Para visualizar los submenús de los portafolios, ideé una disposición expansiva centrada en un estilo carrusel horizontal. En navegación clásica de escritorio, eliminé la tradicional barra de desplazamiento predeterminada del navegador web, reemplazándola por un sistema de 'Slide' horizontal accionado suavemente por una interpolación matemática desde la rueda del ratón, combinado con agarre táctil (Drag-to-Scroll). Adicionalmente, las tarjetas en forma de monolito cristalino integran otra interpolación matemática atada al movimiento del puntero, inyectándoles un hiper-reactivo y liso efecto Tilt 3D sobre los ejes.",
                     textBlock4: "Por último, al ingresar al detalle individual de cada proyecto (`ProjectDetailView`), las tarjetas previas ceden ante un esquema de superposición expansiva paralela. El flujo informativo es fraccionado: la zona superior alberga un enorme encabezado descriptivo inmerso encima del 'Hero Image' completo para impacto máximo con descripciones básicas del proyecto. Al descender, se separa por secciones donde se combina contenido en texto, imágenes y gifs, con una columna izquierda de botones tipo anclaje para navegación fija por secciones, y al centro reposa la información interna, donde párrafos de lectura reposada se acompañan de micro-carruseles (`InlineMediaSlider`) para digerir la técnica sin cansancio visual.",
                     bullets: ["MAIN MENU ESTILO BENTO", "CARRUSEL SLIDER Y TILT 3D", "LAYOUT INMERSIVO CON ANCLAJES"],
-                    media1: [""],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775489607/PF_Others_WebPortfolio_Image4_hmc71n.webm"],
                     media2: [""],
                     media3: [""]
                 }
