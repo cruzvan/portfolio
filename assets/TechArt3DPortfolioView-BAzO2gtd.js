@@ -1,0 +1,1 @@
+import{j as s}from"./index-BPq2-PDM.js";import{t,B as a}from"./BasePortfolioView-CHffIWZo.js";const f=({onClose:e})=>{const o=[...new Set(t.flatMap(r=>r.tags))];return s.jsx(a,{title:"3D & TECH ART",projects:t,categories:o,onClose:e,baseRoute:"#3d-tech-art"})};export{f as default};
