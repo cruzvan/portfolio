@@ -86,8 +86,8 @@ export const gameDesignProjects: ProjectCardData[] = [
         tags: ["GAME DESIGN", "PROGRAMMING", "ART DIRECTION"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765296556/PD_GameDesign_SuperZZ_Cover_ngewro.webp",
         status: "WIP",
-        locked: true,
-        hidden: true
+        locked: false,
+        hidden: false
     },
     {
         id: 5,
@@ -880,39 +880,48 @@ Créditos Concept Art: Matías Rojas Torrejón`,
             overviewImage: ""
         },
         es: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Super ZZ es un estimulante plataformero y puzzle tridimensional de comedia absurda con una temática de sátira ecológica. Disfrutable para jugadores de todas las edades (E10+), te embarca en un viaje colorido donde transformar la contaminación en una victoria de manera ridícula es el eje central.",
             tagContent: {
                 "GAME DESIGN": {
-                    headline: "INSERT HEADLINE: GAME DESIGN",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "DISEÑO DE JUEGO Y SISTEMAS DE INTERACCIÓN",
+                    textBlock1: "Super ZZ es un videojuego plataformero 3D lineal y puzzle en formato 'Story Mode' estilo cartoon y de humor absurdo, donde toda la estructura del mundo funciona al rededor de la sátira ecológica vs consumismo. Este formato permite entregar un mensaje que invita a un amplio público objetivo (Everyone 10+) a participar de experiencias bizarras y desafiantes de concientización ambiental. A diferencia de las aproximaciones sombrías comunes en este medio, aquí el medioambiente contaminado nunca produce miseria al protagonista; más bien, lo motiva a limpiar y pelear contra montañas de basura, administradas por la indiferente corporación 'Mugro S.A.', integrando el ecologismo en un espacio de recreo surrealista, saturado e hiperestimulante.",
+                    textBlock2: "Mecánicas Core: El bucle principal de jugabilidad orbita en torno a saltar, correr, hacer dashes ágiles y ejecutar un 'ground pound' (golpe al suelo). Gracias a un diseño de niveles estructurado intuitivamente, esto posibilita empujar rápidamente pilas pesadas de desperdicios o paralizar objetos rebotando sobre ellos. El objetivo principal no está enfocado simplemente en masacrar monstruos sin sentido, sino en 'Restaurar'; a medida que se ataca, limpia o desintegra la polución frente a los enemigos de suciedad, la arquitectura del nivel lo recompensa de inmediato visualmente, coloreando vívidamente las zonas previamente estériles y abriendo progresivamente secciones ocultas, puzzles ambientales y atajos funcionales a lo largo de los paisajes en las distintas ciudades llenas de mugre que transita el protagonista.",
+                    textBlock3: "Mecánica de Cambio de Estados: Con el intenso propósito de avivar la toma constante de micro-decisiones, diseñé una mecánica nuclear consistente en el intercambio de estados al capturar power-ups estratégicos. Al equiparse el codiciado ítem 'Football T-Shirt', el protagonista pasa de inmediato a su 'Footballer Mode'. Este estado te roba por completo la herramienta más sagrada y recurrente de cualquier juego de plataformas: la habilidad de saltar. Como contraparte, dota a ZZ de mayor tamaño, peso y de un brutal patadón digno de Roberto Carlos, donde puede invocar y patear una enorme pelota que derriba lo que está a su paso. El ritmo general pasa bruscamente de una movilidad vertical a un modo agresivo y horizontal, donde lanzar pelotas obliga a pensar los mapas como acertijos para saber cuándo ocupar cada estado del personaje.",
+                    textBlock4: "Systems Design y la Matriz Handshake: Implementé un ensamble basado en las directrices del Handshake (Apretón de Manos), donde cada entidad modular independiente, aunque no se conozcan mutuamente del todo una con las otras, logran intercomunicarse y reaccionar fluidamente si entran en contacto. Siguiendo la matriz sistémica, observamos grandes reacciones orgánicas: si una caótica llanta agresiva ('Rolling Old Tire') choca contra un obstáculo liso actúa normal, pero si hace handshake cruzando sobre un charco viscoso ('Oil Slippery'), entra en un estado incendiado triplicando su amenaza.",
+                    bullets: ["SÁTIRA ECOLÓGICA", "MECÁNICAS DE TRANSFORMACIÓN", "CAMBIOS DE ESTADOS", "SYSTEM DESIGN Y HANDSHAKE"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775667846/PF_Game_SZZ_Image_1_fiivx9.webm"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775666635/PF_Game_SZZ_Image3_o9osdq.webp"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775666996/PF_Game_SZZ_Image3_1_kyx3ir.webp"]
                 },
                 "PROGRAMMING": {
-                    headline: "INSERT HEADLINE: PROGRAMMING",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "ARQUITECTURA DE SOFTWARE EN UNITY C#",
+                    textBlock1: "Mecánicas de Movimiento y State Pattern: El núcleo de controles de plataformas fue estructurado de forma modular en 'MovementCharacterController.cs'. La captura de los controles se canaliza desde 'MobilePlayerInput.cs' utilizando el New Input System. Para separar el comportamiento de físicas base de las habilidades de combate, se implementó el *State Pattern* mediante 'PlayerState.cs' como clase abstracta y garante de polimorfismo. Al aislar esta capa, las matemáticas balísticas en 'FootballPlayerState.cs' operan sin interferir con el estado original 'StandardState.cs'. Además, el sistema se complementa con módulos de perspectiva de cámara como 'HandHeldCamera.cs' y 'Platform25DCamera.cs'.",
+                    textBlock2: "Gestión de Instancias mediante Patrón Singleton: Todo el engranaje lógico que administra el estado general de los escenarios recae sobre estructuras basadas en el *Singleton Pattern*. Esto garantiza la existencia inalterable de una sola instancia global en memoria, previniendo corrupciones de punteros durante los reseteos y cruces de escenas. Gestores independientes, tales como 'CoinManager.cs', operan reteniendo el progreso del jugador. Al mismo tiempo, los bucles de reactivación dependen generalizadamente de 'LevelManager.cs' y 'DefeatedManager.cs', operando de tal manera que caer a los precipicios permita reingresar fluidamente sin la necesidad de reiniciar el nivel completo.",
+                    textBlock3: "Sistema Modular de Triggers Orientado a Componentes: La interrelación para detectar trampas físicas e interacción ambiental se basó exclusivamente en dependencias de Componentes (Components). En lugar de dotar la topografía del nivel de lógica propia, se inyectaron receptores pasivos y colisionadores utilizando interfaces como 'Area_DamageDealerTrigger.cs' y 'Area_BlockJump.cs'. Este ecosistema se complementa con el uso de Herencia de Programación Orientada a Objetos para los scripts de colisiones y desplazamiento; centralizando en 'PushObjectBase.cs' la herencia nativa de inercia controlada hacia llantas rodantes, desperdicios o vehículos dependientes de 'Car_Movement.cs'.",
+                    textBlock4: "Data Binding e Interfaces Reactivas (*Observer Pattern*): Para mejorar el performance y enfocarse a una futura distribución en dispositivos móviles u de menores recursos, se removió el uso de ciclos dependientes del método *Update()* dentro del Canvas de la interfaz (HUD). La UI gráfica se actualiza implementando las bases reactivas del *Observer Pattern*. Esto permite que los elementos estéticos como contadores numéricos y fundidos gráficos ('UI_Coins.cs', 'UI_HP.cs', 'UI_Transitions.cs') coexistan inactivos en el procesador. Estos despertarán y ejecutarán sus rutinas únicamente al interceder emisiones pasivas suscritas (*Events*) provenientes del jugador.",
+                    bullets: ["STATE PATTERN Y MOVIMIENTO", "SINGLETON EN MANAGERS GLOBAL", "COMPONETIZACIÓN DE TRIGGERS", "OBSERVER PATTERN EN UI CANVASES"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775666635/PF_Game_SZZ_Image_4_1_qe76ok.webm"],
+                    media2: [""],
+                    media3: [""]
                 },
                 "ART DIRECTION": {
-                    headline: "INSERT HEADLINE: ART DIRECTION",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "CARTOON SURREALISTA Y ESTÉTICA YURU-CHARA",
+                    textBlock1: "Inspiración Temática para ZZ (Estética Yuru-Chara): Super ZZ concentra y destila absolutamente todo el resplandeciente ADN artístico visual del proyecto manifestado encarnadamente en su protagonista clave. Despojándolo por completo de la estandarizada silueta cliché pesimista del héroe aguerrido sobre desastres ecológicos, se conceptualizó expresivamente su diseño bajo todo lo opuesto: una inconfundible, robusta e iridiscente bola concentrada de energía inquebrantable cuyo ingenuo prisma interpreta activamente un páramo plagado de plásticos sucios como afluencia pura de un infinito parque de juegos dispuesto a ser alegremente ordenado. Su volumetría en el modelado refleja asimilación conceptual fuerte del estilo estético 'Yuru-chara' japonés (las carismáticas mascotas y figuras hiper expresivas diseñadas por empresas con gigantes cabezas orientadas masivamente hacia irradiar profunda empatía). Abusamos deliberadamente tanto en las extremidades pequeñas unidas a troncos exagerados para justificar animaciones extremadamente infantiles, ruidosas y torpes asediadas de risas estruendosas muy contagiosas frente a la exploración inminente del peligro.",
+                    textBlock2: "Esculturas del Litoral y Entorno del Maule: El extenso modelaje tridimensional que decora pasillos laberínticos empujados al extremo en su saturación para narrativas ambientales, están indudable e inconfundiblemente enraizados hasta la médula tomando como marco referencial panorámicas extremadamente cariñosas e ilógicas partir de los hermosos litorales y zonas del árido interior perteneciente a la popular cordillera y costas de la Séptima Región nacional, Maule. Buscando repudiar tonalidades macabras y lúgubres del fin del mundo causadas por desastres humanos, decidimos apostar por forzar artísticamente e irónicamente la inserción de colillas de cigarro humeantes y suelas o neumáticos apilados dentro la pureza azul oceánica plagada con fauna cangrejera polimérica. Es innegable esta fuerte injerencia de identidades costumbristas e íconos entrañables chilenos operando disonantemente para atrapar y entretener al jugador. Como aquel imperativo evento irremplazable, donde vemos asidos entre cerros distorsionados los urbanos carritos callejeros destinados exclusivamente a vender suculentos 'Completos' (Hot dogs populares) como anclas de supervivencia y única meta resplandeciente e inesperada para reponer energías con comida tradicional chilena en la mita de vertederos ficticios imposibles.",
+                    textBlock3: "Estética Cel-Shaded en Low Poly Geométrico: Defendiendo inamovible la directriz sagrada impuesta para este universo enérgico satírico consistente de humor y una diáfana traducción legible que resalte claramente cada pasarela vertical, decidimos censurar ferozmente intensiones desviadas apoyando el perjudicial uso exhaustivo del mapeado fotográfico ultra texturizado híper-realista que distrae gravemente. Acordamos de raíz concentrar obsesamente los *Draw Calls* limitados a las primitivas, pulidas pero ricas variaciones de asombrosas y robustas geometrías volumétricas netamente del modelado general tipo *Low-Poly*. Trabajamos vertiendo directamente las tonalidades más puras pastel bañando agresivamente bajo perfiles controlados y planos cada cara ortogonal con directos emisores de colores. Configurando, desde Unity, filtros muy espesos por perfiles constantes de un motor central para Render postprocesado (encapsulado vital en 'ManagerPostProcessOutlines.cs') inyectamos contornos agresivamente escarpados del delineado negro en cada silueta principal. Con este filtro persistente global homogeneizamos ineludiblemente cada forma geométrica en el fotograma 3D resultando en las espectaculares estéticas ricas, inmersivas, indelebles y puritivas de cualquier vibrante página de impresión clásica tipo páginas de Cómics Cel-Shaded ilustrado a mano.",
+                    textBlock4: "Magia Óptica a través de Materiales Iridiscentes: Enalteciendo de manera suprema sobre las plataformas las pequeñas peculiaridades psicodélicas vibrátiles y embelesadas sumando toques etéreos sobre interfaces limpiamente pulidas y algunos mágicos resguardos o ítems clave, orientamos muchísimas duras mañanas creativas al apartado netamente funcional para la programación gráfica exhaustiva de vistosos árboles nodales complejos en base física con los pesados ficheros dedicados 'IridescentMenu.shadergraph' combinando ramificaciones del particular código HLSL en 'Iridscent.shader'. Entendiendo complejas disipaciones de espectros sobre superficies tangibles con la interpolación vectorial aplicada (vistos mediante Normal Maps modificados), logramos inyectar exitosamente las complejas refracciones virtuales generadoras y productoras de esa seductora brillantez tornasol mágica ilusoria asimilable a exóticos caparazones perlados y cuarzos místicos, los que transmutan la percepción alterando cromatismos vibrantes basados imperativamente según el continuo de oscilaciones milimétricas producidas directamente desde los angulos de visión del lente operado libremente desde lo visual por el usuario observador final, proporcionando acabados premium y abstractas pero pulidas impresiones sumamente satisfactorias que realzan brutalmente los menús del protagonista en toda oportunidad lúdica.",
+                    bullets: ["ESTÉTICA YURU-CHARA", "NARRATIVA AMBIENTAL DEL MAULE", "GEOMETRÍA LOW-POLY Y CEL SHADING", "PROGRAMACIÓN GRÁFICA DE SHADERS"],
+                    media1: [""],
+                    media2: [""],
+                    media3: [""]
                 }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["UNITY", "VS CODE", "BLENDER", "SUBSTANCE PAINTER", "ILLUSTRATOR"],
+            duration: "EN PROCESO, 2 MESES",
             videos: [],
             gallery: [],
             externalLink: "#",
-            overviewImage: ""
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775667586/PF_Game_SZZ_Image_cover_tdlqfo.webp"
         }
     },
     "LLUVIA DE VERANO": {
