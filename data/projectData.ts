@@ -845,39 +845,48 @@ Créditos Concept Art: Matías Rojas Torrejón`,
     },
     "SUPER ZZ": {
         en: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Super ZZ is an exhilarating 3D platformer and puzzle game of absurd comedy with a theme of ecological satire. Enjoyable for players of all ages (E10+), it embarks you on a colorful journey where transforming pollution into a victory in a ridiculous way is the central axis.",
             tagContent: {
                 "GAME DESIGN": {
-                    headline: "INSERT HEADLINE: GAME DESIGN",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "GAME DESIGN AND INTERACTION SYSTEMS",
+                    textBlock1: "Super ZZ is a linear 3D platformer and puzzle video game in a cartoon-style 'Story Mode' with absurd humor, where the entire structure of the world revolves around ecological satire vs. consumerism. This format allows delivering a message that invites a broad target audience (Everyone 10+) to participate in bizarre and challenging environmental awareness experiences. Unlike common gloomy approaches in this medium, here the polluted environment never produces misery for the protagonist; rather, it motivates them to clean and fight against mountains of garbage, managed by the indifferent corporation 'Mugro S.A.', integrating environmentalism into a surreal, saturated, and hyper-stimulating playground.",
+                    textBlock2: "Core Mechanics: The main gameplay loop orbits around jumping, running, performing agile dashes, and executing a 'ground pound'. Thanks to an intuitively structured level design, this makes it possible to quickly push heavy piles of waste or paralyze objects by bouncing on them. The main objective is not simply focused on mindlessly slaughtering monsters, but on 'Restoring'; as pollution is attacked, cleaned, or disintegrated in front of dirt enemies, the level architecture immediately rewards it visually, vividly coloring previously sterile zones and progressively opening hidden sections, environmental puzzles, and functional shortcuts throughout the landscapes in the different muck-filled cities the protagonist travels through.",
+                    textBlock3: "State Change Mechanic: With the intense purpose of enlivening constant micro-decision making, I designed a core mechanic consisting of exchanging states by capturing strategic power-ups. Upon equipping the coveted 'Football T-Shirt' item, the protagonist immediately switches to their 'Footballer Mode'. This state completely robs you of the most sacred and recurring tool of any platformer game: the ability to jump. On the other hand, it endows ZZ with greater size, weight, and a brutal kick worthy of Roberto Carlos, where they can summon and kick a huge ball that knocks down everything in its path. The general pacing abruptly shifts from vertical mobility to an aggressive and horizontal mode, where throwing balls forces you to think of the maps as puzzles to know when to occupy each state of the character.",
+                    textBlock4: "Systems Design and the Handshake Matrix: I implemented an assembly based on the Handshake guidelines, where each independent modular entity, although they may not fully know each other, manage to intercommunicate and react fluidly if they come into contact. Following the systemic matrix, we observe major organic reactions: if an aggressive chaotic tire ('Rolling Old Tire') crashes into a smooth obstacle it acts normal, but if it handshakes by crossing over a viscous puddle ('Oil Slippery'), it enters an incinerated state tripling its threat.",
+                    bullets: ["ECOLOGICAL SATIRE", "TRANSFORMATION MECHANICS", "STATE CHANGES", "SYSTEM DESIGN AND HANDSHAKE"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775667846/PF_Game_SZZ_Image_1_fiivx9.webm"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775666635/PF_Game_SZZ_Image3_o9osdq.webp"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775754921/PF_Game_SZZ_Image6_wcucsi.webp"]
                 },
                 "PROGRAMMING": {
-                    headline: "INSERT HEADLINE: PROGRAMMING",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "SOFTWARE ARCHITECTURE IN UNITY C#",
+                    textBlock1: "Movement Mechanics and State Pattern: The platform controls core was structured in a modular way within MovementCharacterController.cs. Control capturing is channeled from Inputs.cs using the New Input System. To separate the base physics behavior from the combat abilities, the State Pattern was implemented via PlayerState.cs as an abstract class and guarantor of polymorphism. By isolating this layer, the ballistic mathematics in FootballPlayerState.cs operate without interfering with the original StandardState.cs. Furthermore, the player's system is complemented by camera perspective modules such as HandHeldCamera.cs and Platform25DCamera.cs.",
+                    textBlock2: "Instance Management through Singleton Pattern: All the logical gearing that manages the general state of the scenarios falls on structures based on the Singleton Pattern. This guarantees the unalterable existence of a single global instance in memory, avoiding resets and scene crossings.\nIndependent managers, such as CoinManager.cs, operate by retaining the player's progress. At the same time, the reactivation loops generally depend on LevelManager.cs and DefeatedManager.cs, operating in a way that falling off cliffs or losing all lives allows dropping back in fluidly without the need to restart the entire level.",
+                    textBlock3: "Component-Oriented Modular Trigger System: The interrelation to detect physical traps and environmental interaction was based exclusively on Component dependencies. Instead of endowing the level's topography with its own logic, passive receivers and colliders were injected using interfaces like Area_DamageDealerTrigger.cs and Area_BlockJump.cs. This ecosystem is complemented by the use of Object-Oriented Programming Inheritance for collision and displacement scripts; centralizing in PushObjectBase.cs the native inheritance of controlled inertia towards rolling tires, wastes, or vehicles dependent on Car_Movement.cs.",
+                    textBlock4: "Data Binding and Reactive Interfaces (Observer Pattern): To improve performance and focus on future distribution on mobile or lower-resource devices, the use of loops dependent on the Update() method was removed from the interface Canvas (HUD). The graphical UI is updated by implementing the reactive foundations of the Observer Pattern. This allows aesthetic elements such as numerical counters and graphical fades (UI_Coins.cs, UI_HP.cs, UI_Transitions.cs) to coexist inactive in the processor. These will wake up and execute their routines only upon the interception of subscribed passive broadcasts (Events) originating from the player.",
+                    bullets: ["STATE PATTERN AND MOVEMENT", "SINGLETON IN GLOBAL MANAGERS", "TRIGGER COMPONENTIZATION", "OBSERVER PATTERN IN UI CANVASES"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775671027/PF_Game_SZZ_Image4_pujhg9.webp", "https://res.cloudinary.com/dseaazn5s/video/upload/v1775666635/PF_Game_SZZ_Image_4_1_qe76ok.webm"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775671382/PF_Game_SZZ_Image5_twcnqu.webp"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775754921/PF_Game_SZZ_Image6_wcucsi.webp"]
                 },
                 "ART DIRECTION": {
-                    headline: "INSERT HEADLINE: ART DIRECTION",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "CHILEAN SURREALIST CARTOON AND YURU-CHARA",
+                    textBlock1: "Super ZZ distills the visual artistic DNA of the project into its protagonist, an icon 'Brand Character' of a company that decides to rebel against them because of their corruption and pollution. Completely stripping away the stereotype of a battle-hardened hero facing ecological disasters, its design was conceptualized as the sheer opposite: an energy ball whose innocence interprets cities plagued with plastics and filth as its very own playground that must be energetically tidied up. Its volumetry in modeling and texturing reflects a conceptual assimilation of the Japanese Yuru-chara aesthetic style (hyper-expressive mascots designed by companies, with giant heads to empathize with their products). I deliberately abused the tiny limbs to justify childish, energetic, and comical animations.",
+                    textBlock2: "Coastline Sculptures and Maule Environment: The three-dimensional modeling of the environment was designed taking as reference the coastal landscapes and interior zones of the Maule Region (Chile). To contrast the typical funereal tones of polluted ecosystems, garbage (cigarette butts, stacked tires) was immediately inserted onto pure and colorful environments, creating visual irony using environmental storytelling techniques. Additionally, Chilean traditional imagery was introduced as a resource to give the game more identity; 'completo' food carts, flying spider vendors, passion for soccer, personalized beach towels and, unfortunately, dirtiness.",
+                    textBlock3: "Low-Poly Geometry and Cel-Shaded Aesthetics: To maintain clear legibility of the platforms and reinforce its premise of humor, a strictly Low-Poly modeling format was opted for, consciously avoiding photographic mapping with realistic textures that would have overloaded memory and the quantity of Draw Calls. The color palette was applied by projecting solid and saturated colors onto the faces of the geometry. Subsequently, the image was unified using a global Rendering filter for outlines (ManagerPostProcessOutlines.cs, still in progress). This post-processing injects a persistent black outline into every main silhouette, homogenizing the 3D model under an immersive Cel-Shaded aesthetic result.",
+                    textBlock4: "Graphic Programming and Iridescent Materials: To achieve reflective effects and highlight interactive elements or polished Canvas bases, visual graphic programming was developed in Iridescent.shadergraph, complemented with HLSL code branching in the Iridscent.shader file. These materials technically process the dissipation of the spectrum over the surface, interacting with Normal Maps and crossing the result over the reflection. This achieves a psychedelic illusory iridescent effect, mutating the chromatic saturation based on the viewing angle of the active camera in real time, providing a finish that blends into the simple yet striking graphical style of the world.",
+                    bullets: ["YURU-CHARA AESTHETICS", "ENVIRONMENTAL NARRATIVE OF MAULE", "LOW-POLY GEOMETRY AND CEL SHADING", "GRAPHIC SHADER PROGRAMMING"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775751424/PF_Game_SZZ_Image_7_d0knpm.webm", "https://res.cloudinary.com/dseaazn5s/video/upload/v1775751424/PF_Game_SZZ_Image_7_1_z5qkug.webm"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775752085/PF_Game_SZZ_Image8_ku4jwa.webp"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775754847/PF_Game_SZZ_Image_9_keu7ii.webm"]
                 }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["UNITY", "VS CODE", "BLENDER", "SUBSTANCE PAINTER", "ILLUSTRATOR"],
+            duration: "IN PROGRESS, 2 MONTHS",
             videos: [],
             gallery: [],
             externalLink: "#",
-            overviewImage: ""
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775667586/PF_Game_SZZ_Image_cover_tdlqfo.webp"
         },
         es: {
             description: "Super ZZ es un estimulante plataformero y puzzle tridimensional de comedia absurda con una temática de sátira ecológica. Disfrutable para jugadores de todas las edades (E10+), te embarca en un viaje colorido donde transformar la contaminación en una victoria de manera ridícula es el eje central.",
