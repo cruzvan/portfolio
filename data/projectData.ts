@@ -856,7 +856,7 @@ Créditos Concept Art: Matías Rojas Torrejón`,
                     bullets: ["ECOLOGICAL SATIRE", "TRANSFORMATION MECHANICS", "STATE CHANGES", "SYSTEM DESIGN AND HANDSHAKE"],
                     media1: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775667846/PF_Game_SZZ_Image_1_fiivx9.webm"],
                     media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775666635/PF_Game_SZZ_Image3_o9osdq.webp"],
-                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775754921/PF_Game_SZZ_Image6_wcucsi.webp"]
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775666996/PF_Game_SZZ_Image3_1_kyx3ir.webp"]
                 },
                 "PROGRAMMING": {
                     headline: "SOFTWARE ARCHITECTURE IN UNITY C#",
