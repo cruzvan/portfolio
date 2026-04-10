@@ -307,33 +307,7 @@ export const othersProjects: ProjectCardData[] = [
         locked: false,
         hidden: false
     },
-    /*   { 
-        id: 6, 
-        title: "WEB PORTFOLIO", 
-        category: "Programming", 
-        tags: ["REACT", "THREE.JS", "WEBGL"], 
-        image: "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=2560&auto=format&fit=crop", 
-        status: "Live" 
-      },
-      { 
-        id: 7, 
-        title: "BOARD GAME", 
-        category: "Design", 
-        tags: ["TABLETOP", "MECHANICS", "PRINT & PLAY"], 
-        image: "https://images.unsplash.com/photo-1610890716171-6b1c9f2045ca?q=80&w=2560&auto=format&fit=crop", 
-        status: "Playtesting" 
-      },
-      { 
-        id: 8, 
-        title: "PHOTOGRAPHY", 
-        category: "Visuals", 
-        tags: ["CYBERPUNK", "NEON", "STREET"], 
-        image: "https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=2560&auto=format&fit=crop", 
-        status: "Gallery" 
-      }, */
 ];
-
-// --- CONTENT DATABASE ---
 
 // Fallback content now includes a safe external link
 const DEFAULT_CONTENT: ProjectContent = {
@@ -351,8 +325,6 @@ const DEFAULT_CONTENT: ProjectContent = {
 
 // Updated Project Images to w=2560 (2K ready)
 // REFACTORED: Now supports 'en' and 'es' keys.
-// For brevity in this code update, I will clone the 'en' content to 'es' for most, 
-// and demonstrate translation on PROJECT: ECHO as an example.
 export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectContent }> = {
     // --- EXISTING PROJECTS ---
     "PROJECT: ECHO": {
@@ -447,7 +419,7 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
     // --- GAME DESIGN PROJECTS ---
     "HOLLOW FLOWERS": {
         en: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "'Hollow Flowers' is an immersive transmedia horror game centered around camera-based mechanics, where players use a Handycam to unveil hidden enemies, manipulate time across different eras, and solve puzzles in a tense, dreamlike environment.",
             tagContent: {
                 "GAME DESIGN": {
                     headline: "INSERT HEADLINE: GAME DESIGN",
@@ -529,23 +501,6 @@ For it to work, the system verifies three parameters: the player must be inside 
                         "https://res.cloudinary.com/dseaazn5s/image/upload/v1774967349/PF_Game_HF_Image17_vwvbho.webp"
                     ]
                 },
-                "LEVEL DESIGN": {
-                    headline: "INSERT HEADLINE: LEVEL DESIGN",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["RHYTHM", "PUZZLES", "NARRATIVE"],
-                    media1: [
-                        ""
-                    ],
-                    media2: [
-                        ""
-                    ],
-                    media3: [
-                        ""
-                    ]
-                }
             },
             software: ["UNREAL ENGINE", "FIGMA", "GOOGLE DOCS", "BLENDER", "SUBSTANCE PAINTER", "GITHUB"],
             duration: "6-7 MONTHS",
@@ -555,7 +510,7 @@ For it to work, the system verifies three parameters: the player must be inside 
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1774815393/PF_GameDesign_HollowFlowers_Image0_alycrj.webp"
         },
         es: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "'Hollow Flowers' es un juego de exploración y horror transmedia centrado en mecánicas de videocámara, donde los jugadores utilizan una Handycam para revelar enemigos ocultos, manipular el tiempo entre distintas épocas y resolver acertijos en un entorno tenso y onírico.",
             tagContent: {
                 "GAME DESIGN": {
                     headline: "INSERT HEADLINE: GAME DESIGN",
@@ -637,23 +592,6 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
                         "https://res.cloudinary.com/dseaazn5s/image/upload/v1774967349/PF_Game_HF_Image17_vwvbho.webp"
                     ]
                 },
-                "LEVEL DESIGN": {
-                    headline: "INSERT HEADLINE: LEVEL DESIGN",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["RITMO", "PUZZLES", "NARRATIVA"],
-                    media1: [
-                        ""
-                    ],
-                    media2: [
-                        ""
-                    ],
-                    media3: [
-                        ""
-                    ]
-                }
             },
             software: ["UNREAL ENGINE", "FIGMA", "GOOGLE DOCS", "BLENDER", "SUBSTANCE PAINTER", "GITHUB"],
             duration: "6-7 MESES",
@@ -665,7 +603,7 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
     },
     "FADING MEMORIES": {
         en: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "'Fading Memories' is a narrative-driven walking simulator set in rural Chile that explores the emotional complexities of Alzheimer's. Players interact with nostalgic environments and uncover domestic subplots, experiencing the tension and melancholy of caregiving firsthand.",
             tagContent: {
                 "GAME DESIGN": {
                     headline: "GAME DESIGN",
@@ -679,7 +617,7 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
                     media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775316424/PF_Game_FM_Image3_1_cwfieh.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775315313/PF_Game_FM_Image3_ledmhq.webp"]
                 },
                 "ART DIRECTION": {
-                    headline: "ART DIRECTION",
+                    headline: "CHILEAN RURALITY & MUSICAL DESIGN",
                     textBlock1: `Central-South Chilean Rurality: For the spatial and contextual design, the art direction was framed within the setting of a Chilean manor house in the countryside of the central-south zone (early 2000s). The interiors in constant material abandonment function as a transmission of meaning of the social negligence in which the Grandfather was immersed, causing a naturalistic and melancholic isolation.",
 
 Concept Art credits: Matías Rojas Torrejón`,
@@ -692,7 +630,7 @@ Concept Art credits: Matías Rojas Torrejón`,
                     media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775316035/PF_Game_FM_Image6_slhcta.webp"]
                 },
                 "ILLUMINATION": {
-                    headline: "LIGHTING AND COMPOSITION",
+                    headline: "HORROR LIGHTING & DAY/NIGHT CYCLES",
                     textBlock1: "Interior Ambient Lighting: With the intention of inducing suggested fear and anticipation (as advised by our research), the lighting inside the home is guided by the predominance of multiple small light sources. In this way, through hard shadows, intermittent flashes, and the elevating of lights to limit the visual field, we provoke that irregularity and discomfort typical of a dimmed and worn-out place.",
                     textBlock2: "Post-Processing for Horror: Using post-processing layers, the oppressive atmospheres of emotional horror are designed. Through focus distortion (dynamic 'Depth of Field') and high contrast to highlight uncertainty during stressful situations or during cinematics, forcing the player to feel the vulnerability without ever losing the realism and humanity of each shot.",
                     textBlock3: "Day/Night Cycle and Light Baking: The duality of schedules exerts a crucial narrative function, so its realism was rigorously processed through 'Light Baking' in Unity. Independent lighting maps ('bakes') were generated for both day and night scenarios, allowing for maximum shadow fidelity without sacrificing performance. While the daytime bake wraps in warm colors to support peaceful dialogues, the load of the nighttime maps radically accentuates the terror, serving as a passive Foreshadowing of the danger that awaits in the dark.",
@@ -720,7 +658,7 @@ Concept Art credits: Matías Rojas Torrejón`,
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775238068/PF_Game_FM_Image0_j4k6g3.webp"
         },
         es: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "'Fading Memories' es una aventura de exploración narrativa (walking simulator) ambientada en la ruralidad chilena que explora las complejidades emocionales del Alzheimer. El jugador interactúa con entornos nostálgicos y objetos antiguos para descubrir subtramas, experimentando la tensión y melancolía del cuidado.",
             tagContent: {
                 "GAME DESIGN": {
                     headline: "DISEÑO DE JUEGO",
@@ -734,7 +672,7 @@ Concept Art credits: Matías Rojas Torrejón`,
                     media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775316424/PF_Game_FM_Image3_1_cwfieh.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775315313/PF_Game_FM_Image3_ledmhq.webp"]
                 },
                 "ART DIRECTION": {
-                    headline: "DIRECCIÓN DE ARTE",
+                    headline: "RURALIDAD CHILENA Y DISEÑO MUSICAL",
                     textBlock1: `Ruralidad Chilena del Sector Centro-Sur: Para el diseño espacial y contextual, la dirección artística se enmarcó dentro de la ambientación de una casona patronal chilena en el campo de la zona centro-sur (inicios de los 2000). Los interiores en abandono material constante funcionan como una transmisión ('Transmission of Meaning') de la negligencia social en la que el Abuelo se vió inmerso, provocando un aislamiento naturalista y melancólico.
 
 Créditos Concept Art: Matías Rojas Torrejón`,
@@ -747,7 +685,7 @@ Créditos Concept Art: Matías Rojas Torrejón`,
                     media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775316035/PF_Game_FM_Image6_slhcta.webp"]
                 },
                 "ILLUMINATION": {
-                    headline: "ILUMINACIÓN Y COMPOSICIÓN",
+                    headline: "ILUMINACIÓN DE HORROR Y CICLOS DÍA/NOCHE",
                     textBlock1: "Iluminación Ambiental de Interiores: Con la intención de inducir miedo sugestionado y anticipación (como aconsejaba nuestra investigación), la iluminación en el interior del hogar se guía por la predominancia de múltiples fuentes pequeñas de luz. De esta forma, mediante sombras duras, destellos intermitentes y el enaltecido de luces para limitar el campo visual, provocamos esa irregularidad e incomodidad propia del lugar apagado y malgastado.",
                     textBlock2: "Postprocesado para Horror: Utilizando capas de post-proceso se diseñan las atmósferas opresivas de horror emocional. A través de la distorsión del foco ('Depth of field' dinámico) y el alto contraste para remarcar la incertidumbre durante las situaciones de estrés o en el transcurso de las cinemáticas, obligando al jugador a sentir la vulnerabilidad sin perder nunca el realismo y la humanidad de cada toma.",
                     textBlock3: "Ciclo Día/Noche y Light Baking: La dualidad de horarios ejerce una función narrativa crucial, por lo que su realismo fue procesado rigurosamente mediante 'Light Baking' en Unity. Se generaron mapas de iluminación independientes ('bakes') tanto para los escenarios de día como para los de noche, permitiendo una máxima fidelidad de sombras sin sacrificar rendimiento. Mientras que el bake diurno envuelve en colores cálidos para apoyar diálogos pacíficos, la carga de los mapas nocturnos acentúa radicalmente el terror, apoyándose como un Foreshadowing pasivo del peligro que aguarda en la oscuridad.",
