@@ -44,6 +44,7 @@ export interface ProjectCardData {
     status: string;
     locked?: boolean;
     hidden?: boolean;
+    highlightColor?: string;
 }
 
 // --- CARD DATA COLLECTIONS (Remain shared for now, titles are keys) ---
@@ -57,7 +58,8 @@ export const gameDesignProjects: ProjectCardData[] = [
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765282205/PF_GameDesign_HollowFlowers_Cover_nf3mge.webp",
         status: "DEMO",
         locked: false,
-        hidden: false
+        hidden: false,
+        highlightColor: "#10c382ff"
     },
     {
         id: 2,
@@ -67,7 +69,8 @@ export const gameDesignProjects: ProjectCardData[] = [
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765285301/PF_GameDesign_FadingMemories_Cover_zxkkpv.webp",
         status: "Shipped",
         locked: false,
-        hidden: false
+        hidden: false,
+        highlightColor: "#10b4c3ff"
     },
     {
         id: 3,
@@ -77,7 +80,8 @@ export const gameDesignProjects: ProjectCardData[] = [
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765285900/PF_GameDesign_Undeserved_Cover_v1f7lc.webp",
         status: "MINI PROJECT",
         locked: false,
-        hidden: false
+        hidden: false,
+        highlightColor: "#ef2626ff"
     },
     {
         id: 4,
@@ -87,7 +91,8 @@ export const gameDesignProjects: ProjectCardData[] = [
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765296556/PD_GameDesign_SuperZZ_Cover_ngewro.webp",
         status: "WIP",
         locked: false,
-        hidden: false
+        hidden: false,
+        highlightColor: "#dcd294ff"
     },
     {
         id: 5,
@@ -97,7 +102,8 @@ export const gameDesignProjects: ProjectCardData[] = [
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765288774/PD_GameDesign_AcidRain_Cover_grsa0r.webp",
         status: "FINISHED",
         locked: false,
-        hidden: false
+        hidden: false,
+        highlightColor: "#be94dcff"
     },
     {
         id: 6,
@@ -141,7 +147,8 @@ export const techArtProjects: ProjectCardData[] = [
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765419716/PF_3DTech_NoisePP_Cover_mf3b4c.webp",
         status: "SHIPPED",
         locked: false,
-        hidden: false
+        hidden: false,
+        highlightColor: "#f2d934ff"
     },
     {
         id: 2,
@@ -151,7 +158,8 @@ export const techArtProjects: ProjectCardData[] = [
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775162957/PF_3DTech_BlenderAddon_Cover_dkzmqv.webp",
         status: "WIP",
         locked: false,
-        hidden: false
+        hidden: false,
+        highlightColor: "#47f673ff"
     },
     {
         id: 3,
@@ -161,7 +169,8 @@ export const techArtProjects: ProjectCardData[] = [
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1767724393/PF_3DTech_YIQ_Cover_xkezuz.webp",
         status: "SHIPPED",
         locked: false,
-        hidden: false
+        hidden: false,
+        highlightColor: "#ffa425ff"
     },
     {
         id: 4,
@@ -171,7 +180,8 @@ export const techArtProjects: ProjectCardData[] = [
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765281853/PF_3DTech_CardHologram_Cover_3_y3q1c2.webp",
         status: "FINISHED",
         locked: false,
-        hidden: false
+        hidden: false,
+        highlightColor: "#c525ffff"
     },
     {
         id: 5,
@@ -181,7 +191,8 @@ export const techArtProjects: ProjectCardData[] = [
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765338333/PT_3DTech_ArnoldRoom_Cover_iermi7.webp",
         status: "FINISHED",
         locked: false,
-        hidden: false
+        hidden: false,
+        highlightColor: "#62e2ffff"
     },
     {
         id: 6,
@@ -191,7 +202,8 @@ export const techArtProjects: ProjectCardData[] = [
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765339138/PF_3DTech_WOBIntempesta_Cover_16_wongcl.webp",
         status: "FINISHED",
         locked: false,
-        hidden: false
+        hidden: false,
+        highlightColor: "#f04dffff"
     },
     {
         id: 7,
@@ -265,7 +277,8 @@ export const othersProjects: ProjectCardData[] = [
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775487399/PF_Others_MinScreen_Image_Cover_lapteg.webp",
         status: "FINISHED",
         locked: false,
-        hidden: false
+        hidden: false,
+        highlightColor: "#2076ffff"
     },
     {
         id: 2,
@@ -305,7 +318,8 @@ export const othersProjects: ProjectCardData[] = [
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775495798/PF_Others_WebSebra_Image_Cover_ybcdf0.webp",
         status: "PUBLISHED",
         locked: false,
-        hidden: false
+        hidden: false,
+        highlightColor: "#61e4fbff"
     },
 ];
 

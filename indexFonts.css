@@ -42,7 +42,7 @@
 
 /* La parte m�vil de la barra de scroll */
 ::-webkit-scrollbar-thumb {
-  background: #FE4403;
+  background: var(--highlight-color, #FE4403);
   border-radius: 0px; /* Mantenemos el estilo cuadrado */
 }
 

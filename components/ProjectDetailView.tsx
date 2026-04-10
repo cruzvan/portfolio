@@ -38,7 +38,7 @@ const VideoCard: React.FC<{ src: string, index: number }> = ({ src, index }) => 
         <div className="w-full">
             <div className="mb-4 flex items-center gap-3">
                 <div className="h-px bg-white/20 flex-grow" />
-                <span className="text-xs uppercase tracking-widest text-[#FE4403] font-bold">Log {String(index + 1).padStart(2, '0')}</span>
+                <span className="text-xs uppercase tracking-widest text-[color:var(--highlight-color)] font-bold">Log {String(index + 1).padStart(2, '0')}</span>
             </div>
 
             <div className="aspect-video w-full border border-white/10 shadow-2xl shadow-black relative group bg-black overflow-hidden">
@@ -55,11 +55,11 @@ const VideoCard: React.FC<{ src: string, index: number }> = ({ src, index }) => 
                                 loading="lazy"
                             />
                         )}
-                        <div className="relative z-10 w-16 h-16 rounded-full border border-[#FE4403] flex items-center justify-center bg-black/50 backdrop-blur-sm group-hover/btn:scale-110 transition-transform">
+                        <div className="relative z-10 w-16 h-16 rounded-full border border-[color:var(--highlight-color)] flex items-center justify-center bg-black/50 backdrop-blur-sm group-hover/btn:scale-110 transition-transform">
                             <Play fill="white" className="text-white ml-1" />
                         </div>
-                        <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-[#FE4403]" />
-                        <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-[#FE4403]" />
+                        <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-[color:var(--highlight-color)]" />
+                        <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-[color:var(--highlight-color)]" />
                     </button>
                 ) : (
                     <iframe
@@ -181,7 +181,7 @@ const InlineMediaSlider: React.FC<{ items: string[], setLightboxImage: (img: str
                     <button
                         onClick={(e) => { e.stopPropagation(); setDragged(false); handlePrev(e); }}
                         className="absolute left-2 top-1/2 -translate-y-1/2 p-2 z-20 transition-all border border-white/10 rounded-full
-                                   bg-black/40 text-white/70 hover:bg-[#FE4403] hover:text-white
+                                   bg-black/40 text-white/70 hover:bg-[color:var(--highlight-color)] hover:text-white
                                    opacity-60 md:opacity-0 md:group-hover/slider:opacity-100 backdrop-blur-md"
                     >
                         <ChevronLeft size={16} className="md:w-5 md:h-5" />
@@ -189,7 +189,7 @@ const InlineMediaSlider: React.FC<{ items: string[], setLightboxImage: (img: str
                     <button
                         onClick={(e) => { e.stopPropagation(); setDragged(false); handleNext(e); }}
                         className="absolute right-2 top-1/2 -translate-y-1/2 p-2 z-20 transition-all border border-white/10 rounded-full
-                                   bg-black/40 text-white/70 hover:bg-[#FE4403] hover:text-white
+                                   bg-black/40 text-white/70 hover:bg-[color:var(--highlight-color)] hover:text-white
                                    opacity-60 md:opacity-0 md:group-hover/slider:opacity-100 backdrop-blur-md"
                     >
                         <ChevronRight size={16} className="md:w-5 md:h-5" />
@@ -199,7 +199,7 @@ const InlineMediaSlider: React.FC<{ items: string[], setLightboxImage: (img: str
                     <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-20 transition-all bg-black/40 px-3 py-1.5 rounded-full backdrop-blur-md
                                   opacity-80 md:opacity-0 md:group-hover/slider:opacity-100 pointer-events-none">
                         {items.map((_, i) => (
-                            <div key={i} className={`w-1 h-1 md:w-1.5 md:h-1.5 rounded-full transition-all ${i === currentIndex ? 'bg-[#FE4403] scale-125' : 'bg-white/50'}`} />
+                            <div key={i} className={`w-1 h-1 md:w-1.5 md:h-1.5 rounded-full transition-all ${i === currentIndex ? 'bg-[color:var(--highlight-color)] scale-125' : 'bg-white/50'}`} />
                         ))}
                     </div>
                 </>
@@ -441,7 +441,10 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
     const externalLinkUrl = projectContent.externalLink || `https://www.google.com/search?q=${encodeURIComponent(project.title + " Game Development Project")}`;
 
     return (
-        <div className="fixed inset-0 z-50 bg-black text-white font-sans animate-fade-in-fast" style={{ overscrollBehavior: 'none' }}>
+        <div 
+            style={{ "--highlight-color": project.highlightColor || "#FE4403", overscrollBehavior: 'none' } as React.CSSProperties} 
+            className="fixed inset-0 z-50 bg-black text-white font-sans animate-fade-in-fast"
+        >
 
             {/* --- BACKGROUND LAYER --- */}
             <div
@@ -464,7 +467,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                 >
                     {/* Prev Button */}
                     <button
-                        className="absolute left-2 md:left-8 p-4 text-white/50 hover:text-[#FE4403] hover:scale-110 transition-all z-[110]"
+                        className="absolute left-2 md:left-8 p-4 text-white/50 hover:text-[color:var(--highlight-color)] hover:scale-110 transition-all z-[110]"
                         onClick={(e) => { e.stopPropagation(); handleLightboxNavigation('prev'); }}
                     >
                         <ChevronLeft size={48} />
@@ -493,7 +496,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
 
                     {/* Next Button */}
                     <button
-                        className="absolute right-2 md:right-8 p-4 text-white/50 hover:text-[#FE4403] hover:scale-110 transition-all z-[110]"
+                        className="absolute right-2 md:right-8 p-4 text-white/50 hover:text-[color:var(--highlight-color)] hover:scale-110 transition-all z-[110]"
                         onClick={(e) => { e.stopPropagation(); handleLightboxNavigation('next'); }}
                     >
                         <ChevronRight size={48} />
@@ -525,7 +528,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                         >
                             {sec.label}
                         </span>
-                        <span className={`absolute -left-4 top-1/2 -translate-y-1/2 h-[2px] bg-[#FE4403] transition-all duration-300 ${activeSection === sec.id ? 'w-3' : 'w-0'}`} />
+                        <span className={`absolute -left-4 top-1/2 -translate-y-1/2 h-[2px] bg-[color:var(--highlight-color)] transition-all duration-300 ${activeSection === sec.id ? 'w-3' : 'w-0'}`} />
                     </button>
                 ))}
             </div>
@@ -537,7 +540,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                     href={externalLinkUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-10 md:h-12 items-center gap-2 px-6 md:px-12 bg-white/5 border border-white/10 hover:bg-[#FE4403] hover:border-[#FE4403] backdrop-blur-md transition-all duration-300 group"
+                    className="flex h-10 md:h-12 items-center gap-2 px-6 md:px-12 bg-white/5 border border-white/10 hover:bg-[color:var(--highlight-color)] hover:border-[color:var(--highlight-color)] backdrop-blur-md transition-all duration-300 group"
                 >
                     <span className="text-xs font-bold uppercase tracking-widest text-white">{t('external_files')}</span>
                     <ExternalLink size={14} className="text-white group-hover:rotate-45 transition-transform" />
@@ -545,7 +548,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
 
                 <button
                     onClick={onClose}
-                    className="flex h-10 md:h-12 items-center gap-3 px-6 md:px-8 bg-white hover:bg-[#FE4403] text-black hover:text-white transition-colors duration-300 shadow-xl"
+                    className="flex h-10 md:h-12 items-center gap-3 px-6 md:px-8 bg-white hover:bg-[color:var(--highlight-color)] text-black hover:text-white transition-colors duration-300 shadow-xl"
                 >
                     <span className="text-xs md:text-sm font-bold uppercase tracking-widest" style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}>{t('back')}</span>
                     <X size={18} />
@@ -584,7 +587,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                             {/* Stats */}
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 border-t border-white/20 pt-8 mt-4 w-full max-w-4xl bg-black/80 backdrop-blur-md p-6 md:p-8 rounded-sm">
                                 <div className="flex flex-col gap-2 items-center">
-                                    <span className="text-[11px] uppercase text-[#FE4403] tracking-widest flex items-center gap-2 font-bold"><Users size={12} /> {t('responsibilities')}</span>
+                                    <span className="text-[11px] uppercase text-[color:var(--highlight-color)] tracking-widest flex items-center gap-2 font-bold"><Users size={12} /> {t('responsibilities')}</span>
                                     <div className="flex flex-col gap-1">
                                         {project.tags.map((tag: string, i: number) => (
                                             <span key={i} className="text-[13px] md:text-[15px] font-semibold tracking-wide text-white/90">{tag}</span>
@@ -593,7 +596,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                 </div>
 
                                 <div className="flex flex-col gap-2 items-center">
-                                    <span className="text-[11px] uppercase text-[#FE4403] tracking-widest flex items-center gap-2 font-bold"><Cpu size={12} /> {t('software')}</span>
+                                    <span className="text-[11px] uppercase text-[color:var(--highlight-color)] tracking-widest flex items-center gap-2 font-bold"><Cpu size={12} /> {t('software')}</span>
                                     <div className="flex flex-col gap-1">
                                         {projectContent.software.map((sw: string, i: number) => (
                                             <span key={i} className="text-[13px] md:text-[15px] font-semibold tracking-wide text-white/90">{sw}</span>
@@ -602,7 +605,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                 </div>
 
                                 <div className="flex flex-col gap-2 items-center">
-                                    <span className="text-[11px] uppercase text-[#FE4403] tracking-widest flex items-center gap-2 font-bold"><Calendar size={12} /> {t('duration')}</span>
+                                    <span className="text-[11px] uppercase text-[color:var(--highlight-color)] tracking-widest flex items-center gap-2 font-bold"><Calendar size={12} /> {t('duration')}</span>
                                     <span className="text-[13px] md:text-[15px] font-semibold tracking-wide text-white/90">{projectContent.duration}</span>
                                 </div>
                             </div>
@@ -644,7 +647,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                             <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-white mb-2" style={{ fontFamily: "'UniversNextW04-620CondBold', sans-serif" }}>
                                                 {sec.label}
                                             </h2>
-                                            <div className="w-16 md:w-24 h-1 bg-[#FE4403]" />
+                                            <div className="w-16 md:w-24 h-1 bg-[color:var(--highlight-color)]" />
                                         </div>
                                         <h3 className="text-lg md:text-2xl text-white/90 font-bold tracking-wide" style={{ fontFamily: "'ITC Avant Garde Gothic Pro', sans-serif" }} >{content.headline}</h3>
 
@@ -668,12 +671,12 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                         </div>
                                         <div className="relative aspect-video border border-white/10 bg-white/5 p-1">
                                             <InlineMediaSlider items={content.media1 && content.media1.length > 0 ? content.media1 : [sectionImage1]} setLightboxImage={setLightboxImage} />
-                                            <div className="absolute -top-1 -left-1 w-3 h-3 border-t border-l border-[#FE4403] pointer-events-none z-30" />
-                                            <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b border-r border-[#FE4403] pointer-events-none z-30" />
+                                            <div className="absolute -top-1 -left-1 w-3 h-3 border-t border-l border-[color:var(--highlight-color)] pointer-events-none z-30" />
+                                            <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b border-r border-[color:var(--highlight-color)] pointer-events-none z-30" />
                                         </div>
                                     </div>
 
-                                    <div className="w-full bg-black/40 border-l-2 border-[#FE4403] p-4 md:p-8 backdrop-blur-md">
+                                    <div className="w-full bg-black/40 border-l-2 border-[color:var(--highlight-color)] p-4 md:p-8 backdrop-blur-md">
                                         {/* TEXT BLOCK 2: Space Grotesk, White, No Opacity */}
                                         <div className="text-lg md:text-xl text-white leading-relaxed font-normal whitespace-pre-wrap" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                                             {content.textBlock2}
@@ -684,7 +687,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                         <InlineMediaSlider items={content.media2 && content.media2.length > 0 ? content.media2 : [sectionImage2]} setLightboxImage={setLightboxImage} />
                                     </div>
 
-                                    <div className="w-full bg-black/40 border-l-2 border-[#FE4403] p-4 md:p-8 backdrop-blur-md">
+                                    <div className="w-full bg-black/40 border-l-2 border-[color:var(--highlight-color)] p-4 md:p-8 backdrop-blur-md">
                                         {/* TEXT BLOCK 3: Space Grotesk, White, No Opacity */}
                                         <div className="text-base md:text-lg text-white leading-relaxed font-normal text-justify whitespace-pre-wrap" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                                             {content.textBlock3}
@@ -694,8 +697,8 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div className="relative aspect-video border border-white/10 bg-white/5 p-1 order-2 md:order-1">
                                             <InlineMediaSlider items={content.media3 && content.media3.length > 0 ? content.media3 : [sectionImage3]} setLightboxImage={setLightboxImage} />
-                                            <div className="absolute -top-1 -right-1 w-3 h-3 border-t border-r border-[#FE4403] pointer-events-none z-30" />
-                                            <div className="absolute -bottom-1 -left-1 w-3 h-3 border-b border-l border-[#FE4403] pointer-events-none z-30" />
+                                            <div className="absolute -top-1 -right-1 w-3 h-3 border-t border-r border-[color:var(--highlight-color)] pointer-events-none z-30" />
+                                            <div className="absolute -bottom-1 -left-1 w-3 h-3 border-b border-l border-[color:var(--highlight-color)] pointer-events-none z-30" />
                                         </div>
                                         {/* TEXT BLOCK 4: Space Grotesk, White, No Opacity */}
                                         <div className="flex items-center text-base md:text-lg text-white leading-relaxed font-normal text-justify order-1 md:order-2 whitespace-pre-wrap" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -762,8 +765,8 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                                 <Maximize2 className={i === 0 ? "text-white w-12 h-12" : "text-white w-8 h-8"} />
                                             )}
                                         </div>
-                                        <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-[#FE4403] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                        <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-[#FE4403] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                        <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-[color:var(--highlight-color)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                        <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-[color:var(--highlight-color)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                     </div>
                                 ))}
                             </div>
