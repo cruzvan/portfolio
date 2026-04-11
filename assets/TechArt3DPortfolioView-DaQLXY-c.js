@@ -1,1 +1,0 @@
-import{j as s}from"./index-CvW1MoOG.js";import{t,B as a}from"./BasePortfolioView-r52SKOFT.js";const f=({onClose:e})=>{const o=[...new Set(t.flatMap(r=>r.tags))];return s.jsx(a,{title:"3D & TECH ART",projects:t,categories:o,onClose:e,baseRoute:"#3d-tech-art"})};export{f as default};
