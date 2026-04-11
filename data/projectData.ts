@@ -119,10 +119,10 @@ export const gameDesignProjects: ProjectCardData[] = [
         id: 7,
         title: "EVERYTHING I SEE",
         category: "Systems Design",
-        tags: ["GAME DESIGN", "DOCS", "SYSTEMS DESIGN"],
+        tags: ["GAME DESIGN", "DOCS"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765321421/PD_GameDesign_EIS_Cover_vvzppq.webp",
         status: "CONCEPT IDEA",
-        locked: true,
+        locked: false,
         hidden: false
     },
     {
@@ -972,86 +972,70 @@ Gestores independientes, tales como CoinManager.cs, operan reteniendo el progres
     },
     "EVERYTHING I SEE": {
         en: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "'Everything I See' is the new response to stealth and puzzle sci-fi video games. In a mobile space facility under cosmic light storms, you will use a camera obscura to manipulate dimensional lights while escaping enemies with extremely limited resources and movements.",
             tagContent: {
                 "GAME DESIGN": {
-                    headline: "INSERT HEADLINE: GAME DESIGN",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
+                    headline: "DIMENSIONAL MECHANICS AND LEVEL DESIGN",
+                    textBlock1: "In a mobile space facility under unstable light storms, experiments are conducted with a reinvention of Kepler's camera obscura to open new dimensions by modifying light sources. Upon losing control after a lethal failure in the project, the protagonist's objective becomes finding an exit through a labyrinthine architecture with extremely limited kinetic abilities. This forces the use of pure stealth to avoid detection by corrupt scientists, military forces, and lethal anomalies.",
+                    textBlock2: "Dimensional Light Manipulation (Keplerian Cells): The core pillar of gameplay lies in the concept of the camera obscura. The environment is not a static entity; by altering a room's light source by recharging energy capsules ('Keplerian Cells'), physical space is overwritten with a projected second dimension. This reveals new interactions, physics, light mirrors, and portals that allow resolving level designs sequentially. However, the use of 'Keplerian Cells' is limited in each level, forcing the player to use them strategically.",
+                    textBlock3: "Top-Down Camera Strategy and Acoustic Detection: The design assumes a top-down view perspective. This expanded structure grants the advantage of examining adjacent blocks or predicting patrols thanks to the 'Offset Camera' function. Given that the player is inherently vulnerable in direct combat, they rely on 'slow-walk' and temporary invisibility on specific tiles for evasion. Each AI responds asymmetrically to fields of view and footstep intensity, orchestrating a constant risk-reward balance.",
+                    textBlock4: "Systemic Topology and Branching Paths: Fostering a 'Puzzle-Stealth' Level Design, stages harbor sound walls, active laser grids, and independent generators. The standout feature of this structure lies in multiple exits at critical points: these act as dynamic decision-making junctions that will progressively alter the levels and mechanics faced (interactively reflected in a 'Path Menu'), corresponding to whether the player preferred unscrupulous evasion or taking action over the level's state.",
+                    bullets: ["PUZZLE-STEALTH", "DIMENSIONAL LIGHTS", "TOP-DOWN CAMERA", "BRANCHING PATHS"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775857615/PF_Game_EIS_Image1_kx5vi6.webp"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775846689/PF_Game_EIS_Image2_2_jez7jz.webp"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775858711/PF_Game_EIS_Image3_z7fzeh.webp"]
                 },
                 "DOCS": {
-                    headline: "INSERT HEADLINE: DOCS",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
+                    headline: "WORLDBUILDING AND SCI-FI SYSTEMS",
+                    textBlock1: "Postulate of Sensory Coherence and Lore: The narrative justification emerges from a scientific expedition that discovered the 'Threshold', a monstrous crystal capable of redirecting light spectrums in ways foreign to known physics, manifesting tangible ecosystems from underlying dimensions. An accident led to a hermetic isolation that resulted in greed and scarcity, causing the personnel to rely on and cultivate a cult around the 'Threshold', leading to biological experiments for survival using alien projections.",
+                    textBlock2: "Art Direction and Isolating Atmosphere: Visually, the aesthetics are grounded in PBR lighting systems to intensify tension, drawing inspiration from claustrophobic benchmarks like 'Prey' or 'Alien Isolation'. Human control rooms adopt opaque metallic materials, neutral lights, and cold palettes; but every time a dimensional beam breaks the camera obscura's threshold, the graphics engine abruptly saturates radiant colors and injects iridescent aberrations onto organic surfaces to frame their exceptional nature.",
+                    textBlock3: "Interconnection and Enemy Design: Varied AI-driven elements make up the hazards within the level. A collaborative circuit exists among 'Security Guards' who, if neutralized, leave the intricate 'Laser Turrets' temporarily inoperable. On the other hand, we will face alien species like The Wandering Tesla—an erratic boss indestructible with energy weaponry—and the lethal 'Noise Trackers', blind entities that nullify our visual tactics and condition the player to move prioritizing decibels and environmental noise management.",
+                    textBlock4: "Systemic Accessibility and UX: Highly aware of the steep cognitive curve of tactical stealth titles, the user interface (UI) design features several inclusion elements: translucent pause menus, granting the player breathers to analyze the problem without breaking flow; natively integrated standardized colorblind settings; a dynamic modular tutorials book logging newly learned mechanics; and spatial audio logs kept in the inventory to recall and analyze the game's lore.",
+                    bullets: ["WORLDBUILDING & LORE", "PBR LIGHTS & POST-PROCESSING", "ENEMY SYSTEMS", "ACCESSIBILITY UI"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775860013/PF_Game_EIS_Image4_oygngd.webp"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775881575/PF_Game_EIS_Image5_vx44fo.webp"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775846427/PF_Game_EIS_Image6_wvomkg.webp"]
                 },
-                "SYSTEMS DESIGN": {
-                    headline: "INSERT HEADLINE: SYSTEMS DESIGN",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["GOOGLE DOCS", "FIGMA", "WHIMSICAL", "UNREAL ENGINE"],
+            duration: "W.I.P.",
             videos: [],
             gallery: [],
             externalLink: "#",
-            overviewImage: ""
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765321421/PD_GameDesign_EIS_Cover_vvzppq.webp"
         },
         es: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "'Everything I See' es la nueva respuesta a la ciencia ficción en videojuegos de sigilo y puzzle. En una instalación móvil bajo tormentas de luz cósmicas, utilizarás una cámara oscura para manipular luces dimensionales mientras escapas de enemigos con recursos y movimientos sumamente limitados.",
             tagContent: {
                 "GAME DESIGN": {
-                    headline: "INSERT HEADLINE: GAME DESIGN",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
+                    headline: "MECÁNICAS DIMENSIONALES Y DISEÑO DE NIVELES",
+                    textBlock1: "En una instalación móvil espacial bajo tormentas de luz inestables, se experimenta con una reinvención de la cámara oscura de Kepler para abrir nuevas dimensiones modificando las fuentes lumínicas. Al perder el control tras una letal falla en el proyecto, el objetivo de la protagonista recae en buscar la salida a través de una laberíntica arquitectura con habilidades cinéticas sumamente limitadas. Obligando a emplear sigilo puro para evitar ser detectado por científicos corruptos, fuerzas militares y anomalías letales.",
+                    textBlock2: "Manipulación de Luces Dimensionales (Keplerian Cells): El pilar del gameplay reside en el concepto de cámara oscura. El entorno no es un ente estático; al alterar la fuente de luz de un habitáculo recargando cápsulas de energía ('Keplerian Cells'), se sobrescribe el espacio físico con una segunda dimensión proyectada. Esto revela nuevas interacciones, físicas, espejos de luz y portales que permitirán resolver el diseño de niveles en cadena. Sin embargo, el uso de 'Keplerian Cells' es limitado en cada nivel, forzando que el player los use estratégicamente.",
+                    textBlock3: "Estrategia de Cámara Top-Down y Detección Acústica: El diseño asume una perspectiva cenital (top-down view). Esta estructura ampliada otorga la ventaja de examinar las celdas contiguas o predecir los patrullajes gracias a la función 'Offset Camera'. Como el jugador es inherentemente vulnerable en combate directo, cuenta con 'slow-walk' e invisibilidad temporal en placas concretas para la evasión. Cada IA responde asimétricamente a campos de visión y a la intensidad de los pasos, orquestando una balanza constante de riesgo-recompensa.",
+                    textBlock4: "Topología Sistémica y Ramificaciones: Fomentando el Level Design 'Puzzle-Stealth', las etapas albergan muros de sonido, murallas láser activas y generadores independientes. Lo destacado de la estructura radica en las múltiples salidas en puntos críticos: estas actúan como tomas de decisión dinámicas que alterarán progresivamente los niveles y mecánicas a enfrentar (reflejado de manera interactiva en un 'Path Menu'), respondiendo a si el jugador prefirió evadir inescrupulosamente o accionar sobre el estado del nivel.",
+                    bullets: ["PUZZLE-STEALTH", "LUCES DIMENSIONALES", "CÁMARA TOP-DOWN", "RUTAS RAMIFICADAS"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775857615/PF_Game_EIS_Image1_kx5vi6.webp"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775846689/PF_Game_EIS_Image2_2_jez7jz.webp"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775858711/PF_Game_EIS_Image3_z7fzeh.webp"]
                 },
                 "DOCS": {
-                    headline: "INSERT HEADLINE: DOCS",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
+                    headline: "WORLDBUILDING Y SISTEMAS SCI-FI",
+                    textBlock1: "Postulado de Coherencia Sensorial y Lore: La justificación argumental emerge de una expedición científica que descubrió al 'Threshold', un cristal monstruoso con la capacidad de redirigir espectros de luz de formas ajenas a la física conocida, manifestando ecosistemas tangibles de dimensiones subyacentes. Un accidente llevó a un aislamiento hermético que derivó en avaricia y escasez, causando que el personal dependiera y comenzara a crear un culto alrededor del 'Threshold', derivando en experimentos biológicos para sobrevivir utilizando las proyecciones alienígenas.",
+                    textBlock2: "Dirección de Arte y Atmósfera Aislante: Visualmente la estética se cimienta en sistemas de iluminación PBR para intensificar la tensión, tomando inspiración de referentes claustrofóbicos como 'Prey' o 'Alien Isolation'. Las salas de control humano adoptan materiales metálicos opacos, luces neutras y paletas frías; pero cada vez que un haz dimensional rompe el umbral de la cámara oscura, el motor gráfico satura bruscamente colores radiantes e inyecta aberraciones iridiscentes sobre lo orgánico para enmarcar su excepcionalidad.",
+                    textBlock3: "Interconexión y Diseño de Enemigos: Variados elementos con AI componen los peligros dentro del nivel. Un circuito colaborativo entre los 'Guardias de Seguridad' que, de ser neutralizados, dejan inservibles temporalmente a las intrincadas 'Torretas Láser'. Por otro lado, enfrentaremos especies alienígenas como The Wanderer Tesla –un jefe errante, indestructible con armamento energético– y los letales 'Noise Trackers', entes ciegos que anulan nuestras tácticas visuales y condicionan al jugador a moverse priorizando sus decibeles y manejo de ruidos ambientales.",
+                    textBlock4: "Accesibilidad Sistémica y UX: Consciente de la curva cognitiva de los títulos de sigilo tácticos, el diseño de la interfaz (UI) posee algunos elementos de inclusión: menús de pausa translúcidos, dando respiros al jugador para analizar el problema sin perder el flujo; configuraciones estandarizadas de daltonismo integradas nativamente, un libro dinámico de 'Tutoriales Modulares' con las nuevas mecánicas aprendidas, y audios espaciales que se guardan en el inventario para recordar y analizar el lore del juego.",
+                    bullets: ["WORLDBUILDING & LORE", "LUCES PBR Y POSTPROCESADO", "SISTEMAS DE ENEMIGOS", "UI DE ACCESIBILIDAD"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775860013/PF_Game_EIS_Image4_oygngd.webp"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775881575/PF_Game_EIS_Image5_vx44fo.webp"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775846427/PF_Game_EIS_Image6_wvomkg.webp"]
                 },
-                "SYSTEMS DESIGN": {
-                    headline: "INSERT HEADLINE: SYSTEMS DESIGN",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["GOOGLE DOCS", "FIGGMA", "WHIMSICAL", "UNREAL ENGINE"],
+            duration: "W.I.P.",
             videos: [],
             gallery: [],
             externalLink: "#",
-            overviewImage: ""
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765321421/PD_GameDesign_EIS_Cover_vvzppq.webp"
         }
     },
     "F.A.L.L.O.U.T.": {
