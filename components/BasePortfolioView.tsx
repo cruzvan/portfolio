@@ -146,7 +146,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick, lang
                   <Lock size={24} className="text-[#FE4403]" />
                 </div>
               ) : (
-                project.tags.slice(0, 3).map((tag, i, arr) => (
+                (project.tagsOverwrite || project.tags).map((tag, i, arr) => (
                   <div key={i} className="flex items-center justify-between">
                     <span className={`text-[8px] md:text-[1.1vh] uppercase tracking-widest font-medium ${isHovered && !isLocked ? 'text-black font-bold' : 'text-white'}`} style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                       {tag}
@@ -223,7 +223,8 @@ const BasePortfolioView: React.FC<BasePortfolioViewProps> = ({ title, projects, 
     ? visibleProjects
     : visibleProjects.filter(p => {
       const categoryUpper = activeCategory.toUpperCase();
-      return p.tags.includes(categoryUpper) || p.category === activeCategory;
+      const pTags = p.tagsOverwrite || p.tags;
+      return pTags.some(t => t.toUpperCase() === categoryUpper) || p.category === activeCategory;
     });
 
   // --- SMOOTH SCROLL LOOP ---
