@@ -246,22 +246,22 @@ export const techArtProjects: ProjectCardData[] = [
         id: 9,
         title: "DRELL CREATURE",
         category: "Unity",
-        tags: ["3D MODELING", "3D TEXTURING"],
+        tags: ["3D MODELING"],
         tagsOverwrite: ["3D MODELING", "3D TEXTURING"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765336797/PF_3DTech_DrellCreature_Cover_yh5zxu.webp",
         status: "FINISHED",
-        locked: true,
+        locked: false,
         hidden: false
     },
     {
         id: 10,
         title: "3D PROPS (FADING MEMORIES)",
         category: "Unity",
-        tags: ["UNITY"],
-        tagsOverwrite: ["UNITY", "ILLUMINATION"],
+        tags: ["3D MODELING"],
+        tagsOverwrite: ["UNITY", "MODELING", "TEXTURING"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765337149/PF_3DTech_FMProps_Cover_czkwkv.webp",
         status: "FINISHED",
-        locked: true,
+        locked: false,
         hidden: false
     },
     {
@@ -272,7 +272,7 @@ export const techArtProjects: ProjectCardData[] = [
         tagsOverwrite: ["3D MODELING"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765337674/PF_3DTech_LDVBuildings_Cover_vs5usm.webp",
         status: "FINISHED",
-        locked: true,
+        locked: false,
         hidden: false
     },
     {
@@ -1729,188 +1729,141 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
     },
     "DRELL CREATURE": {
         en: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Creation of a high-fidelity 3D bust based on the design of the Drell creatures from the Mass Effect universe, using high-resolution sculpting workflows and micro-detail baking for asset optimization.",
             tagContent: {
                 "3D MODELING": {
-                    headline: "INSERT HEADLINE: 3D MODELING",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
+                    headline: "ORGANIC DESIGN AND HYPER-REALISTIC SCULPTING",
+                    textBlock1: "This project focuses on the conceptualization and creation of a hyper-realistic 3D model inspired by the physiognomy of the Drell, part of the Mass Effect video game universe. The main objective was to design an organic bust capturing the species' reptilian/humanoid essence, respecting the iconic cranial ridges and asymmetric head structure, but bringing it to a modern detail standard suitable for next-gen cinematics or video games.",
+                    textBlock2: "The sculpting process was carried out in ZBrush. To achieve the correct anatomical density by shaping the thick neck folds and scaly texture, volumetric block-outs and an arsenal of organic Alphas were used. Once the silhouette was finished, an optimized version with clean geometry flows (Low Poly) was immediately extracted directly from ZBrush, separated from the detailed model (High Poly) to have two different .fbx files.",
+                    textBlock3: "For the materials, the 'Low Poly' was imported into Substance Painter. Painting and texturing were approached in a layered manner, progressively structuring reflective layers and roughness maps to emulate different levels of epithelial humidity. Over this, the 'Baking' process was performed, successfully transferring all pores, scales, and micro-details from the High Poly mesh to the flat surface of the light model using its Normal map.",
+                    textBlock4: "Finally, the formal presentation and technical lighting (Lookdev) stage was performed in Blender. The model processing the image is directly the bust in its Low Poly state, but it acquires all that depth, weight, and deceptive realism thanks to the coupling of the previously baked Normal map. Direct lights were calibrated to accentuate the specular range and roughness typical of Drell skin.",
+                    bullets: ["ZBRUSH MODELING", "LOW POLY RETOPO", "NORMAL BAKING", "SUBSTANCE / BLENDER"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775947017/PF_3DTech_Drell_Image1_mqnke7.jpg", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947047/078f0f39-c933-41ed-95cf-d77cf855906d.png"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775947107/agnosticangel-masseffect_kans56.jpg"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775947114/agnosticangel-masseffect-material-preview_zl0mpz.jpg", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947114/agnosticangel-imagen-2024-06-09-221802534_pd7qw4.jpg"]
                 },
-                "3D TEXTURING": {
-                    headline: "INSERT HEADLINE: 3D TEXTURING",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["ZBRUSH", "SUBSTANCE PAINTER", "BLENDER"],
+            duration: "W.I.P.",
             videos: [],
             gallery: [],
             externalLink: "#",
-            overviewImage: ""
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947107/agnosticangel-masseffect_kans56.jpg"
         },
         es: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Creación de un busto 3D de alta fidelidad basado en el diseño de las criaturas Drell del universo de Mass Effect, utilizando flujos de trabajo de esculpido de alta resolución y baking de microdetalles para la optimización de assets.",
             tagContent: {
                 "3D MODELING": {
-                    headline: "INSERT HEADLINE: 3D MODELING",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
+                    headline: "DISEÑO ORGÁNICO Y ESCULPIDO HIPERREALISTA",
+                    textBlock1: "Este proyecto se centra en la conceptualización y creación de un modelo 3D hiperrealista inspirado en la fisonomía de los Drell, parte del universo del videojuego Mass Effect. El objetivo principal fue diseñar un busto orgánico logrando capturar la esencia reptiliana/humanoide de la especie, respetando las icónicas crestas craneales y la estructura asimétrica de la cabeza, pero llevándolo a un estándar de detalle actual apto para cinemáticas o videojuegos de última generación.",
+                    textBlock2: "El proceso de esculpido se llevó a cabo en ZBrush. Para lograr la densidad anatómica correcta conformando los gruesos pliegues del cuello y la textura escamosa, se hizo uso de bloqueos volumétricos y un arsenal de Alphas orgánicos. Una vez terminada la silueta, se extrajo de inmediato la versión optimizada con flujos limpios de geometría (Low Poly) directamente de ZBrush, la cual se separó del modelo detallado (High Poly) y así tener dos .fbx diferentes.",
+                    textBlock3: "Para el tratamiento de materiales se importó el 'Low Poly' a Substance Painter. La pintura y texturización se abordaron de manera estratificada estructurando progresivamente capas reflectivas y mapas de rugosidad para emular diferentes niveles de humedad epitelial. Sobre esto se realizó el proceso de 'Baking', logrando transferir todos los poros, escamas y microdetalles de la malla High Poly hacia la superficie plana del modelo ligero usando su mapa de Normales.",
+                    textBlock4: "Por último, la etapa formal de presentación e iluminación técnica (Lookdev) se realizó en Blender. El modelo que procesa la imagen es directamente el busto en su estado de Low Poly, pero adquiere toda esa profundidad, peso y realismo engañoso gracias al acoplamiento del mapa de Normales cocinado anteriormente. Las luces directas fueron calibradaspara acentuar el rango especular y de roughness propio de la piel Drell.",
+                    bullets: ["MODELADO ZBRUSH", "RETOPO LOW POLY", "BAKING DE NORMALES", "SUBSTANCE / BLENDER"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775947017/PF_3DTech_Drell_Image1_mqnke7.jpg", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947047/078f0f39-c933-41ed-95cf-d77cf855906d.png"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775947107/agnosticangel-masseffect_kans56.jpg"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775947114/agnosticangel-masseffect-material-preview_zl0mpz.jpg", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947114/agnosticangel-imagen-2024-06-09-221802534_pd7qw4.jpg"]
                 },
-                "3D TEXTURING": {
-                    headline: "INSERT HEADLINE: 3D TEXTURING",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["ZBRUSH", "SUBSTANCE PAINTER", "BLENDER"],
+            duration: "W.I.P.",
             videos: [],
             gallery: [],
             externalLink: "#",
-            overviewImage: ""
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947107/agnosticangel-masseffect_kans56.jpg"
         }
     },
     "3D PROPS (FADING MEMORIES)": {
         en: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Production and workflow for optimized 3D models (Props) that narratively and visually anchor the rural material culture of Chile in the early 2000s, used in 'Fading Memories'.",
             tagContent: {
-                "GAME DESIGN": {
-                    headline: "INSERT HEADLINE: UNITY",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
+                "3D MODELING": {
+                    headline: "PBR WORKFLOW AND CHILEAN MATERIAL CULTURE",
+                    textBlock1: "This project involves the conceptualization and creation of multiple 3D props for the video game 'Fading Memories'. Following its art direction focused on rural south-central Chile, nostalgic antiques of the national iconography were modeled (such as the 'chancho en piedra', round washing machines, classic phones, or the turntable where the game's musical mechanics take place). These artifacts function as narrative elements oriented to organically reflect the passage of time and the negligence existing in the manor where the video game takes place.",
+                    textBlock2: "Structural development based its methodology on parallel High and Low resolution polygon sculpts. A 'High Poly' variant was first elaborated, strongly marking hits, oxidations, and asymmetries of continuous use in its topology. Next, a more efficient 'Low Poly' version was extracted and mapped, adjusting its master curves so that no checkered outline was seen from any camera angle, preserving the physical silhouette of the original object.",
+                    textBlock3: "Once the UV coordinates were deployed without geometric distortion (warping) margins, Marmoset Toolbag was used for the 'Baking' stage, adjusting asymmetric volumetric cages and projecting each micro-geometric recess of the 'High Poly'.",
+                    textBlock4: "Finally, wear and organic properties (texturing) were addressed in Substance Painter. Thinking about Video Game performance and real-time, PBR textures were exported compacted under the 'ARM' standard (Ambient Occlusion, Roughness, and Metallic in a single RGB file). Upon introducing them into Unity, I created a 'Custom Shader' designed exclusively to decode these hyper-realistic textures in real-time, requiring only 3 textures per object in memory instead of the standard 5.",
+                    bullets: ["CHILEAN DESIGN", "HIGH/LOW POLY METHODOLOGY", "MARMOSET BAKING", "CUSTOM SHADERS & ARM"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775947567/17656395-4822-4b4a-ad6b-950131cdf8bc.png"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775947711/9b9329c5-af27-4319-8274-df5e5b32f470.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947717/a2ff5e03-f8ed-47ea-9872-7ec50630be3f.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947722/b1badb7e-0ecd-4a2f-bbac-19ca1cb4a027.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947724/5c5485b8-fe73-4803-a908-56588d13a339.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947734/50dc5f6a-4218-416f-a454-63a0440cdb47.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947739/4370af38-e1e0-4597-ad33-f45b79ad3a44.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947751/33d522a9-c9a4-4e5d-8856-9eefb8aef0d0.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947755/0f6f27bc-893f-451e-86fc-e74d5339d85a.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947758/0d95c441-8b40-4641-b424-52422a2cccf8.png"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775947622/687db6d1-d011-4a30-a41a-08ba4530332f.png"]
                 },
-                "ART DIRECTION": {
-                    headline: "INSERT HEADLINE: UI",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
-                },
-                "ILLUMINATION": {
-                    headline: "INSERT HEADLINE: ILLUMINATION",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["BLENDER", "MARMOSET TOOLBAG", "SUBSTANCE PAINTER", "UNITY"],
+            duration: "W.I.P.",
             videos: [],
             gallery: [],
             externalLink: "#",
-            overviewImage: ""
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947717/a2ff5e03-f8ed-47ea-9872-7ec50630be3f.png"
         },
         es: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Producción y flujo de trabajo para modelos tridimensionales (Props) optimizados que anclan narrativa y visualmente la cultura material rural de Chile a principios de los 2000, utilizados en 'Fading Memories'.",
             tagContent: {
-                "GAME DESIGN": {
-                    headline: "INSERT HEADLINE: UNITY",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
+                "3D MODELING": {
+                    headline: "WORKFLOW PBR Y CULTURA MATERIAL CHILENA",
+                    textBlock1: "Este proyecto realiza la conceptualización y creación de múltiples props 3D para el videojuego 'Fading Memories'. Siguiendo su dirección de arte orientada en la ruralidad chilena del centro-sur, se modelaron antigüedades nostálgicas de la iconografía nacional (como el chancho en piedra, lavadoras redondas, teléfonos clásicos o el tocadiscos donde transcurre la mecánica musical del juego). Estos artefactos funcionan como elementos narrativos orientados a reflejar orgánicamente el paso del tiempo y la negligencia que existe en la casona donde transcurre el videojuego.",
+                    textBlock2: "El desarrollo estructural basó su metodología en esculpidos paralelos de Alta y Baja resolución poligonal. Se elaboró primeramente una variante 'High Poly', marcando fuertemente en su topología los golpes, oxidaciones y asimetrías de uso continuo. A continuación, se extrajo y mapeó una versión 'Low Poly' más eficiente, ajustando sus curvas maestras para que en ningún ángulo de la cámara se presenciara un contorno cuadriculado, preservando la silueta física del objeto original.",
+                    textBlock3: "Una vez desplegadas las coordenadas UV sin márgenes de distorsión geométrica (warping), se empleó Marmoset Toolbag para la etapa de 'Baking'. Ajustando jaulas volumétricas asimétricas y proyectando cada hundimiento micro-geométrico del 'High Poly'.",
+                    textBlock4: "Finalmente, el desgaste y las propiedades orgánicas (texturizado) se abordaron en Substance Painter. Pensando en el rendimiento de Videojuegos y tiempo real, las texturas PBR fueron exportadas compactadas bajo el estándar 'ARM' (Ambient Occlusion, Roughness y Metallic en un solo archivo RGB). Al momento de introducirlas en Unity, creé un 'Custom Shader' diseñado exclusivamente para decodificar en tiempo real dichas texturas hiperrealistas que solicitan apenas 3 texturas por objeto en memoria, en vez de las 5 del estándar.",
+                    bullets: ["DISEÑO CHILENO", "METODOLOGÍA HIGH/LOW POLY", "BAKING EN MARMOSET", "CUSTOM SHADERS Y ARM"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775947567/17656395-4822-4b4a-ad6b-950131cdf8bc.png"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775947711/9b9329c5-af27-4319-8274-df5e5b32f470.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947717/a2ff5e03-f8ed-47ea-9872-7ec50630be3f.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947722/b1badb7e-0ecd-4a2f-bbac-19ca1cb4a027.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947724/5c5485b8-fe73-4803-a908-56588d13a339.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947734/50dc5f6a-4218-416f-a454-63a0440cdb47.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947739/4370af38-e1e0-4597-ad33-f45b79ad3a44.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947751/33d522a9-c9a4-4e5d-8856-9eefb8aef0d0.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947755/0f6f27bc-893f-451e-86fc-e74d5339d85a.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947758/0d95c441-8b40-4641-b424-52422a2cccf8.png"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775947622/687db6d1-d011-4a30-a41a-08ba4530332f.png"]
                 },
-                "ART DIRECTION": {
-                    headline: "INSERT HEADLINE: UI",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
-                },
-                "ILLUMINATION": {
-                    headline: "INSERT HEADLINE: ILLUMINATION",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                }
+
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["BLENDER", "MARMOSET TOOLBAG", "SUBSTANCE PAINTER", "UNITY"],
+            duration: "W.I.P.",
             videos: [],
             gallery: [],
             externalLink: "#",
-            overviewImage: ""
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775947717/a2ff5e03-f8ed-47ea-9872-7ec50630be3f.png"
         }
     },
     "LOW POLY CHILEAN BUILDINGS (LLUVIA DE VERANO)": {
         en: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Development of Low Poly architecture for the video game 'Lluvia de Verano', focused on capturing the socioeconomic and architectural diversity of southern Chile to enhance Level Design and investigation narrative.",
             tagContent: {
                 "3D MODELING": {
-                    headline: "INSERT HEADLINE: 3D MODELING",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "SOCIAL ARCHITECTURE AND MODULAR DESIGN",
+                    textBlock1: "The process began with deep field research and a collection of photographic references in southern Chile, focusing on faithfully representing the marked socioeconomic gaps. The goal was to create a visually narrative architectural contrast: from marginal populations with self-built wooden and recycled material houses to ostentatious mansions located in gated communities, achieving a social realism atmosphere that anchors social contrasts in the game's story.",
+                    textBlock2: "Level Design adapted organically to these spatial disparities. In marginal sectors, the design bets on small but highly functional spaces that transmit a sense of overcrowding. Conversely, condo houses were conceptualized as massive and detailed areas, ideal for the game's detective mechanics, allowing the integration of multiple hidden clues within the house and a more analytical and thorough exploration.",
+                    textBlock3: "To ensure volumetric coherence, an initial 'Block Modeling' or Blockout phase was implemented. Scales and movement flows within the structures were defined, validating that dimensions allowed fluid navigation for the player, ensuring each room met the game's camera visibility requirements.",
+                    textBlock4: "Finally, detailed modeling proceeded under a semi-modular workflow. Sets of walls, frames, roofs, and ornamental details were created, allowing resource reuse without sacrificing the unique identity of each structure.",
+                    bullets: ["SOCIOECONOMIC RESEARCH", "NARRATIVE LEVEL DESIGN", "BLOCK MODELING", "SEMI-MODULAR MODELING"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775948787/PF_3DTech_LDVBuildings_Image1_1_pfslty.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775948786/PF_3DTech_LDVBuildings_Image1_2_v3xuap.webp"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775948930/4a6b7d30-8a85-42b5-9db5-3e3b87ff1fe3.png ", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775949008/d400b3dc-dd71-4f5f-bea8-ad36f8d78dc9.png"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775949096/66748e74-b82e-4593-875b-10fdc938581c.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775949109/30056a8b-719a-4ce2-ba8e-3f4830ee668a.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775949079/48df30b1-5758-49b4-8036-815f4f5872e4.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775949094/fc5217e6-838d-4ff1-a538-8ff4a3380f6a.png"]
                 }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["BLENDER", "UNITY", "PURE REF"],
+            duration: "W.I.P.",
             videos: [],
             gallery: [],
             externalLink: "#",
-            overviewImage: ""
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775949096/66748e74-b82e-4593-875b-10fdc938581c.png"
         },
         es: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Desarrollo de arquitectura Low Poly para el videojuego 'Lluvia de Verano', centrada en capturar la diversidad socioeconómica y arquitectónica del sur de Chile para potenciar el Level Design y la narrativa de investigación.",
             tagContent: {
                 "3D MODELING": {
-                    headline: "INSERT HEADLINE: 3D MODELING",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
+                    headline: "ARQUITECTURA SOCIAL Y DISEÑO MODULAR",
+                    textBlock1: "El proceso comenzó con una profunda investigación de campo y recopilación de referentes fotográficos en el sur de Chile, enfocándose en representar fielmente las marcadas brechas socioeconómicas. El objetivo fue crear un contraste arquitectónico visualmente narrativo: desde poblaciones marginales con viviendas autoconstruidas de madera y materiales reciclados, hasta ostentosas mansiones situadas en condominios cerrados, logrando una atmósfera de realismo social que ancla los contrastes sociales en la historia del juego.",
+                    textBlock2: "El Level Design se adaptó orgánicamente a estas disparidades espaciales. En los sectores marginales, el diseño apuesta por espacios reducidos, pero altamente funcionales que transmiten una sensación de hacinamiento. Por el contrario, las viviendas de condominio se conceptualizaron como áreas masivas y detalladas, ideales para la mecánica de detective del juego, permitiendo la integración de múltiples pistas ocultas dentro de la casa y una exploración más analítica y minuciosa.",
+                    textBlock3: "Para asegurar la coherencia volumétrica, se implementó una fase inicial de 'Block Modeling' o Blockout. En esta etapa se definieron las escalas reales y los flujos de movimiento dentro de las estructuras, validando que las dimensiones permitieran una navegación fluida para el jugador, garantizando que cada habitación cumpliera con los requisitos de visibilidad de la cámara del juego.",
+                    textBlock4: "Finalmente, se procedió con un modelado detallado bajo un flujo de trabajo semi-modular. Se crearon sets de paredes, marcos, techos y detalles ornamentales que permiten la reutilización de recursos sin sacrificar la identidad única de cada estructura.",
+                    bullets: ["INVESTIGACIÓN SOCIOECONÓMICA", "LEVEL DESIGN NARRATIVO", "BLOCK MODELING", "MODELADO SEMI-MODULAR"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775948787/PF_3DTech_LDVBuildings_Image1_1_pfslty.webp", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775948786/PF_3DTech_LDVBuildings_Image1_2_v3xuap.webp"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775948930/4a6b7d30-8a85-42b5-9db5-3e3b87ff1fe3.png ", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775949008/d400b3dc-dd71-4f5f-bea8-ad36f8d78dc9.png"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775949096/66748e74-b82e-4593-875b-10fdc938581c.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775949109/30056a8b-719a-4ce2-ba8e-3f4830ee668a.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775949079/48df30b1-5758-49b4-8036-815f4f5872e4.png", "https://res.cloudinary.com/dseaazn5s/image/upload/v1775949094/fc5217e6-838d-4ff1-a538-8ff4a3380f6a.png"]
                 }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["BLENDER", "UNITY", "PURE REF"],
+            duration: "W.I.P.",
             videos: [],
             gallery: [],
             externalLink: "#",
-            overviewImage: ""
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775949096/66748e74-b82e-4593-875b-10fdc938581c.png"
         }
     },
     "LEVEL DRESSING (CAVE MADNESS)": {
