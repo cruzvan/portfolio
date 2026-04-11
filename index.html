@@ -177,8 +177,8 @@
         display: block;
         width: 40px;
         height: 150px;
-        /* Adjusted colors to match theme (orange only) */
-        background: linear-gradient(#FE4403, #FF8A00, #FE4403);
+        /* Adjusted colors to use the dynamic highlight color, falling back to orange theme */
+        background: linear-gradient(var(--highlight-color, #FE4403), var(--highlight-color, #FF8A00), var(--highlight-color, #FE4403));
         animation: rotation_9018 10000ms infinite linear;
         animation-delay: var(--anim-offset, 0s);
       }
@@ -215,8 +215,8 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="/portfolio/assets/index-CThp-tDr.js"></script>
-  <link rel="stylesheet" crossorigin href="/portfolio/assets/index-Bvt-0k6c.css">
+  <script type="module" crossorigin src="/portfolio/assets/index-CvW1MoOG.js"></script>
+  <link rel="stylesheet" crossorigin href="/portfolio/assets/index-CNZMOT9n.css">
 </head>
   <body>
     <div id="root"></div>
