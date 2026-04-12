@@ -306,12 +306,13 @@ export const othersProjects: ProjectCardData[] = [
         id: 2,
         title: "CUSTOM OBSIDIAN VAULTS",
         category: "Design",
-        tags: ["JAVASCRIPT", "MANAGEMENT"],
-        tagsOverwrite: ["JAVASCRIPT", "MANAGEMENT"],
-        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
+        tags: ["UI / UX", "PROGRAMMING"],
+        tagsOverwrite: ["UI/UX", "PROGRAMMING"],
+        image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1776020680/PF_Others_Obsidian_Image_CoverVertical_epuhln.webp",
         status: "AVAILABLE",
-        locked: true,
-        hidden: false
+        locked: false,
+        hidden: false,
+        highlightColor: "#7140cdf9"
     },
     {
         id: 3,
@@ -1979,70 +1980,70 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
     },
     "CUSTOM OBSIDIAN VAULTS": {
         en: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Complete architecture of a modular management system for Obsidian, using asynchronous JavaScript, Dataview, and Templater to generate responsive user interfaces and project tracking.",
             tagContent: {
-                "JAVASCRIPT": {
-                    headline: "INSERT HEADLINE: JAVASCRIPT",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
+                "UI / UX": {
+                    headline: "MODULAR INTERFACE FOR CREATIVES",
+                    textBlock1: "I designed this vault system as a solution focused on professionals and agencies in the creative sector who need to structure complex data. The software stands out for its hyper-modular architecture that separates databases from their visual interfaces, allowing for rapid modifications and native adaptability in both English and Spanish, centralizing the information flow without visual friction.",
+                    textBlock2: "The main component is the Dashboard (Homepage), visually operating as a minimalist terminal without distracting colors. I designed an information hierarchy that places widgets and metrics at the top, while the bottom area groups dynamic switchable tabs. This approach cleans up dense folder navigation to prioritize the system's macro tracking through quick interactions and intuitive icons.",
+                    textBlock3: "For the critical control of tasks and itineraries (Scheduled Tasks and Active Projects), I integrated the versatility of the TaskNotes plugin combined with Gantt-like diagrams. Structured quick accesses (Monthly Calendar, Agenda, Kanban) and an iterative 'NEW TASK' button that invokes creation modals are deployed from the same space. Thus, the vault generates dynamic rows that automatically calculate countdown timers (ETA), and processes real-time variables such as flow status, metric durations (timeEstimate), and scheduled dates, allowing the task or project cycle to be assimilated at a single glance.",
+                    textBlock4: "On the other hand, the Collections section consolidates databases of audiovisual references and literature in a kind of checkered 'gallery view'. It is focused exclusively on maximizing legibility and features a quick 'Add Record' shortcut system that invokes floating input modals with the 'MediaDb' plugin and automatically collects information from external APIs, giving organicity to inspiration capture and audiovisual media tracking.",
+                    bullets: ["BILINGUAL MODULAR DASHBOARD", "VISUAL GANTT CHARTS", "AGILE MEDIA GRIDS"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1776012367/a4754ae7-7968-4052-b1c0-48cf07c70870.png"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1776014879/PF_Others_Obsidian_Image2_qbbdnj.webm"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1776015132/PF_Others_Obsidian_Image3_mran8g.webm"]
                 },
-                "MANAGEMENT": {
-                    headline: "INSERT HEADLINE: MANAGEMENT",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
+                "PROGRAMMING": {
+                    headline: "DATAVIEWJS & DEPENDENCY INJECTION",
+                    textBlock1: "To achieve consistent interactions and mathematical calculations throughout the vault, the core relies on asynchronous searches and transversal programming. Using loose adaptations of an Observer Pattern, the system sweeps embedded metadata (progress and custom properties in YAML/Markdown), merging with Obsidian Templater and DataviewJS to render interfaces and interactive components generated on demand.",
+                    textBlock2: "Ensuring interface performance, I made sure to heavily apply Non-Blocking Data Fetching processes. Functions such as weather monitors based on Open Meteo or the cross-collection of dozens of distributed RSS feeds occur entirely in the background and inject validated HTTP responses using JavaScript Promises, maintaining tactile fluidity and routing free of long wait times.",
+                    textBlock3: "The general autonomous integration implements Factory Pattern guidelines with Templater. I developed interdependent script structures with recursive capability; they do not generate simple isolated notes, but rather build the relational infrastructure of a project (Kanban boards, CRM files, budgets) in parallel with a single input, configuring WikiLinks in strict sequence milliseconds behind the scenes.",
+                    textBlock4: "Finally, the level of scalability achieved by the vault allows it to dynamically cross-reference task hours with entire project estimates ('Time Entries' vs 'Time Estimate'). This data treatment is orchestrated with pure functional iterations extracted using Dataview's internal APIs in JavaScript, centralizing huge composite matrices for general calculation and debugging without reloading external bases.",
+                    bullets: ["DATAVIEWJS & INJECTION", "FACTORY PATTERN / TEMPLATER", "NON-BLOCKING DATA FETCHING"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1776015915/PF_Others_Obsidian_Image4_etktug.webm"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1776018179/PF_Others_Obsidian_Image5_ngvgfb.webp"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1776018178/PF_Others_Obsidian_Image6_zish7j.webp"]
                 }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["JAVASCRIPT", "OBSIDIAN DATAVIEW API", "OBSIDIAN TEMPLATER API", "MARKDOWN / HTML"],
+            duration: "1 MONTH",
             videos: [],
             gallery: [],
             externalLink: "#",
-            overviewImage: ""
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1776019990/PF_Others_Obsidian_ImageCoverwebp_pm73qe.webp"
         },
         es: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Arquitectura completa de un sistema de gestión modular para Obsidian, utilizando JavaScript asíncrono, Dataview y Templater para generar interfaces responsivas de usuario y seguimiento de proyectos.",
             tagContent: {
-                "JAVASCRIPT": {
-                    headline: "INSERT HEADLINE: JAVASCRIPT",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
+                "UI / UX": {
+                    headline: "INTERFAZ MODULAR PARA CREATIVOS",
+                    textBlock1: "Diseñé este sistema de bóvedas como una solución enfocada en profesionales y agencias del sector creativo que necesitan estructurar datos complejos. El software destaca por poseer una arquitectura hiper-modular que separa las bases de datos de sus interfaces visuales, permitiendo modificaciones rápidas y adaptabilidad nativa tanto en inglés como en español y centralizando el caudal de información sin fricciones visuales.",
+                    textBlock2: "El componente principal es el Dashboard (Homepage), operando visualmente como una terminal minimalista y sin colores distractores. Diseñé una jerarquía de información que ubica widgets y métricas en la parte superior, mientras que la zona inferior agrupa pestañas dinámicas conmutables. Esta aproximación limpia la densa navegación por carpetas para priorizar el seguimiento macro del sistema mediante interacciones rápidas e íconos intuitivos.",
+                    textBlock3: "Para el control crítico de tareas e itinerarios (Scheduled Tasks y Active Projects), integré la versatilidad del plugin TaskNotes combinada con diagramas similares a Gantt. Desde el mismo espacio se despliegan accesos rápidos estructurados (Calendario Mensual, Agenda, Kanban) y un botón iterativo 'NEW TASK' que invoca modales de creación. Así, la bóveda genera filas dinámicas que calculan automáticamente contadores regresivos (ETA), y procesa en tiempo real variables como el estado en el flujo, duraciones métricas (timeEstimate) y fechas programadas, permitiendo asimilar el ciclo de la tarea o proyecto con un solo vistazo.",
+                    textBlock4: "Por su parte, la sección de Coleciones consolida bases de datos de referencias audiovisuales y literatura en una especie de 'gallery view' cuadriculada. Está enfocado exclusivamente en maximizar la legibilidad y cuenta con un sistema rápido de atajos ('Add Record') que invoca modales de entrada flotantes con el plugin 'MediaDb'y recolecta información desde APIs externas automáticamente, dándole organicidad a la captura de inspiración y tracking de medios audivisuales.",
+                    bullets: ["DASHBOARD MODULAR BILINGÜE", "GANTT CHARTS VISUALES", "CUADRÍCULAS DE MEDIOS ÁGILES"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1776012367/a4754ae7-7968-4052-b1c0-48cf07c70870.png"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1776014879/PF_Others_Obsidian_Image2_qbbdnj.webm"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1776015132/PF_Others_Obsidian_Image3_mran8g.webm"]
                 },
-                "MANAGEMENT": {
-                    headline: "INSERT HEADLINE: MANAGEMENT",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
+                "PROGRAMMING": {
+                    headline: "DATAVIEWJS E INYECCIÓN DE DEPENDENCIAS",
+                    textBlock1: "Para lograr interacciones y cálculos matemáticos consistentes en toda la bóveda, el núcleo recae sobre búsquedas asíncronas y programación transversal. Utilizando adaptaciones libres de un Observer Pattern, el sistema barre metadatos incrustados (progreso y propiedades personalizadas en YAML/Markdown), uniéndose con Obsidian Templater y DataviewJS para renderizar interfaces y componentes interactivos generados bajo demanda.",
+                    textBlock2: "Asegurando el rendimiento de las interfaces, me aseguré de aplicar fuertemente procesos de Non-Blocking Data Fetching. Funciones como los monitores meteorológicos basados en Open Meteo o la recopilación cruzada de decenas de feeds RSS distribuidas ocurren completamente en background e inyectan respuestas HTTP validadas mediante Promesas de JavaScript, manteniendo la fluidez táctil y enrutamientos libres de tiempos de espera largos.",
+                    textBlock3: "La integración autónoma general implementa directrices de un Factory Pattern con Templater. Elaboré estructuras de script interdependientes con capacidad recursiva; no generan simples notas aisladas, sino que arman la infraestructura relacional de un proyecto (tableros Kanban, fichas CRM, presupuestos) en paralelo con un único input, configurando los WikiLinks en secuencia estricta en milisegundos tras las cortinas.",
+                    textBlock4: "Finalmente, el nivel de escalabilidad alcanzado por la bóveda le permite cruzar dinámicamente horas de tareas con estimaciones de proyectos enteros ('Time Entries' contra 'Time Estimate'). Este tratamiento de datos se orquesta con iteraciones funcionales puras extraídas usando las APIs internas de Dataview en JavaScript, centralizando matrices compuestas enormes para el cálculo y depuración general sin recargar bases externas.",
+                    bullets: ["DATAVIEWJS & INYECCIÓN", "FACTORY PATTERN / TEMPLATER", "NON-BLOCKING DATA FETCHING"],
+                    media1: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1776015915/PF_Others_Obsidian_Image4_etktug.webm"],
+                    media2: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1776018179/PF_Others_Obsidian_Image5_ngvgfb.webp"],
+                    media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1776018178/PF_Others_Obsidian_Image6_zish7j.webp"]
                 }
             },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
+            software: ["JAVASCRIPT", "OBSIDIAN DATAVIEW API", "OBSIDIAN TEMPLATER API", "MARKDOWN / HTML"],
+            duration: "1 MES",
             videos: [],
             gallery: [],
             externalLink: "#",
-            overviewImage: ""
+            overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1776019990/PF_Others_Obsidian_ImageCoverwebp_pm73qe.webp"
         }
     },
     "PIXEL 3D SPOTIFY CANVAS (WINTERS OF BLUE)": {
