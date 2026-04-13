@@ -1,1 +1,0 @@
-import{j as r}from"./index-DdfpTxKC.js";import{o as e,B as a}from"./BasePortfolioView-DHi6TxNB.js";const l=({onClose:o})=>{const s=[...new Set(e.flatMap(t=>t.tagsOverwrite||t.tags))];return r.jsx(a,{title:"MISCELLANEOUS",projects:e,categories:s,onClose:o,baseRoute:"#others"})};export{l as default};

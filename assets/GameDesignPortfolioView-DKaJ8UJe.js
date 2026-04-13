@@ -1,0 +1,1 @@
+import{j as a}from"./index-CW05KXO7.js";import{g as t,B as r}from"./BasePortfolioView-bJug5-bm.js";const m=({onClose:s})=>{const o=[...new Set(t.flatMap(e=>e.tagsOverwrite||e.tags))];return a.jsx(r,{title:"GAME DESIGN",projects:t,categories:o,onClose:s,baseRoute:"#game-design"})};export{m as default};
