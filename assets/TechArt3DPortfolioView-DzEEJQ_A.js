@@ -1,1 +1,0 @@
-import{j as s}from"./index-Cpnm1fnD.js";import{t as e,B as a}from"./BasePortfolioView-CJ1-oANT.js";const f=({onClose:o})=>{const r=[...new Set(e.flatMap(t=>t.tagsOverwrite||t.tags))];return s.jsx(a,{title:"3D & TECH ART",projects:e,categories:r,onClose:o,baseRoute:"#3d-tech-art"})};export{f as default};

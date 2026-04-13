@@ -1,1 +1,0 @@
-import{j as r}from"./index-Cpnm1fnD.js";import{o as e,B as a}from"./BasePortfolioView-CJ1-oANT.js";const l=({onClose:o})=>{const s=[...new Set(e.flatMap(t=>t.tagsOverwrite||t.tags))];return r.jsx(a,{title:"MISCELLANEOUS",projects:e,categories:s,onClose:o,baseRoute:"#others"})};export{l as default};

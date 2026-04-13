@@ -1,1 +1,0 @@
-import{j as a}from"./index-Cpnm1fnD.js";import{g as t,B as r}from"./BasePortfolioView-CJ1-oANT.js";const m=({onClose:s})=>{const o=[...new Set(t.flatMap(e=>e.tagsOverwrite||e.tags))];return a.jsx(r,{title:"GAME DESIGN",projects:t,categories:o,onClose:s,baseRoute:"#game-design"})};export{m as default};

@@ -1,0 +1,1 @@
+import{j as s}from"./index-DdfpTxKC.js";import{t as e,B as a}from"./BasePortfolioView-DHi6TxNB.js";const f=({onClose:o})=>{const r=[...new Set(e.flatMap(t=>t.tagsOverwrite||t.tags))];return s.jsx(a,{title:"3D & TECH ART",projects:e,categories:r,onClose:o,baseRoute:"#3d-tech-art"})};export{f as default};
