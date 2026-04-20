@@ -87,7 +87,7 @@ export const translations = {
     about_role_gd: 'Game Designer',
     about_role_ta: 'Technical Artist',
     about_bio_p1: "World-builder at the intersection of code and art. I am passionate about the process of experimentation: the hours spent refining a mechanic or tweaking a shader until it feels just right.",
-    about_bio_p2: "I thrive on teamwork and the constant pursuit of new knowledge to apply to my projects, as I am currently doing at Hollow Flowers. I believe the best games are born from collaboration and meticulous organization.",
+    about_bio_p2: "I thrive on teamwork and the constant pursuit of new knowledge to apply to my projects, as I am currently doing at Ruido VFX. I believe the best games are born from collaboration and meticulous organization.",
     get_in_touch: 'Get in Touch',
     autosave_msg: 'This game has an autosave feature.',
     saving_notification: 'A notification will appear on screen when the game is saving.',

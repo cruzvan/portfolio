@@ -272,7 +272,7 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
             className="bg-gray-300/80 text-black px-12 py-3 font-bold tracking-widest uppercase hover:bg-white transition-colors duration-200 text-lg border-2 border-black/20 shadow-lg"
             style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}
           >
-            Back
+            {t('back')}
           </button>
         </div>
 
@@ -288,7 +288,7 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
               <path d="6 9C6 5.68629 8.68629 3 12 3V10H6V9Z" fill="currentColor" />
            </svg>
            <span className="text-[10px] md:text-xs tracking-[0.2em] font-medium uppercase pt-1" style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}>
-             Select
+             {t('hud_select')}
            </span>
         </div>
       </div>
