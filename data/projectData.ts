@@ -370,7 +370,7 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
             description: "'Hollow Flowers' is an immersive transmedia horror game centered around camera-based mechanics, where players use a Handycam to unveil hidden enemies, manipulate time across different eras, and solve puzzles in a tense, dreamlike environment.",
             tagContent: {
                 "GAME DESIGN": {
-                    headline: "INSERT HEADLINE: GAME DESIGN",
+                    headline: "CAMERA MECHANICS & HANDYCAM ARCHITECTURE",
                     textBlock1: `'Hollow Flowers' is a transmedia project starring Kei, a teenager who records everything with her Handycam. For this exploration and horror video game, featuring an aesthetic that combines dreamlike, analog, and anime elements, we decided that a large part of the mechanics would revolve around the video camera, including:
 • The exploration view switching from third-person to first-person when the camera is activated.
 • Zooming in.
@@ -393,7 +393,7 @@ export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectCo
                     ]
                 },
                 "PROGRAMMING": {
-                    headline: "INSERT HEADLINE: PROGRAMMING BLUEPRINTS",
+                    headline: "DIMENSIONAL BLUEPRINTS & TEMPORAL LOGIC",
                     textBlock1: `Rewind-Fastforward: A system integrated into Kei's handycam, designed to rewind or fast-forward objects in time.
 It works via a 'Line Trace' in Unreal Engine to detect the selected target. Upon activating the rewind or fast-forward command, an exclusive 'Level Sequence' of the object is played, which transitions the position of its 'meshes' and 'colliders' to alternate fluidly between both temporal states.
 Simultaneously, the activation of the system adds noise effects through the camera's post-processing and modifies the dynamic materials of the affected models to provide visual feedback.`,
@@ -421,7 +421,7 @@ For it to work, the system verifies three parameters: the player must be inside 
                 },
 
                 "SHADERS": {
-                    headline: "INSERT HEADLINE: SHADERS",
+                    headline: "ANALOG AESTHETICS & VISUAL ANOMALIES",
                     textBlock1: "For the handycam's aesthetics, we employed a combination of 'Post Process Materials', highlighting effects of 'barrel' and 'signal distortion', 'scanlines', 'scratches', 'colored noise', blur, and YIQ chromatic aberration. These filters are activated exclusively when using the video camera and react dynamically to the environment to provide visual feedback. To achieve this, a 'Material Parameter Collection' (MPC) is used; for example, when rewinding an object, the code increments the 'SignalDistortionIntensity' variable, emulating the classic static of a VHS tape.",
                     textBlock2: `In the 'Past Shift Zone', interactive objects use a smart material configured to react asynchronously in two states:
 • Player outside the 'Trigger Collider': The object renders its present-time texture. However, the portion of its 3D model that visually intersects with the zone generates a strong anomaly of chromatic aberration and emissive pixelation to alert the player.
@@ -461,7 +461,7 @@ For it to work, the system verifies three parameters: the player must be inside 
             description: "'Hollow Flowers' es un juego de exploración y horror transmedia centrado en mecánicas de videocámara, donde los jugadores utilizan una Handycam para revelar enemigos ocultos, manipular el tiempo entre distintas épocas y resolver acertijos en un entorno tenso y onírico.",
             tagContent: {
                 "GAME DESIGN": {
-                    headline: "INSERT HEADLINE: GAME DESIGN",
+                    headline: "MECÁNICAS DE CÁMARA Y ARQUITECTURA HANDYCAM",
                     textBlock1: `'Hollow Flowers' es un proyecto transmedia protagonizado por Kei, una adolescente que registra todo con su Handycam. Para este videojuego de exploración y horror, con estética que combina: lo onírico, analógico y animé, decidimos que gran parte de las mecánicas se realizarán en torno a la videocámara, incluyendo:
 • El cambio de exploración de tercera persona a primera persona cuando la cámara se activa.
 •  Hacer zoom.
@@ -484,7 +484,7 @@ For it to work, the system verifies three parameters: the player must be inside 
                     ]
                 },
                 "PROGRAMMING": {
-                    headline: "INSERT HEADLINE: PROGRAMMING BLUEPRINTS",
+                    headline: "BLUEPRINTS DIMENSIONALES Y LÓGICA TEMPORAL",
                     textBlock1: `Rewind-Fastforward: Sistema integrado a la handycam de Kei, diseñado para atrasar o adelantar objetos en el tiempo.
 Funciona mediante un 'Line Trace' en Unreal Engine para detectar el objetivo seleccionado. Al activar el comando de rewind o fast-forward, se reproduce un 'Level Sequence' exclusivo del objeto, el cual transiciona la posición de sus 'meshes' y 'colliders' para alternar fluidamente entre ambos estados temporales.
 Simultáneamente, la activación del sistema añade efectos de ruido mediante el postprocesado de la cámara y modifica los materiales dinámicos de los modelos afectados para brindar feedback visual.`,
@@ -512,7 +512,7 @@ Para que funcione, el sistema verifica tres parámetros: el jugador debe estar d
                 },
 
                 "SHADERS": {
-                    headline: "INSERT HEADLINE: SHADERS",
+                    headline: "ESTÉTICA ANALÓGICA Y ANOMALÍAS VISUALES",
                     textBlock1: "Para la estética de la handycam empleamos una combinación de 'Post Process Materials', destacando efectos de 'barrel' y 'signal distortion', 'scanlines', 'scratches', 'colored noise', desenfoque y aberración cromática YIQ. Estos filtros se activan exclusivamente al usar la video-cámara y reaccionan dinámicamente al entorno para otorgar feedback visual. Para lograr esto, se utiliza un 'Material Parameter Collection' (MPC); por ejemplo, al rebobinar un objeto, el código incrementa la variable 'SignalDistortionIntensity', emulando la clásica estática de una cinta VHS",
                     textBlock2: `En la 'Past Shift Zone', los objetos interactivos utilizan un material inteligente configurado para reaccionar asíncronamente en dos estados:
 • Jugador fuera del 'Trigger Collider': El objeto renderiza su textura del tiempo presente. Sin embargo, la porción de su modelo 3D que intersecta visualmente con la zona, genera una fuerte anomalía de aberración cromática y pixelación emisiva para alertar al jugador.
@@ -589,14 +589,6 @@ Concept Art credits: Matías Rojas Torrejón`,
                     media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775317447/PF_Game_FM_Image9_xlaiwn.webm"],
 
                 },
-                "DOCS": {
-                    headline: "INSERT HEADLINE: DOCS",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                }
             },
             software: ["UNITY", "GOOGLE DOCS", "GITHUB", "TRELLO", "ILLUSTRATOR", "BLENDER", "SUBSTANCE PAINTER", "CUBASE"],
             duration: "11 MONTHS",
@@ -644,14 +636,6 @@ Créditos Concept Art: Matías Rojas Torrejón`,
                     media3: ["https://res.cloudinary.com/dseaazn5s/video/upload/v1775317447/PF_Game_FM_Image9_xlaiwn.webm"],
 
                 },
-                "DOCS": {
-                    headline: "INSERT HEADLINE: DOCS",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                }
             },
             software: ["UNITY", "GOOGLE DOCS", "GITHUB", "TRELLO", "ILLUSTRATOR", "BLENDER", "SUBSTANCE PAINTER", "CUBASE"],
             duration: "11 MESES",
@@ -757,7 +741,7 @@ Créditos Concept Art: Matías Rojas Torrejón`,
                 },
                 "ART DIRECTION": {
                     headline: "CHILEAN SURREALIST CARTOON AND YURU-CHARA",
-                    textBlock1: "Super ZZ distills the visual artistic DNA of the project into its protagonist, an icon 'Brand Character' of a company that decides to rebel against them because of their corruption and pollution. Completely stripping away the stereotype of a battle-hardened hero facing ecological disasters, its design was conceptualized as the sheer opposite: an energy ball whose innocence interprets cities plagued with plastics and filth as its very own playground that must be energetically tidied up. Its volumetry in modeling and texturing reflects a conceptual assimilation of the Japanese Yuru-chara aesthetic style (hyper-expressive mascots designed by companies, with giant heads to empathize with their products). I deliberately abused the tiny limbs to justify childish, energetic, and comical animations.",
+                    textBlock1: "Super ZZ distills the visual artistic DNA of the project into its protagonist, an icon 'Brand Character' of a company that decides to rebel against them because of their corruption and pollution. Completely stripping away the stereotype of a battle-hardened hero facing ecological disasters, its design was conceptualized as the sheer opposite: an energy ball whose innocence interprets cities plagued with plastics and filth as its very own playground that must be energetically tidied up. Its volumetry in modeling and texturing reflects a conceptual assimilation of the Japanese Yuru-chara aesthetic style (hyper-expressive mascots designed by companies, with giant heads to empathize with their products). The tiny limbs were deliberately designed to justify childish, energetic, and comical animations.",
                     textBlock2: "Coastline Sculptures and Maule Environment: The three-dimensional modeling of the environment was designed taking as reference the coastal landscapes and interior zones of the Maule Region (Chile). To contrast the typical funereal tones of polluted ecosystems, garbage (cigarette butts, stacked tires) was immediately inserted onto pure and colorful environments, creating visual irony using environmental storytelling techniques. Additionally, Chilean traditional imagery was introduced as a resource to give the game more identity; 'completo' food carts, flying spider vendors, passion for soccer, personalized beach towels and, unfortunately, dirtiness.",
                     textBlock3: "Low-Poly Geometry and Cel-Shaded Aesthetics: To maintain clear legibility of the platforms and reinforce its premise of humor, a strictly Low-Poly modeling format was opted for, consciously avoiding photographic mapping with realistic textures that would have overloaded memory and the quantity of Draw Calls. The color palette was applied by projecting solid and saturated colors onto the faces of the geometry. Subsequently, the image was unified using a global Rendering filter for outlines (ManagerPostProcessOutlines.cs, still in progress). This post-processing injects a persistent black outline into every main silhouette, homogenizing the 3D model under an immersive Cel-Shaded aesthetic result.",
                     textBlock4: "Graphic Programming and Iridescent Materials: To achieve reflective effects and highlight interactive elements or polished Canvas bases, visual graphic programming was developed in Iridescent.shadergraph, complemented with HLSL code branching in the Iridscent.shader file. These materials technically process the dissipation of the spectrum over the surface, interacting with Normal Maps and crossing the result over the reflection. This achieves a psychedelic illusory iridescent effect, mutating the chromatic saturation based on the viewing angle of the active camera in real time, providing a finish that blends into the simple yet striking graphical style of the world.",
@@ -802,7 +786,7 @@ Gestores independientes, tales como CoinManager.cs, operan reteniendo el progres
                 },
                 "ART DIRECTION": {
                     headline: "CARTOON SURREALISTA CHILENO Y YURU-CHARA",
-                    textBlock1: "Super ZZ destila el ADN artístico visual del proyecto en su protagonista, un 'Brand Character' ícono de una compañía que decide rebelarse contra ellos a causa de su corrupción y contaminación. Despojándolo por completo de estereotipo de héroe aguerrido sobre desastres ecológicos, se conceptualizó su diseño bajo todo lo opuesto: una bola de energía cuyo ingenuo interpreta ciudades plagadas de plásticos y suciedad como su propio parque de juegos que debe ser enérgicamente ordenado. Su volumetría en el modelado y texturizado refleja una asimilación conceptual del estilo estético Yuru-chara japonés (mascotas hiper expresivas diseñadas por empresas, con cabezas gigantes para empatizar con sus productos). Abusé deliberadamente de las extremidades pequeñas para justificar animaciones infantiles, enérgicas y cómicas.",
+                    textBlock1: "Super ZZ destila el ADN artístico visual del proyecto en su protagonista, un 'Brand Character' ícono de una compañía que decide rebelarse contra ellos a causa de su corrupción y contaminación. Despojándolo por completo de estereotipo de héroe aguerrido sobre desastres ecológicos, se conceptualizó su diseño bajo todo lo opuesto: una bola de energía cuyo ingenuo interpreta ciudades plagadas de plásticos y suciedad como su propio parque de juegos que debe ser enérgicamente ordenado. Su volumetría en el modelado y texturizado refleja una asimilación conceptual del estilo estético Yuru-chara japonés (mascotas hiper expresivas diseñadas por empresas, con cabezas gigantes para enfrentar a sus productos). Se buscó diseñar extremidades pequeñas deliberadamente para justificar animaciones infantiles, enérgicas y cómicas.",
                     textBlock2: "Esculturas del Litoral y Entorno del Maule: El modelado tridimensional del entorno se diseñó tomando como referencia los paisajes litorales y zonas del interior de la Región del Maule (Chile). Para contrastar las típicas tonalidades fúnebres de los ecosistemas contaminados, se insertó basura (colillas de cigarro, neumáticos apilados) directamente sobre ambientes puros y coloridos, creando ironía visual usando técnicas de environmental storytelling. Además, se introdujo imaginería costumbrista de Chile como un recurso para dar más identidad al juego; carritos de completos, venderores de arañas voladoras, pasión por el fútbol, toallas de playa personalizadas y, lamentablemente, la suciedad.",
                     textBlock3: "Geometría Low-Poly y Estética Cel-Shaded: Para mantener una clara legibilidad de las plataformas y reforzar su premisa de humor, se optó por un modelado netamente en formato Low-Poly, evitando conscientemente el mapeado fotográfico con texturas realistas que hubieran sobrecargado la memoria y cantidad de Draw Calls. La paleta cromática se aplicó proyectando colores sólidos y saturados en las caras de la geometría. Posteriormente, se unificó la imagen utilizando un filtro global de Renderizado para contornos (ManagerPostProcessOutlines.cs, sigue en proceso). Este postprocesado inyecta un delineado negro persistente a cada silueta principal, homogeneizando el modelo 3D bajo un resultado estético en técnica Cel-Shaded inmersiva.",
                     textBlock4: "Programación Gráfica y Materiales Iridiscentes: Para lograr efectos reflectantes y destacar los elementos interactivos o bases pulidas de los Canvas, se desarrolló programación visual gráfica en Iridescent.shadergraph, complementada con ramificaciones de código HLSL en el fichero Iridscent.shader. Estos materiales procesan de forma técnica la disipación del espectro sobre la superficie, interactuando con Normal Maps y cruzando el resultado sobre el reflejo. Esto logra un efecto tornasol ilusorio psicodélico, mutando la saturación cromática basándose en el ángulo de visión de la cámara activa en tiempo real, proporcionando un acabado que combina en lo simple pero llamativo del estilo gráfico del mundo.",
@@ -964,7 +948,7 @@ Gestores independientes, tales como CoinManager.cs, operan reteniendo el progres
                     media3: ["https://res.cloudinary.com/dseaazn5s/image/upload/v1775846427/PF_Game_EIS_Image6_wvomkg.webp"]
                 },
             },
-            software: ["GOOGLE DOCS", "FIGGMA", "WHIMSICAL", "UNREAL ENGINE"],
+            software: ["GOOGLE DOCS", "FIGMA", "WHIMSICAL", "UNREAL ENGINE"],
             duration: "W.I.P.",
             videos: [],
             gallery: [],
@@ -1167,7 +1151,7 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
     },
     "BLENDER COMPOSITOR ADD-ONS": {
         en: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Set of professional post-processing tools for Blender, including dither, VHS, and CRT generators, designed for optimized visual workflows.",
             tagContent: {
                 "PROGRAMMING": {
                     headline: "PYTHON + BLENDER API",
@@ -1200,7 +1184,7 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775163317/PF_3DTech_BlenderAddon_0_cover_z9nymx.webp"
         },
         es: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Conjunto de herramientas profesionales de post-procesado para Blender, incluyendo generadores de dither, VHS y CRT, diseñados para flujos de trabajo visuales optimizados.",
             tagContent: {
                 "PROGRAMMING": {
                     headline: "PYTHON + BLENDER API",
@@ -1235,7 +1219,7 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
     },
     "YIQ NTSC POSTPOCESS SHADER": {
         en: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Technical recreation of the NTSC color space (YIQ) for precise analog signal simulation and chromatic aberration in Unreal Engine.",
             tagContent: {
                 "SHADERS": {
                     headline: "MATERIAL GRAPH LOGIC",
@@ -1262,7 +1246,7 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1767725394/PF_3DTech_YIQ_Image0_yj5uek.webp"
         },
         es: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Recreación técnica del espacio de color NTSC (YIQ) para simulación precisa de señal analógica y aberración cromática en Unreal Engine.",
             tagContent: {
                 "SHADERS": {
                     headline: "LÓGICA DEL MATERIAL GRAPH",
@@ -1329,7 +1313,7 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
                     bullets: ["CARTA", "HOLOGRAMA", "PARALLAX OCCLUSION"]
                 },
                 "UNREAL ENGINE": {
-                    headline: "INSERT HEADLINE: UNREAL ENGINE",
+                    headline: "LEVEL SEQUENCE Y MATERIALES",
                     textBlock1: "Se crea una pequeña animación con Level Sequence de Unreal Engine 5, modificando la ubicación, rotación y escala de la carta y la cámara.",
                     textBlock2: "A diferencia de otros ojetos del videojuego, el material ocupa shading Unlit para que sus colores vivos no sean afectados por la presencia o ausencia de iluminación en el ambiente.",
                     textBlock3: "La parte delantera de la carta posee un Material Instance donde se pueden modificar variables como las texturas a ocupar con sus escalas, el brillo del holograma, niveles de profundidad, entre otros.",
@@ -1419,7 +1403,7 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
     },
     "INTEMPESTA LYRIC VIDEO": {
         en: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Immersive 3D audiovisual experience combining underwater environments and celestial bodies, featuring reactive animations to music in Unreal Engine.",
             tagContent: {
                 "SHADERS": {
                     headline: "UNREAL MATERIAL NODES",
@@ -1454,7 +1438,7 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1767033326/PF_3DTech_WOBIntempesta_Image0_y3ytyv.webp"
         },
         es: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+            description: "Experiencia audiovisual 3D inmersiva que combina entornos submarinos y cuerpos celestes, con animaciones reactivas a la música en Unreal Engine.",
             tagContent: {
                 "SHADERS": {
                     headline: "UNREAL MATERIAL NODES",
@@ -1573,68 +1557,7 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
             overviewImage: ""
         }
     },
-    "UNDESERVED MAIN MENU": {
-        en: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
-            tagContent: {
-                "UNITY": {
-                    headline: "INSERT HEADLINE: UNITY",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
-                },
-                "ANIMATION": {
-                    headline: "INSERT HEADLINE: ANIMATION",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                }
-            },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
-            videos: [],
-            gallery: [],
-            externalLink: "#",
-            overviewImage: ""
-        },
-        es: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
-            tagContent: {
-                "UNITY": {
-                    headline: "INSERT HEADLINE: UNITY",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"],
-                    media1: [""],
-                    media2: [""],
-                    media3: [""]
-                },
-                "ANIMATION": {
-                    headline: "INSERT HEADLINE: ANIMATION",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                }
-            },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
-            videos: [],
-            gallery: [],
-            externalLink: "#",
-            overviewImage: ""
-        }
-    },
+
     "DRELL CREATURE": {
         en: {
             description: "Creation of a high-fidelity 3D bust based on the design of the Drell creatures from the Mass Effect universe, using high-resolution sculpting workflows and micro-detail baking for asset optimization.",
@@ -1774,46 +1697,7 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
             overviewImage: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775949096/66748e74-b82e-4593-875b-10fdc938581c.png"
         }
     },
-    "LEVEL DRESSING (CAVE MADNESS)": {
-        en: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
-            tagContent: {
-                "SHADERS": {
-                    headline: "INSERT HEADLINE: SHADERS",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                }
-            },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
-            videos: [],
-            gallery: [],
-            externalLink: "#",
-            overviewImage: ""
-        },
-        es: {
-            description: "INSERT DESCRIPTION HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
-            tagContent: {
-                "SHADERS": {
-                    headline: "INSERT HEADLINE: SHADERS",
-                    textBlock1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-                    textBlock2: "Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-                    textBlock3: "INSERT TEXT HERE.",
-                    textBlock4: "INSERT TEXT HERE.",
-                    bullets: ["Bullet point one", "Bullet point two", "Bullet point three"]
-                }
-            },
-            software: ["INSERT SOFTWARE"],
-            duration: "INSERT DURATION",
-            videos: [],
-            gallery: [],
-            externalLink: "#",
-            overviewImage: ""
-        }
-    },
+
 
 
     // --- OTHERS PROJECTS ---
