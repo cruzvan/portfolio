@@ -211,16 +211,16 @@ const MenuCard: React.FC<MenuCardProps> = ({
                         Opacity (50%) and brightness (0.7) are tuned for a gentle, non-blinding iridescence.
                     */}
                 <div
-                  className="absolute inset-0 mix-blend-color-dodge opacity-10 transition-none"
+                  className="absolute inset-0 mix-blend-color-difference opacity-100 transition-none"
                   style={{
                     background: `
                                 linear-gradient(
                                     115deg, 
                                     transparent 20%, 
-                                    #00E0FF 40%, 
-                                    #FF0099 50%, 
-                                    #E0FF00 60%, 
-                                    transparent 80%
+                                    #FF0099 30%, 
+                                    #832affff 50%, 
+                                    #ff0000ff 70%, 
+                                    transparent 90%
                                 )
                             `,
                     backgroundSize: '200% 200%',
