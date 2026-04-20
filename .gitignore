@@ -23,5 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 gemini.md
+todolist.md
 imagesRequested.md
 .localresources/

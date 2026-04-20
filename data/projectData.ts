@@ -104,9 +104,9 @@ export const gameDesignProjects: ProjectCardData[] = [
         title: "ACID RAIN",
         category: "GAME DESIGN",
         tags: ["GAME DESIGN", "UNITY"],
-        tagsOverwrite: ["GAME DESIGN", "PROGRAMMING", "UNITY"],
+        tagsOverwrite: ["GAME DESIGN", "PROGRAMMING", "ART DIRECTION", "UNITY"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765288774/PD_GameDesign_AcidRain_Cover_grsa0r.webp",
-        status: "FINISHED",
+        status: "ALMOST FINISHED",
         locked: false,
         hidden: false,
         highlightColor: "#be94dcff"
@@ -127,7 +127,7 @@ export const gameDesignProjects: ProjectCardData[] = [
         title: "EVERYTHING I SEE",
         category: "Systems Design",
         tags: ["GAME DESIGN", "DOCS"],
-        tagsOverwrite: ["GAME DESIGN", "DOCS"],
+        tagsOverwrite: ["GAME DESIGN", "DOCS", "UNREAL ENGINE"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765321421/PD_GameDesign_EIS_Cover_vvzppq.webp",
         status: "CONCEPT IDEA",
         locked: false,
@@ -165,9 +165,9 @@ export const techArtProjects: ProjectCardData[] = [
         title: "BLENDER COMPOSITOR ADD-ONS",
         category: "Blender",
         tags: ["PROGRAMMING", "SHADERS"],
-        tagsOverwrite: ["PROGRAMMING", "SHADERS"],
+        tagsOverwrite: ["PROGRAMMING", "SHADERS", "BLENDER"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1775162957/PF_3DTech_BlenderAddon_Cover_dkzmqv.webp",
-        status: "WIP",
+        status: "SHIPPED",
         locked: false,
         hidden: false,
         highlightColor: "#47f673ff"
@@ -200,7 +200,7 @@ export const techArtProjects: ProjectCardData[] = [
         id: 5,
         title: "HEY ARNOLD 3D ROOM",
         category: "Postprocessing",
-        tags: ["3D MODELING", "TEXTURING", "UNREAL ENGINE"],
+        tags: ["3D MODELING", "TEXTURING", , "BLENDER", "UNREAL ENGINE"],
         tagsOverwrite: ["3D MODELING", "TEXTURING", "UNREAL ENGINE"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765338333/PT_3DTech_ArnoldRoom_Cover_iermi7.webp",
         status: "FINISHED",
@@ -213,7 +213,7 @@ export const techArtProjects: ProjectCardData[] = [
         title: "INTEMPESTA LYRIC VIDEO",
         category: "Unity",
         tags: ["SHADERS", "UNREAL ENGINE", "ANIMATION"],
-        tagsOverwrite: ["SHADERS", "UNREAL ENGINE", "ANIMATION"],
+        tagsOverwrite: ["SHADERS", "ANIMATION", "UNREAL ENGINE"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765339138/PF_3DTech_WOBIntempesta_Cover_16_wongcl.webp",
         status: "FINISHED",
         locked: false,
@@ -247,7 +247,7 @@ export const techArtProjects: ProjectCardData[] = [
         title: "DRELL CREATURE",
         category: "Unity",
         tags: ["3D MODELING"],
-        tagsOverwrite: ["3D MODELING", "3D TEXTURING"],
+        tagsOverwrite: ["3D MODELING", "3D TEXTURING", "BLENDER"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765336797/PF_3DTech_DrellCreature_Cover_yh5zxu.webp",
         status: "FINISHED",
         locked: false,
@@ -258,7 +258,7 @@ export const techArtProjects: ProjectCardData[] = [
         title: "3D PROPS (FADING MEMORIES)",
         category: "Unity",
         tags: ["3D MODELING"],
-        tagsOverwrite: ["UNITY", "MODELING", "TEXTURING"],
+        tagsOverwrite: ["UNITY", "MODELING", "TEXTURING", "BLENDER"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765337149/PF_3DTech_FMProps_Cover_czkwkv.webp",
         status: "FINISHED",
         locked: false,
@@ -269,7 +269,7 @@ export const techArtProjects: ProjectCardData[] = [
         title: "LOW POLY CHILEAN BUILDINGS (LLUVIA DE VERANO)",
         category: "Unity",
         tags: ["3D MODELING"],
-        tagsOverwrite: ["3D MODELING"],
+        tagsOverwrite: ["3D MODELING", "BLENDER"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765337674/PF_3DTech_LDVBuildings_Cover_vs5usm.webp",
         status: "FINISHED",
         locked: false,
@@ -364,96 +364,6 @@ const DEFAULT_CONTENT: ProjectContent = {
 };
 
 export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectContent }> = {
-    // --- EXISTING PROJECTS ---
-    "PROJECT: ECHO": {
-        en: {
-            description: "Project: ECHO is a tactical stealth game where sound is your only vision. Players navigate a pitch-black facility using an echolocation scanner to visualize the environment, track patrols, and uncover a corporate conspiracy.",
-            tagContent: {
-                "GAME DESIGN": {
-                    headline: "Mechanics & Systems Architecture",
-                    textBlock1: "The core challenge of Project: ECHO was removing the player's primary sense: sight. We couldn't simply apply a 'blindness' filter; we had to replace it with an active information-gathering mechanic. The 'Lidar Pulse' became the central verb used to interact with the world.",
-                    textBlock2: "We iterated through various decay rates for the visual information. Early prototypes showed that if the world stayed visible for too long, players treated it like a standard shooter. If it faded too fast, it induced motion sickness. The final design uses a 'memory' shader that keeps static geometry visible for 10 seconds.",
-                    textBlock3: "Furthermore, the noise-generation system creates a risk/reward loop. Running creates visible sound waves that enemies can see, forcing players to move slowly or use distractions (throwing objects) to bait AI patrols into specific choke points.",
-                    textBlock4: "The economy of information became our primary balancing lever. Players must spend a resource (Sound) to gain information (Vision), but that same resource reveals their position to the enemy.",
-                    bullets: ["Lidar Mechanic", "Sensory Deprivation", "Risk/Reward Loops", "Enemy AI States", "Resource Economy", "Stealth Metrics"]
-                },
-                "PROTOTYPING": {
-                    headline: "Greyboxing & Iterative Failure",
-                    textBlock1: "Before a single texture was made, we built the entire facility in greybox to test navigation solely based on audio cues. We discovered early on that complex geometry (stairs, clutter) was unreadable via echolocation.",
-                    textBlock2: "We shifted the art direction towards Brutalist architecture—large, flat planes and distinct silhouettes that remain readable even when represented by wireframes. This stylistic choice wasn't just aesthetic; it was functional necessity derived from playtesting.",
-                    textBlock3: "We used Unreal Engine blueprints to rapidly create 'Sound Traps'—surfaces like broken glass or puddles—that act as varying terrain. This prototyping phase saved months of art production by defining strictly what shapes were 'readable' to the player before modeling began.",
-                    textBlock4: "Rapid iteration cycles allowed us to fail fast. We scrapped three different versions of the scanning mechanic before settling on the radial pulse, proving that directional cones were too limiting for 3D navigation.",
-                    bullets: ["Brutalist Layouts", "Sound Trap Logic", "Navigational Flow", "Fail-Fast Iteration", "Blueprinting", "Paper Prototyping"]
-                },
-                "LEVEL DESIGN": {
-                    headline: "Pacing & Spatial Loops",
-                    textBlock1: "The levels in ECHO are designed as non-linear sandboxes. Unlike linear stealth games where you wait for a specific guard rotation, ECHO requires the player to constantly map their surroundings using active pulses.",
-                    textBlock2: "Verticality plays a huge role. I introduced 'Vantage Points'—high beams or vents where players are safe from ground patrols but have limited scanning range. This creates a rhythm of 'Scan (Safe) -> Move (Dangerous) -> Hide (Safe)'.",
-                    textBlock3: "Each level features a 'Golden Path' for speedrunners, but also multiple side ventilation shafts that act as shortcuts, rewarding exploration with reduced encounter risks but higher navigation difficulty.",
-                    textBlock4: "Choke points are gated not by locked doors, but by 'Audio Hazard' zones—areas with loud machinery or crunchy surfaces that force the player to time their movement or find creative ways to dampen the noise.",
-                    bullets: ["Verticality", "Safety Rhythm", "Sandbox Encounters", "Shortcuts", "Choke Points", "Environmental Hazards"]
-                }
-            },
-            software: ["Unreal Engine 5", "Wwise", "Jira", "Perforce"],
-            duration: "8 Months",
-            videos: [
-                "https://www.youtube.com/embed/dQw4w9WgXcQ",
-                "https://www.youtube.com/embed/w7Wz9X6j8D4"
-            ],
-            gallery: [
-                "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop",
-                "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop",
-                "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop",
-                "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop"
-            ],
-            externalLink: "https://www.google.com/search?q=Project+Echo+Stealth+Game",
-            overviewImage: ""
-        },
-        es: {
-            description: "Project: ECHO es un juego de sigilo táctico donde el sonido es tu única visión. Los jugadores navegan por una instalación en completa oscuridad utilizando un escáner de ecolocalización para visualizar el entorno, rastrear patrullas y descubrir una conspiración corporativa.",
-            tagContent: {
-                "GAME DESIGN": {
-                    headline: "Mecánicas y Arquitectura de Sistemas",
-                    textBlock1: "El desafío principal de Project: ECHO fue eliminar el sentido primario del jugador: la vista. No podíamos simplemente aplicar un filtro de 'ceguera'; tuvimos que reemplazarlo con una mecánica activa de recolección de información. El 'Pulso Lidar' se convirtió en el verbo central para interactuar con el mundo.",
-                    textBlock2: "Iteramos a través de varias tasas de decaimiento para la información visual. Los primeros prototipos mostraron que si el mundo permanecía visible demasiado tiempo, los jugadores lo trataban como un shooter estándar. El diseño final utiliza un shader de 'memoria' que mantiene la geometría estática visible durante 10 segundos.",
-                    textBlock3: "Además, el sistema de generación de ruido crea un bucle de riesgo/recompensa. Correr crea ondas de sonido visibles que los enemigos pueden ver, obligando a los jugadores a moverse lentamente o usar distracciones.",
-                    textBlock4: "La economía de la información se convirtió en nuestra principal palanca de equilibrio. Los jugadores deben gastar un recurso (Sonido) para ganar información (Visión), pero ese mismo recurso revela su posición.",
-                    bullets: ["Mecánica Lidar", "Privación Sensorial", "Riesgo/Recompensa", "IA Enemiga", "Economía de Recursos", "Métricas de Sigilo"]
-                },
-                "PROTOTYPING": {
-                    headline: "Greyboxing e Iteración",
-                    textBlock1: "Antes de crear una sola textura, construimos toda la instalación en greybox para probar la navegación basada únicamente en señales de audio. Descubrimos temprano que la geometría compleja (escaleras, desorden) era ilegible a través de la ecolocalización.",
-                    textBlock2: "Cambiamos la dirección artística hacia una arquitectura brutalista: planos grandes y planos y siluetas distintas que siguen siendo legibles incluso cuando se representan mediante wireframes.",
-                    textBlock3: "Utilizamos blueprints de Unreal Engine para crear rápidamente 'Trampas de Sonido' (superficies como vidrios rotos) que actúan como terreno variable.",
-                    textBlock4: "Los ciclos rápidos de iteración nos permitieron fallar rápido. Desechamos tres versiones diferentes de la mecánica de escaneo antes de decidirnos por el pulso radial.",
-                    bullets: ["Diseño Brutalista", "Trampas de Sonido", "Flujo de Navegación", "Iteración Rápida", "Blueprints", "Prototipado en Papel"]
-                },
-                "LEVEL DESIGN": {
-                    headline: "Ritmo y Bucles Espaciales",
-                    textBlock1: "Los niveles en ECHO están diseñados como sandboxes no lineales. A diferencia de los juegos de sigilo lineales, ECHO requiere que el jugador mapee constantemente su entorno mediante pulsos activos.",
-                    textBlock2: "La verticalidad juega un papel enorme. Introduje 'Puntos de Ventaja': vigas altas o conductos donde los jugadores están a salvo de las patrullas terrestres pero tienen un rango de escaneo limitado.",
-                    textBlock3: "Cada nivel presenta un 'Camino Dorado' para speedrunners, pero también múltiples conductos de ventilación laterales que actúan como atajos.",
-                    textBlock4: "Los puntos de estrangulamiento no están cerrados por puertas, sino por zonas de 'Peligro de Audio': áreas con maquinaria ruidosa que obligan al jugador a cronometrar su movimiento.",
-                    bullets: ["Verticalidad", "Ritmo de Seguridad", "Encuentros Sandbox", "Atajos", "Puntos de Choque", "Peligros Ambientales"]
-                }
-            },
-            software: ["Unreal Engine 5", "Wwise", "Jira", "Perforce"],
-            duration: "8 Meses",
-            videos: [
-                "https://www.youtube.com/embed/dQw4w9WgXcQ",
-                "https://www.youtube.com/embed/w7Wz9X6j8D4"
-            ],
-            gallery: [
-                "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop",
-                "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop",
-                "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2560&auto=format&fit=crop",
-                "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2560&auto=format&fit=crop"
-            ],
-            externalLink: "https://www.google.com/search?q=Project+Echo+Stealth+Game",
-            overviewImage: ""
-        }
-    },
-
     // --- GAME DESIGN PROJECTS ---
     "HOLLOW FLOWERS": {
         en: {
@@ -2249,31 +2159,23 @@ El concepto "Acid Rain" nace de la canción homónima de la banda musical "The G
     }
 };
 
-// Re-hydrate the incomplete keys with the original English content to ensure the app works 
-// while waiting for full translation.
 const originalDB: Record<string, ProjectContent> = {
     // ... [Original content omitted for brevity, but logically I am using the content 
     // from the previous file version to populate the 'en' keys above dynamically 
     // or assuming they are filled. For this response, I will trust the fallback logic below]
 };
 
-// Helper to get data safely with language support
-export const getProjectContent = (title: string, lang: 'en' | 'es' = 'en'): ProjectContent => {
-    // Upper case key matching to be safe
-    const key = Object.keys(projectDatabase).find(k => k.toUpperCase() === title.toUpperCase());
 
+export const getProjectContent = (title: string, lang: 'en' | 'es' = 'en'): ProjectContent => {
+    const key = Object.keys(projectDatabase).find(k => k.toUpperCase() === title.toUpperCase());
     if (key && projectDatabase[key]) {
-        // If we have the specific language
         if (projectDatabase[key][lang] && Object.keys(projectDatabase[key][lang]).length > 0) {
             return projectDatabase[key][lang];
         }
-        // Fallback to EN if ES is missing
         if (projectDatabase[key]['en'] && Object.keys(projectDatabase[key]['en']).length > 0) {
             return projectDatabase[key]['en'];
         }
     }
-
-    // Hard fallback if the refactor left empty holes (to prevent crashes during transition)
     return {
         ...DEFAULT_CONTENT,
         description: lang === 'es'
