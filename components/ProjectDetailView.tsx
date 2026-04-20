@@ -536,15 +536,17 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
             {/* --- FLOATING ACTIONS (BOTTOM RIGHT) --- */}
             <div className={`fixed bottom-4 md:bottom-8 right-4 md:right-12 z-50 flex gap-4 items-end transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 {/* Functional External Files Button */}
-                <a
-                    href={externalLinkUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex h-10 md:h-12 items-center gap-2 px-6 md:px-12 bg-white/5 border border-white/10 hover:bg-[color:var(--highlight-color)] hover:border-[color:var(--highlight-color)] backdrop-blur-md transition-all duration-300 group"
-                >
-                    <span className="text-xs font-bold uppercase tracking-widest text-white">{t('external_files')}</span>
-                    <ExternalLink size={14} className="text-white group-hover:rotate-45 transition-transform" />
-                </a>
+                {projectContent.externalLink && projectContent.externalLink.trim() !== "" && projectContent.externalLink.trim() !== "#" && (
+                    <a
+                        href={projectContent.externalLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex h-10 md:h-12 items-center gap-2 px-6 md:px-12 bg-white/5 border border-white/10 hover:bg-[color:var(--highlight-color)] hover:border-[color:var(--highlight-color)] backdrop-blur-md transition-all duration-300 group"
+                    >
+                        <span className="text-xs font-bold uppercase tracking-widest text-white">{t('external_files')}</span>
+                        <ExternalLink size={14} className="text-white group-hover:rotate-45 transition-transform" />
+                    </a>
+                )}
 
                 <button
                     onClick={onClose}

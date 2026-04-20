@@ -30,8 +30,8 @@ export interface ProjectContent {
     duration: string;
     videos: string[];
     gallery: string[];
-    externalLink?: string; // New field for the button
-    overviewImage?: string; // Specific image for the Overview background
+    externalLink?: string;
+    overviewImage?: string;
 }
 
 // Interface for the Portfolio Cards (Menu Level)
@@ -48,7 +48,7 @@ export interface ProjectCardData {
     highlightColor?: string;
 }
 
-// --- CARD DATA COLLECTIONS (Remain shared for now, titles are keys) ---
+// --- CARD DATA COLLECTIONS ---
 
 export const gameDesignProjects: ProjectCardData[] = [
     {
@@ -120,7 +120,7 @@ export const gameDesignProjects: ProjectCardData[] = [
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765291863/PD_GameDesign_LluviaDeVerano_Cover_ekue0o.webp",
         status: "PRE-PRODUCTION",
         locked: true,
-        hidden: false
+        hidden: true
     },
     {
         id: 7,
@@ -323,7 +323,7 @@ export const othersProjects: ProjectCardData[] = [
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765075336/SB_Test_Project_tshmjp.webp",
         status: "Personal",
         locked: true,
-        hidden: false
+        hidden: true
     },
     {
         id: 4,
@@ -350,7 +350,6 @@ export const othersProjects: ProjectCardData[] = [
     },
 ];
 
-// Fallback content now includes a safe external link
 const DEFAULT_CONTENT: ProjectContent = {
     description: "Data for this project is currently classified or pending declassification. Please check back later for full mission details.",
     tagContent: {},
@@ -364,8 +363,6 @@ const DEFAULT_CONTENT: ProjectContent = {
     externalLink: "https://www.google.com"
 };
 
-// Updated Project Images to w=2560 (2K ready)
-// REFACTORED: Now supports 'en' and 'es' keys.
 export const projectDatabase: Record<string, { en: ProjectContent, es: ProjectContent }> = {
     // --- EXISTING PROJECTS ---
     "PROJECT: ECHO": {
