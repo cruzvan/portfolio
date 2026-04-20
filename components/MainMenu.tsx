@@ -79,6 +79,7 @@ const MenuCard: React.FC<MenuCardProps> = ({
       // We inverse the movement slightly to make it feel like reflection
       // Range 0% to 100%
       barRef.current.style.setProperty('--holo-x', `${(1 - xPct) * 100}%`);
+      barRef.current.style.setProperty('--text-holo-x', `${50 + (xPct - 0.5) * 150}%`); // More sensitive (150% range)
       barRef.current.style.setProperty('--holo-y', `${(1 - yPct) * 100}%`);
     }
 
@@ -181,7 +182,9 @@ const MenuCard: React.FC<MenuCardProps> = ({
 
         {/* --- INFO OVERLAY SECTION (Bottom Absolute) --- */}
         <div className={`absolute bottom-0 left-0 w-full transition-all duration-300 flex flex-col justify-end z-20 ${isCompressed ? 'opacity-0 translate-y-10' : 'opacity-100 translate-y-0'
-          }`}>
+          }`}
+          style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
+        >
 
           {/* UPDATED: Holographic Roughness Effect */}
           <div
@@ -256,13 +259,43 @@ const MenuCard: React.FC<MenuCardProps> = ({
 
             {/* Text Container */}
             <div className="flex flex-col justify-center h-full relative z-10 pointer-events-none">
-              <h3 className={`text-[9px] md:text-sm uppercase tracking-widest transition-colors duration-300 font-bold mb-1 ${isHovered ? 'text-black/60' : 'text-gray-400'
-                }`} style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              <h3
+                className={`text-[9px] md:text-sm uppercase tracking-widest transition-all duration-300 font-bold mb-1 
+                  ${isHovered ? 'text-transparent' : 'text-gray-400'}`}
+                style={{
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  backgroundImage: isHovered
+                    ? `linear-gradient(115deg, #fc8dcfff 20%, #b78bf9ff 50%, #fa8888ff 80%)`
+                    : 'none',
+                  WebkitBackgroundClip: isHovered ? 'text' : 'none',
+                  backgroundClip: isHovered ? 'text' : 'none',
+                  backgroundSize: '250% 250%',
+                  backgroundPosition: 'var(--text-holo-x, 50%) var(--holo-y, 50%)',
+                  transition: isHovered ? 'none' : 'all 0.3s',
+                  willChange: 'background-position, transform',
+                  transform: 'translateZ(0)'
+                }}
+              >
                 {item.category}
               </h3>
-              <h2 className={`font-bold uppercase leading-none tracking-tighter transition-all duration-300 ${isHovered ? 'text-white text-lg md:text-2xl text-shadow-sm' : 'text-white/90 text-base md:text-xl'
-                }`}
-                style={{ fontFamily: "'Dazzle Unicase', sans-serif" }}>
+              <h2
+                className={`font-bold uppercase leading-none tracking-tighter transition-all duration-300 
+                  ${isHovered ? 'text-transparent scale-105' : 'text-white/90 text-base md:text-xl'}`}
+                style={{
+                  fontFamily: "'Dazzle Unicase', sans-serif",
+                  backgroundImage: isHovered
+                    ? `linear-gradient(115deg, #fff 10%, #FF0099 40%, #ffd12aff 60%, #fff 90%)`
+                    : 'none',
+                  WebkitBackgroundClip: isHovered ? 'text' : 'none',
+                  backgroundClip: isHovered ? 'text' : 'none',
+                  backgroundSize: '250% 250%',
+                  backgroundPosition: 'var(--text-holo-x, 50%) var(--holo-y, 50%)',
+                  textShadow: isHovered ? '0 0 15px rgba(255,255,255,0.3)' : 'none',
+                  transition: isHovered ? 'none' : 'all 0.3s',
+                  willChange: 'background-position, transform',
+                  transform: 'translateZ(0)'
+                }}
+              >
                 {item.title}
               </h2>
             </div>
