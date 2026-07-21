@@ -200,7 +200,7 @@ export const techArtProjects: ProjectCardData[] = [
         id: 5,
         title: "HEY ARNOLD 3D ROOM",
         category: "Postprocessing",
-        tags: ["3D MODELING", "TEXTURING", , "BLENDER", "UNREAL ENGINE"],
+        tags: ["3D MODELING", "TEXTURING", "BLENDER", "UNREAL ENGINE"],
         tagsOverwrite: ["3D MODELING", "TEXTURING", "UNREAL ENGINE"],
         image: "https://res.cloudinary.com/dseaazn5s/image/upload/v1765338333/PT_3DTech_ArnoldRoom_Cover_iermi7.webp",
         status: "FINISHED",
