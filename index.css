@@ -219,16 +219,12 @@
   bottom: calc(1rem + env(safe-area-inset-bottom));
 }
 
-.hud-bottom-6 {
-  bottom: calc(1.5rem + env(safe-area-inset-bottom));
-}
-
-.hud-bottom-16 {
-  bottom: calc(4rem + env(safe-area-inset-bottom));
-}
-
 .pt-hud-safe {
   padding-top: calc(1rem + env(safe-area-inset-top));
+}
+
+.pb-hud-safe {
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom));
 }
 
 .pt-hud-2 {
@@ -304,14 +300,6 @@
   }
 
   .hud-bottom-safe {
-    bottom: calc(0.5rem + env(safe-area-inset-bottom));
-  }
-
-  .hud-bottom-6 {
-    bottom: calc(0.5rem + env(safe-area-inset-bottom));
-  }
-
-  .hud-bottom-16 {
     bottom: calc(0.5rem + env(safe-area-inset-bottom));
   }
 

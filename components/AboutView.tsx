@@ -2,6 +2,7 @@
 import React from 'react';
 import { Download, Mail, Linkedin, Github, BrainCircuit } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useIsTouchDevice } from '../hooks/useDeviceProfile';
 
 interface AboutViewProps {
     onClose: () => void;
@@ -10,6 +11,7 @@ interface AboutViewProps {
 
 const AboutView: React.FC<AboutViewProps> = ({ onClose }) => {
     const { t } = useLanguage();
+    const isTouchDevice = useIsTouchDevice();
 
     // Flattened skills for the "Tag" layout style
     const topSkills = [
@@ -29,8 +31,8 @@ const AboutView: React.FC<AboutViewProps> = ({ onClose }) => {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 md:p-8 animate-fade-in-fast">
 
             {/* --- Main Layout Container (Constrained Height with Flex Column) --- */}
-            {/* This ensures the entire assembly (Card + Button) fits within 85dvh */}
-            <div className="relative w-full max-w-4xl max-h-[85dvh] flex flex-col animate-modal-in">
+            {/* This ensures the entire assembly fits within the viewport; without the back button there is no extra row to reserve */}
+            <div className={`relative w-full max-w-4xl flex flex-col animate-modal-in ${isTouchDevice ? 'max-h-[90dvh]' : 'max-h-[85dvh]'}`}>
 
                 {/* Scrollable Content Card */}
                 {/* flex-1 and min-h-0 allows this area to shrink and scroll if the screen is too short */}
@@ -160,17 +162,19 @@ const AboutView: React.FC<AboutViewProps> = ({ onClose }) => {
                     </div>
                 </div>
 
-                {/* Back Button (Inside Flex Container) */}
+                {/* Back Button (Inside Flex Container) - hidden on touch to reclaim vertical space */}
                 {/* shrink-0 prevents it from being crushed, ensures it's always below the content and visible */}
-                <div className="shrink-0 w-full flex justify-end pt-4 pointer-events-auto z-50">
-                    <button
-                        onClick={onClose}
-                        className="bg-gray-300/80 text-black px-12 py-3 font-bold tracking-widest uppercase hover:bg-white transition-colors duration-200 text-lg shadow-lg border-2 border-transparent"
-                        style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}
-                    >
-                        {t('back')}
-                    </button>
-                </div>
+                {!isTouchDevice && (
+                    <div className="shrink-0 w-full flex justify-end pt-4 pointer-events-auto z-50">
+                        <button
+                            onClick={onClose}
+                            className="bg-gray-300/80 text-black px-12 py-3 font-bold tracking-widest uppercase hover:bg-white transition-colors duration-200 text-lg shadow-lg border-2 border-transparent"
+                            style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}
+                        >
+                            {t('back')}
+                        </button>
+                    </div>
+                )}
 
             </div>
         </div>

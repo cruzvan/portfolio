@@ -2,6 +2,7 @@
 import React from 'react';
 import { Mail, Linkedin, Github, BrainCircuit } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useIsTouchDevice } from '../hooks/useDeviceProfile';
 
 interface ContactViewProps {
   onClose: () => void;
@@ -16,6 +17,7 @@ interface SocialLink {
 
 const ContactView: React.FC<ContactViewProps> = ({ onClose }) => {
   const { t } = useLanguage();
+  const isTouchDevice = useIsTouchDevice();
 
   const socialLinks: SocialLink[] = [
     { icon: <Mail />, label: 'Email', href: 'mailto:angelocruz.vgd@gmail.com' },
@@ -72,32 +74,36 @@ const ContactView: React.FC<ContactViewProps> = ({ onClose }) => {
           </div>
         </div>
         
-        {/* Back Button, positioned outside, flush with the bottom-right of the modal */}
-        <div className="absolute right-0 top-full">
-            <button
-                onClick={onClose}
-                className="bg-gray-300/80 text-black px-8 md:px-12 py-2 md:py-3 font-bold tracking-widest uppercase hover:bg-white transition-colors duration-200 text-base md:text-lg"
-                style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}
-            >
-                {t('back')}
-            </button>
-        </div>
+        {/* Back Button, flush with the bottom-right of the modal - hidden on touch to reclaim vertical space */}
+        {!isTouchDevice && (
+          <div className="absolute right-0 top-full">
+              <button
+                  onClick={onClose}
+                  className="bg-gray-300/80 text-black px-8 md:px-12 py-2 md:py-3 font-bold tracking-widest uppercase hover:bg-white transition-colors duration-200 text-base md:text-lg"
+                  style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}
+              >
+                  {t('back')}
+              </button>
+          </div>
+        )}
       </div>
 
-      {/* --- HUD FOOTER --- */}
-      <div className="absolute bottom-4 md:bottom-8 left-0 w-full px-6 md:px-12 flex justify-between items-end pointer-events-none z-50">
-        <div className="flex items-center gap-3 text-white/50">
-           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="3" width="12" height="18" rx="6" stroke="currentColor" strokeWidth="1.5" />
-              <line x1="12" y1="3" x2="12" y2="10" stroke="currentColor" strokeWidth="1.5" />
-              <line x1="6" y1="10" x2="18" y2="10" stroke="currentColor" strokeWidth="1.5" />
-              <path d="6 9C6 5.68629 8.68629 3 12 3V10H6V9Z" fill="currentColor" />
-           </svg>
-           <span className="text-[10px] md:text-xs tracking-[0.2em] font-medium uppercase pt-1" style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}>
-             {t('hud_select')}
-           </span>
+      {/* --- HUD FOOTER (desktop only; hidden on touch to free vertical space) --- */}
+      {!isTouchDevice && (
+        <div className="absolute bottom-4 md:bottom-8 left-0 w-full px-6 md:px-12 flex justify-between items-end pointer-events-none z-50">
+          <div className="flex items-center gap-3 text-white/50">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="3" width="12" height="18" rx="6" stroke="currentColor" strokeWidth="1.5" />
+                <line x1="12" y1="3" x2="12" y2="10" stroke="currentColor" strokeWidth="1.5" />
+                <line x1="6" y1="10" x2="18" y2="10" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M6 9C6 5.68629 8.68629 3 12 3V10H6V9Z" fill="currentColor" />
+             </svg>
+             <span className="text-[10px] md:text-xs tracking-[0.2em] font-medium uppercase pt-1" style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}>
+               {t('hud_select')}
+             </span>
+          </div>
         </div>
-      </div>
+      )}
 
     </div>
   );

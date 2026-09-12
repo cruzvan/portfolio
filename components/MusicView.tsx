@@ -312,10 +312,10 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
       </div>
 
       {/* --- Main Content Container (Visible Box) --- */}
-      <div className={`relative w-full max-w-6xl h-[70dvh] short:h-[62dvh] bg-black/40 border border-white/10 backdrop-blur-sm mt-12 short:mt-6 ${isTouchDevice ? '' : 'md:h-[77dvh] md:mt-0'}`}>
+      <div className={`relative w-full max-w-6xl h-[78dvh] short:h-[70dvh] bg-black/40 border border-white/10 backdrop-blur-sm mt-12 short:mt-6 ${isTouchDevice ? '' : 'md:h-[77dvh] md:mt-0'}`}>
 
         {/* Scrollable List with padding inside the visible box */}
-        <div className="w-full h-full overflow-y-auto p-4 md:p-6 space-y-6 scrollbar-hide pb-24 md:pb-6">
+        <div className="w-full h-full overflow-y-auto p-4 md:p-6 space-y-6 scrollbar-hide pb-6">
           
           {tracks.map((track, index) => (
             <MusicTrackItem key={track.id} track={track} index={index} />
@@ -323,33 +323,37 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
 
         </div>
 
-        {/* Back Button: fixed and always visible on touch, below the rail on desktop */}
-        <div className={`${isTouchDevice ? 'fixed bottom-6 hud-bottom-6 right-6 short:right-4' : 'fixed bottom-6 right-6 md:absolute md:right-0 md:top-full md:bottom-auto md:mt-4'} pointer-events-auto z-50`}>
-          <button
-            onClick={onClose}
-            className="bg-gray-300/80 text-black px-12 short:px-8 py-3 short:py-2 font-bold tracking-widest uppercase hover:bg-white transition-colors duration-200 text-lg short:text-base border-2 border-black/20 shadow-lg"
-            style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}
-          >
-            {t('back')}
-          </button>
-        </div>
+        {/* Back Button: hidden on touch (browser/Android back handles it) to reclaim vertical space; below the rail on desktop */}
+        {!isTouchDevice && (
+          <div className="fixed bottom-6 right-6 md:absolute md:right-0 md:top-full md:bottom-auto md:mt-4 pointer-events-auto z-50">
+            <button
+              onClick={onClose}
+              className="bg-gray-300/80 text-black px-12 py-3 font-bold tracking-widest uppercase hover:bg-white transition-colors duration-200 text-lg border-2 border-black/20 shadow-lg"
+              style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}
+            >
+              {t('back')}
+            </button>
+          </div>
+        )}
 
       </div>
 
-      {/* --- HUD FOOTER --- */}
-      <div className="absolute bottom-4 md:bottom-8 hud-bottom-safe left-0 w-full px-6 md:px-12 flex justify-between items-end pointer-events-none z-50">
-        <div className="flex items-center gap-3 text-white/50">
-           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="3" width="12" height="18" rx="6" stroke="currentColor" strokeWidth="1.5" />
-              <line x1="12" y1="3" x2="12" y2="10" stroke="currentColor" strokeWidth="1.5" />
-              <line x1="6" y1="10" x2="18" y2="10" stroke="currentColor" strokeWidth="1.5" />
-              <path d="6 9C6 5.68629 8.68629 3 12 3V10H6V9Z" fill="currentColor" />
-           </svg>
-           <span className="text-[10px] md:text-xs tracking-[0.2em] font-medium uppercase pt-1" style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}>
-             {t('hud_select')}
-           </span>
+      {/* --- HUD FOOTER (desktop only; hidden on touch to free vertical space) --- */}
+      {!isTouchDevice && (
+        <div className="absolute bottom-4 md:bottom-8 hud-bottom-safe left-0 w-full px-6 md:px-12 flex justify-between items-end pointer-events-none z-50">
+          <div className="flex items-center gap-3 text-white/50">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="3" width="12" height="18" rx="6" stroke="currentColor" strokeWidth="1.5" />
+                <line x1="12" y1="3" x2="12" y2="10" stroke="currentColor" strokeWidth="1.5" />
+                <line x1="6" y1="10" x2="18" y2="10" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M6 9C6 5.68629 8.68629 3 12 3V10H6V9Z" fill="currentColor" />
+             </svg>
+             <span className="text-[10px] md:text-xs tracking-[0.2em] font-medium uppercase pt-1" style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}>
+               {t('hud_select')}
+             </span>
+          </div>
         </div>
-      </div>
+      )}
 
     </div>
   );

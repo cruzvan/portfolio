@@ -78,7 +78,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick, lang
       // UPDATED DIMENSIONS: Using VH units for desktop (md) to scale with screen height.
       // Mobile: Fixed pixel size.
       // Desktop (md): Height 55vh, Width 32vh (maintains aspect ratio based on height).
-      className={`relative flex-shrink-0 h-[50dvh] aspect-[9/16] md:w-[32vh] md:h-[55vh] short:h-[42dvh] snap-center group select-none transition-all duration-300 ${isLocked ? 'cursor-default' : 'cursor-pointer'}`}
+      className={`relative flex-shrink-0 aspect-[9/16] md:w-[32vh] md:h-[55vh] snap-center group select-none transition-all duration-300 ${isTouchDevice ? 'h-full short:h-full' : 'h-[50dvh]'} ${isLocked ? 'cursor-default' : 'cursor-pointer'}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -116,9 +116,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick, lang
         </div>
 
         {/* --- Top Status Bar --- */}
-        <div className="absolute top-0 left-0 w-full p-3 md:p-4 flex justify-between items-start z-20">
+        <div className={`absolute top-0 left-0 w-full ${isTouchDevice ? 'p-2' : 'p-3 md:p-4'} flex justify-between items-start z-20`}>
           <div
-            className={`bg-white/10 backdrop-blur-md px-2 py-1 text-[9px] min-[320px]:max-h-[500px]:text-[8px] md:text-[1.2vh] font-bold uppercase tracking-widest border-l-2 ${isHovered && !isLocked ? 'border-[#FE4403] text-white' : 'border-white text-white'}`}
+            className={`bg-white/10 backdrop-blur-md ${isTouchDevice ? 'px-1.5 py-0.5 text-[7px]' : 'px-2 py-1 text-[9px] min-[320px]:max-h-[500px]:text-[8px] md:text-[1.2vh]'} font-bold uppercase tracking-widest border-l-2 ${isHovered && !isLocked ? 'border-[#FE4403] text-white' : 'border-white text-white'}`}
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             {project.status}
@@ -131,29 +131,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick, lang
           {/* Hover Action Bar */}
           <div className={`w-full h-1 bg-[#FE4403] transform origin-left transition-transform duration-300 ${isHovered && !isLocked ? 'scale-x-100' : 'scale-x-0'}`} />
 
-          <div className={`p-4 md:p-5 2xl:p-6 transition-all duration-300 ${isHovered && !isLocked ? 'bg-[#FE4403] translate-y-0' : 'bg-transparent translate-y-0'}`}>
+          <div className={`${isTouchDevice ? 'p-3' : 'p-4 md:p-5 2xl:p-6'} transition-all duration-300 ${isHovered && !isLocked ? 'bg-[#FE4403] translate-y-0' : 'bg-transparent translate-y-0'}`}>
 
             {/* Title */}
-            <h3 className="text-lg min-[320px]:max-h-[500px]:text-sm md:text-2xl 2xl:text-3xl short:text-base font-bold uppercase leading-none tracking-tight mb-2 md:mb-3 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <h3 className={`${isTouchDevice ? 'text-sm leading-[1.05] line-clamp-2 mb-1.5' : 'text-lg min-[320px]:max-h-[500px]:text-sm md:text-2xl 2xl:text-3xl mb-2 md:mb-3 leading-none'} font-bold uppercase tracking-tight text-white`} style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               {project.title}
             </h3>
 
             {/* Sub-Location/Detail - Updated to Multi-Tags */}
-            <div className="flex flex-col gap-1 border-t border-white/20 pt-2 md:pt-3 mt-2">
+            <div className={`flex flex-col ${isTouchDevice ? 'gap-0.5 pt-1.5 mt-0' : 'gap-1 pt-2 md:pt-3 mt-2'} border-t border-white/20`}>
               {isHovered && isLocked ? (
                 <div className="flex items-center justify-between">
-                  <span className={`text-[8px] md:text-[1.1vh] uppercase tracking-widest font-medium text-white`} style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                  <span className={`${isTouchDevice ? 'text-[7px]' : 'text-[8px] md:text-[1.1vh]'} uppercase tracking-widest font-medium text-white`} style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                     {t('in_progress')}
                   </span>
-                  <Lock size={24} className="text-[#FE4403]" />
+                  <Lock size={isTouchDevice ? 16 : 24} className="text-[#FE4403]" />
                 </div>
               ) : (
                 (project.tagsOverwrite || project.tags).map((tag, i, arr) => (
                   <div key={i} className="flex items-center justify-between">
-                    <span className={`text-[8px] md:text-[1.1vh] uppercase tracking-widest font-medium ${isHovered && !isLocked ? 'text-black font-bold' : 'text-white'}`} style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                    <span className={`${isTouchDevice ? 'text-[7px] leading-tight' : 'text-[8px] md:text-[1.1vh]'} uppercase tracking-widest font-medium ${isHovered && !isLocked ? 'text-black font-bold' : 'text-white'}`} style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                       {tag}
                     </span>
-                    {isHovered && !isLocked && i === arr.length - 1 && <ArrowRight size={24} className="text-black" />}
+                    {isHovered && !isLocked && i === arr.length - 1 && <ArrowRight size={isTouchDevice ? 16 : 24} className="text-black" />}
                   </div>
                 ))
               )}
@@ -372,12 +372,13 @@ const BasePortfolioView: React.FC<BasePortfolioViewProps> = ({ title, projects, 
 
           {/* --- MAIN CONTENT AREA --- */}
           {/* UPDATED: Increased top padding for better breathing room on FHD */}
-          <div className="flex-grow flex items-center justify-center w-full h-full pt-4 md:pt-24 2xl:pt-28 short:pt-0 pb-8 short:pb-0 px-0 md:px-12 min-h-0">
-            {/* UPDATED: Container height based on VH (65vh) to accommodate 55vh cards + scrollbar */}
-            <div className="relative w-full h-[60dvh] md:h-[65dvh] short:h-[68dvh] bg-black/20 border-y border-white/10 backdrop-blur-sm group">
+          <div className={`flex-grow flex items-center justify-center w-full min-h-0 pt-4 md:pt-24 2xl:pt-28 short:pt-0 ${isTouchDevice ? 'pb-4 short:pb-2' : 'pb-8 short:pb-0'} px-0 md:px-12 ${isTouchDevice ? 'flex-1' : 'h-full'}`}>
+            {/* UPDATED: Container height based on VH to accommodate the cards + scrollbar.
+                On touch it stretches to the available space so cards get maximum height. */}
+            <div className={`relative w-full bg-black/20 border-y border-white/10 backdrop-blur-sm group ${isTouchDevice ? 'self-stretch min-h-0' : 'h-[60dvh] md:h-[65dvh] short:h-[68dvh]'}`}>
               <div
                 ref={scrollContainerRef}
-                className={`w-full h-full overflow-x-auto flex items-center gap-4 md:gap-4 2xl:gap-6 short:gap-3 px-8 md:px-12 short:px-6 cursor-grab active:cursor-grabbing scrollbar-hide touch-scroll-x ${isTouchDevice ? 'snap-x snap-mandatory' : ''}`}
+                className={`w-full h-full overflow-x-auto flex items-center gap-4 md:gap-4 2xl:gap-6 short:gap-3 px-8 md:px-12 short:px-6 py-3 short:py-2 cursor-grab active:cursor-grabbing scrollbar-hide touch-scroll-x ${isTouchDevice ? 'snap-x snap-mandatory' : ''}`}
                 onMouseDown={handleMouseDown}
                 onMouseLeave={handleMouseLeave}
                 onMouseUp={handleMouseUp}
@@ -409,32 +410,24 @@ const BasePortfolioView: React.FC<BasePortfolioViewProps> = ({ title, projects, 
               </div>
             </div>
 
-            {/* Back Button - touch devices (phones and tablets), always on screen */}
-            <div className={`${isTouchDevice ? 'block' : 'md:hidden'} fixed bottom-16 hud-bottom-16 right-4 z-50`}>
-              <button
-                onClick={onClose}
-                className="bg-gray-300/80 text-black px-8 py-3 short:px-6 short:py-2 font-bold tracking-widest uppercase active:bg-white transition-colors duration-200 text-sm short:text-xs shadow-lg border border-black/20"
-                style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}
-              >
-                {t('back')}
-              </button>
-            </div>
           </div>
 
-          {/* --- HUD FOOTER --- */}
-          <div className="absolute bottom-4 md:bottom-8 hud-bottom-safe left-0 w-full px-6 md:px-12 short:px-4 flex justify-between items-end pointer-events-none z-50">
-            <div className="flex items-center gap-3 text-white/50">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="6" y="3" width="12" height="18" rx="6" stroke="currentColor" strokeWidth="1.5" />
-                <line x1="12" y1="3" x2="12" y2="10" stroke="currentColor" strokeWidth="1.5" />
-                <line x1="6" y1="10" x2="18" y2="10" stroke="currentColor" strokeWidth="1.5" />
-                <path d="6 9C6 5.68629 8.68629 3 12 3V10H6V9Z" fill="currentColor" />
-              </svg>
-              <span className="text-[10px] md:text-xs tracking-[0.2em] font-medium uppercase pt-1" style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}>
-                {t('hud_select')}
-              </span>
+          {/* --- HUD FOOTER (desktop only; hidden on touch to free vertical space) --- */}
+          {!isTouchDevice && (
+            <div className="absolute bottom-4 md:bottom-8 hud-bottom-safe left-0 w-full px-6 md:px-12 short:px-4 flex justify-between items-end pointer-events-none z-50">
+              <div className="flex items-center gap-3 text-white/50">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="3" width="12" height="18" rx="6" stroke="currentColor" strokeWidth="1.5" />
+                  <line x1="12" y1="3" x2="12" y2="10" stroke="currentColor" strokeWidth="1.5" />
+                  <line x1="6" y1="10" x2="18" y2="10" stroke="currentColor" strokeWidth="1.5" />
+                  <path d="M6 9C6 5.68629 8.68629 3 12 3V10H6V9Z" fill="currentColor" />
+                </svg>
+                <span className="text-[10px] md:text-xs tracking-[0.2em] font-medium uppercase pt-1" style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}>
+                  {t('hud_select')}
+                </span>
+              </div>
             </div>
-          </div>
+          )}
         </>
       )}
 

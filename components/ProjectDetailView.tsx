@@ -675,13 +675,16 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                     </a>
                 )}
 
-                <button
-                    onClick={onClose}
-                    className="flex h-10 md:h-12 short:h-9 items-center gap-3 px-6 md:px-8 short:px-4 bg-white hover:bg-[color:var(--highlight-color)] text-black hover:text-white transition-colors duration-300 shadow-xl"
-                >
-                    <span className="text-xs md:text-sm short:text-[10px] font-bold uppercase tracking-widest" style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}>{t('back')}</span>
-                    <X size={18} className="short:hidden" />
-                </button>
+                {/* Back button hidden on touch (browser/Android back handles it) to reclaim vertical space */}
+                {!isTouchDevice && (
+                    <button
+                        onClick={onClose}
+                        className="flex h-12 items-center gap-3 px-8 bg-white hover:bg-[color:var(--highlight-color)] text-black hover:text-white transition-colors duration-300 shadow-xl"
+                    >
+                        <span className="text-sm font-bold uppercase tracking-widest" style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}>{t('back')}</span>
+                        <X size={18} />
+                    </button>
+                )}
             </div>
 
             {/* --- MAIN SCROLL CONTAINER --- */}

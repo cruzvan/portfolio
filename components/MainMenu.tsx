@@ -189,7 +189,7 @@ const MenuCard: React.FC<MenuCardProps> = ({
           <div
             ref={barRef}
             className={`
-                w-full px-4 md:px-6 py-4 md:py-5 flex flex-row items-center gap-4 relative overflow-hidden transition-all duration-300
+                w-full ${isTouchDevice ? 'px-3 py-2.5 gap-3' : 'px-4 md:px-6 py-4 md:py-5 gap-4'} flex flex-row items-center relative overflow-hidden transition-all duration-300
                 ${isHovered ? 'bg-[#FE4403]' : 'bg-[#09080b]/90 backdrop-blur-sm'}
             `}
           >
@@ -251,15 +251,15 @@ const MenuCard: React.FC<MenuCardProps> = ({
             )}
 
             {/* Icon Container */}
-            <div className={`h-10 w-10 md:h-14 md:w-14 flex-shrink-0 flex items-center justify-center transition-all duration-300 relative z-10 ${isHovered ? 'bg-white text-[#FE4403] shadow-lg scale-110' : 'border border-white/20 bg-white/5 text-white/70'
+            <div className={`${isTouchDevice ? 'h-8 w-8' : 'h-10 w-10 md:h-14 md:w-14'} flex-shrink-0 flex items-center justify-center transition-all duration-300 relative z-10 ${isHovered ? 'bg-white text-[#FE4403] shadow-lg scale-110' : 'border border-white/20 bg-white/5 text-white/70'
               }`}>
-              {React.cloneElement(item.icon, { className: "w-5 h-5 md:w-7 md:h-7" })}
+              {React.cloneElement(item.icon, { className: isTouchDevice ? "w-4 h-4" : "w-5 h-5 md:w-7 md:h-7" })}
             </div>
 
             {/* Text Container */}
             <div className="flex flex-col justify-center h-full relative z-10 pointer-events-none">
               <h3
-                className={`text-[9px] md:text-sm uppercase tracking-widest transition-all duration-300 font-bold mb-1 
+                className={`${isTouchDevice ? 'text-[8px]' : 'text-[9px] md:text-sm'} uppercase tracking-widest transition-all duration-300 font-bold mb-1 
                   ${isHovered ? 'text-transparent' : 'text-gray-400'}`}
                 style={{
                   fontFamily: "'Space Grotesk', sans-serif",
@@ -279,7 +279,7 @@ const MenuCard: React.FC<MenuCardProps> = ({
               </h3>
               <h2
                 className={`font-bold uppercase leading-none tracking-tighter transition-all duration-300 
-                  ${isHovered ? 'text-transparent scale-105' : 'text-white/90 text-base md:text-xl'}`}
+                  ${isHovered ? 'text-transparent scale-105' : (isTouchDevice ? 'text-white/90 text-sm' : 'text-white/90 text-base md:text-xl')}`}
                 style={{
                   fontFamily: "'Dazzle Unicase', sans-serif",
                   backgroundImage: isHovered
@@ -541,7 +541,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
   ];
 
   return (
-    <div className="relative flex flex-col justify-center items-center w-full h-full animate-fade-in-fast">
+    <div className={`relative flex flex-col w-full h-full animate-fade-in-fast ${isTouchDevice ? '' : 'justify-center items-center'}`}>
 
       {/* --- INTERACTIVE BACKGROUND LAYER (Canvas) --- */}
       <canvas
@@ -549,8 +549,8 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
         className="absolute inset-0 pointer-events-none z-0"
       />
 
-      {/* --- STATIC DECORATIVE ELEMENTS (Hide on small mobile to reduce clutter) --- */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden hidden md:block short:hidden">
+      {/* --- STATIC DECORATIVE ELEMENTS (Hidden on touch: their viewport-anchored lines/brackets do not align with the grid) --- */}
+      <div className={`absolute inset-0 pointer-events-none z-0 overflow-hidden ${isTouchDevice ? 'hidden' : 'hidden md:block'}`}>
 
         {/* Horizontal Lines - Top & Bottom framing the grid */}
         <div className="absolute top-[12vh] left-0 w-full flex justify-center opacity-20">
@@ -586,17 +586,17 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
       </div>
 
       {/* --- HUD HEADER --- */}
-      <div className="absolute top-4 md:top-8 hud-top-safe left-0 w-full px-6 md:px-12 short:px-4 short:pt-2 flex justify-between items-start z-50 short:bg-gradient-to-b short:from-black/95 short:via-black/70 short:to-transparent short:pb-8">
+      <div className={`${isTouchDevice ? 'relative pt-hud-safe pb-2 short:pt-2 short:pb-1' : 'absolute top-4 md:top-8 hud-top-safe'} left-0 w-full px-6 md:px-12 flex justify-between items-start z-50`}>
 
         {/* Left: Branding */}
         <button
           onClick={onHeaderClick}
           className="flex flex-col text-left group focus:outline-none pointer-events-auto cursor-pointer"
         >
-          <h1 className="text-lg md:text-2xl short:text-sm font-bold tracking-tight text-white leading-none group-hover:text-white/80 transition-colors" style={{ fontFamily: "'Dazzle Unicase', sans-serif" }}>
+          <h1 className="text-base md:text-2xl font-bold tracking-tight text-white leading-none group-hover:text-white/80 transition-colors" style={{ fontFamily: "'Dazzle Unicase', sans-serif" }}>
             ANGELO CRUZ
           </h1>
-          <span className="text-[9px] md:text-xs short:text-[7px] tracking-[0.2em] text-[#FE4403] font-bold uppercase mt-1" style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}>
+          <span className="text-[8px] md:text-xs tracking-[0.2em] text-[#FE4403] font-bold uppercase mt-1" style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}>
             Game Designer Portfolio
           </span>
         </button>
@@ -604,16 +604,16 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
         {/* Right: Responsive Content Swap (Score vs Language) */}
         <div className="flex items-center gap-3">
 
-          {/* DESKTOP: SCORE (Hidden on Mobile) */}
-          <div className="hidden md:flex items-center gap-3 pointer-events-none">
+          {/* DESKTOP: SCORE (Hidden on touch/mobile) */}
+          <div className={`${isTouchDevice ? 'hidden' : 'hidden md:flex'} items-center gap-3 pointer-events-none`}>
             <span className="text-white/60 text-[10px] md:text-xs tracking-widest uppercase font-medium" style={{ fontFamily: "'ITC Avant Garde Gothic Pro XLt', sans-serif" }}>
               {t('hud_score')}: {score.toString().padStart(6, '0')}
             </span>
             <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_#22c55e]"></span>
           </div>
 
-          {/* MOBILE: LANGUAGE TOGGLE (Hidden on Desktop) */}
-          <div className="md:hidden pointer-events-auto">
+          {/* TOUCH: LANGUAGE TOGGLE */}
+          <div className={`${isTouchDevice ? 'block' : 'md:hidden'} pointer-events-auto`}>
             <div className="flex items-center bg-black/40 border border-white/20 backdrop-blur-md p-1 gap-1">
               <button
                 onClick={() => setLanguage('en')}
@@ -727,35 +727,44 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
 
       {/* --- TOUCH MENU (Grid; phones and tablets in any orientation) --- */}
       {/*
-          The parent uses `justify-center` for desktop; on touch that clips the
-          top of a taller-than-screen grid. `h-full` + `overflow-y-auto` on the
-          child gives it its own scroll context instead of being centered.
+          On touch the whole menu is a flex column (header / grid / footer) so
+          the framing never overlaps the cards, regardless of viewport height.
+          The framing lines are anchored to the grid itself (not the viewport),
+          so they bracket the cards correctly on any phone screen.
       */}
-      <div className={`${isTouchDevice ? 'block' : 'md:hidden'} w-full h-full z-10 pt-[calc(6rem+env(safe-area-inset-top))] pb-[calc(6rem+env(safe-area-inset-bottom))] px-4 md:px-10 short:pt-12 short:pb-12 short:px-4 overflow-y-auto touch-scroll-x`}>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 short:grid-cols-4 gap-2 md:gap-4 short:gap-2 w-full max-w-6xl mx-auto">
-          {menuItems.map((item) => {
-            return (
-              <MenuCard
-                key={item.id}
-                item={item}
-                isHovered={false}
-                isSiblingHovered={false}
-                // Touch devices: single tap navigates directly
-                onMouseEnter={() => { }}
-                onMouseLeave={() => { }}
-                onCardClick={onCardClick}
-                isStacked={false}
-                flexClass=""
-                className="aspect-square short:aspect-[4/3] w-full shadow-lg border border-white/10 transition-all duration-300"
-                style={{ animationDelay: `${(item.id - 1) * 100}ms` }}
-              />
-            );
-          })}
+      <div className={`${isTouchDevice ? 'flex-1 min-h-0' : 'h-full'} ${isTouchDevice ? 'block' : 'md:hidden'} w-full z-10 overflow-y-auto touch-scroll-x`}>
+        <div className="min-h-full short:h-full flex flex-col py-3 px-4 md:px-10 short:py-2">
+          <div className="relative w-full max-w-6xl mx-auto my-auto short:my-0 short:flex-1 short:min-h-0 short:flex short:flex-col">
+            {/* Top framing line (grid-anchored) */}
+            <div className="absolute -top-3 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 short:grid-cols-5 gap-2 md:gap-4 short:gap-2 w-full short:flex-1 short:min-h-0 short:auto-rows-fr">
+              {menuItems.map((item) => {
+                return (
+                  <MenuCard
+                    key={item.id}
+                    item={item}
+                    isHovered={false}
+                    isSiblingHovered={false}
+                    // Touch devices: single tap navigates directly
+                    onMouseEnter={() => { }}
+                    onMouseLeave={() => { }}
+                    onCardClick={onCardClick}
+                    isStacked={false}
+                    flexClass=""
+                    className="aspect-square short:aspect-auto short:h-full short:min-h-0 w-full shadow-lg border border-white/10 transition-all duration-300"
+                    style={{ animationDelay: `${(item.id - 1) * 100}ms` }}
+                  />
+                );
+              })}
+            </div>
+            {/* Bottom framing line (grid-anchored) */}
+            <div className="absolute -bottom-3 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+          </div>
         </div>
       </div>
 
       {/* --- HUD FOOTER --- */}
-      <div className="absolute bottom-4 md:bottom-8 hud-bottom-safe left-0 w-full px-6 md:px-12 short:px-4 short:pb-1 flex justify-between items-end pointer-events-none z-50 short:bg-gradient-to-t short:from-black/95 short:via-black/70 short:to-transparent short:pt-8">
+      <div className={`${isTouchDevice ? 'relative pt-2 pb-hud-safe short:pt-1' : 'absolute bottom-4 md:bottom-8 hud-bottom-safe'} left-0 w-full px-6 md:px-12 flex justify-between items-end pointer-events-none z-50`}>
         <div className="flex items-center gap-3 text-white/50">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="3" width="12" height="18" rx="6" stroke="currentColor" strokeWidth="1.5" />
@@ -771,8 +780,8 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
         {/* Right: Responsive Content Swap (Language vs Score) */}
         <div className="flex items-center justify-end">
 
-          {/* DESKTOP: LANGUAGE TOGGLE (Hidden on Mobile) */}
-          <div className="hidden md:block pointer-events-auto">
+          {/* DESKTOP: LANGUAGE TOGGLE */}
+          <div className={`${isTouchDevice ? 'hidden' : 'hidden md:block'} pointer-events-auto`}>
             <div className="flex items-center bg-black/40 border border-white/20 backdrop-blur-md p-1 gap-1">
               <button
                 onClick={() => setLanguage('en')}
@@ -812,8 +821,8 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
             </div>
           </div>
 
-          {/* MOBILE: SCORE (Hidden on Desktop) */}
-          <div className="flex md:hidden items-center gap-3 pointer-events-none">
+          {/* TOUCH: SCORE */}
+          <div className={`${isTouchDevice ? 'flex' : 'md:hidden'} items-center gap-3 pointer-events-none`}>
             <span className="text-white/60 text-[10px] tracking-widest uppercase font-medium" style={{ fontFamily: "'ITC Avant Garde Gothic Pro XLt', sans-serif" }}>
               {t('hud_score')}: {score.toString().padStart(6, '0')}
             </span>
