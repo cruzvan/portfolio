@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useIsTouchDevice } from '../hooks/useDeviceProfile';
 
 interface StartScreenProps {
   onStart: () => void;
@@ -8,6 +9,7 @@ interface StartScreenProps {
 
 const StartScreen: React.FC<StartScreenProps> = ({ onStart }) => {
   const { t } = useLanguage();
+  const isTouchDevice = useIsTouchDevice();
   const [isExiting, setIsExiting] = useState(false);
 
   const handleStartInteraction = () => {
@@ -53,20 +55,33 @@ const StartScreen: React.FC<StartScreenProps> = ({ onStart }) => {
               
             {/* Using the translation key for the text */}
             <span className="text-xl md:text-2xl font-semibold tracking-widest uppercase" style={{ fontFamily: "'ITC Avant Garde Gothic Pro XLt'" }}>
-              {t('pressStart')}
+              {t(isTouchDevice ? 'tapStart' : 'pressStart')}
             </span>
 
-            {/* Mouse Icon with Left Click Highlighted */}
+            {/* Input hint: finger icon on touch devices, mouse on desktop */}
             <div className="opacity-90">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Active Left Button Fill (Cyan with Glow) */}
-                <path d="M6 10V9C6 5.68629 8.68629 3 12 3V10H6Z" fill="#22d3ee" style={{ filter: 'drop-shadow(0 0 5px rgba(34,211,238,0.6))' }} /> 
-                
-                {/* Mouse Body Outline & Details - Thinner strokes (1.2) */}
-                <rect x="6" y="3" width="12" height="18" rx="6" stroke="white" strokeWidth="1.2" />
-                <line x1="12" y1="3" x2="12" y2="10" stroke="white" strokeWidth="1.2" />
-                <line x1="6" y1="10" x2="18" y2="10" stroke="white" strokeWidth="1.2" />
-              </svg>
+              {isTouchDevice ? (
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M9 11.5V6.5a1.5 1.5 0 0 1 3 0v5h.5a4 4 0 0 1 4 4v1a5 5 0 0 1-5 5h-1.2a5 5 0 0 1-4-2L4 16.2a1.6 1.6 0 0 1 2.4-2.1L9 16.5"
+                    stroke="white"
+                    strokeWidth="1.4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path d="M9 11.5V7a1.5 1.5 0 0 1 3 0v4.5" fill="#22d3ee" style={{ filter: 'drop-shadow(0 0 5px rgba(34,211,238,0.6))' }} />
+                </svg>
+              ) : (
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* Active Left Button Fill (Cyan with Glow) */}
+                  <path d="M6 10V9C6 5.68629 8.68629 3 12 3V10H6Z" fill="#22d3ee" style={{ filter: 'drop-shadow(0 0 5px rgba(34,211,238,0.6))' }} />
+
+                  {/* Mouse Body Outline & Details - Thinner strokes (1.2) */}
+                  <rect x="6" y="3" width="12" height="18" rx="6" stroke="white" strokeWidth="1.2" />
+                  <line x1="12" y1="3" x2="12" y2="10" stroke="white" strokeWidth="1.2" />
+                  <line x1="6" y1="10" x2="18" y2="10" stroke="white" strokeWidth="1.2" />
+                </svg>
+              )}
             </div>
             
           </div>

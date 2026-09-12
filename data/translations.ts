@@ -1,6 +1,7 @@
 
 export type TranslationKey =
   | 'pressStart'
+  | 'tapStart'
   | 'loading'
   | 'menu_about'
   | 'menu_about_cat'
@@ -63,6 +64,7 @@ export type TranslationKey =
 export const translations = {
   en: {
     pressStart: 'Press to start',
+    tapStart: 'Tap to start',
     loading: 'Loading Portfolio...',
     menu_about: 'ABOUT ME',
     menu_about_cat: 'PROFILE & CONTACT',
@@ -124,6 +126,7 @@ export const translations = {
   },
   es: {
     pressStart: 'Presiona para iniciar',
+    tapStart: 'Toca para iniciar',
     loading: 'Cargando Portafolio...',
     menu_about: 'SOBRE MÍ',
     menu_about_cat: 'PERFIL Y CONTACTO',

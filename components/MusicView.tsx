@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Play } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { TranslationKey } from '../data/translations';
 import { useHoverVideo } from '../hooks/useHoverVideo';
+import { useIsTouchDevice } from '../hooks/useDeviceProfile';
+import { isVideoUrl } from '../utils/media';
 
 interface MusicTrack {
   id: string;
@@ -13,10 +14,100 @@ interface MusicTrack {
   soundcloudId: string;
 }
 
+/**
+ * Visualizer is intentionally its own component: it updates ~10x/second and
+ * previously lived in MusicView's state, re-rendering all 12 track cards and
+ * their SoundCloud iframes on every tick during module playback.
+ */
+const Visualizer: React.FC<{ bars?: number }> = ({ bars = 12 }) => {
+    const [data, setData] = useState<number[]>(() => new Array(bars).fill(5));
+    const rafRef = useRef<number>(0);
+    const timeoutRef = useRef<number | null>(null);
+
+    useEffect(() => {
+        const animate = () => {
+            setData(prev => prev.map(() => Math.random() * 40 + 10));
+            timeoutRef.current = window.setTimeout(() => {
+                rafRef.current = requestAnimationFrame(animate);
+            }, 100);
+        };
+
+        rafRef.current = requestAnimationFrame(animate);
+        return () => {
+            cancelAnimationFrame(rafRef.current);
+            if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
+        };
+    }, []);
+
+    return (
+        <div className="flex gap-1 h-6 md:h-8 items-end opacity-90" aria-hidden="true">
+            {data.map((height, i) => (
+                <div
+                    key={i}
+                    className="w-1 md:w-1.5 bg-[#FE4403] transition-all duration-100 ease-linear"
+                    style={{ height: `${Math.max(5, height)}%`, opacity: 0.8 }}
+                />
+            ))}
+        </div>
+    );
+};
+
+/**
+ * Defers mounting the heavy third-party SoundCloud iframe until the track
+ * scrolls near the viewport. Keeps the initial render light on phones.
+ */
+const LazySoundCloudEmbed: React.FC<{ soundcloudId: string }> = ({ soundcloudId }) => {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        const el = containerRef.current;
+        if (!el || visible) return;
+
+        if (!('IntersectionObserver' in window)) {
+            setVisible(true);
+            return;
+        }
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries.some(entry => entry.isIntersecting)) {
+                    setVisible(true);
+                    observer.disconnect();
+                }
+            },
+            { rootMargin: '400px 0px' }
+        );
+
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, [visible]);
+
+    return (
+        <div ref={containerRef} className="w-full h-full">
+            {visible ? (
+                <iframe
+                    width="100%"
+                    height="100%"
+                    scrolling="no"
+                    frameBorder="no"
+                    allow="autoplay"
+                    title="SoundCloud player"
+                    src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A${soundcloudId}&color=%23fe4403&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false&show_artwork=false`}
+                    className="opacity-100"
+                />
+            ) : (
+                <div className="w-full h-full bg-black/30 border border-white/5" />
+            )}
+        </div>
+    );
+};
+
 const MusicTrackItem: React.FC<{ track: MusicTrack; index: number }> = ({ track, index }) => {
     const { t } = useLanguage();
     const { videoRef, onHoverPlay, onHoverPause } = useHoverVideo();
-    const isVideo = track.coverUrl.endsWith('.webm');
+    const isTouchDevice = useIsTouchDevice();
+    const isVideo = isVideoUrl(track.coverUrl);
 
     return (
         <div 
@@ -36,7 +127,7 @@ const MusicTrackItem: React.FC<{ track: MusicTrack; index: number }> = ({ track,
                         loop
                         muted
                         playsInline
-                        preload="metadata"
+                        preload={isTouchDevice ? 'none' : 'metadata'}
                         className="absolute inset-0 w-full h-full object-cover"
                     />
                 ) : (
@@ -89,15 +180,7 @@ const MusicTrackItem: React.FC<{ track: MusicTrack; index: number }> = ({ track,
 
                 {/* --- Player Section --- */}
                 <div className="w-full h-[120px] md:h-[120px] border-t border-white/5 pt-4 relative bg-black/20">
-                    <iframe 
-                        width="100%" 
-                        height="100%" 
-                        scrolling="no" 
-                        frameBorder="no" 
-                        allow="autoplay" 
-                        src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A${track.soundcloudId}&color=%23fe4403&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false&show_artwork=false`}
-                        className="opacity-100"
-                    />
+                    <LazySoundCloudEmbed soundcloudId={track.soundcloudId} />
                 </div>
             </div>
         </div>
@@ -110,10 +193,7 @@ interface MusicViewProps {
 
 const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
   const { t } = useLanguage();
-  const [visualizerData, setVisualizerData] = useState<number[]>(new Array(12).fill(5));
-  
-  // Ref for the animation loop
-  const requestRef = useRef<number>(0);
+  const isTouchDevice = useIsTouchDevice();
 
   // Datos actualizados sin el prefijo "PROJECT:" y con IDs de SoundCloud
   // Images updated to w=1200
@@ -216,48 +296,26 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
     }
   ];
 
-  // Visualizer Loop - Always running in "Standby/Monitoring" mode
-  const animateVisualizer = () => {
-    setVisualizerData(prev => prev.map(() => Math.random() * 40 + 10)); // Low activity simulation
-    // Slow down the update rate slightly for a "tech" feel
-    setTimeout(() => {
-      requestRef.current = requestAnimationFrame(animateVisualizer);
-    }, 100); 
-  };
-
-  useEffect(() => {
-    requestRef.current = requestAnimationFrame(animateVisualizer);
-    return () => cancelAnimationFrame(requestRef.current);
-  }, []);
+  // Visualizer updates internally (isolated component) to avoid re-rendering
+  // the whole track list and its iframes on every tick.
 
   return (
     <div className="relative flex flex-col justify-center items-center w-full h-full animate-fade-in-fast">
       
       {/* --- Header --- */}
-      <div className="absolute top-4 md:top-8 left-0 w-full px-6 md:px-12 pointer-events-none z-50 flex justify-between items-center">
+      <div className="absolute top-4 md:top-8 hud-top-safe left-0 w-full px-6 md:px-12 pointer-events-none z-50 flex justify-between items-center">
         <h1 className="text-xl md:text-3xl font-bold tracking-tighter text-white" style={{ fontFamily: "'Dazzle Unicase', sans-serif" }}>
           AUDIO LOGS
         </h1>
         {/* Responsive Visualizer */}
-        <div className="flex gap-1 h-6 md:h-8 items-end opacity-90">
-            {visualizerData.map((height, i) => (
-                <div 
-                  key={i} 
-                  className="w-1 md:w-1.5 bg-[#FE4403] transition-all duration-100 ease-linear" 
-                  style={{ 
-                    height: `${Math.max(5, height)}%`,
-                    opacity: 0.8
-                  }} 
-                />
-            ))}
-        </div>
+        <Visualizer />
       </div>
 
       {/* --- Main Content Container (Visible Box) --- */}
-      <div className="relative w-full max-w-6xl h-[70vh] md:h-[77vh] bg-black/40 border border-white/10 backdrop-blur-sm mt-12 md:mt-0">
-        
+      <div className={`relative w-full max-w-6xl h-[70dvh] short:h-[62dvh] bg-black/40 border border-white/10 backdrop-blur-sm mt-12 short:mt-6 ${isTouchDevice ? '' : 'md:h-[77dvh] md:mt-0'}`}>
+
         {/* Scrollable List with padding inside the visible box */}
-        <div className="w-full h-full overflow-y-auto p-4 md:p-6 space-y-6 scrollbar-hide pb-20 md:pb-6">
+        <div className="w-full h-full overflow-y-auto p-4 md:p-6 space-y-6 scrollbar-hide pb-24 md:pb-6">
           
           {tracks.map((track, index) => (
             <MusicTrackItem key={track.id} track={track} index={index} />
@@ -265,11 +323,11 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
 
         </div>
 
-        {/* Back Button positioned FIXED on mobile/landscape to ensure visibility, Absolute on desktop */}
-        <div className="fixed bottom-6 right-6 md:absolute md:right-0 md:top-full md:bottom-auto md:mt-4 pointer-events-auto z-50">
+        {/* Back Button: fixed and always visible on touch, below the rail on desktop */}
+        <div className={`${isTouchDevice ? 'fixed bottom-6 hud-bottom-6 right-6 short:right-4' : 'fixed bottom-6 right-6 md:absolute md:right-0 md:top-full md:bottom-auto md:mt-4'} pointer-events-auto z-50`}>
           <button
             onClick={onClose}
-            className="bg-gray-300/80 text-black px-12 py-3 font-bold tracking-widest uppercase hover:bg-white transition-colors duration-200 text-lg border-2 border-black/20 shadow-lg"
+            className="bg-gray-300/80 text-black px-12 short:px-8 py-3 short:py-2 font-bold tracking-widest uppercase hover:bg-white transition-colors duration-200 text-lg short:text-base border-2 border-black/20 shadow-lg"
             style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}
           >
             {t('back')}
@@ -279,7 +337,7 @@ const MusicView: React.FC<MusicViewProps> = ({ onClose }) => {
       </div>
 
       {/* --- HUD FOOTER --- */}
-      <div className="absolute bottom-4 md:bottom-8 left-0 w-full px-6 md:px-12 flex justify-between items-end pointer-events-none z-50">
+      <div className="absolute bottom-4 md:bottom-8 hud-bottom-safe left-0 w-full px-6 md:px-12 flex justify-between items-end pointer-events-none z-50">
         <div className="flex items-center gap-3 text-white/50">
            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="6" y="3" width="12" height="18" rx="6" stroke="currentColor" strokeWidth="1.5" />

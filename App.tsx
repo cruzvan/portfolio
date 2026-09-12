@@ -204,7 +204,7 @@ function PortfolioApp() {
   }, [appState]);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-black text-white select-none">
+    <div className="relative w-full h-dvh overflow-hidden bg-black text-white select-none">
       
       {/* Background Layer - Always active, now receives appState for color shifting */}
       <div className="absolute inset-0 z-0">
@@ -225,7 +225,7 @@ function PortfolioApp() {
         )}
 
         {appState === 'loading' && (
-          <div className="absolute bottom-0 left-0 w-full px-8 md:px-16 pb-12 md:pb-20 flex flex-col z-20">
+          <div className="absolute bottom-0 left-0 w-full px-8 md:px-16 pb-hud-12 flex flex-col z-20">
             <div className="flex justify-start items-end mb-3">
               <h2 
                 className="text-xl md:text-3xl font-bold tracking-widest text-white uppercase" 

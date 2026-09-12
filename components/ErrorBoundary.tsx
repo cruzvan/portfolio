@@ -31,7 +31,7 @@ class ErrorBoundary extends React.Component<Props, State> {
   public render() {
     if (this.state.hasError) {
       return (
-        <div className="w-full h-screen bg-black flex flex-col items-center justify-center text-[#FE4403] font-mono p-8 relative overflow-hidden">
+        <div className="w-full h-dvh bg-black flex flex-col items-center justify-center text-[#FE4403] font-mono p-8 relative overflow-hidden">
             {/* Background Glitch Elements */}
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none" />
             <div className="absolute top-0 left-0 w-full h-1 bg-[#FE4403] animate-pulse" />

@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
+import { detectTouchDevice } from '../hooks/useDeviceProfile';
 
 // Define the available states that affect color
 type BackgroundState = 'default' | 'about' | 'portfolio-gd' | 'music' | 'contact' | 'portfolio-ta' | 'portfolio-others';
@@ -14,6 +15,9 @@ const SciFiBackground: React.FC<SciFiBackgroundProps> = ({ appState = 'start' })
   // Refs accessible to the animation loop closure
   const currentColorRef = useRef<[number, number, number]>([0.0, 0.05, 0.21]);
   const targetColorRef = useRef<[number, number, number]>([0.0, 0.05, 0.21]);
+
+  // Lets the color-target effect restart the touch 2D loop after it converged
+  const wakeLoopRef = useRef<(() => void) | null>(null);
 
   // Color Mapping Logic
   const getColorTarget = (state: string): [number, number, number] => {
@@ -49,6 +53,7 @@ const SciFiBackground: React.FC<SciFiBackgroundProps> = ({ appState = 'start' })
   // Update target whenever appState changes
   useEffect(() => {
     targetColorRef.current = getColorTarget(appState);
+    wakeLoopRef.current?.();
   }, [appState]);
 
   // WebGL Initialization and Loop
@@ -57,27 +62,29 @@ const SciFiBackground: React.FC<SciFiBackgroundProps> = ({ appState = 'start' })
     if (!canvas) return;
 
     // PERFORMANCE OPTIMIZATION:
-    // Robust detection for Mobile/Tablet to disable heavy WebGL shaders.
-    // 1. Check User Agent for common mobile identifiers.
-    // 2. Check Screen Width via matchMedia (more stable than innerWidth).
-    const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    const isSmallScreen = window.matchMedia("(max-width: 1024px)").matches;
+    // Device-capability detection (not screen width) disables the heavy WebGL
+    // raymarching shader on phones and tablets in any orientation.
+    const isTouchDevice = detectTouchDevice();
 
-    if (isMobileUA || isSmallScreen) {
+    if (isTouchDevice) {
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
 
         let id: number;
-        
+        let isRunning = false;
+        let isVisible = document.visibilityState !== 'hidden';
+
         const handleResize = () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
+            renderFrame();
+            startLoop();
         };
-        window.addEventListener('resize', handleResize);
-        handleResize();
 
-        const loop2D = () => {
-            // Smooth Color Interpolation (Same logic as shader but for 2D fill)
+        // Draws one interpolation step. Returns true while the color is still
+        // visibly changing, so we can stop the loop once converged instead of
+        // burning GPU/battery at 60fps forever.
+        const renderFrame = (): boolean => {
             const [cr, cg, cb] = currentColorRef.current;
             const [tr, tg, tb] = targetColorRef.current;
             const easing = 0.02;
@@ -88,17 +95,52 @@ const SciFiBackground: React.FC<SciFiBackgroundProps> = ({ appState = 'start' })
 
             currentColorRef.current = [nr, ng, nb];
 
-            // Fill background with solid color
-            // Multiply by 255 for RGB strings
             ctx.fillStyle = `rgb(${Math.floor(nr * 255)}, ${Math.floor(ng * 255)}, ${Math.floor(nb * 255)})`;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
+
+            const isConverged =
+                Math.abs(tr - nr) < 0.001 &&
+                Math.abs(tg - ng) < 0.001 &&
+                Math.abs(tb - nb) < 0.001;
+
+            return !isConverged;
+        };
+
+        const loop2D = () => {
+            const shouldContinue = renderFrame();
+            if (shouldContinue) {
+                id = requestAnimationFrame(loop2D);
+            } else {
+                isRunning = false;
+            }
+        };
+
+        const startLoop = () => {
+            if (isRunning || !isVisible || !isTouchDevice) return;
+            isRunning = true;
             id = requestAnimationFrame(loop2D);
         };
-        loop2D();
+
+        const handleVisibilityChange = () => {
+            isVisible = document.visibilityState !== 'hidden';
+            if (!isVisible) {
+                cancelAnimationFrame(id);
+                isRunning = false;
+            } else {
+                startLoop();
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+        handleResize();
+
+        wakeLoopRef.current = startLoop;
 
         return () => {
+            wakeLoopRef.current = null;
             window.removeEventListener('resize', handleResize);
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
             cancelAnimationFrame(id);
         };
     }

@@ -3,15 +3,12 @@ import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { X, ExternalLink, Maximize2, Users, Calendar, ChevronDown, Cpu, Play, ChevronLeft, ChevronRight } from 'lucide-react';
 import { getProjectContent, TagContentSection, ProjectCardData } from '../data/projectData';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useIsTouchDevice } from '../hooks/useDeviceProfile';
+import { getVideoPoster, isVideoUrl } from '../utils/media';
 
 // Re-exporting ProjectCardData as Project for backward compatibility if needed, 
 // or using ProjectCardData directly.
 export type Project = ProjectCardData;
-
-// Helper to check if a URL is a video
-const isVideo = (url: string) => {
-    return /\.(mp4|webm|ogg|mov)$/i.test(url);
-};
 
 interface ProjectDetailProps {
     project: Project;
@@ -82,6 +79,9 @@ const InlineMediaSlider: React.FC<{ items: string[], setLightboxImage: (img: str
     const [touchStartX, setTouchStartX] = useState<number | null>(null);
     const [isDragging, setIsDragging] = useState(false);
     const [dragged, setDragged] = useState(false);
+    // On touch devices, videos show a still poster until the user taps play
+    const isTouchDevice = useIsTouchDevice();
+    const [playingMedia, setPlayingMedia] = useState<string | null>(null);
 
     const handleNext = (e?: React.MouseEvent | React.TouchEvent) => {
         if (e) e.stopPropagation();
@@ -151,16 +151,45 @@ const InlineMediaSlider: React.FC<{ items: string[], setLightboxImage: (img: str
             onMouseUp={handleTouchEnd}
             onMouseLeave={handleTouchEnd}
         >
-            {isVideo(currentMedia) ? (
-                <video
-                    key={currentMedia}
-                    src={currentMedia}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover/slider:scale-105 pointer-events-none"
-                    muted
-                    loop
-                    autoPlay
-                    playsInline
-                />
+            {isVideoUrl(currentMedia) ? (
+                isTouchDevice && playingMedia !== currentMedia ? (
+                    <button
+                        key={`poster-${currentMedia}`}
+                        className="absolute inset-0 w-full h-full z-20 group/play"
+                        onClick={(e) => { e.stopPropagation(); if (!dragged) setPlayingMedia(currentMedia); }}
+                        aria-label="Play video"
+                    >
+                        {getVideoPoster(currentMedia) ? (
+                            <div
+                                className="absolute inset-0 bg-cover bg-center"
+                                style={{ backgroundImage: `url(${getVideoPoster(currentMedia)})` }}
+                            />
+                        ) : (
+                            <video
+                                src={currentMedia}
+                                className="absolute inset-0 w-full h-full object-cover"
+                                muted
+                                playsInline
+                                preload="metadata"
+                            />
+                        )}
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                            <div className="w-12 h-12 rounded-full border border-[color:var(--highlight-color)] flex items-center justify-center bg-black/50 backdrop-blur-sm transition-transform group-hover/play:scale-110">
+                                <Play fill="white" className="text-white ml-0.5" size={20} />
+                            </div>
+                        </div>
+                    </button>
+                ) : (
+                    <video
+                        key={currentMedia}
+                        src={currentMedia}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover/slider:scale-105 pointer-events-none"
+                        muted
+                        loop
+                        autoPlay
+                        playsInline
+                    />
+                )
             ) : (
                 <div
                     key={currentMedia}
@@ -208,8 +237,70 @@ const InlineMediaSlider: React.FC<{ items: string[], setLightboxImage: (img: str
     );
 };
 
+// --- GALLERY MEDIA (still first frame on touch, tap to play) ---
+const GalleryMedia: React.FC<{ src: string, index: number }> = ({ src, index }) => {
+    const isTouchDevice = useIsTouchDevice();
+    const [playing, setPlaying] = useState(false);
+    const isVideo = isVideoUrl(src);
+
+    if (!isVideo) {
+        return (
+            <img
+                src={src}
+                alt={`Gallery ${index}`}
+                loading="lazy"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+        );
+    }
+
+    if (isTouchDevice && !playing) {
+        const poster = getVideoPoster(src);
+
+        // Without a usable poster we cannot show a meaningful still, so let the
+        // browser fetch just metadata (no playback) instead of a blank box.
+        return (
+            <button
+                className="relative w-full h-full group/play"
+                onClick={(e) => { e.stopPropagation(); setPlaying(true); }}
+                aria-label="Play video"
+            >
+                {poster ? (
+                    <div
+                        className="absolute inset-0 bg-cover bg-center"
+                        style={{ backgroundImage: `url(${poster})` }}
+                    />
+                ) : (
+                    <video
+                        src={src}
+                        className="absolute inset-0 w-full h-full object-cover"
+                        muted
+                        playsInline
+                        preload="metadata"
+                    />
+                )}
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                    <Play className={index === 0 ? "text-white w-12 h-12" : "text-white w-8 h-8"} fill="white" />
+                </div>
+            </button>
+        );
+    }
+
+    return (
+        <video
+            src={src}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            muted
+            loop
+            autoPlay
+            playsInline
+        />
+    );
+};
+
 const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
     const { language, t } = useLanguage();
+    const isTouchDevice = useIsTouchDevice();
 
     // Fetch content from data file based on project title AND language
     const projectContent = useMemo(() => getProjectContent(project.title, language), [project.title, language]);
@@ -375,9 +466,9 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
             }
         };
 
-        // On mobile, native scrolling doesn't use this wheel handler in the same way,
-        // so we don't rely on it for mobile section tracking.
-        if (activeEl && window.matchMedia("(min-width: 768px)").matches) {
+        // Scroll-jacking is a pointer-device interaction; on touch devices the
+        // native momentum scrolling drives section tracking through onScroll.
+        if (activeEl && !isTouchDevice) {
             activeEl.addEventListener('wheel', handleWheel, { passive: false });
         }
 
@@ -386,31 +477,47 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                 activeEl.removeEventListener('wheel', handleWheel);
             }
         };
-    }, [activeSection, isScrolling, dynamicSections, scrollToSection]);
+    }, [activeSection, isScrolling, dynamicSections, scrollToSection, isTouchDevice]);
 
-    // --- MOBILE SCROLL HANDLER ---
+    // --- SCROLL HANDLER (throttled with rAF) ---
     // Tracks native scroll position to update activeSection and trigger background blur
+    const scrollRafRef = useRef<number | null>(null);
+
     const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
         // Only process if not currently auto-scrolling (prevents jitter)
         if (isScrolling) return;
 
         const container = e.currentTarget;
-        // Trigger point is 1/3 down the screen to feel responsive
-        const scrollPosition = container.scrollTop + (window.innerHeight / 3);
+        if (scrollRafRef.current !== null) return;
 
-        for (const section of dynamicSections) {
-            const el = sectionRefs.current[section.id];
-            if (el) {
-                const { offsetTop, offsetHeight } = el;
-                if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-                    if (activeSection !== section.id) {
-                        setActiveSection(section.id);
+        scrollRafRef.current = requestAnimationFrame(() => {
+            scrollRafRef.current = null;
+
+            // Trigger point is 1/3 down the screen to feel responsive
+            const scrollPosition = container.scrollTop + (container.clientHeight / 3);
+
+            for (const section of dynamicSections) {
+                const el = sectionRefs.current[section.id];
+                if (el) {
+                    const { offsetTop, offsetHeight } = el;
+                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                        if (activeSection !== section.id) {
+                            setActiveSection(section.id);
+                        }
+                        return;
                     }
-                    return;
                 }
             }
-        }
+        });
     };
+
+    useEffect(() => {
+        return () => {
+            if (scrollRafRef.current !== null) {
+                cancelAnimationFrame(scrollRafRef.current);
+            }
+        };
+    }, []);
 
     const getContentForTag = (tag: string): TagContentSection => {
         // Look up the tag in the specific project's content
@@ -477,7 +584,7 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                         className="relative w-auto h-auto max-w-[75vw] max-h-[75vh] flex items-center justify-center select-none"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        {isVideo(lightboxImage) ? (
+                        {isVideoUrl(lightboxImage) ? (
                             <video
                                 src={lightboxImage}
                                 className="w-full h-full object-contain shadow-2xl border border-white/10 bg-black"
@@ -511,8 +618,8 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                 </div>
             )}
 
-            {/* --- FLOATING NAVIGATION (LEFT) - HIDDEN ON MOBILE --- */}
-            <div className={`fixed left-8 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-6 transition-all duration-700 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+            {/* --- FLOATING NAVIGATION (LEFT) - DESKTOP POINTER DEVICES ONLY --- */}
+            <div className={`fixed left-8 top-1/2 -translate-y-1/2 z-50 ${isTouchDevice ? 'hidden' : 'hidden md:flex'} flex-col gap-6 transition-all duration-700 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
                 {dynamicSections.map((sec) => (
                     <button
                         key={sec.id}
@@ -533,27 +640,47 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                 ))}
             </div>
 
+            {/* --- MOBILE/TABLET SECTION NAV (scrollable chips) --- */}
+            <div className={`${isTouchDevice ? 'block' : 'md:hidden'} fixed top-0 left-0 w-full z-[60] bg-gradient-to-b from-black/90 to-transparent pt-hud-2 short:pt-1 pb-4 short:pb-2 px-4 short:px-3`}>
+                <div className="flex gap-2 short:gap-1 overflow-x-auto scrollbar-hide touch-scroll-x">
+                    {dynamicSections.map((sec) => (
+                        <button
+                            key={sec.id}
+                            onClick={() => scrollToSection(sec.id)}
+                            className={`flex-shrink-0 px-3 short:px-2 py-1.5 short:py-1 text-[10px] short:text-[9px] font-bold uppercase tracking-widest border transition-colors duration-300 ${
+                                activeSection === sec.id
+                                    ? 'bg-[color:var(--highlight-color)] border-[color:var(--highlight-color)] text-black'
+                                    : 'bg-black/50 border-white/20 text-white/70'
+                            }`}
+                            style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}
+                        >
+                            {sec.label}
+                        </button>
+                    ))}
+                </div>
+            </div>
+
             {/* --- FLOATING ACTIONS (BOTTOM RIGHT) --- */}
-            <div className={`fixed bottom-4 md:bottom-8 right-4 md:right-12 z-50 flex gap-4 items-end transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className={`fixed bottom-4 md:bottom-8 hud-bottom-safe right-4 md:right-12 short:right-3 z-50 flex gap-4 short:gap-2 items-end transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 {/* Functional External Files Button */}
                 {projectContent.externalLink && projectContent.externalLink.trim() !== "" && projectContent.externalLink.trim() !== "#" && (
                     <a
                         href={projectContent.externalLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex h-10 md:h-12 items-center gap-2 px-6 md:px-12 bg-white/5 border border-white/10 hover:bg-[color:var(--highlight-color)] hover:border-[color:var(--highlight-color)] backdrop-blur-md transition-all duration-300 group"
+                        className="flex h-10 md:h-12 short:h-9 items-center gap-2 px-6 md:px-12 short:px-4 bg-white/5 border border-white/10 hover:bg-[color:var(--highlight-color)] hover:border-[color:var(--highlight-color)] backdrop-blur-md transition-all duration-300 group"
                     >
-                        <span className="text-xs font-bold uppercase tracking-widest text-white">{t('external_files')}</span>
+                        <span className="text-xs short:text-[10px] font-bold uppercase tracking-widest text-white">{t('external_files')}</span>
                         <ExternalLink size={14} className="text-white group-hover:rotate-45 transition-transform" />
                     </a>
                 )}
 
                 <button
                     onClick={onClose}
-                    className="flex h-10 md:h-12 items-center gap-3 px-6 md:px-8 bg-white hover:bg-[color:var(--highlight-color)] text-black hover:text-white transition-colors duration-300 shadow-xl"
+                    className="flex h-10 md:h-12 short:h-9 items-center gap-3 px-6 md:px-8 short:px-4 bg-white hover:bg-[color:var(--highlight-color)] text-black hover:text-white transition-colors duration-300 shadow-xl"
                 >
-                    <span className="text-xs md:text-sm font-bold uppercase tracking-widest" style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}>{t('back')}</span>
-                    <X size={18} />
+                    <span className="text-xs md:text-sm short:text-[10px] font-bold uppercase tracking-widest" style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}>{t('back')}</span>
+                    <X size={18} className="short:hidden" />
                 </button>
             </div>
 
@@ -564,21 +691,21 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
           Added onScroll handler to track sections on mobile/tablet native scrolling.
       */}
             <div
-                className="relative w-full h-full overflow-y-auto md:overflow-hidden scroll-smooth"
+                className={`relative w-full h-full overflow-y-auto scroll-smooth ${isTouchDevice ? '' : 'md:overflow-hidden'}`}
                 onScroll={handleScroll}
             >
 
                 {/* === SECTION 1: OVERVIEW === */}
                 {/* 
-            MOBILE FIX: Changed h-screen to min-h-screen and overflow-visible. 
+            MOBILE FIX: Changed h-screen to min-h-dvh and overflow-visible. 
             This allows sections to stack naturally on mobile.
         */}
                 <section
                     id="overview"
                     ref={(el) => { if (el) sectionRefs.current['overview'] = el; }}
-                    className="relative w-full min-h-screen md:h-screen md:overflow-y-auto overflow-visible"
+                    className={`relative w-full min-h-dvh overflow-visible ${isTouchDevice ? '' : 'md:h-dvh md:overflow-y-auto'}`}
                 >
-                    <div className="relative z-10 w-full min-h-screen px-4 md:px-8 flex flex-col items-center justify-center text-center py-20">
+                    <div className="relative z-10 w-full min-h-dvh px-4 md:px-8 flex flex-col items-center justify-center text-center py-20">
                         <div className="animate-slide-up-fade-in flex flex-col items-center" style={{ animationDelay: '0.1s' }}>
 
                             {/* Title */}
@@ -637,9 +764,9 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                             key={sec.id}
                             id={sec.id}
                             ref={(el) => { if (el) sectionRefs.current[sec.id] = el; }}
-                            className="relative w-full min-h-screen md:h-screen md:overflow-y-auto overflow-visible"
+                            className={`relative w-full min-h-dvh overflow-visible ${isTouchDevice ? '' : 'md:h-dvh md:overflow-y-auto'}`}
                         >
-                            <div className="min-h-screen flex flex-col items-center py-16 md:py-20 px-4 md:px-8 md:pl-48">
+                            <div className="min-h-dvh flex flex-col items-center py-16 md:py-20 px-4 md:px-8 md:pl-48">
 
                                 <div className="w-full max-w-7xl space-y-8 md:space-y-12 mb-20">
 
@@ -725,9 +852,9 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                 <section
                     id="gallery"
                     ref={(el) => { if (el) sectionRefs.current['gallery'] = el; }}
-                    className="relative w-full min-h-screen md:h-screen md:overflow-y-auto overflow-visible"
+                    className={`relative w-full min-h-dvh overflow-visible ${isTouchDevice ? '' : 'md:h-dvh md:overflow-y-auto'}`}
                 >
-                    <div className="min-h-screen flex flex-col items-center justify-center w-full px-4 md:pl-48 py-20 md:py-24">
+                    <div className="min-h-dvh flex flex-col items-center justify-center w-full px-4 md:pl-48 py-20 md:py-24">
                         <div className="w-full max-w-7xl">
                             <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-widest mb-8 md:mb-12 text-white/90 border-b border-white/10 pb-6 flex justify-between items-end">
                                 {t('gallery')}
@@ -742,26 +869,10 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                                         onClick={() => setLightboxImage(img)}
                                     >
                                         <div className="w-full h-full overflow-hidden">
-                                            {isVideo(img) ? (
-                                                <video
-                                                    src={img}
-                                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                                    muted
-                                                    loop
-                                                    autoPlay
-                                                    playsInline
-                                                />
-                                            ) : (
-                                                <img
-                                                    src={img}
-                                                    alt={`Gallery ${i}`}
-                                                    loading="lazy"
-                                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                                />
-                                            )}
+                                            <GalleryMedia src={img} index={i} />
                                         </div>
                                         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                            {isVideo(img) ? (
+                                            {isVideoUrl(img) ? (
                                                 <Play className={i === 0 ? "text-white w-12 h-12" : "text-white w-8 h-8"} fill="white" />
                                             ) : (
                                                 <Maximize2 className={i === 0 ? "text-white w-12 h-12" : "text-white w-8 h-8"} />
@@ -781,9 +892,9 @@ const ProjectDetailView: React.FC<ProjectDetailProps> = ({ project, onClose }) =
                 <section
                     id="videos"
                     ref={(el) => { if (el) sectionRefs.current['videos'] = el; }}
-                    className="relative w-full min-h-screen md:h-screen md:overflow-y-auto overflow-visible"
+                    className={`relative w-full min-h-dvh overflow-visible ${isTouchDevice ? '' : 'md:h-dvh md:overflow-y-auto'}`}
                 >
-                    <div className="min-h-screen flex flex-col items-center w-full px-4 md:px-8 md:pl-48 py-20 md:py-24">
+                    <div className="min-h-dvh flex flex-col items-center w-full px-4 md:px-8 md:pl-48 py-20 md:py-24">
                         <div className="w-full max-w-5xl">
                             <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-widest mb-8 md:mb-12 text-white/90 border-b border-white/10 pb-6">
                                 {t('videos')}

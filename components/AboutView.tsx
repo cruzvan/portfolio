@@ -29,8 +29,8 @@ const AboutView: React.FC<AboutViewProps> = ({ onClose }) => {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 md:p-8 animate-fade-in-fast">
 
             {/* --- Main Layout Container (Constrained Height with Flex Column) --- */}
-            {/* This ensures the entire assembly (Card + Button) fits within 85vh */}
-            <div className="relative w-full max-w-4xl max-h-[85vh] flex flex-col animate-modal-in">
+            {/* This ensures the entire assembly (Card + Button) fits within 85dvh */}
+            <div className="relative w-full max-w-4xl max-h-[85dvh] flex flex-col animate-modal-in">
 
                 {/* Scrollable Content Card */}
                 {/* flex-1 and min-h-0 allows this area to shrink and scroll if the screen is too short */}

@@ -4,6 +4,8 @@ import { Gamepad2, Box, Music, FolderOpen, User } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 import { useHoverVideo } from '../hooks/useHoverVideo';
+import { useIsTouchDevice } from '../hooks/useDeviceProfile';
+import { getVideoPoster, isVideoUrl } from '../utils/media';
 
 // FIX: Define a type for menu items to improve type safety and avoid using `any`.
 interface MenuItem {
@@ -45,23 +47,19 @@ const MenuCard: React.FC<MenuCardProps> = ({
   const cardRef = useRef<HTMLDivElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
   const { videoRef, onHoverPlay, onHoverPause } = useHoverVideo();
+  const isTouchDevice = useIsTouchDevice();
   const [transform, setTransform] = useState("perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)");
 
   // PERFORMANCE OPTIMIZATION: Ref for requestAnimationFrame throttling
   const rafRef = useRef<number | null>(null);
 
-  const isVideo = item.image.endsWith('.webm');
+  const isVideo = isVideoUrl(item.image);
+  const videoPoster = isTouchDevice ? getVideoPoster(item.image) : undefined;
 
   // --- 3D TILT & HOLOGRAPHIC LIGHTING LOGIC (THROTTLED) ---
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Disable tilt on mobile/touch devices implicitly by checking hover state interactions usually
-    if (!cardRef.current || isCompressed) return;
-
-    // PERFORMANCE: Disable effect on tablets and mobile devices (< 1024px) to save resources
-    const isMobileUA = typeof navigator !== 'undefined' && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    const isSmallScreen = typeof window !== 'undefined' && window.matchMedia("(max-width: 1024px)").matches;
-
-    if (isMobileUA || isSmallScreen) return;
+    // Disable tilt on touch devices (phones and tablets) regardless of width
+    if (!cardRef.current || isCompressed || isTouchDevice) return;
 
     const x = e.clientX;
     const y = e.clientY;
@@ -158,10 +156,11 @@ const MenuCard: React.FC<MenuCardProps> = ({
             <video
               ref={videoRef}
               src={item.image}
+              poster={videoPoster}
               loop
               muted
               playsInline
-              preload="metadata"
+              preload={isTouchDevice ? 'none' : 'metadata'}
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-200 ${isHovered ? 'opacity-100' : 'opacity-60'}`}
             />
           ) : (
@@ -316,6 +315,7 @@ interface MainMenuProps {
 
 const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, onAddScore }) => {
   const { language, setLanguage, t } = useLanguage();
+  const isTouchDevice = useIsTouchDevice();
 
   // Updated Menu Data with translation hook
   const menuItems: MenuItem[] = [
@@ -338,11 +338,8 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
 
   // --- INTERACTIVE CONSTELLATION EFFECT (Modified to "Bubble") ---
   useEffect(() => {
-    // PERFORMANCE: Disable particles on mobile/tablet
-    const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    const isSmallScreen = window.matchMedia("(max-width: 1024px)").matches;
-
-    if (isMobileUA || isSmallScreen) return;
+    // PERFORMANCE: Disable particles on touch devices (phones and tablets)
+    if (isTouchDevice) return;
 
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -521,7 +518,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseout', handleMouseLeave);
     };
-  }, []);
+  }, [isTouchDevice]);
 
 
   const getHoveredColumnIndex = (id: number | null) => {
@@ -553,7 +550,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
       />
 
       {/* --- STATIC DECORATIVE ELEMENTS (Hide on small mobile to reduce clutter) --- */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden hidden md:block">
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden hidden md:block short:hidden">
 
         {/* Horizontal Lines - Top & Bottom framing the grid */}
         <div className="absolute top-[12vh] left-0 w-full flex justify-center opacity-20">
@@ -589,17 +586,17 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
       </div>
 
       {/* --- HUD HEADER --- */}
-      <div className="absolute top-4 md:top-8 left-0 w-full px-6 md:px-12 flex justify-between items-start z-50">
+      <div className="absolute top-4 md:top-8 hud-top-safe left-0 w-full px-6 md:px-12 short:px-4 short:pt-2 flex justify-between items-start z-50 short:bg-gradient-to-b short:from-black/95 short:via-black/70 short:to-transparent short:pb-8">
 
         {/* Left: Branding */}
         <button
           onClick={onHeaderClick}
           className="flex flex-col text-left group focus:outline-none pointer-events-auto cursor-pointer"
         >
-          <h1 className="text-lg md:text-2xl font-bold tracking-tight text-white leading-none group-hover:text-white/80 transition-colors" style={{ fontFamily: "'Dazzle Unicase', sans-serif" }}>
+          <h1 className="text-lg md:text-2xl short:text-sm font-bold tracking-tight text-white leading-none group-hover:text-white/80 transition-colors" style={{ fontFamily: "'Dazzle Unicase', sans-serif" }}>
             ANGELO CRUZ
           </h1>
-          <span className="text-[9px] md:text-xs tracking-[0.2em] text-[#FE4403] font-bold uppercase mt-1" style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}>
+          <span className="text-[9px] md:text-xs short:text-[7px] tracking-[0.2em] text-[#FE4403] font-bold uppercase mt-1" style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}>
             Game Designer Portfolio
           </span>
         </button>
@@ -666,7 +663,12 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
           Desktop: flex-row with fixed height. 
       */}
       {/* --- DESKTOP MENU (Flex Row / Accordion) --- */}
-      <div className="hidden md:flex flex-row items-stretch justify-center z-10 w-full px-12 h-[70vh] gap-0">
+      {/*
+          Layout is chosen by device capability, not width: touch devices
+          (phones AND tablets in any orientation) always get the tap grid,
+          because the accordion depends on hover which they cannot provide.
+      */}
+      <div className={`${isTouchDevice ? 'hidden' : 'hidden md:flex'} flex-row items-stretch justify-center z-10 w-full px-12 h-[70vh] gap-0`}>
         {columns.map((col, colIndex) => {
           const isColumnActive = hoveredColumnIndex === colIndex;
           const isStacked = col.type === 'stacked';
@@ -723,40 +725,37 @@ const MainMenu: React.FC<MainMenuProps> = ({ onCardClick, onHeaderClick, score, 
         })}
       </div>
 
-      {/* --- MOBILE MENU (Grid) --- */}
-      <div className="grid md:hidden grid-cols-2 gap-2 p-4 w-full z-10 mt-16 pb-20 overflow-y-auto">
-        {menuItems.map((item) => {
-          const isItemHovered = hoveredId === item.id;
-          return (
-            <MenuCard
-              key={item.id}
-              item={item}
-              isHovered={isItemHovered}
-              isSiblingHovered={false}
-              // For mobile grid, logic: Tap 1 -> Expand/Hover, Tap 2 -> Go
-              onMouseEnter={() => { }} // Disable hover on mobile
-              onMouseLeave={() => { }}
-              onCardClick={(id) => {
-                if (hoveredId !== id) {
-                  setHoveredId(id);
-                } else {
-                  onCardClick(id);
-                }
-              }}
-              isStacked={false}
-              flexClass=""
-              className={`
-                        aspect-square w-full shadow-lg border border-white/10 transition-all duration-300
-                        ${isItemHovered ? 'col-span-2' : 'col-span-1'}
-                      `}
-              style={{ animationDelay: `${(item.id - 1) * 100}ms` }}
-            />
-          );
-        })}
+      {/* --- TOUCH MENU (Grid; phones and tablets in any orientation) --- */}
+      {/*
+          The parent uses `justify-center` for desktop; on touch that clips the
+          top of a taller-than-screen grid. `h-full` + `overflow-y-auto` on the
+          child gives it its own scroll context instead of being centered.
+      */}
+      <div className={`${isTouchDevice ? 'block' : 'md:hidden'} w-full h-full z-10 pt-[calc(6rem+env(safe-area-inset-top))] pb-[calc(6rem+env(safe-area-inset-bottom))] px-4 md:px-10 short:pt-12 short:pb-12 short:px-4 overflow-y-auto touch-scroll-x`}>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 short:grid-cols-4 gap-2 md:gap-4 short:gap-2 w-full max-w-6xl mx-auto">
+          {menuItems.map((item) => {
+            return (
+              <MenuCard
+                key={item.id}
+                item={item}
+                isHovered={false}
+                isSiblingHovered={false}
+                // Touch devices: single tap navigates directly
+                onMouseEnter={() => { }}
+                onMouseLeave={() => { }}
+                onCardClick={onCardClick}
+                isStacked={false}
+                flexClass=""
+                className="aspect-square short:aspect-[4/3] w-full shadow-lg border border-white/10 transition-all duration-300"
+                style={{ animationDelay: `${(item.id - 1) * 100}ms` }}
+              />
+            );
+          })}
+        </div>
       </div>
 
       {/* --- HUD FOOTER --- */}
-      <div className="absolute bottom-4 md:bottom-8 left-0 w-full px-6 md:px-12 flex justify-between items-end pointer-events-none z-50">
+      <div className="absolute bottom-4 md:bottom-8 hud-bottom-safe left-0 w-full px-6 md:px-12 short:px-4 short:pb-1 flex justify-between items-end pointer-events-none z-50 short:bg-gradient-to-t short:from-black/95 short:via-black/70 short:to-transparent short:pt-8">
         <div className="flex items-center gap-3 text-white/50">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="3" width="12" height="18" rx="6" stroke="currentColor" strokeWidth="1.5" />

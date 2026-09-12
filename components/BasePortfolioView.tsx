@@ -4,6 +4,7 @@ import { ArrowRight, Lock } from 'lucide-react';
 import ProjectDetailView from './ProjectDetailView';
 import { ProjectCardData, slugify } from '../data/projectData';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useIsTouchDevice } from '../hooks/useDeviceProfile';
 
 // --- TYPES ---
 export interface BasePortfolioViewProps {
@@ -27,14 +28,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick, lang
   const cardRef = useRef<HTMLDivElement>(null);
   const [transform, setTransform] = useState("perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)");
   const [isHovered, setIsHovered] = useState(false);
+  const isTouchDevice = useIsTouchDevice();
 
   // Ref for throttling
   const rafRef = useRef<number | null>(null);
 
-  // 3D Tilt Logic - Throttled
+  // 3D Tilt Logic - Throttled, desktop pointers only
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Disable heavy tilt on mobile touch via check if hover triggered naturally
-    if (project.locked || !cardRef.current || rafRef.current) return;
+    // Disable heavy tilt on touch devices (phones and tablets)
+    if (project.locked || !cardRef.current || rafRef.current || isTouchDevice) return;
 
     const x = e.clientX;
     const y = e.clientY;
@@ -76,7 +78,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick, lang
       // UPDATED DIMENSIONS: Using VH units for desktop (md) to scale with screen height.
       // Mobile: Fixed pixel size.
       // Desktop (md): Height 55vh, Width 32vh (maintains aspect ratio based on height).
-      className={`relative flex-shrink-0 h-[50vh] aspect-[9/16] md:w-[32vh] md:h-[55vh] group select-none transition-all duration-300 ${isLocked ? 'cursor-default' : 'cursor-pointer'}`}
+      className={`relative flex-shrink-0 h-[50dvh] aspect-[9/16] md:w-[32vh] md:h-[55vh] short:h-[42dvh] snap-center group select-none transition-all duration-300 ${isLocked ? 'cursor-default' : 'cursor-pointer'}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -132,7 +134,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick, lang
           <div className={`p-4 md:p-5 2xl:p-6 transition-all duration-300 ${isHovered && !isLocked ? 'bg-[#FE4403] translate-y-0' : 'bg-transparent translate-y-0'}`}>
 
             {/* Title */}
-            <h3 className="text-lg min-[320px]:max-h-[500px]:text-sm md:text-2xl 2xl:text-3xl font-bold uppercase leading-none tracking-tight mb-2 md:mb-3 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <h3 className="text-lg min-[320px]:max-h-[500px]:text-sm md:text-2xl 2xl:text-3xl short:text-base font-bold uppercase leading-none tracking-tight mb-2 md:mb-3 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               {project.title}
             </h3>
 
@@ -171,6 +173,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick, lang
 // --- MAIN VIEW COMPONENT ---
 const BasePortfolioView: React.FC<BasePortfolioViewProps> = ({ title, projects, categories, onClose, baseRoute }) => {
   const { t, language } = useLanguage();
+  const isTouchDevice = useIsTouchDevice();
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [selectedProject, setSelectedProject] = useState<ProjectCardData | null>(null);
 
@@ -263,6 +266,8 @@ const BasePortfolioView: React.FC<BasePortfolioViewProps> = ({ title, projects, 
   };
 
   const handleWheel = (e: React.WheelEvent) => {
+    // Native momentum scrolling drives touch devices; the lerp hijack is desktop-only
+    if (isTouchDevice) return;
     const multiplier = 3;
     startSmoothScroll(e.deltaY * multiplier);
   };
@@ -272,9 +277,9 @@ const BasePortfolioView: React.FC<BasePortfolioViewProps> = ({ title, projects, 
   }, []);
 
 
-  // --- DRAG TO SCROLL LOGIC ---
+  // --- DRAG TO SCROLL LOGIC (pointer devices only; touch uses native scroll) ---
   const handleMouseDown = (e: React.MouseEvent) => {
-    if (!scrollContainerRef.current) return;
+    if (!scrollContainerRef.current || isTouchDevice) return;
 
     cancelAnimationFrame(animationFrameRef.current);
     isAnimatingRef.current = false;
@@ -288,7 +293,7 @@ const BasePortfolioView: React.FC<BasePortfolioViewProps> = ({ title, projects, 
   const handleMouseUp = () => setIsDragging(false);
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || !scrollContainerRef.current) return;
+    if (!isDragging || !scrollContainerRef.current || isTouchDevice) return;
     e.preventDefault();
     const x = e.pageX - scrollContainerRef.current.offsetLeft;
     const walk = (x - startX) * 2;
@@ -337,16 +342,16 @@ const BasePortfolioView: React.FC<BasePortfolioViewProps> = ({ title, projects, 
       {!selectedProject && (
         <>
           {/* --- TOP NAVIGATION BAR --- */}
-          <div className="relative md:absolute top-0 left-0 w-full z-40 flex-shrink-0 bg-gradient-to-b from-black via-black/80 to-transparent pt-4 md:pt-8 pb-4 md:pb-12 px-6 md:px-12">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/20 pb-2">
-              <h1 className="text-xl md:text-2xl 2xl:text-3xl font-bold tracking-tighter text-white mb-2 md:mb-0" style={{ fontFamily: "'Dazzle Unicase', sans-serif" }}>
+          <div className="relative md:absolute top-0 left-0 w-full z-40 flex-shrink-0 bg-gradient-to-b from-black via-black/80 to-transparent pt-hud-safe md:pt-8 short:pt-2 pb-4 md:pb-12 short:pb-2 px-6 md:px-12 short:px-4">
+            <div className="flex flex-col md:flex-row short:flex-col justify-between items-start md:items-end short:items-start border-b border-white/20 pb-2">
+              <h1 className="text-xl md:text-2xl 2xl:text-3xl short:text-base font-bold tracking-tighter text-white mb-2 md:mb-0 short:mb-1 short:whitespace-nowrap" style={{ fontFamily: "'Dazzle Unicase', sans-serif" }}>
                 {title}
               </h1>
 
-              <div className="flex flex-wrap gap-1 md:gap-4 2xl:gap-8 mt-2 md:mt-0">
+              <div className="flex md:flex-wrap short:flex-nowrap gap-3 md:gap-4 2xl:gap-8 mt-2 md:mt-0 short:mt-0 w-full md:w-auto overflow-x-auto scrollbar-hide touch-scroll-x pb-1 md:pb-0">
                 <button
                   onClick={() => setActiveCategory('All')}
-                  className={`text-[9px] md:text-xs 2xl:text-base uppercase tracking-widest pb-2 transition-all duration-300 font-bold ${activeCategory === 'All' ? 'text-white border-b-4 border-[#FE4403]' : 'text-white/40 hover:text-white border-b-4 border-transparent'}`}
+                  className={`flex-shrink-0 text-[9px] md:text-xs 2xl:text-base short:text-[9px] uppercase tracking-widest pb-2 short:pb-1 transition-all duration-300 font-bold ${activeCategory === 'All' ? 'text-white border-b-4 border-[#FE4403]' : 'text-white/40 hover:text-white border-b-4 border-transparent'}`}
                   style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}
                 >
                   {t('all_targets')}
@@ -355,7 +360,7 @@ const BasePortfolioView: React.FC<BasePortfolioViewProps> = ({ title, projects, 
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className={`flex items-center gap-1 md:gap-2 text-[9px] md:text-xs 2xl:text-base uppercase tracking-widest pb-2 transition-all duration-300 font-bold ${activeCategory === cat ? 'text-white border-b-4 border-[#FE4403]' : 'text-white/40 hover:text-white border-b-4 border-transparent'}`}
+                    className={`flex-shrink-0 flex items-center gap-1 md:gap-2 text-[9px] md:text-xs 2xl:text-base short:text-[9px] uppercase tracking-widest pb-2 short:pb-1 transition-all duration-300 font-bold ${activeCategory === cat ? 'text-white border-b-4 border-[#FE4403]' : 'text-white/40 hover:text-white border-b-4 border-transparent'}`}
                     style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}
                   >
                     {cat}
@@ -367,12 +372,12 @@ const BasePortfolioView: React.FC<BasePortfolioViewProps> = ({ title, projects, 
 
           {/* --- MAIN CONTENT AREA --- */}
           {/* UPDATED: Increased top padding for better breathing room on FHD */}
-          <div className="flex-grow flex items-center justify-center w-full h-full pt-4 md:pt-24 2xl:pt-28 pb-8 px-0 md:px-12 min-h-0">
+          <div className="flex-grow flex items-center justify-center w-full h-full pt-4 md:pt-24 2xl:pt-28 short:pt-0 pb-8 short:pb-0 px-0 md:px-12 min-h-0">
             {/* UPDATED: Container height based on VH (65vh) to accommodate 55vh cards + scrollbar */}
-            <div className="relative w-full h-[60vh] md:h-[65vh] bg-black/20 border-y border-white/10 backdrop-blur-sm group">
+            <div className="relative w-full h-[60dvh] md:h-[65dvh] short:h-[68dvh] bg-black/20 border-y border-white/10 backdrop-blur-sm group">
               <div
                 ref={scrollContainerRef}
-                className="w-full h-full overflow-x-auto flex items-center gap-4 md:gap-4 2xl:gap-6 px-8 md:px-12 cursor-grab active:cursor-grabbing"
+                className={`w-full h-full overflow-x-auto flex items-center gap-4 md:gap-4 2xl:gap-6 short:gap-3 px-8 md:px-12 short:px-6 cursor-grab active:cursor-grabbing scrollbar-hide touch-scroll-x ${isTouchDevice ? 'snap-x snap-mandatory' : ''}`}
                 onMouseDown={handleMouseDown}
                 onMouseLeave={handleMouseLeave}
                 onMouseUp={handleMouseUp}
@@ -392,8 +397,8 @@ const BasePortfolioView: React.FC<BasePortfolioViewProps> = ({ title, projects, 
                 ))}
               </div>
 
-              {/* Back Button - Positioned absolutely below the container on Mobile, and relatively/absolutely on Desktop */}
-              <div className="hidden md:block absolute right-4 top-full mt-4 md:right-0 md:mt-4 pointer-events-auto z-50">
+              {/* Back Button - desktop pointer devices, positioned below the rail */}
+              <div className={`${isTouchDevice ? 'hidden' : 'hidden md:block'} absolute right-4 top-full mt-4 md:right-0 md:mt-4 pointer-events-auto z-50`}>
                 <button
                   onClick={onClose}
                   className="bg-gray-300/80 text-black px-8 py-2 md:px-12 md:py-3 font-bold tracking-widest uppercase hover:bg-white transition-colors duration-200 text-sm md:text-lg shadow-lg"
@@ -403,10 +408,21 @@ const BasePortfolioView: React.FC<BasePortfolioViewProps> = ({ title, projects, 
                 </button>
               </div>
             </div>
+
+            {/* Back Button - touch devices (phones and tablets), always on screen */}
+            <div className={`${isTouchDevice ? 'block' : 'md:hidden'} fixed bottom-16 hud-bottom-16 right-4 z-50`}>
+              <button
+                onClick={onClose}
+                className="bg-gray-300/80 text-black px-8 py-3 short:px-6 short:py-2 font-bold tracking-widest uppercase active:bg-white transition-colors duration-200 text-sm short:text-xs shadow-lg border border-black/20"
+                style={{ fontFamily: "'ITC Avant Garde Gothic Pro Md', sans-serif" }}
+              >
+                {t('back')}
+              </button>
+            </div>
           </div>
 
           {/* --- HUD FOOTER --- */}
-          <div className="absolute bottom-4 md:bottom-8 left-0 w-full px-6 md:px-12 flex justify-between items-end pointer-events-none z-50">
+          <div className="absolute bottom-4 md:bottom-8 hud-bottom-safe left-0 w-full px-6 md:px-12 short:px-4 flex justify-between items-end pointer-events-none z-50">
             <div className="flex items-center gap-3 text-white/50">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="6" y="3" width="12" height="18" rx="6" stroke="currentColor" strokeWidth="1.5" />
